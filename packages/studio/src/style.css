@@ -929,13 +929,13 @@
   --s-doc-bg-grid-color: color-mix(in oklab, var(--s-neutral-500) 30%, transparent);
   --s-doc-bg-token-preview: var(--s-bg-background);
   --s-doc-bg-token-padding: var(--s-brand-100);
-  --s-doc-bg-shape: var(--s-neutral-200);
+  --s-doc-bg-shape: var(--s-neutral-100);
 }
 
 .dark {
   --s-doc-bg-tint: color-mix(in oklab, var(--s-brand-400) 10%, transparent);
   --s-doc-bg-token-padding: color-mix(in oklab, var(--s-brand-400) 25%, transparent);
-  --s-doc-bg-shape: var(--s-neutral-700);
+  --s-doc-bg-shape: var(--s-neutral-800);
 }
 
 @utility doc-bg-tint {

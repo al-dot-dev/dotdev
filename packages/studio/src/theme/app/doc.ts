@@ -9,7 +9,7 @@ export const doc = defineComponent({
     'bg-grid-color': 'neutral-500/30',
     'bg-token-preview': 'bg-background',
     'bg-token-padding': ['brand-100', 'brand-400/25'],
-    'bg-shape': ['neutral-200', 'neutral-700'],
+    'bg-shape': ['neutral-100', 'neutral-800'],
   },
   utilities: {
     card: `doc-bg-card border border-default radius-lg transition-[background-color,border-color]`,
