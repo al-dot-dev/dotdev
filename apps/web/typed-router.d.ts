@@ -325,6 +325,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    'Tabs': RouteRecordInfo<
+      'Tabs',
+      '/ui-kit/navigation/tabs',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -669,6 +676,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/ui-kit/navigation/pagination/index.vue': {
       routes:
         | 'Pagination'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/ui-kit/navigation/tabs/index.vue': {
+      routes:
+        | 'Tabs'
       views:
         | never
       pathParamNames:
