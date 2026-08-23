@@ -61,7 +61,7 @@ export const doc = defineComponent({
     '.doc-example__code-view': `relative flex flex-1`,
     '.doc-example__code-toggle': `absolute top-1 right-1 z-10`,
 
-    '.doc-code': `max-h-50 h-auto`,
+    '.doc-code': `max-h-100 h-auto`,
     '.doc-code__raw': `py-4 pr-4`,
     '.doc-code .shiki': `flex text-sm outline-none`,
     '.doc-code .shiki code': `pr-4`,
