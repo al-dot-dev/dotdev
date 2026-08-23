@@ -445,16 +445,26 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "gap-lg"?: T
     }
     "select"?: {
-      "text-default"?: T
-      "text-placeholder"?: T
       "bg-soft"?: T
       "bg-outlined"?: T
       "border-outlined"?: T
-      "border-underlined"?: T
-      "border-hover"?: T
+      "border-focus"?: T
       "border-invalid"?: T
-      "bg-popup"?: T
-      "border-popup"?: T
+      "text-default"?: T
+      "text-placeholder"?: T
+      "pl-sm"?: T
+      "pl-md"?: T
+      "pl-lg"?: T
+      "h-sm"?: T
+      "h-md"?: T
+      "h-lg"?: T
+      "type-sm"?: T
+      "type-md"?: T
+      "type-lg"?: T
+      "gap-sm"?: T
+      "gap-md"?: T
+      "gap-lg"?: T
+      "rounded"?: T
     }
     "switch"?: {
       "border"?: T

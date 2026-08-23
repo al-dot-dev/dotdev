@@ -1,6 +1,7 @@
 <script generic="T, L extends keyof T, V extends keyof T, M extends boolean" lang="ts" setup>
 import type { UIListBoxEmits, UIListBoxProps, UIListBoxSlots } from './listbox.types.ts'
 import {
+  asTemplateRef,
   Icon,
   normalizeBooleanProp,
   Scope,
@@ -247,21 +248,19 @@ defineExpose({
   focusOut: onFocusOut,
 })
 
-/* TODO: delete when fixed useUiKitProps types */
-const checkmark = computed(() => ui.checkmark)
-const columns = computed(() => ui.columns)
+const tui = asTemplateRef(ui)
 </script>
 
 <template>
   <ul
     ref="listbox"
-    :style="isGrid ? { '--ui-listbox-columns': columns } : undefined"
+    :style="isGrid ? { '--ui-listbox-columns': tui.columns } : undefined"
     v-bind="rootAttrs"
     @focusin="onNativeFocusIn"
     @focusout="onNativeFocusOut"
     @mousedown="onMouseDown"
   >
-    <Scope v-for="(item, idx) in options" :key="idx" #default="scope" :scope="getOptionBindings(item, idx)">
+    <Scope v-for="(item, idx) in tui.options" :key="idx" #default="scope" :scope="getOptionBindings(item, idx)">
       <li
         :id="scope.id"
         :aria-disabled="disabled"
@@ -274,9 +273,13 @@ const columns = computed(() => ui.columns)
         role="option"
         @mousedown="scope.onMousedown"
       >
-        <Icon v-if="checkmark === 'left'" :class="bem('checkmark', [checkmark])" :name="checkmarkIcon ?? 'check'" />
+        <Icon
+          v-if="tui.checkmark === 'left'"
+          :class="bem('checkmark', [tui.checkmark])"
+          :name="checkmarkIcon ?? 'check'"
+        />
         <slot name="default" v-bind="{ option: item, ...scope }">{{ scope.label }}</slot>
-        <Icon v-if="checkmark === 'right'" :class="bem('checkmark', [checkmark])" :name="checkmarkIcon" />
+        <Icon v-if="tui.checkmark === 'right'" :class="bem('checkmark', [tui.checkmark])" :name="checkmarkIcon" />
       </li>
     </Scope>
   </ul>

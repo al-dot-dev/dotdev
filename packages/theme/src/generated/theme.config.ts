@@ -594,34 +594,26 @@ export default {
       "gap-lg": "var(--_NS_-gap-lg)"
     },
     "select": {
-      "text-default": "var(--_NS_-text-foreground)",
-      "text-placeholder": [
-        "var(--_NS_-neutral-400)",
-        "var(--_NS_-neutral-500)"
-      ],
-      "bg-soft": [
-        "var(--_NS_-neutral-100)",
-        "var(--_NS_-neutral-800)"
-      ],
+      "bg-soft": "var(--_NS_-bg-neutral-soft)",
       "bg-outlined": "var(--_NS_-bg-background)",
-      "border-outlined": [
-        "var(--_NS_-neutral-300)",
-        "var(--_NS_-neutral-700)"
-      ],
-      "border-underlined": [
-        "var(--_NS_-neutral-200)",
-        "var(--_NS_-neutral-700)"
-      ],
-      "border-hover": [
-        "var(--_NS_-neutral-400)",
-        "var(--_NS_-neutral-600)"
-      ],
-      "border-invalid": "color-mix(in oklab, var(--_NS_-danger-500) 50%, transparent)",
-      "bg-popup": "var(--_NS_-white)",
-      "border-popup": [
-        "var(--_NS_-neutral-100)",
-        "var(--_NS_-neutral-800)"
-      ]
+      "border-outlined": "var(--_NS_-border-neutral)",
+      "border-focus": "var(--_NS_-border-brand)",
+      "border-invalid": "var(--_NS_-border-danger)",
+      "text-default": "var(--_NS_-text-foreground)",
+      "text-placeholder": "var(--_NS_-text-placeholder)",
+      "pl-sm": "var(--_NS_-space-sm)",
+      "pl-md": "var(--_NS_-space-md)",
+      "pl-lg": "var(--_NS_-space-lg)",
+      "h-sm": "var(--_NS_-size-sm)",
+      "h-md": "var(--_NS_-size-md)",
+      "h-lg": "var(--_NS_-size-lg)",
+      "type-sm": "var(--_NS_-type-sm)",
+      "type-md": "var(--_NS_-type-md)",
+      "type-lg": "var(--_NS_-select-type-md)",
+      "gap-sm": "var(--_NS_-gap-sm)",
+      "gap-md": "var(--_NS_-gap-md)",
+      "gap-lg": "var(--_NS_-gap-lg)",
+      "rounded": "var(--_NS_-radius-md)"
     },
     "switch": {
       "border": "var(--_NS_-border-neutral)",

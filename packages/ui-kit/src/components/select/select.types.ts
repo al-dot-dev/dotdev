@@ -1,5 +1,12 @@
 import type { VNode } from 'vue'
-import type { ArrayModelConfig, UiKitBaseProps, UiKitFieldVariant, UiKitOverride, UiKitSize } from '@dotdev/ui-kit'
+import type {
+  ArrayModelConfig,
+  UiKitBaseProps,
+  UiKitFieldVariant,
+  UiKitOverride,
+  UiKitSize,
+  UIListBoxSlotScope,
+} from '@dotdev/ui-kit'
 
 export interface UISelectProps<T = any, L = any, V = any, M = any>
   extends ArrayModelConfig<T, L, V, M>, UiKitBaseProps {
@@ -11,9 +18,7 @@ export interface UISelectProps<T = any, L = any, V = any, M = any>
 }
 
 export interface UISelectSlots<T = any> {
-  default?(props: { option: T; selected: boolean; index: number }): VNode[]
-  prefix?(props: { option: T; selected: boolean; index: number }): VNode[]
-  suffix?(props: { option: T; selected: boolean; index: number }): VNode[]
+  default?(props: UIListBoxSlotScope<T>): VNode[]
 }
 
 export interface UISelectEmits {}

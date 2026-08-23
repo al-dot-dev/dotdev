@@ -1,21 +1,31 @@
 <script generic="T, L extends keyof T, V extends keyof T, M extends boolean | undefined" lang="ts" setup>
-import { Floating, Icon, ListBox, useSelectOptions, useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import {
+  asTemplateRef,
+  Floating,
+  Icon,
+  ListBox,
+  normalizeBooleanProp,
+  useUiKitBem,
+  useUiKitProps,
+  useUiKitTheme,
+} from '@dotdev/ui-kit'
 import type { UISelectEmits, UISelectProps, UISelectSlots } from './select.types.ts'
 import { computed, nextTick, ref, useId, useTemplateRef } from 'vue'
 import { selectStyle } from '@dotdev/theme'
 
+const UI_NAME = 'select'
+
 defineEmits<UISelectEmits>()
 defineSlots<UISelectSlots>()
 const props = withDefaults(defineProps<UISelectProps<T, L, V, M>>(), {
-  ui: 'select',
+  ui: UI_NAME,
   size: 'md',
   variant: 'outlined',
 })
 
 const model = defineModel<M extends true ? T[] : T | undefined>()
 
-const ui = useUiKitProps<'select', UISelectProps<T, L, V, M>>('select', props)
-const { getOptionLabel } = useSelectOptions<T>(ui.labelKey, ui.valueKey)
+const ui = useUiKitProps(UI_NAME, props)
 const bem = useUiKitBem(ui)
 useUiKitTheme(ui, selectStyle)
 
@@ -26,11 +36,11 @@ const listboxRef = useTemplateRef('listbox')
 const listboxId = `${useId()}-listbox`
 const isFocused = ref(false)
 const isOpen = computed(() => !!floatingRef.value?.isOpen)
-const multiple = computed(() => ui.multiple === ('' as any) || ui.multiple === true)
+const multiple = computed(() => normalizeBooleanProp(ui.multiple))
 
 const rootClass = computed(() => {
   const { size, disabled, invalid, variant } = ui
-  return bem([size, variant], { disabled, invalid, focused: isFocused.value })
+  return bem([size, variant], { disabled, invalid, focused: isFocused.value || isOpen.value })
 })
 
 const isPlaceholder = computed(() => {
@@ -38,6 +48,10 @@ const isPlaceholder = computed(() => {
   if (Array.isArray(value)) return value.length === 0
   return value === null || value === undefined || value === ''
 })
+
+function getOptionLabel(option: T) {
+  return String(ui.labelKey ? option[ui.labelKey] : option)
+}
 
 const displayLabel = computed(() => {
   if (isPlaceholder.value) return ''
@@ -80,7 +94,7 @@ function closeAndBlur() {
   isFocused.value = false
 }
 
-function handleKeydown(event: KeyboardEvent) {
+function onKeyDown(event: KeyboardEvent) {
   if (ui.disabled) return
   if (event.key === 'Tab') closeAndBlur()
 
@@ -89,7 +103,6 @@ function handleKeydown(event: KeyboardEvent) {
     return
   }
 
-  // Если есть фокус значит клавиатурой управляет listbox
   if (listboxRef.value?.isFocused) return
 
   switch (event.key) {
@@ -98,7 +111,7 @@ function handleKeydown(event: KeyboardEvent) {
       event.preventDefault()
 
       toggleDropdown(event)
-      // Если список открылся и есть выбранное значение — фокусируемся на нем
+
       if (!isPlaceholder.value) {
         nextTick(() => listboxRef.value?.focusIn())
         event.stopPropagation()
@@ -121,13 +134,15 @@ function handleKeydown(event: KeyboardEvent) {
       break
   }
 }
+
+const tui = asTemplateRef(ui)
 </script>
 
 <template>
   <Floating ref="floating" #default="{ ref, style }" :offset="2" auto-update fit @click-outside="closeAndBlur">
-    <div :class="rootClass" @click="toggleDropdown" @keydown="handleKeydown">
+    <div :class="rootClass" tabindex="-1" @click="toggleDropdown" @keydown="onKeyDown">
       <span ref="combobox" v-bind="comboboxAttrs" @focus="isFocused = true">
-        {{ displayLabel || ui.placeholder }}
+        {{ displayLabel || tui.placeholder }}
       </span>
 
       <div :class="bem('dropdown')" aria-hidden="true">
@@ -136,26 +151,27 @@ function handleKeydown(event: KeyboardEvent) {
     </div>
 
     <Teleport to="body">
-      <div v-if="isOpen" :ref="ref" :class="bem('listbox-wrapper', [size])" :style="style">
+      <div v-if="isOpen" :ref="ref" :class="bem('listbox-wrapper')" :style="style">
         <ListBox
           :id="listboxId"
           ref="listbox"
           v-model="model"
-          :deselectable="ui.deselectable"
-          :disabled="ui.disabled"
-          :invalid="ui.invalid"
-          :label-key="ui.labelKey"
+          #default="scope"
+          :deselectable="tui.deselectable"
+          :disabled="tui.disabled"
+          :label-key="tui.labelKey"
           :multiple="multiple"
-          :option-disabled="ui.optionDisabled"
-          :options="ui.options"
-          :placeholder="ui.placeholder"
-          :size="ui.size"
-          :ui="`${ui.ui}-listbox`"
-          :value-key="ui.valueKey"
+          :option-disabled="tui.optionDisabled"
+          :options="tui.options"
+          :placeholder="tui.placeholder"
+          :size="tui.size"
+          :value-key="tui.valueKey"
           tabindex="-1"
           @click="restoreFocus"
           @update:model-value="closeDropdown"
-        />
+        >
+          <slot v-bind="scope" />
+        </ListBox>
       </div>
     </Teleport>
   </Floating>
