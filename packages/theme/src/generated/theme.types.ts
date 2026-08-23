@@ -538,6 +538,7 @@ export interface ThemeDefinition<T = string | [string, string]> {
     }
     "skeleton"?: {
       "bg"?: T
+      "rounded"?: T
     }
     "progress"?: {
       "bg-primary"?: T

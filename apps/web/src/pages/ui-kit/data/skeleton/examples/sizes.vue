@@ -7,6 +7,5 @@ import { Skeleton } from '@dotdev/ui-kit'
     <Skeleton class="h-3" />
     <Skeleton />
     <Skeleton class="h-6" />
-    <Skeleton class="h-px w-full" />
   </div>
 </template>

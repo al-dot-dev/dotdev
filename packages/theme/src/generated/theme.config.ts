@@ -707,7 +707,8 @@ export default {
       "bg": [
         "var(--_NS_-neutral-200)",
         "var(--_NS_-neutral-700)"
-      ]
+      ],
+      "rounded": "4px"
     },
     "progress": {
       "bg-primary": "var(--_NS_-bg-brand)",

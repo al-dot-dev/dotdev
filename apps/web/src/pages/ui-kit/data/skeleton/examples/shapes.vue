@@ -3,12 +3,11 @@ import { Skeleton } from '@dotdev/ui-kit'
 </script>
 
 <template>
-  <div class="flex items-center gap-4">
-    <Skeleton class="size-12" rounded />
+  <div class="flex items-center gap-4 w-full max-w-sm">
+    <Skeleton class="w-12" rounded square />
 
     <div class="flex w-full flex-col gap-2">
-      <Skeleton class="h-3 w-1/3" />
-      <Skeleton class="h-3 w-2/3" />
+      <Skeleton :lines="2" class="w-2/3" text />
     </div>
   </div>
 </template>

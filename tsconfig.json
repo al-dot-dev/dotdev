@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "paths": {
       "@dotdev/theme": ["./packages/theme/src"],
       "@dotdev/theme/*": ["./packages/theme/src/*"],

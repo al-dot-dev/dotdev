@@ -10,22 +10,22 @@ defineDocPage({
   title: 'Skeleton',
   icon: 'component-1',
   styleScope: 'skeleton',
-  description: `A placeholder preview of content before it loads. Renders as a pulsing block that mimics the layout of text, avatars, or cards, reducing perceived loading time.`,
+  description: `A placeholder preview of content before it loads. Renders neutral bars, typographic text lines that adopt the surrounding line-height, or square shapes like avatars — then swaps back to the real content once loading completes.`,
   sources: import.meta.glob('./examples/*.{vue,ts}', { query: '?raw', eager: true, import: 'default' }),
   examples: [
     {
       title: 'Basic usage',
-      description: `A <code>Skeleton</code> renders as a full-width line by default. Compose several of them to mimic paragraphs of text; the pulse animation signals that content is on its way.`,
+      description: `The <code>text</code> prop turns the skeleton into a typographic placeholder: each line is <code>1em</code> tall and spaced by the surrounding line-height (<code>lh</code>), so it sits flush with real text at any font size. Pass <code>:lines</code> to render several rows; the trailing line shortens to <code>80%</code> like an unfinished paragraph unless an explicit width is set.`,
       preview: basic,
     },
     {
       title: 'Sizes',
-      description: `Adjust dimensions with utility classes — <code>h-3</code>, <code>h-6</code>, or a hairline <code>h-px</code> for subtle dividers within a loading layout.`,
+      description: `Without <code>text</code>, the skeleton is a full-width <code>h-4</code> bar. Adjust dimensions with utility classes — <code>h-3</code>, <code>h-6</code>, or whatever the layout calls for.`,
       preview: sizes,
     },
     {
       title: 'Shapes',
-      description: `Use the <code>rounded</code> prop to turn a square skeleton into a circle, ideal for avatar placeholders next to text lines.`,
+      description: `Add <code>square</code> to drop the fixed height and follow the element's width (<code>aspect-square</code>). Paired with <code>rounded</code> it becomes a circle — ideal for avatar placeholders next to text lines.`,
       preview: shapes,
     },
     {
@@ -35,7 +35,7 @@ defineDocPage({
     },
     {
       title: 'Card composition',
-      description: `Combine skeletons with real components to build a full loading state. Only the placeholders animate — static chrome like borders and buttons render immediately.`,
+      description: `Skeletons accept real content in the default slot and swap it in when <code>loading</code> turns off — text becomes typographic lines, an avatar a circle, a button a sized bar. Wrap a region in <code>SkeletonProvider</code> to drive every nested skeleton from one state, and use <code>skeleton-class</code> to style the placeholder without touching the layout element.`,
       preview: card,
     },
   ],

@@ -4,7 +4,7 @@ import { Skeleton } from '@dotdev/ui-kit'
 
 <template>
   <div class="flex w-full flex-col gap-3">
-    <Skeleton variant="static" class="h-20" />
+    <Skeleton class="h-10" variant="static" />
     <Skeleton variant="static" />
   </div>
 </template>

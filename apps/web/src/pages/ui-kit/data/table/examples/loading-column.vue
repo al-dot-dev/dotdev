@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { Table, type UITableColumn } from '@dotdev/ui-kit'
+import { Skeleton, Table, type UITableColumn } from '@dotdev/ui-kit'
 
-const loading = [
-  { name: '', role: '', status: '' },
-  { name: '', role: '', status: '' },
-  { name: '', role: '', status: '' },
+const items = [
+  { name: 'Vue', stars: 48000, license: 'MIT' },
+  { name: 'React', stars: 230000, license: 'MIT' },
+  { name: 'Svelte', stars: 82000, license: 'MIT' },
 ]
 
-type Row = (typeof loading)[number]
+type Item = (typeof items)[number]
 
-const columns: UITableColumn<Row>[] = [
+const columns: UITableColumn<Item>[] = [
   { key: 'name', header: 'Name' },
   { key: 'role', header: 'Role' },
   { key: 'status', header: 'Status' },
@@ -17,9 +17,9 @@ const columns: UITableColumn<Row>[] = [
 </script>
 
 <template>
-  <Table :columns="columns" :data="loading">
+  <Table :columns="columns" :data="items">
     <template #loading-column>
-      <div class="h-4 w-3/4 animate-pulse rounded bg-neutral-500/10" />
+      <Skeleton class="w-1/2" />
     </template>
   </Table>
 </template>
