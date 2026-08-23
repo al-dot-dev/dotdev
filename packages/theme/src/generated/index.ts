@@ -25,4 +25,5 @@ export { default as skeletonStyle } from './skeleton.ts'
 export { default as progressStyle } from './progress.ts'
 export { default as paginationStyle } from './pagination.ts'
 export { default as layoutStyle } from './layout.ts'
+export { default as tabsStyle } from './tabs.ts'
 

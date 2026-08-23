@@ -32,6 +32,7 @@ import type {
   UILayoutProps,
   UILayoutSidebarProps,
   UILayoutHeaderProps,
+  UITabsProps,
 } from '@dotdev/ui-kit'
 
 export interface UiKitConfig {
@@ -67,6 +68,7 @@ export interface UiKitConfig {
     layout?: Partial<UILayoutProps>
     'layout-sidebar'?: Partial<UILayoutSidebarProps>
     'layout-header'?: Partial<UILayoutHeaderProps>
+    tabs?: Partial<UITabsProps>
   }
   icons?: Partial<Record<UiKitIcon, Component>>
 }

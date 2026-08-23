@@ -728,6 +728,28 @@ export default {
     "layout": {
       "h-header": "56px",
       "w-sidebar": "240px"
+    },
+    "tabs": {
+      "border-default": "var(--_NS_-border-neutral)",
+      "border-selected": "var(--_NS_-border-brand)",
+      "border-outlined": "var(--_NS_-border-neutral)",
+      "bg-soft": "var(--_NS_-bg-neutral-soft)",
+      "bg-outlined": "var(--_NS_-bg-background)",
+      "bg-item": [
+        "var(--_NS_-white)",
+        "var(--_NS_-neutral-800)"
+      ],
+      "text-default": "var(--_NS_-text-muted)",
+      "text-selected": "var(--_NS_-text-foreground)",
+      "px-sm": "var(--_NS_-space-sm)",
+      "px-md": "var(--_NS_-space-md)",
+      "px-lg": "var(--_NS_-space-lg)",
+      "h-sm": "var(--_NS_-size-sm)",
+      "h-md": "var(--_NS_-size-md)",
+      "h-lg": "var(--_NS_-size-lg)",
+      "gap-sm": "var(--_NS_-gap-sm)",
+      "gap-md": "var(--_NS_-gap-md)",
+      "gap-lg": "var(--_NS_-gap-lg)"
     }
   }
 }

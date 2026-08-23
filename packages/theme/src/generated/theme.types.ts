@@ -577,5 +577,24 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "h-header"?: T
       "w-sidebar"?: T
     }
+    "tabs"?: {
+      "border-default"?: T
+      "border-selected"?: T
+      "border-outlined"?: T
+      "bg-soft"?: T
+      "bg-outlined"?: T
+      "bg-item"?: T
+      "text-default"?: T
+      "text-selected"?: T
+      "px-sm"?: T
+      "px-md"?: T
+      "px-lg"?: T
+      "h-sm"?: T
+      "h-md"?: T
+      "h-lg"?: T
+      "gap-sm"?: T
+      "gap-md"?: T
+      "gap-lg"?: T
+    }
   }
 }
