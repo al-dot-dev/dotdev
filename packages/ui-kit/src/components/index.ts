@@ -1,6 +1,7 @@
 export * from './icon'
 export * from './button'
 export * from './breadcrumbs'
+export * from './pagination'
 export * from './icon-button'
 export * from './input'
 export * from './textarea'

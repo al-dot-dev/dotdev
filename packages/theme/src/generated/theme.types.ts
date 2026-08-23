@@ -548,5 +548,20 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "bg-info"?: T
       "bg-success"?: T
     }
+    "pagination"?: {
+      "bg-item"?: T
+      "bg-item-selected"?: T
+      "text-default"?: T
+      "text-selected"?: T
+      "px-sm"?: T
+      "px-md"?: T
+      "px-lg"?: T
+      "h-sm"?: T
+      "h-md"?: T
+      "h-lg"?: T
+      "gap-sm"?: T
+      "gap-md"?: T
+      "gap-lg"?: T
+    }
   }
 }

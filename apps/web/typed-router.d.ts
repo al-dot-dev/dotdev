@@ -255,6 +255,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    'Pagination': RouteRecordInfo<
+      'Pagination',
+      '/ui-kit/navigation/pagination',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -519,6 +526,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/ui-kit/navigation/breadcrumbs/index.vue': {
       routes:
         | 'Breadcrumbs'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/ui-kit/navigation/pagination/index.vue': {
+      routes:
+        | 'Pagination'
       views:
         | never
       pathParamNames:

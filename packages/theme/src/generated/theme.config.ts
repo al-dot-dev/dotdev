@@ -717,6 +717,21 @@ export default {
       "bg-warning": "var(--_NS_-bg-warning)",
       "bg-info": "var(--_NS_-bg-info)",
       "bg-success": "var(--_NS_-bg-success)"
+    },
+    "pagination": {
+      "bg-item": "var(--_NS_-bg-neutral-soft)",
+      "bg-item-selected": "var(--_NS_-bg-neutral-soft-hover)",
+      "text-default": "var(--_NS_-text-muted)",
+      "text-selected": "var(--_NS_-text-foreground)",
+      "px-sm": "var(--_NS_-space-xs)",
+      "px-md": "var(--_NS_-space-sm)",
+      "px-lg": "var(--_NS_-space-md)",
+      "h-sm": "var(--_NS_-size-xs)",
+      "h-md": "var(--_NS_-size-sm)",
+      "h-lg": "var(--_NS_-size-md)",
+      "gap-sm": "var(--_NS_-gap-sm)",
+      "gap-md": "var(--_NS_-gap-md)",
+      "gap-lg": "var(--_NS_-gap-lg)"
     }
   }
 }

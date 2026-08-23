@@ -23,4 +23,5 @@ export { default as tagStyle } from './tag.ts'
 export { default as textareaStyle } from './textarea.ts'
 export { default as skeletonStyle } from './skeleton.ts'
 export { default as progressStyle } from './progress.ts'
+export { default as paginationStyle } from './pagination.ts'
 

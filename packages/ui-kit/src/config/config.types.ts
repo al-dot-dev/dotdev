@@ -28,6 +28,7 @@ import type {
   UITextareaProps,
   UISkeletonProps,
   UIProgressProps,
+  UIPaginationProps,
 } from '@dotdev/ui-kit'
 
 export interface UiKitConfig {
@@ -59,6 +60,7 @@ export interface UiKitConfig {
     table?: Partial<UITableProps>
     skeleton?: Partial<UISkeletonProps>
     progress?: Partial<UIProgressProps>
+    pagination?: Partial<UIPaginationProps>
   }
   icons?: Partial<Record<UiKitIcon, Component>>
 }
