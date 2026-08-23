@@ -19,7 +19,7 @@ const { currentIndex, currentItem, setCurrentIndex, onKeydown } = useKeyboardNav
 <template>
   <div>
     <div
-      class="flex w-56 flex-col gap-0.5 rounded-xl border border-primary-200 bg-white p-1 outline-none transition-[border-color] focus:border-primary-400 dark:bg-primary-950"
+      class="flex w-56 flex-col gap-0.5 rounded-xl border border-default bg-surface p-1 outline-none transition-[border-color] focus:border-brand"
       tabindex="0"
       @blur="setCurrentIndex(-1)"
       @keydown="onKeydown"
@@ -29,10 +29,10 @@ const { currentIndex, currentItem, setCurrentIndex, onKeydown } = useKeyboardNav
         :key="item.label"
         :class="
           item.disabled
-            ? 'cursor-not-allowed text-primary-400/50 dark:text-primary-600/50'
+            ? 'cursor-not-allowed text-placeholder'
             : index === currentIndex
-              ? 'bg-primary-100 text-primary-900 dark:bg-primary-800 dark:text-primary-100'
-              : 'text-primary-700 dark:text-primary-300'
+              ? 'bg-neutral-soft text-foreground'
+              : 'text-foreground'
         "
         class="rounded-lg px-3 py-1.5 text-sm"
       >
@@ -40,6 +40,6 @@ const { currentIndex, currentItem, setCurrentIndex, onKeydown } = useKeyboardNav
       </div>
     </div>
 
-    <p class="mt-2 text-sm text-primary-500">Current: {{ currentItem?.label ?? 'none' }}</p>
+    <p class="mt-2 font-mono text-xs text-muted">Current: {{ currentItem?.label ?? 'none' }}</p>
   </div>
 </template>
