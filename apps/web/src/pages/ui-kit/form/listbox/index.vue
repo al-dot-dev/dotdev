@@ -25,14 +25,9 @@ defineDocPage({
       preview: base,
     },
     {
-      title: 'Filtering options',
-      description: `Combine the <code>filter</code> prop with an external input to create custom option filtering. The <code>ListBox</code> updates visible options while keeping keyboard navigation synchronized.`,
-      preview: filter,
-    },
-    {
-      title: 'Grid selection',
-      description: `Use the <code>columns</code> prop to display options in a grid layout. Combine it with <code>multiple</code> to allow selecting multiple values from a compact collection of options.`,
-      preview: grid,
+      title: 'Object options',
+      description: `Use <code>label-key</code> to specify the property displayed to the user and <code>value-key</code> to define the unique value used for selection when working with object options.`,
+      preview: object,
     },
     {
       title: 'Checkmark position',
@@ -45,6 +40,11 @@ defineDocPage({
       preview: sizes,
     },
     {
+      title: 'Variants',
+      description: `Use the <code>variant</code> prop to control the visual style of the list. The <code>soft</code> variant adds a soft background, while <code>plain</code> removes the default container styling for custom layouts.`,
+      preview: variants,
+    },
+    {
       title: 'Multiple selection',
       description: `Use the <code>multiple</code> prop to allow selecting multiple options. The <code>v-model</code> value should be an array containing all selected options.`,
       preview: multiple,
@@ -54,11 +54,7 @@ defineDocPage({
       description: `Use the <code>deselectable</code> prop to allow removing the current selection. This works with both single and multiple selection modes.`,
       preview: deselectable,
     },
-    {
-      title: 'Variants',
-      description: `Use the <code>variant</code> prop to control the visual style of the list. The <code>soft</code> variant adds a soft background, while <code>plain</code> removes the default container styling for custom layouts.`,
-      preview: variants,
-    },
+
     {
       title: 'Disabled state',
       description: `Use the <code>disabled</code> prop to disable the entire component or <code>option-disabled</code> to disable specific options. Disabled options remain visible but cannot be selected.`,
@@ -70,9 +66,14 @@ defineDocPage({
       preview: invalid,
     },
     {
-      title: 'Object options',
-      description: `Use <code>label-key</code> to specify the property displayed to the user and <code>value-key</code> to define the unique value used for selection when working with object options.`,
-      preview: object,
+      title: 'Filtering options',
+      description: `Combine the <code>filter</code> prop with an external input to create custom option filtering. The <code>ListBox</code> updates visible options while keeping keyboard navigation synchronized.`,
+      preview: filter,
+    },
+    {
+      title: 'Grid selection',
+      description: `Use the <code>columns</code> prop to display options in a grid layout. Combine it with <code>multiple</code> to allow selecting multiple values from a compact collection of options.`,
+      preview: grid,
     },
   ],
 })
