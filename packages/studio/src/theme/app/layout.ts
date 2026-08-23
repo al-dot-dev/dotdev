@@ -6,11 +6,11 @@ export const layout = defineComponent({
   semantics: {
     'h-header': '56px',
     'w-sidebar': '240px',
-    'text-heading': ['--d-neutral-400', '--d-neutral-500'],
+    'text-heading': ['neutral-400', 'neutral-500'],
   },
   utilities: {
     root: 'bg-background text-foreground transition-[background-color]',
-    panel: 'bg-surface border-default backdrop-blur-md transition-[background-color,border]',
+    panel: 'bg-surface border-default transition-[background-color,border]',
   },
   rules: {
     '.layout': `flex min-h-svh layout-root`,

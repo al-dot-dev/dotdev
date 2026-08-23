@@ -7,13 +7,11 @@
   "exports": {
     ".": "./src/index.ts",
     "./vite": "./src/utils/extend-route.ts",
-    "./style.css": "./src/index.css"
+    "./style.css": "./src/style.css"
   },
   "scripts": {
-    "build:utility": "dotdev-design build -n d -i ./src/theme/index.ts -o ./src/theme/generated/utilities.css -s theme -k utilities",
-    "build:vars": "dotdev-design build -n d -i ./src/theme/index.ts -o ./src/theme/generated/vars.css -s theme -k primitives",
-    "build:studio": "dotdev-design build -n s -i ./src/theme/index.ts -o ./src/index.css",
-    "watch": "dotdev-design watch -d ./src/theme -n s -i ./src/theme/index.ts -o ./src/index.css"
+    "watch": "dotdev-design watch -d ./src/theme -n s -i ./src/theme/index.ts -o ./src/style.css",
+    "build": "dotdev-design build -d ./src/theme -n s -i ./src/theme/index.ts -o ./src/style.css"
   },
   "dependencies": {
     "vue": "^3.5.39",
@@ -23,8 +21,7 @@
     "vue-component-type-helpers": "^3.3.8",
     "@dotdev/ui-kit": "workspace:*",
     "@dotdev/design": "workspace:*",
-    "@dotdev/theme": "workspace:*",
-    "tailwindcss": "^4.3.3"
+    "@dotdev/theme": "workspace:*"
   },
   "devDependencies": {
     "vite": "^8.1.1",
