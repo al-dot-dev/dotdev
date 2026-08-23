@@ -12,6 +12,12 @@ interface StudioMenuItem extends UIMenuItem {
   children: UIMenuItem[]
 }
 
+function compareNodes(a: Node, b: Node): number {
+  const aOrder = typeof a.route?.meta.order === 'number' ? a.route.meta.order : Number.POSITIVE_INFINITY
+  const bOrder = typeof b.route?.meta.order === 'number' ? b.route.meta.order : Number.POSITIVE_INFINITY
+  return aOrder - bOrder || a.segment.localeCompare(b.segment)
+}
+
 export function routesToMenu(routes: RouteRecordNormalized[]): StudioMenuItem[] {
   const root: Node = {
     segment: '',
@@ -45,7 +51,7 @@ export function routesToMenu(routes: RouteRecordNormalized[]): StudioMenuItem[] 
   }
 
   function flatten(node: Node, level: number, items: UIMenuItem[]) {
-    const children = [...node.children.values()].sort((a, b) => a.segment.localeCompare(b.segment))
+    const children = [...node.children.values()].sort(compareNodes)
 
     for (const child of children) {
       if (child.route) {
@@ -62,7 +68,7 @@ export function routesToMenu(routes: RouteRecordNormalized[]): StudioMenuItem[] 
 
   const result: (UIMenuItem & { children: UIMenuItem[] })[] = []
 
-  for (const child of [...root.children.values()].sort((a, b) => a.segment.localeCompare(b.segment))) {
+  for (const child of [...root.children.values()].sort(compareNodes)) {
     const children: UIMenuItem[] = []
 
     flatten(child, 1, children)
