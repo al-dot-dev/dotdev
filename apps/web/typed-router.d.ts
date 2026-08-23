@@ -59,9 +59,72 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    'useArrayModel': RouteRecordInfo<
+      'useArrayModel',
+      '/hooks/use-array-model',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useClickOutside': RouteRecordInfo<
+      'useClickOutside',
+      '/hooks/use-click-outside',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useClipboard': RouteRecordInfo<
+      'useClipboard',
+      '/hooks/use-clipboard',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useColorScheme': RouteRecordInfo<
+      'useColorScheme',
+      '/hooks/use-color-scheme',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useFloating': RouteRecordInfo<
+      'useFloating',
+      '/hooks/use-floating',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useGlobalEvent': RouteRecordInfo<
+      'useGlobalEvent',
+      '/hooks/use-global-event',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     'useKeyboardNavigation': RouteRecordInfo<
       'useKeyboardNavigation',
       '/hooks/use-keyboard-navigation',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useTypeahead': RouteRecordInfo<
+      'useTypeahead',
+      '/hooks/use-typeahead',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'Layout': RouteRecordInfo<
+      'Layout',
+      '/layout',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'Base layout': RouteRecordInfo<
+      'Base layout',
+      '/layout/base',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -307,9 +370,81 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
+    'src/pages/hooks/use-array-model/index.vue': {
+      routes:
+        | 'useArrayModel'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/hooks/use-click-outside/index.vue': {
+      routes:
+        | 'useClickOutside'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/hooks/use-clipboard/index.vue': {
+      routes:
+        | 'useClipboard'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/hooks/use-color-scheme/index.vue': {
+      routes:
+        | 'useColorScheme'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/hooks/use-floating/index.vue': {
+      routes:
+        | 'useFloating'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/hooks/use-global-event/index.vue': {
+      routes:
+        | 'useGlobalEvent'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
     'src/pages/hooks/use-keyboard-navigation/index.vue': {
       routes:
         | 'useKeyboardNavigation'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/hooks/use-typeahead/index.vue': {
+      routes:
+        | 'useTypeahead'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/layout/index.vue': {
+      routes:
+        | 'Layout'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/layout/base/index.vue': {
+      routes:
+        | 'Base layout'
       views:
         | never
       pathParamNames:
