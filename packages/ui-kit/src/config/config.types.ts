@@ -29,6 +29,9 @@ import type {
   UISkeletonProps,
   UIProgressProps,
   UIPaginationProps,
+  UILayoutProps,
+  UILayoutSidebarProps,
+  UILayoutHeaderProps,
 } from '@dotdev/ui-kit'
 
 export interface UiKitConfig {
@@ -61,6 +64,9 @@ export interface UiKitConfig {
     skeleton?: Partial<UISkeletonProps>
     progress?: Partial<UIProgressProps>
     pagination?: Partial<UIPaginationProps>
+    layout?: Partial<UILayoutProps>
+    'layout-sidebar'?: Partial<UILayoutSidebarProps>
+    'layout-header'?: Partial<UILayoutHeaderProps>
   }
   icons?: Partial<Record<UiKitIcon, Component>>
 }

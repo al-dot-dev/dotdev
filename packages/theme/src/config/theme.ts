@@ -23,6 +23,7 @@ import { textarea } from './components/textarea.ts'
 import { skeleton } from './components/skeleton.ts'
 import { progress } from './components/progress.ts'
 import { pagination } from './components/pagination.ts'
+import { layout } from './components/layout.ts'
 
 const sizeKeys = ['h', 'size']
 const spaceKeys = ['px', 'py', 'p', 'pl', 'pr', 'pt', 'pb']
@@ -273,6 +274,7 @@ export default defineTheme({
     skeleton,
     progress,
     pagination,
+    layout,
   },
 })
 

@@ -724,6 +724,10 @@ export default {
       "gap-sm": "var(--_NS_-gap-sm)",
       "gap-md": "var(--_NS_-gap-md)",
       "gap-lg": "var(--_NS_-gap-lg)"
+    },
+    "layout": {
+      "h-header": "56px",
+      "w-sidebar": "240px"
     }
   }
 }

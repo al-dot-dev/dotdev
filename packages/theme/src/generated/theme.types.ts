@@ -573,5 +573,9 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "gap-md"?: T
       "gap-lg"?: T
     }
+    "layout"?: {
+      "h-header"?: T
+      "w-sidebar"?: T
+    }
   }
 }
