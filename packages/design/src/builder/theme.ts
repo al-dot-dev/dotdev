@@ -10,7 +10,7 @@ export interface ThemeConfig {
   components?: ComponentEntry
 }
 
-export const NAMESPACE = '_NS_'
+export const NAMESPACE = 'NS'
 
 export class Theme {
   public registry: Registry

@@ -5,13 +5,7 @@ import { ref } from 'vue'
 const enabled = ref(true)
 const clicks = ref(0)
 
-useGlobalEvent(
-  'click',
-  () => {
-    clicks.value++
-  },
-  { target: 'window', watch: enabled, immediate: true },
-)
+useGlobalEvent('click', () => clicks.value++, { target: window, watch: enabled, immediate: true })
 </script>
 
 <template>

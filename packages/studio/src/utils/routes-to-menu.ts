@@ -27,11 +27,12 @@ export function routesToMenu(routes: RouteRecordNormalized[]): StudioMenuItem[] 
 
   for (const route of routes) {
     if (route.path === '/') continue
+    if (route.path === '/docs') continue
 
-    const segments = route.path.split('/').filter(Boolean)
+    const segments = route.path.split('/').filter((s) => s && s !== 'docs')
 
     let node = root
-    let currentPath = ''
+    let currentPath = route.path.includes('/docs') ? '/docs' : ''
 
     for (const segment of segments) {
       currentPath += `/${segment}`

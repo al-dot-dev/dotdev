@@ -9,7 +9,7 @@ useGlobalEvent(
   (event) => {
     position.value = { x: event.clientX, y: event.clientY }
   },
-  { target: 'window' },
+  { target: window },
 )
 </script>
 

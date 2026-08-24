@@ -6,6 +6,7 @@ import { useRoute } from 'vue-router'
 
 type MenuGroup = UIMenuItem & { children: UIMenuItem[] }
 
+const emits = defineEmits(['select'])
 const props = defineProps<{ items: MenuGroup[] }>()
 
 const route = useRoute()
@@ -33,7 +34,7 @@ watch(
       </template>
 
       <template #content="{ item }">
-        <Menu :items="item.children" size="sm" />
+        <Menu :items="item.children" size="sm" @select="emits('select')" />
       </template>
     </Accordion>
   </nav>

@@ -23,7 +23,7 @@ import {
 } from '@dotdev/ui-kit'
 import Logo from '../components/Logo.vue'
 
-definePage({ name: 'Dashboard', meta: { landing: true } })
+definePage({ name: 'Landing' })
 
 const pgVariant = ref('soft')
 const pgColor = ref('primary')
@@ -31,7 +31,8 @@ const pgSize = ref('md')
 const demoSwitch = ref(true)
 
 const marqueeIcons = [
-  'accessibility',  'align-right',
+  'accessibility',
+  'align-right',
   'arrow-down',
   'avatar',
   'bookmark-filled',
@@ -136,18 +137,58 @@ const packages = [
 ] as const
 
 const hooks = [
-  { name: 'useArrayModel', to: '/hooks/use-array-model', desc: 'Single or multiple selection with value keys and disabled options.' },
-  { name: 'useClickOutside', to: '/hooks/use-click-outside', desc: 'Fire a callback on outside clicks — popovers, menus, dropdowns.' },
-  { name: 'useClipboard', to: '/hooks/use-clipboard', desc: 'Read and write the clipboard reactively.' },
-  { name: 'useColorScheme', to: '/hooks/use-color-scheme', desc: 'Light / dark / auto with system sync and persistence.' },
-  { name: 'useFloating', to: '/hooks/use-floating', desc: 'Anchor positioning for popups and floating surfaces.' },
-  { name: 'useGlobalEvent', to: '/hooks/use-global-event', desc: 'Typed window and document listeners with automatic cleanup.' },
-  { name: 'useKeyboardNavigation', to: '/hooks/use-keyboard-navigation', desc: 'Arrow-key navigation with boundary control for lists.' },
-  { name: 'useTypeahead', to: '/hooks/use-typeahead', desc: 'Type-ahead selection for listbox-style interfaces.' },
+  {
+    name: 'useArrayModel',
+    to: '/docs/hooks/use-array-model',
+    desc: 'Single or multiple selection with value keys and disabled options.',
+  },
+  {
+    name: 'useClickOutside',
+    to: '/docs/hooks/use-click-outside',
+    desc: 'Fire a callback on outside clicks — popovers, menus, dropdowns.',
+  },
+  { name: 'useClipboard', to: '/docs/hooks/use-clipboard', desc: 'Read and write the clipboard reactively.' },
+  {
+    name: 'useColorScheme',
+    to: '/docs/hooks/use-color-scheme',
+    desc: 'Light / dark / auto with system sync and persistence.',
+  },
+  {
+    name: 'useFloating',
+    to: '/docs/hooks/use-floating',
+    desc: 'Anchor positioning for popups and floating surfaces.',
+  },
+  {
+    name: 'useGlobalEvent',
+    to: '/docs/hooks/use-global-event',
+    desc: 'Typed window and document listeners with automatic cleanup.',
+  },
+  {
+    name: 'useKeyboardNavigation',
+    to: '/docs/hooks/use-keyboard-navigation',
+    desc: 'Arrow-key navigation with boundary control for lists.',
+  },
+  {
+    name: 'useTypeahead',
+    to: '/docs/hooks/use-typeahead',
+    desc: 'Type-ahead selection for listbox-style interfaces.',
+  },
 ]
 
 const rampTokens = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
-const rampKind = ['neutral', 'neutral', 'neutral', 'neutral', 'brand', 'brand', 'brand', 'brand', 'neutral', 'neutral', 'neutral']
+const rampKind = [
+  'neutral',
+  'neutral',
+  'neutral',
+  'neutral',
+  'brand',
+  'brand',
+  'brand',
+  'brand',
+  'neutral',
+  'neutral',
+  'neutral',
+]
 
 const steps = [
   {
@@ -181,11 +222,11 @@ export const uiKit = createUiKit({
 ]
 
 const galleryGroups = [
-  { label: 'Buttons', to: '/ui-kit/buttons' },
-  { label: 'Fields', to: '/ui-kit/form' },
-  { label: 'Selection', to: '/ui-kit/form/select-button' },
-  { label: 'Status & data', to: '/ui-kit/data' },
-  { label: 'Navigation', to: '/ui-kit/navigation' },
+  { label: 'Buttons', to: '/docs/ui-kit/buttons' },
+  { label: 'Fields', to: '/docs/ui-kit/form' },
+  { label: 'Selection', to: '/docs/ui-kit/form/select-button' },
+  { label: 'Status & data', to: '/docs/ui-kit/data' },
+  { label: 'Navigation', to: '/docs/ui-kit/navigation' },
 ]
 
 const city = ref('Berlin')
@@ -201,8 +242,8 @@ const demoCheck = ref(true)
 <template>
   <main class="landing">
     <section class="landing__hero">
-      <div class="landing__hero-glow" aria-hidden="true" />
-      <div class="landing__hero-grid" aria-hidden="true" />
+      <div aria-hidden="true" class="landing__hero-glow" />
+      <div aria-hidden="true" class="landing__hero-grid" />
 
       <div class="landing__hero-copy">
         <h1 class="landing__title">
@@ -211,13 +252,13 @@ const demoCheck = ref(true)
         </h1>
 
         <p class="landing__subtitle">
-          A clean, deeply themeable UI kit. BEM + Tailwind with no CSS-in-JS runtime, namespaced themes that coexist
-          in one project — and every component documented with live examples.
+          A clean, deeply themeable UI kit. BEM + Tailwind with no CSS-in-JS runtime, namespaced themes that coexist in
+          one project — and every component documented with live examples.
         </p>
 
         <div class="landing__actions">
-          <Button href="/ui-kit" size="lg">Browse components</Button>
-          <Button href="/documentation/config" size="lg" variant="outlined">Get started</Button>
+          <Button href="/docs/ui-kit" size="lg">Browse components</Button>
+          <Button href="/docs/documentation/config" size="lg" variant="outlined">Get started</Button>
         </div>
 
         <p class="landing__meta">
@@ -239,28 +280,26 @@ const demoCheck = ref(true)
 
         <div class="landing__demo-stage">
           <div class="landing__demo-controls">
-            <SelectButton v-model="pgVariant" size="sm" :options="['soft', 'outlined', 'solid']" />
-            <SelectButton v-model="pgColor" size="sm" :options="['primary', 'neutral', 'success', 'danger']" />
-            <SelectButton v-model="pgSize" size="sm" :options="['sm', 'md', 'lg']" />
+            <SelectButton v-model="pgVariant" :options="['soft', 'outlined', 'solid']" size="sm" />
+            <SelectButton v-model="pgColor" :options="['primary', 'neutral', 'success', 'danger']" size="sm" />
+            <SelectButton v-model="pgSize" :options="['sm', 'md', 'lg']" size="sm" />
           </div>
 
           <div class="landing__demo-output">
-            <Button label="Deploy" :variant="pgVariant" :color="pgColor" :size="pgSize" />
-            <Input placeholder="Project name" variant="soft" :size="pgSize === 'lg' ? 'lg' : 'md'" />
+            <Button :color="pgColor" :size="pgSize" :variant="pgVariant" label="Deploy" />
+            <Input :size="pgSize === 'lg' ? 'lg' : 'md'" placeholder="Project name" variant="soft" />
             <Switch v-model="demoSwitch" />
-            <Tag label="live" :color="pgColor" />
+            <Tag :color="pgColor" label="live" />
           </div>
 
-          <p class="landing__demo-hint">
-            Real components, real props — flip the segments above.
-          </p>
+          <p class="landing__demo-hint">Real components, real props — flip the segments above.</p>
         </div>
       </div>
     </section>
 
-    <section class="landing__marquee" aria-label="Icon set preview">
+    <section aria-label="Icon set preview" class="landing__marquee">
       <span class="landing__marquee-caption">the icon set</span>
-      <div class="landing__marquee-window" aria-hidden="true">
+      <div aria-hidden="true" class="landing__marquee-window">
         <div class="landing__marquee-track">
           <div v-for="half in 2" :key="half" class="landing__marquee-half">
             <span v-for="iconName in marqueeIcons" :key="`${half}-${iconName}`" class="landing__marquee-icon">
@@ -276,8 +315,8 @@ const demoCheck = ref(true)
       <div class="landing__ledger-intro">
         <h2 class="landing__section-title">Built like a workbench</h2>
         <p class="landing__section-sub">
-          Small visible surfaces, a single source of truth, no magic. Every claim below is something you can verify
-          in the docs today.
+          Small visible surfaces, a single source of truth, no magic. Every claim below is something you can verify in
+          the docs today.
         </p>
       </div>
 
@@ -351,8 +390,8 @@ const demoCheck = ref(true)
       <div class="landing__section-head">
         <h2 class="landing__section-title">Every control, alive</h2>
         <p class="landing__section-sub">
-          These are the real components, rendered by the same kit you would install. Open any group to read its
-          source, props and themes.
+          These are the real components, rendered by the same kit you would install. Open any group to read its source,
+          props and themes.
         </p>
       </div>
 
@@ -360,7 +399,7 @@ const demoCheck = ref(true)
         <article class="landing__gallery-group">
           <header class="landing__gallery-head">
             <h3 class="landing__gallery-label">{{ galleryGroups[0].label }}</h3>
-            <RouterLink class="landing__gallery-link" :to="galleryGroups[0].to">Open docs</RouterLink>
+            <RouterLink :to="galleryGroups[0].to" class="landing__gallery-link">Open docs</RouterLink>
           </header>
           <div class="landing__gallery-stage">
             <Button label="Save" />
@@ -375,19 +414,19 @@ const demoCheck = ref(true)
         <article class="landing__gallery-group">
           <header class="landing__gallery-head">
             <h3 class="landing__gallery-label">{{ galleryGroups[1].label }}</h3>
-            <RouterLink class="landing__gallery-link" :to="galleryGroups[1].to">Open docs</RouterLink>
+            <RouterLink :to="galleryGroups[1].to" class="landing__gallery-link">Open docs</RouterLink>
           </header>
           <div class="landing__gallery-stage landing__gallery-stage--fields">
             <Input placeholder="Email address" variant="outlined" />
             <Textarea placeholder="Message" />
-            <Select v-model="city" placeholder="City" :options="['Berlin', 'London', 'Paris', 'Tokyo']" />
+            <Select v-model="city" :options="['Berlin', 'London', 'Paris', 'Tokyo']" placeholder="City" />
           </div>
         </article>
 
         <article class="landing__gallery-group">
           <header class="landing__gallery-head">
             <h3 class="landing__gallery-label">{{ galleryGroups[2].label }}</h3>
-            <RouterLink class="landing__gallery-link" :to="galleryGroups[2].to">Open docs</RouterLink>
+            <RouterLink :to="galleryGroups[2].to" class="landing__gallery-link">Open docs</RouterLink>
           </header>
           <div class="landing__gallery-stage">
             <label class="landing__gallery-field">
@@ -406,14 +445,14 @@ const demoCheck = ref(true)
               <Switch v-model="publicProfile" />
               Public profile
             </label>
-            <SelectButton v-model="tab" size="sm" :options="['Day', 'Week', 'Month']" />
+            <SelectButton v-model="tab" :options="['Day', 'Week', 'Month']" size="sm" />
           </div>
         </article>
 
         <article class="landing__gallery-group">
           <header class="landing__gallery-head">
             <h3 class="landing__gallery-label">{{ galleryGroups[3].label }}</h3>
-            <RouterLink class="landing__gallery-link" :to="galleryGroups[3].to">Open docs</RouterLink>
+            <RouterLink :to="galleryGroups[3].to" class="landing__gallery-link">Open docs</RouterLink>
           </header>
           <div class="landing__gallery-stage landing__gallery-stage--status">
             <div class="landing__ns-row">
@@ -430,10 +469,10 @@ const demoCheck = ref(true)
               <Skeleton class="w-24 h-4" />
             </div>
             <Message
-              color="success"
-              title="Deployed"
-              message="main@4f2c9e is live in production."
               class="w-full max-w-sm"
+              color="success"
+              message="main@4f2c9e is live in production."
+              title="Deployed"
             />
           </div>
         </article>
@@ -441,12 +480,12 @@ const demoCheck = ref(true)
         <article class="landing__gallery-group">
           <header class="landing__gallery-head">
             <h3 class="landing__gallery-label">{{ galleryGroups[4].label }}</h3>
-            <RouterLink class="landing__gallery-link" :to="galleryGroups[4].to">Open docs</RouterLink>
+            <RouterLink :to="galleryGroups[4].to" class="landing__gallery-link">Open docs</RouterLink>
           </header>
           <div class="landing__gallery-stage landing__gallery-stage--nav">
             <Breadcrumbs :items="[{ label: 'Home' }, { label: 'Library' }, { label: 'Data' }]" />
             <Tabs v-model="tab" :options="['Overview', 'Specs', 'History']" />
-            <Pagination v-model="page" :total="120" :page-size="10" />
+            <Pagination v-model="page" :page-size="10" :total="120" />
           </div>
         </article>
       </div>
@@ -470,7 +509,7 @@ const demoCheck = ref(true)
           </div>
           <p class="landing__package-desc">{{ pkg.desc }}</p>
           <div class="landing__package-meta">
-            <Tag v-for="chip in pkg.meta" :key="chip" :label="chip" variant="soft" color="primary" />
+            <Tag v-for="chip in pkg.meta" :key="chip" :label="chip" color="primary" variant="soft" />
           </div>
         </article>
       </div>
@@ -485,12 +524,7 @@ const demoCheck = ref(true)
       </div>
 
       <div class="landing__hooks">
-        <RouterLink
-          v-for="hook in hooks"
-          :key="hook.name"
-          class="landing__hook group"
-          :to="hook.to"
-        >
+        <RouterLink v-for="hook in hooks" :key="hook.name" :to="hook.to" class="landing__hook group">
           <code class="landing__hook-name">{{ hook.name }}</code>
           <span class="landing__hook-desc">{{ hook.desc }}</span>
           <Icon class="landing__hook-arrow" name="arrow-right" />
@@ -502,16 +536,16 @@ const demoCheck = ref(true)
       <div class="landing__theme-copy">
         <h2 class="landing__section-title">One ramp. Two worlds.</h2>
         <p class="landing__section-sub landing__section-sub--left">
-          Tokens are plain CSS custom properties on an oklch ramp. Flip one class and every surface follows — no
-          second stylesheet, no build step, no flash.
+          Tokens are plain CSS custom properties on an oklch ramp. Flip one class and every surface follows — no second
+          stylesheet, no build step, no flash.
         </p>
 
         <div class="landing__ramp">
           <span
             v-for="(step, i) in rampTokens"
             :key="`${rampKind[i]}-${step}`"
-            class="landing__ramp-swatch"
             :class="`landing__ramp-swatch--${rampKind[i]}-${step}`"
+            class="landing__ramp-swatch"
           />
         </div>
         <p class="landing__ramp-caption">oklch — cool greys with a violet undertone, indigo core at 400–700</p>
@@ -524,7 +558,7 @@ const demoCheck = ref(true)
           </header>
           <div class="landing__twin-stage">
             <Button label="Deploy" />
-            <Input placeholder="Search" variant="soft" size="sm" />
+            <Input placeholder="Search" size="sm" variant="soft" />
             <div class="landing__ns-row">
               <Switch v-model="demoSwitch" />
               <Tag color="primary" label="Live" />
@@ -538,7 +572,7 @@ const demoCheck = ref(true)
           </header>
           <div class="landing__twin-stage">
             <Button label="Deploy" />
-            <Input placeholder="Search" variant="soft" size="sm" />
+            <Input placeholder="Search" size="sm" variant="soft" />
             <div class="landing__ns-row">
               <Switch v-model="demoSwitch" />
               <Tag color="primary" label="Live" />
@@ -574,7 +608,7 @@ const demoCheck = ref(true)
 
       <div class="landing__cta-actions">
         <Button href="/ui-kit" size="lg">Browse components</Button>
-        <Button href="/documentation/config" size="lg" variant="outlined">Read the docs</Button>
+        <Button href="/docs/documentation/config" size="lg" variant="outlined">Read the docs</Button>
       </div>
 
       <p class="landing__cta-version">dotdev v0.1.0 — the precision workbench</p>
@@ -588,19 +622,19 @@ const demoCheck = ref(true)
           <IconButton aria-label="GitHub repository" class="text-muted" icon="github-logo" />
         </div>
 
-        <nav class="landing__footer-col" aria-label="Components">
+        <nav aria-label="Components" class="landing__footer-col">
           <p class="landing__footer-heading">Components</p>
-          <RouterLink class="landing__footer-link" to="/ui-kit/buttons">Buttons</RouterLink>
-          <RouterLink class="landing__footer-link" to="/ui-kit/form/input">Inputs</RouterLink>
-          <RouterLink class="landing__footer-link" to="/ui-kit/form/select">Selects</RouterLink>
-          <RouterLink class="landing__footer-link" to="/ui-kit/navigation/tabs">Tabs</RouterLink>
+          <RouterLink class="landing__footer-link" to="/docs/ui-kit/buttons">Buttons</RouterLink>
+          <RouterLink class="landing__footer-link" to="/docs/ui-kit/form/input">Inputs</RouterLink>
+          <RouterLink class="landing__footer-link" to="/docs/ui-kit/form/select">Selects</RouterLink>
+          <RouterLink class="landing__footer-link" to="/docs/ui-kit/navigation/tabs">Tabs</RouterLink>
         </nav>
 
-        <nav class="landing__footer-col" aria-label="Resources">
+        <nav aria-label="Resources" class="landing__footer-col">
           <p class="landing__footer-heading">Resources</p>
-          <RouterLink class="landing__footer-link" to="/documentation">Documentation</RouterLink>
-          <RouterLink class="landing__footer-link" to="/documentation/config">Configuration</RouterLink>
-          <RouterLink class="landing__footer-link" to="/hooks">Hooks</RouterLink>
+          <RouterLink class="landing__footer-link" to="/docs/documentation">Documentation</RouterLink>
+          <RouterLink class="landing__footer-link" to="/docs/documentation/config">Configuration</RouterLink>
+          <RouterLink class="landing__footer-link" to="/docs/hooks">Hooks</RouterLink>
         </nav>
       </div>
 
