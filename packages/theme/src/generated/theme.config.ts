@@ -95,330 +95,331 @@ export default {
     "black": "#000000"
   },
   "semantics": {
+    "bg-backdrop": "color-mix(in oklab, var(--NS-black) 30%, transparent)",
     "bg-background": [
-      "var(--_NS_-white)",
-      "var(--_NS_-neutral-950)"
+      "var(--NS-white)",
+      "var(--NS-neutral-950)"
     ],
     "bg-surface": [
-      "var(--_NS_-white)",
-      "var(--_NS_-neutral-950)"
+      "var(--NS-white)",
+      "var(--NS-neutral-950)"
     ],
     "text-foreground": [
-      "var(--_NS_-neutral-900)",
-      "var(--_NS_-neutral-100)"
+      "var(--NS-neutral-900)",
+      "var(--NS-neutral-100)"
     ],
     "text-muted": [
-      "var(--_NS_-neutral-500)",
-      "var(--_NS_-neutral-400)"
+      "var(--NS-neutral-500)",
+      "var(--NS-neutral-400)"
     ],
     "border-default": [
-      "var(--_NS_-neutral-100)",
-      "var(--_NS_-neutral-800)"
+      "var(--NS-neutral-100)",
+      "var(--NS-neutral-800)"
     ],
     "text-placeholder": [
-      "var(--_NS_-neutral-400)",
-      "var(--_NS_-neutral-600)"
+      "var(--NS-neutral-400)",
+      "var(--NS-neutral-600)"
     ],
     "bg-brand": [
-      "var(--_NS_-brand-500)",
-      "var(--_NS_-brand-400)"
+      "var(--NS-brand-500)",
+      "var(--NS-brand-400)"
     ],
     "bg-brand-hover": [
-      "var(--_NS_-brand-600)",
-      "var(--_NS_-brand-300)"
+      "var(--NS-brand-600)",
+      "var(--NS-brand-300)"
     ],
     "text-brand": [
-      "var(--_NS_-brand-600)",
-      "var(--_NS_-brand-400)"
+      "var(--NS-brand-600)",
+      "var(--NS-brand-400)"
     ],
     "text-on-brand": [
-      "var(--_NS_-neutral-50)",
-      "var(--_NS_-neutral-950)"
+      "var(--NS-neutral-50)",
+      "var(--NS-neutral-950)"
     ],
     "bg-brand-soft": [
-      "var(--_NS_-brand-50)",
-      "color-mix(in oklab, var(--_NS_-brand-500) 16%, transparent)"
+      "var(--NS-brand-50)",
+      "color-mix(in oklab, var(--NS-brand-500) 16%, transparent)"
     ],
     "bg-brand-soft-hover": [
-      "var(--_NS_-brand-100)",
-      "color-mix(in oklab, var(--_NS_-brand-500) 26%, transparent)"
+      "var(--NS-brand-100)",
+      "color-mix(in oklab, var(--NS-brand-500) 26%, transparent)"
     ],
     "border-brand": [
-      "var(--_NS_-brand-500)",
-      "var(--_NS_-brand-400)"
+      "var(--NS-brand-500)",
+      "var(--NS-brand-400)"
     ],
-    "border-brand-soft": "color-mix(in oklab, var(--_NS_-brand-500) 26%, transparent)",
-    "ring-brand": "color-mix(in oklab, var(--_NS_-brand-500) 50%, transparent)",
+    "border-brand-soft": "color-mix(in oklab, var(--NS-brand-500) 26%, transparent)",
+    "ring-brand": "color-mix(in oklab, var(--NS-brand-500) 50%, transparent)",
     "bg-neutral": [
-      "var(--_NS_-neutral-800)",
-      "var(--_NS_-neutral-200)"
+      "var(--NS-neutral-800)",
+      "var(--NS-neutral-200)"
     ],
     "bg-neutral-hover": [
-      "var(--_NS_-neutral-700)",
-      "var(--_NS_-neutral-300)"
+      "var(--NS-neutral-700)",
+      "var(--NS-neutral-300)"
     ],
     "text-neutral": [
-      "var(--_NS_-neutral-700)",
-      "var(--_NS_-neutral-300)"
+      "var(--NS-neutral-700)",
+      "var(--NS-neutral-300)"
     ],
     "text-on-neutral": [
-      "var(--_NS_-neutral-50)",
-      "var(--_NS_-neutral-900)"
+      "var(--NS-neutral-50)",
+      "var(--NS-neutral-900)"
     ],
     "bg-neutral-soft": [
-      "var(--_NS_-neutral-50)",
-      "color-mix(in oklab, var(--_NS_-neutral-500) 16%, transparent)"
+      "var(--NS-neutral-50)",
+      "color-mix(in oklab, var(--NS-neutral-500) 16%, transparent)"
     ],
     "bg-neutral-soft-hover": [
-      "var(--_NS_-neutral-100)",
-      "color-mix(in oklab, var(--_NS_-neutral-500) 26%, transparent)"
+      "var(--NS-neutral-100)",
+      "color-mix(in oklab, var(--NS-neutral-500) 26%, transparent)"
     ],
     "border-neutral": [
-      "var(--_NS_-neutral-200)",
-      "var(--_NS_-neutral-700)"
+      "var(--NS-neutral-200)",
+      "var(--NS-neutral-700)"
     ],
-    "ring-neutral": "color-mix(in oklab, var(--_NS_-neutral-500) 50%, transparent)",
+    "ring-neutral": "color-mix(in oklab, var(--NS-neutral-500) 50%, transparent)",
     "bg-danger": [
-      "var(--_NS_-danger-600)",
-      "var(--_NS_-danger-400)"
+      "var(--NS-danger-600)",
+      "var(--NS-danger-400)"
     ],
     "bg-danger-hover": [
-      "var(--_NS_-danger-700)",
-      "var(--_NS_-danger-300)"
+      "var(--NS-danger-700)",
+      "var(--NS-danger-300)"
     ],
     "text-danger": [
-      "var(--_NS_-danger-600)",
-      "var(--_NS_-danger-400)"
+      "var(--NS-danger-600)",
+      "var(--NS-danger-400)"
     ],
     "text-on-danger": [
-      "var(--_NS_-neutral-50)",
-      "var(--_NS_-neutral-950)"
+      "var(--NS-neutral-50)",
+      "var(--NS-neutral-950)"
     ],
     "bg-danger-soft": [
-      "var(--_NS_-danger-50)",
-      "color-mix(in oklab, var(--_NS_-danger-500) 16%, transparent)"
+      "var(--NS-danger-50)",
+      "color-mix(in oklab, var(--NS-danger-500) 16%, transparent)"
     ],
     "bg-danger-soft-hover": [
-      "var(--_NS_-danger-100)",
-      "color-mix(in oklab, var(--_NS_-danger-500) 26%, transparent)"
+      "var(--NS-danger-100)",
+      "color-mix(in oklab, var(--NS-danger-500) 26%, transparent)"
     ],
     "border-danger": [
-      "var(--_NS_-danger-500)",
-      "var(--_NS_-danger-400)"
+      "var(--NS-danger-500)",
+      "var(--NS-danger-400)"
     ],
-    "ring-danger": "color-mix(in oklab, var(--_NS_-danger-500) 50%, transparent)",
+    "ring-danger": "color-mix(in oklab, var(--NS-danger-500) 50%, transparent)",
     "bg-warning": [
-      "var(--_NS_-warning-500)",
-      "var(--_NS_-warning-400)"
+      "var(--NS-warning-500)",
+      "var(--NS-warning-400)"
     ],
     "bg-warning-hover": [
-      "var(--_NS_-warning-600)",
-      "var(--_NS_-warning-300)"
+      "var(--NS-warning-600)",
+      "var(--NS-warning-300)"
     ],
     "text-warning": [
-      "var(--_NS_-warning-700)",
-      "var(--_NS_-warning-400)"
+      "var(--NS-warning-700)",
+      "var(--NS-warning-400)"
     ],
     "text-on-warning": [
-      "var(--_NS_-neutral-950)",
-      "var(--_NS_-neutral-950)"
+      "var(--NS-neutral-950)",
+      "var(--NS-neutral-950)"
     ],
     "bg-warning-soft": [
-      "var(--_NS_-warning-50)",
-      "color-mix(in oklab, var(--_NS_-warning-500) 16%, transparent)"
+      "var(--NS-warning-50)",
+      "color-mix(in oklab, var(--NS-warning-500) 16%, transparent)"
     ],
     "bg-warning-soft-hover": [
-      "var(--_NS_-warning-100)",
-      "color-mix(in oklab, var(--_NS_-warning-500) 26%, transparent)"
+      "var(--NS-warning-100)",
+      "color-mix(in oklab, var(--NS-warning-500) 26%, transparent)"
     ],
     "border-warning": [
-      "var(--_NS_-warning-600)",
-      "var(--_NS_-warning-400)"
+      "var(--NS-warning-600)",
+      "var(--NS-warning-400)"
     ],
-    "ring-warning": "color-mix(in oklab, var(--_NS_-warning-500) 50%, transparent)",
+    "ring-warning": "color-mix(in oklab, var(--NS-warning-500) 50%, transparent)",
     "bg-info": [
-      "var(--_NS_-info-700)",
-      "var(--_NS_-info-400)"
+      "var(--NS-info-700)",
+      "var(--NS-info-400)"
     ],
     "bg-info-hover": [
-      "var(--_NS_-info-800)",
-      "var(--_NS_-info-300)"
+      "var(--NS-info-800)",
+      "var(--NS-info-300)"
     ],
     "text-info": [
-      "var(--_NS_-info-700)",
-      "var(--_NS_-info-400)"
+      "var(--NS-info-700)",
+      "var(--NS-info-400)"
     ],
     "text-on-info": [
-      "var(--_NS_-neutral-50)",
-      "var(--_NS_-neutral-950)"
+      "var(--NS-neutral-50)",
+      "var(--NS-neutral-950)"
     ],
     "bg-info-soft": [
-      "var(--_NS_-info-50)",
-      "color-mix(in oklab, var(--_NS_-info-500) 16%, transparent)"
+      "var(--NS-info-50)",
+      "color-mix(in oklab, var(--NS-info-500) 16%, transparent)"
     ],
     "bg-info-soft-hover": [
-      "var(--_NS_-info-100)",
-      "color-mix(in oklab, var(--_NS_-info-500) 26%, transparent)"
+      "var(--NS-info-100)",
+      "color-mix(in oklab, var(--NS-info-500) 26%, transparent)"
     ],
     "border-info": [
-      "var(--_NS_-info-600)",
-      "var(--_NS_-info-400)"
+      "var(--NS-info-600)",
+      "var(--NS-info-400)"
     ],
-    "ring-info": "color-mix(in oklab, var(--_NS_-info-500) 50%, transparent)",
+    "ring-info": "color-mix(in oklab, var(--NS-info-500) 50%, transparent)",
     "bg-success": [
-      "var(--_NS_-success-700)",
-      "var(--_NS_-success-400)"
+      "var(--NS-success-700)",
+      "var(--NS-success-400)"
     ],
     "bg-success-hover": [
-      "var(--_NS_-success-800)",
-      "var(--_NS_-success-300)"
+      "var(--NS-success-800)",
+      "var(--NS-success-300)"
     ],
     "text-success": [
-      "var(--_NS_-success-700)",
-      "var(--_NS_-success-400)"
+      "var(--NS-success-700)",
+      "var(--NS-success-400)"
     ],
     "text-on-success": [
-      "var(--_NS_-neutral-50)",
-      "var(--_NS_-neutral-950)"
+      "var(--NS-neutral-50)",
+      "var(--NS-neutral-950)"
     ],
     "bg-success-soft": [
-      "var(--_NS_-success-50)",
-      "color-mix(in oklab, var(--_NS_-success-500) 16%, transparent)"
+      "var(--NS-success-50)",
+      "color-mix(in oklab, var(--NS-success-500) 16%, transparent)"
     ],
     "bg-success-soft-hover": [
-      "var(--_NS_-success-100)",
-      "color-mix(in oklab, var(--_NS_-success-500) 26%, transparent)"
+      "var(--NS-success-100)",
+      "color-mix(in oklab, var(--NS-success-500) 26%, transparent)"
     ],
     "border-success": [
-      "var(--_NS_-success-600)",
-      "var(--_NS_-success-400)"
+      "var(--NS-success-600)",
+      "var(--NS-success-400)"
     ],
-    "ring-success": "color-mix(in oklab, var(--_NS_-success-500) 50%, transparent)"
+    "ring-success": "color-mix(in oklab, var(--NS-success-500) 50%, transparent)"
   },
   "components": {
     "button": {
-      "bg-primary-solid": "var(--_NS_-bg-brand)",
-      "bg-primary-solid-hover": "var(--_NS_-bg-brand-hover)",
-      "text-primary-solid": "var(--_NS_-text-on-brand)",
-      "bg-primary-soft": "var(--_NS_-bg-brand-soft)",
-      "bg-primary-soft-hover": "var(--_NS_-bg-brand-soft-hover)",
-      "text-primary-outlined": "var(--_NS_-text-brand)",
-      "border-primary-outlined": "var(--_NS_-border-brand)",
-      "ring-primary": "var(--_NS_-ring-brand)",
-      "bg-neutral-solid": "var(--_NS_-bg-neutral)",
-      "bg-neutral-solid-hover": "var(--_NS_-bg-neutral-hover)",
-      "text-neutral-solid": "var(--_NS_-text-on-neutral)",
-      "bg-neutral-soft": "var(--_NS_-bg-neutral-soft)",
-      "bg-neutral-soft-hover": "var(--_NS_-bg-neutral-soft-hover)",
-      "text-neutral-outlined": "var(--_NS_-text-neutral)",
-      "border-neutral-outlined": "var(--_NS_-border-neutral)",
-      "ring-neutral": "var(--_NS_-ring-neutral)",
-      "bg-danger-solid": "var(--_NS_-bg-danger)",
-      "bg-danger-solid-hover": "var(--_NS_-bg-danger-hover)",
-      "text-danger-solid": "var(--_NS_-text-on-danger)",
-      "bg-danger-soft": "var(--_NS_-bg-danger-soft)",
-      "bg-danger-soft-hover": "var(--_NS_-bg-danger-soft-hover)",
-      "text-danger-outlined": "var(--_NS_-text-danger)",
-      "border-danger-outlined": "var(--_NS_-border-danger)",
-      "ring-danger": "var(--_NS_-ring-danger)",
-      "bg-warning-solid": "var(--_NS_-bg-warning)",
-      "bg-warning-solid-hover": "var(--_NS_-bg-warning-hover)",
-      "text-warning-solid": "var(--_NS_-text-on-warning)",
-      "bg-warning-soft": "var(--_NS_-bg-warning-soft)",
-      "bg-warning-soft-hover": "var(--_NS_-bg-warning-soft-hover)",
-      "text-warning-outlined": "var(--_NS_-text-warning)",
-      "border-warning-outlined": "var(--_NS_-border-warning)",
-      "ring-warning": "var(--_NS_-ring-warning)",
-      "bg-info-solid": "var(--_NS_-bg-info)",
-      "bg-info-solid-hover": "var(--_NS_-bg-info-hover)",
-      "text-info-solid": "var(--_NS_-text-on-info)",
-      "bg-info-soft": "var(--_NS_-bg-info-soft)",
-      "bg-info-soft-hover": "var(--_NS_-bg-info-soft-hover)",
-      "text-info-outlined": "var(--_NS_-text-info)",
-      "border-info-outlined": "var(--_NS_-border-info)",
-      "ring-info": "var(--_NS_-ring-info)",
-      "bg-success-solid": "var(--_NS_-bg-success)",
-      "bg-success-solid-hover": "var(--_NS_-bg-success-hover)",
-      "text-success-solid": "var(--_NS_-text-on-success)",
-      "bg-success-soft": "var(--_NS_-bg-success-soft)",
-      "bg-success-soft-hover": "var(--_NS_-bg-success-soft-hover)",
-      "text-success-outlined": "var(--_NS_-text-success)",
-      "border-success-outlined": "var(--_NS_-border-success)",
-      "ring-success": "var(--_NS_-ring-success)",
-      "px-sm": "var(--_NS_-space-md)",
-      "px-md": "var(--_NS_-space-lg)",
-      "px-lg": "var(--_NS_-space-xl)",
-      "h-sm": "var(--_NS_-size-sm)",
-      "h-md": "var(--_NS_-size-md)",
-      "h-lg": "var(--_NS_-size-lg)",
-      "gap-sm": "var(--_NS_-gap-sm)",
-      "gap-md": "var(--_NS_-gap-md)",
-      "gap-lg": "var(--_NS_-gap-lg)",
-      "type-sm": "var(--_NS_-type-sm)",
-      "type-md": "var(--_NS_-button-type-sm)",
-      "type-lg": "var(--_NS_-type-lg)",
-      "rounded": "var(--_NS_-radius-md)"
+      "bg-primary-solid": "var(--NS-bg-brand)",
+      "bg-primary-solid-hover": "var(--NS-bg-brand-hover)",
+      "text-primary-solid": "var(--NS-text-on-brand)",
+      "bg-primary-soft": "var(--NS-bg-brand-soft)",
+      "bg-primary-soft-hover": "var(--NS-bg-brand-soft-hover)",
+      "text-primary-outlined": "var(--NS-text-brand)",
+      "border-primary-outlined": "var(--NS-border-brand)",
+      "ring-primary": "var(--NS-ring-brand)",
+      "bg-neutral-solid": "var(--NS-bg-neutral)",
+      "bg-neutral-solid-hover": "var(--NS-bg-neutral-hover)",
+      "text-neutral-solid": "var(--NS-text-on-neutral)",
+      "bg-neutral-soft": "var(--NS-bg-neutral-soft)",
+      "bg-neutral-soft-hover": "var(--NS-bg-neutral-soft-hover)",
+      "text-neutral-outlined": "var(--NS-text-neutral)",
+      "border-neutral-outlined": "var(--NS-border-neutral)",
+      "ring-neutral": "var(--NS-ring-neutral)",
+      "bg-danger-solid": "var(--NS-bg-danger)",
+      "bg-danger-solid-hover": "var(--NS-bg-danger-hover)",
+      "text-danger-solid": "var(--NS-text-on-danger)",
+      "bg-danger-soft": "var(--NS-bg-danger-soft)",
+      "bg-danger-soft-hover": "var(--NS-bg-danger-soft-hover)",
+      "text-danger-outlined": "var(--NS-text-danger)",
+      "border-danger-outlined": "var(--NS-border-danger)",
+      "ring-danger": "var(--NS-ring-danger)",
+      "bg-warning-solid": "var(--NS-bg-warning)",
+      "bg-warning-solid-hover": "var(--NS-bg-warning-hover)",
+      "text-warning-solid": "var(--NS-text-on-warning)",
+      "bg-warning-soft": "var(--NS-bg-warning-soft)",
+      "bg-warning-soft-hover": "var(--NS-bg-warning-soft-hover)",
+      "text-warning-outlined": "var(--NS-text-warning)",
+      "border-warning-outlined": "var(--NS-border-warning)",
+      "ring-warning": "var(--NS-ring-warning)",
+      "bg-info-solid": "var(--NS-bg-info)",
+      "bg-info-solid-hover": "var(--NS-bg-info-hover)",
+      "text-info-solid": "var(--NS-text-on-info)",
+      "bg-info-soft": "var(--NS-bg-info-soft)",
+      "bg-info-soft-hover": "var(--NS-bg-info-soft-hover)",
+      "text-info-outlined": "var(--NS-text-info)",
+      "border-info-outlined": "var(--NS-border-info)",
+      "ring-info": "var(--NS-ring-info)",
+      "bg-success-solid": "var(--NS-bg-success)",
+      "bg-success-solid-hover": "var(--NS-bg-success-hover)",
+      "text-success-solid": "var(--NS-text-on-success)",
+      "bg-success-soft": "var(--NS-bg-success-soft)",
+      "bg-success-soft-hover": "var(--NS-bg-success-soft-hover)",
+      "text-success-outlined": "var(--NS-text-success)",
+      "border-success-outlined": "var(--NS-border-success)",
+      "ring-success": "var(--NS-ring-success)",
+      "px-sm": "var(--NS-space-md)",
+      "px-md": "var(--NS-space-lg)",
+      "px-lg": "var(--NS-space-xl)",
+      "h-sm": "var(--NS-size-sm)",
+      "h-md": "var(--NS-size-md)",
+      "h-lg": "var(--NS-size-lg)",
+      "gap-sm": "var(--NS-gap-sm)",
+      "gap-md": "var(--NS-gap-md)",
+      "gap-lg": "var(--NS-gap-lg)",
+      "type-sm": "var(--NS-type-sm)",
+      "type-md": "var(--NS-button-type-sm)",
+      "type-lg": "var(--NS-type-lg)",
+      "rounded": "var(--NS-radius-md)"
     },
     "accordion": {
-      "bg-item-outlined": "var(--_NS_-bg-background)",
-      "bg-item-soft": "var(--_NS_-bg-neutral-soft)",
-      "border-item": "var(--_NS_-border-default)",
-      "text-item": "var(--_NS_-text-foreground)",
-      "text-value": "var(--_NS_-text-foreground)",
-      "text-indicator": "var(--_NS_-text-muted)",
-      "text-indicator-open": "var(--_NS_-text-foreground)",
-      "ring-focus": "var(--_NS_-ring-brand)",
+      "bg-item-outlined": "var(--NS-bg-background)",
+      "bg-item-soft": "var(--NS-bg-neutral-soft)",
+      "border-item": "var(--NS-border-default)",
+      "text-item": "var(--NS-text-foreground)",
+      "text-value": "var(--NS-text-foreground)",
+      "text-indicator": "var(--NS-text-muted)",
+      "text-indicator-open": "var(--NS-text-foreground)",
+      "ring-focus": "var(--NS-ring-brand)",
       "gap": "0.5rem",
-      "px-item": "var(--_NS_-space-lg)",
-      "py-item": "var(--_NS_-space-md)",
-      "pb-item": "var(--_NS_-space-md)",
-      "gap-item": "var(--_NS_-gap-md)",
-      "text-size-item": "var(--_NS_-type-sm)",
-      "rounded-item": "var(--_NS_-radius-md)"
+      "px-item": "var(--NS-space-lg)",
+      "py-item": "var(--NS-space-md)",
+      "pb-item": "var(--NS-space-md)",
+      "gap-item": "var(--NS-gap-md)",
+      "text-size-item": "var(--NS-type-sm)",
+      "rounded-item": "var(--NS-radius-md)"
     },
     "avatar": {
       "size": "2.5em",
-      "rounded-square": "var(--_NS_-radius-md)",
+      "rounded-square": "var(--NS-radius-md)",
       "border": "color-mix(in oklab, currentColor 50%, transparent)",
-      "bg-primary-soft": "var(--_NS_-bg-brand-soft)",
-      "text-primary-soft": "var(--_NS_-text-brand)",
-      "bg-primary-solid": "var(--_NS_-bg-brand)",
-      "text-primary-solid": "var(--_NS_-text-on-brand)",
-      "bg-neutral-soft": "var(--_NS_-bg-neutral-soft)",
-      "text-neutral-soft": "var(--_NS_-text-neutral)",
-      "bg-neutral-solid": "var(--_NS_-bg-neutral)",
-      "text-neutral-solid": "var(--_NS_-text-on-neutral)",
-      "bg-danger-soft": "var(--_NS_-bg-danger-soft)",
-      "text-danger-soft": "var(--_NS_-text-danger)",
-      "bg-danger-solid": "var(--_NS_-bg-danger)",
-      "text-danger-solid": "var(--_NS_-text-on-danger)",
-      "bg-warning-soft": "var(--_NS_-bg-warning-soft)",
-      "text-warning-soft": "var(--_NS_-text-warning)",
-      "bg-warning-solid": "var(--_NS_-bg-warning)",
-      "text-warning-solid": "var(--_NS_-text-on-warning)",
-      "bg-info-soft": "var(--_NS_-bg-info-soft)",
-      "text-info-soft": "var(--_NS_-text-info)",
-      "bg-info-solid": "var(--_NS_-bg-info)",
-      "text-info-solid": "var(--_NS_-text-on-info)",
-      "bg-success-soft": "var(--_NS_-bg-success-soft)",
-      "text-success-soft": "var(--_NS_-text-success)",
-      "bg-success-solid": "var(--_NS_-bg-success)",
-      "text-success-solid": "var(--_NS_-text-on-success)"
+      "bg-primary-soft": "var(--NS-bg-brand-soft)",
+      "text-primary-soft": "var(--NS-text-brand)",
+      "bg-primary-solid": "var(--NS-bg-brand)",
+      "text-primary-solid": "var(--NS-text-on-brand)",
+      "bg-neutral-soft": "var(--NS-bg-neutral-soft)",
+      "text-neutral-soft": "var(--NS-text-neutral)",
+      "bg-neutral-solid": "var(--NS-bg-neutral)",
+      "text-neutral-solid": "var(--NS-text-on-neutral)",
+      "bg-danger-soft": "var(--NS-bg-danger-soft)",
+      "text-danger-soft": "var(--NS-text-danger)",
+      "bg-danger-solid": "var(--NS-bg-danger)",
+      "text-danger-solid": "var(--NS-text-on-danger)",
+      "bg-warning-soft": "var(--NS-bg-warning-soft)",
+      "text-warning-soft": "var(--NS-text-warning)",
+      "bg-warning-solid": "var(--NS-bg-warning)",
+      "text-warning-solid": "var(--NS-text-on-warning)",
+      "bg-info-soft": "var(--NS-bg-info-soft)",
+      "text-info-soft": "var(--NS-text-info)",
+      "bg-info-solid": "var(--NS-bg-info)",
+      "text-info-solid": "var(--NS-text-on-info)",
+      "bg-success-soft": "var(--NS-bg-success-soft)",
+      "text-success-soft": "var(--NS-text-success)",
+      "bg-success-solid": "var(--NS-bg-success)",
+      "text-success-solid": "var(--NS-text-on-success)"
     },
     "breadcrumbs": {
       "gap": "0.5em",
       "text-icon": "0.875em",
-      "text-muted": "var(--_NS_-text-muted)",
-      "text-current": "var(--_NS_-text-foreground)"
+      "text-muted": "var(--NS-text-muted)",
+      "text-current": "var(--NS-text-foreground)"
     },
     "checkbox": {
-      "bg-soft": "var(--_NS_-bg-neutral-soft-hover)",
-      "bg-outlined": "var(--_NS_-bg-background)",
-      "bg-checked": "var(--_NS_-bg-brand)",
-      "border-outlined": "var(--_NS_-border-neutral)",
-      "border-checked": "var(--_NS_-border-brand)",
-      "border-invalid": "var(--_NS_-border-danger)",
-      "ring-brand": "var(--_NS_-ring-brand)",
+      "bg-soft": "var(--NS-bg-neutral-soft-hover)",
+      "bg-outlined": "var(--NS-bg-background)",
+      "bg-checked": "var(--NS-bg-brand)",
+      "border-outlined": "var(--NS-border-neutral)",
+      "border-checked": "var(--NS-border-brand)",
+      "border-invalid": "var(--NS-border-danger)",
+      "ring-brand": "var(--NS-ring-brand)",
       "rounded-sm": "0.25rem",
       "rounded-md": "0.375rem",
       "rounded-lg": "0.5rem",
@@ -427,128 +428,128 @@ export default {
       "size-lg": "1.5rem"
     },
     "divider": {
-      "border-primary": "var(--_NS_-border-brand)",
-      "text-primary": "var(--_NS_-text-brand)",
-      "border-neutral": "var(--_NS_-border-default)",
-      "text-neutral": "var(--_NS_-text-muted)",
-      "border-danger": "var(--_NS_-border-danger)",
-      "text-danger": "var(--_NS_-text-danger)",
-      "border-warning": "var(--_NS_-border-warning)",
-      "text-warning": "var(--_NS_-text-warning)",
-      "border-info": "var(--_NS_-border-info)",
-      "text-info": "var(--_NS_-text-info)",
-      "border-success": "var(--_NS_-border-success)",
-      "text-success": "var(--_NS_-text-success)"
+      "border-primary": "var(--NS-border-brand)",
+      "text-primary": "var(--NS-text-brand)",
+      "border-neutral": "var(--NS-border-default)",
+      "text-neutral": "var(--NS-text-muted)",
+      "border-danger": "var(--NS-border-danger)",
+      "text-danger": "var(--NS-text-danger)",
+      "border-warning": "var(--NS-border-warning)",
+      "text-warning": "var(--NS-text-warning)",
+      "border-info": "var(--NS-border-info)",
+      "text-info": "var(--NS-text-info)",
+      "border-success": "var(--NS-border-success)",
+      "text-success": "var(--NS-text-success)"
     },
     "group": {
-      "bg-soft": "var(--_NS_-bg-neutral-soft)",
-      "bg-outlined": "var(--_NS_-bg-background)"
+      "bg-soft": "var(--NS-bg-neutral-soft)",
+      "bg-outlined": "var(--NS-bg-background)"
     },
     "icon-button": {},
     "icon": {},
     "input": {
-      "bg-soft": "var(--_NS_-bg-neutral-soft)",
-      "bg-outlined": "var(--_NS_-bg-background)",
-      "border-outlined": "var(--_NS_-border-neutral)",
-      "border-focus": "var(--_NS_-border-brand)",
-      "border-invalid": "var(--_NS_-border-danger)",
-      "text-default": "var(--_NS_-text-foreground)",
-      "text-placeholder": "var(--_NS_-text-placeholder)",
-      "px-sm": "var(--_NS_-space-sm)",
-      "px-md": "var(--_NS_-space-md)",
-      "px-lg": "var(--_NS_-space-lg)",
-      "h-sm": "var(--_NS_-size-sm)",
-      "h-md": "var(--_NS_-size-md)",
-      "h-lg": "var(--_NS_-size-lg)",
-      "type-sm": "var(--_NS_-type-sm)",
-      "type-md": "var(--_NS_-type-md)",
-      "type-lg": "var(--_NS_-input-type-md)",
-      "rounded": "var(--_NS_-radius-md)"
+      "bg-soft": "var(--NS-bg-neutral-soft)",
+      "bg-outlined": "var(--NS-bg-background)",
+      "border-outlined": "var(--NS-border-neutral)",
+      "border-focus": "var(--NS-border-brand)",
+      "border-invalid": "var(--NS-border-danger)",
+      "text-default": "var(--NS-text-foreground)",
+      "text-placeholder": "var(--NS-text-placeholder)",
+      "px-sm": "var(--NS-space-sm)",
+      "px-md": "var(--NS-space-md)",
+      "px-lg": "var(--NS-space-lg)",
+      "h-sm": "var(--NS-size-sm)",
+      "h-md": "var(--NS-size-md)",
+      "h-lg": "var(--NS-size-lg)",
+      "type-sm": "var(--NS-type-sm)",
+      "type-md": "var(--NS-type-md)",
+      "type-lg": "var(--NS-input-type-md)",
+      "rounded": "var(--NS-radius-md)"
     },
     "listbox": {
-      "text-default": "var(--_NS_-text-foreground)",
-      "bg-soft": "var(--_NS_-bg-neutral-soft)",
-      "bg-outlined": "var(--_NS_-bg-background)",
-      "border-outlined": "var(--_NS_-border-neutral)",
-      "border-invalid": "var(--_NS_-border-danger)",
-      "bg-item-hover": "var(--_NS_-bg-neutral-soft)",
-      "bg-item-selected": "var(--_NS_-bg-neutral-soft)",
-      "bg-item-soft-hover": "var(--_NS_-bg-neutral-soft-hover)",
-      "bg-item-soft-selected": "var(--_NS_-bg-neutral-soft-hover)",
-      "ring-item-highlighted": "var(--_NS_-ring-brand)",
-      "text-item-selected": "var(--_NS_-text-brand)",
-      "px-sm": "var(--_NS_-space-sm)",
-      "px-md": "var(--_NS_-space-md)",
-      "px-lg": "var(--_NS_-space-lg)",
-      "h-sm": "var(--_NS_-size-sm)",
-      "h-md": "var(--_NS_-size-md)",
-      "h-lg": "var(--_NS_-size-lg)",
-      "gap-sm": "var(--_NS_-gap-sm)",
-      "gap-md": "var(--_NS_-gap-md)",
-      "gap-lg": "var(--_NS_-gap-lg)",
-      "type-sm": "var(--_NS_-type-sm)",
-      "type-md": "var(--_NS_-type-md)",
-      "type-lg": "var(--_NS_-listbox-type-md)",
+      "text-default": "var(--NS-text-foreground)",
+      "bg-soft": "var(--NS-bg-neutral-soft)",
+      "bg-outlined": "var(--NS-bg-background)",
+      "border-outlined": "var(--NS-border-neutral)",
+      "border-invalid": "var(--NS-border-danger)",
+      "bg-item-hover": "var(--NS-bg-neutral-soft)",
+      "bg-item-selected": "var(--NS-bg-neutral-soft)",
+      "bg-item-soft-hover": "var(--NS-bg-neutral-soft-hover)",
+      "bg-item-soft-selected": "var(--NS-bg-neutral-soft-hover)",
+      "ring-item-highlighted": "var(--NS-ring-brand)",
+      "text-item-selected": "var(--NS-text-brand)",
+      "px-sm": "var(--NS-space-sm)",
+      "px-md": "var(--NS-space-md)",
+      "px-lg": "var(--NS-space-lg)",
+      "h-sm": "var(--NS-size-sm)",
+      "h-md": "var(--NS-size-md)",
+      "h-lg": "var(--NS-size-lg)",
+      "gap-sm": "var(--NS-gap-sm)",
+      "gap-md": "var(--NS-gap-md)",
+      "gap-lg": "var(--NS-gap-lg)",
+      "type-sm": "var(--NS-type-sm)",
+      "type-md": "var(--NS-type-md)",
+      "type-lg": "var(--NS-listbox-type-md)",
       "gap": "0.125rem",
       "p": "0.25rem",
-      "rounded": "var(--_NS_-radius-md)",
+      "rounded": "var(--NS-radius-md)",
       "rounded-item": "calc(var(--d-radius-md) - 4px)"
     },
     "menu": {
-      "text-default": "var(--_NS_-text-muted)",
-      "text-heading": "var(--_NS_-text-muted)",
-      "text-item": "var(--_NS_-text-muted)",
-      "text-item-hover": "var(--_NS_-text-foreground)",
-      "bg-item-hover": "var(--_NS_-bg-neutral-soft)",
+      "text-default": "var(--NS-text-muted)",
+      "text-heading": "var(--NS-text-muted)",
+      "text-item": "var(--NS-text-muted)",
+      "text-item-hover": "var(--NS-text-foreground)",
+      "bg-item-hover": "var(--NS-bg-neutral-soft)",
       "gap": "0.125rem",
       "py-heading": "0.25rem",
-      "px-heading-sm": "var(--_NS_-space-sm)",
-      "px-heading-md": "var(--_NS_-space-md)",
-      "px-heading-lg": "var(--_NS_-space-lg)",
-      "px-item-sm": "var(--_NS_-space-sm)",
-      "px-item-md": "var(--_NS_-space-md)",
-      "px-item-lg": "var(--_NS_-space-lg)",
-      "gap-item-sm": "var(--_NS_-gap-sm)",
-      "gap-item-md": "var(--_NS_-gap-md)",
-      "gap-item-lg": "var(--_NS_-gap-lg)",
-      "h-item-sm": "var(--_NS_-size-sm)",
-      "h-item-md": "var(--_NS_-size-md)",
-      "h-item-lg": "var(--_NS_-size-lg)",
-      "rounded-item-sm": "var(--_NS_-radius-sm)",
-      "rounded-item-md": "var(--_NS_-radius-md)",
-      "rounded-item-lg": "var(--_NS_-radius-lg)",
-      "type-sm": "var(--_NS_-type-sm)",
-      "type-md": "var(--_NS_-menu-type-sm)",
-      "type-lg": "var(--_NS_-menu-type-md)"
+      "px-heading-sm": "var(--NS-space-sm)",
+      "px-heading-md": "var(--NS-space-md)",
+      "px-heading-lg": "var(--NS-space-lg)",
+      "px-item-sm": "var(--NS-space-sm)",
+      "px-item-md": "var(--NS-space-md)",
+      "px-item-lg": "var(--NS-space-lg)",
+      "gap-item-sm": "var(--NS-gap-sm)",
+      "gap-item-md": "var(--NS-gap-md)",
+      "gap-item-lg": "var(--NS-gap-lg)",
+      "h-item-sm": "var(--NS-size-sm)",
+      "h-item-md": "var(--NS-size-md)",
+      "h-item-lg": "var(--NS-size-lg)",
+      "rounded-item-sm": "var(--NS-radius-sm)",
+      "rounded-item-md": "var(--NS-radius-md)",
+      "rounded-item-lg": "var(--NS-radius-lg)",
+      "type-sm": "var(--NS-type-sm)",
+      "type-md": "var(--NS-menu-type-sm)",
+      "type-lg": "var(--NS-menu-type-md)"
     },
     "message": {
-      "bg-primary-soft": "var(--_NS_-bg-brand-soft)",
-      "text-primary": "var(--_NS_-text-brand)",
-      "border-primary": "var(--_NS_-border-brand)",
-      "bg-neutral-soft": "var(--_NS_-bg-neutral-soft)",
-      "text-neutral": "var(--_NS_-text-neutral)",
-      "border-neutral": "var(--_NS_-border-neutral)",
-      "bg-danger-soft": "var(--_NS_-bg-danger-soft)",
-      "text-danger": "var(--_NS_-text-danger)",
-      "border-danger": "var(--_NS_-border-danger)",
-      "bg-warning-soft": "var(--_NS_-bg-warning-soft)",
-      "text-warning": "var(--_NS_-text-warning)",
-      "border-warning": "var(--_NS_-border-warning)",
-      "bg-info-soft": "var(--_NS_-bg-info-soft)",
-      "text-info": "var(--_NS_-text-info)",
-      "border-info": "var(--_NS_-border-info)",
-      "bg-success-soft": "var(--_NS_-bg-success-soft)",
-      "text-success": "var(--_NS_-text-success)",
-      "border-success": "var(--_NS_-border-success)"
+      "bg-primary-soft": "var(--NS-bg-brand-soft)",
+      "text-primary": "var(--NS-text-brand)",
+      "border-primary": "var(--NS-border-brand)",
+      "bg-neutral-soft": "var(--NS-bg-neutral-soft)",
+      "text-neutral": "var(--NS-text-neutral)",
+      "border-neutral": "var(--NS-border-neutral)",
+      "bg-danger-soft": "var(--NS-bg-danger-soft)",
+      "text-danger": "var(--NS-text-danger)",
+      "border-danger": "var(--NS-border-danger)",
+      "bg-warning-soft": "var(--NS-bg-warning-soft)",
+      "text-warning": "var(--NS-text-warning)",
+      "border-warning": "var(--NS-border-warning)",
+      "bg-info-soft": "var(--NS-bg-info-soft)",
+      "text-info": "var(--NS-text-info)",
+      "border-info": "var(--NS-border-info)",
+      "bg-success-soft": "var(--NS-bg-success-soft)",
+      "text-success": "var(--NS-text-success)",
+      "border-success": "var(--NS-border-success)"
     },
     "radio": {
-      "border-outlined": "var(--_NS_-border-neutral)",
-      "bg-soft": "var(--_NS_-bg-neutral-soft-hover)",
-      "bg-outlined": "var(--_NS_-bg-background)",
-      "border-checked": "var(--_NS_-border-brand)",
-      "bg-checked": "var(--_NS_-bg-brand)",
-      "ring-brand": "var(--_NS_-ring-brand)",
-      "border-invalid": "var(--_NS_-border-danger)",
+      "border-outlined": "var(--NS-border-neutral)",
+      "bg-soft": "var(--NS-bg-neutral-soft-hover)",
+      "bg-outlined": "var(--NS-bg-background)",
+      "border-checked": "var(--NS-border-brand)",
+      "bg-checked": "var(--NS-bg-brand)",
+      "ring-brand": "var(--NS-ring-brand)",
+      "border-invalid": "var(--NS-border-danger)",
       "size-sm": "1rem",
       "size-md": "1.25rem",
       "size-lg": "1.5rem"
@@ -564,84 +565,84 @@ export default {
       "translate-thumb-x": "0px",
       "rounded-thumb": "999px",
       "bg-thumb": [
-        "var(--_NS_-neutral-100)",
-        "var(--_NS_-neutral-800)"
+        "var(--NS-neutral-100)",
+        "var(--NS-neutral-800)"
       ],
       "bg-thumb-hover": [
-        "var(--_NS_-neutral-200)",
-        "var(--_NS_-neutral-700)"
+        "var(--NS-neutral-200)",
+        "var(--NS-neutral-700)"
       ]
     },
     "select-button": {
-      "border-outlined": "var(--_NS_-border-neutral)",
-      "bg-item-outlined": "var(--_NS_-bg-neutral-soft-hover)",
-      "bg-soft": "var(--_NS_-bg-neutral-soft)",
-      "bg-outlined": "var(--_NS_-bg-background)",
+      "border-outlined": "var(--NS-border-neutral)",
+      "bg-item-outlined": "var(--NS-bg-neutral-soft-hover)",
+      "bg-soft": "var(--NS-bg-neutral-soft)",
+      "bg-outlined": "var(--NS-bg-background)",
       "bg-item-soft": [
-        "var(--_NS_-white)",
-        "var(--_NS_-neutral-800)"
+        "var(--NS-white)",
+        "var(--NS-neutral-800)"
       ],
-      "text-default": "var(--_NS_-text-muted)",
-      "text-selected": "var(--_NS_-text-foreground)",
-      "px-sm": "var(--_NS_-space-sm)",
-      "px-md": "var(--_NS_-space-md)",
-      "px-lg": "var(--_NS_-space-lg)",
-      "h-sm": "var(--_NS_-size-sm)",
-      "h-md": "var(--_NS_-size-md)",
-      "h-lg": "var(--_NS_-size-lg)",
-      "gap-sm": "var(--_NS_-gap-sm)",
-      "gap-md": "var(--_NS_-gap-md)",
-      "gap-lg": "var(--_NS_-gap-lg)"
+      "text-default": "var(--NS-text-muted)",
+      "text-selected": "var(--NS-text-foreground)",
+      "px-sm": "var(--NS-space-sm)",
+      "px-md": "var(--NS-space-md)",
+      "px-lg": "var(--NS-space-lg)",
+      "h-sm": "var(--NS-size-sm)",
+      "h-md": "var(--NS-size-md)",
+      "h-lg": "var(--NS-size-lg)",
+      "gap-sm": "var(--NS-gap-sm)",
+      "gap-md": "var(--NS-gap-md)",
+      "gap-lg": "var(--NS-gap-lg)"
     },
     "select": {
-      "bg-soft": "var(--_NS_-bg-neutral-soft)",
-      "bg-outlined": "var(--_NS_-bg-background)",
-      "border-outlined": "var(--_NS_-border-neutral)",
-      "border-focus": "var(--_NS_-border-brand)",
-      "border-invalid": "var(--_NS_-border-danger)",
-      "text-default": "var(--_NS_-text-foreground)",
-      "text-placeholder": "var(--_NS_-text-placeholder)",
-      "pl-sm": "var(--_NS_-space-sm)",
-      "pl-md": "var(--_NS_-space-md)",
-      "pl-lg": "var(--_NS_-space-lg)",
-      "h-sm": "var(--_NS_-size-sm)",
-      "h-md": "var(--_NS_-size-md)",
-      "h-lg": "var(--_NS_-size-lg)",
-      "type-sm": "var(--_NS_-type-sm)",
-      "type-md": "var(--_NS_-type-md)",
-      "type-lg": "var(--_NS_-select-type-md)",
-      "gap-sm": "var(--_NS_-gap-sm)",
-      "gap-md": "var(--_NS_-gap-md)",
-      "gap-lg": "var(--_NS_-gap-lg)",
-      "rounded": "var(--_NS_-radius-md)"
+      "bg-soft": "var(--NS-bg-neutral-soft)",
+      "bg-outlined": "var(--NS-bg-background)",
+      "border-outlined": "var(--NS-border-neutral)",
+      "border-focus": "var(--NS-border-brand)",
+      "border-invalid": "var(--NS-border-danger)",
+      "text-default": "var(--NS-text-foreground)",
+      "text-placeholder": "var(--NS-text-placeholder)",
+      "pl-sm": "var(--NS-space-sm)",
+      "pl-md": "var(--NS-space-md)",
+      "pl-lg": "var(--NS-space-lg)",
+      "h-sm": "var(--NS-size-sm)",
+      "h-md": "var(--NS-size-md)",
+      "h-lg": "var(--NS-size-lg)",
+      "type-sm": "var(--NS-type-sm)",
+      "type-md": "var(--NS-type-md)",
+      "type-lg": "var(--NS-select-type-md)",
+      "gap-sm": "var(--NS-gap-sm)",
+      "gap-md": "var(--NS-gap-md)",
+      "gap-lg": "var(--NS-gap-lg)",
+      "rounded": "var(--NS-radius-md)"
     },
     "switch": {
-      "border": "var(--_NS_-border-neutral)",
-      "border-checked": "var(--_NS_-border-brand)",
-      "border-invalid": "var(--_NS_-border-danger)",
-      "bg-soft": "var(--_NS_-bg-neutral-soft-hover)",
-      "bg-outlined": "var(--_NS_-bg-background)",
-      "bg-checked": "var(--_NS_-bg-brand)",
-      "bg-thumb-outlined": "var(--_NS_-bg-neutral-soft-hover)",
-      "bg-thumb-checked": "var(--_NS_-bg-brand)",
-      "bg-thumb-soft": "var(--_NS_-white)",
-      "ring-brand": "var(--_NS_-ring-brand)",
+      "border": "var(--NS-border-neutral)",
+      "border-checked": "var(--NS-border-brand)",
+      "border-invalid": "var(--NS-border-danger)",
+      "bg-soft": "var(--NS-bg-neutral-soft-hover)",
+      "bg-outlined": "var(--NS-bg-background)",
+      "bg-checked": "var(--NS-bg-brand)",
+      "bg-thumb-outlined": "var(--NS-bg-neutral-soft-hover)",
+      "bg-thumb-checked": "var(--NS-bg-brand)",
+      "bg-thumb-soft": "var(--NS-white)",
+      "ring-brand": "var(--NS-ring-brand)",
       "h": "1.5rem",
       "p": "0.125rem",
       "rounded": "9999px"
     },
     "table": {
-      "text-default": "var(--_NS_-text-foreground)",
-      "text-muted": "var(--_NS_-text-muted)",
-      "text-caption": "var(--_NS_-table-text-muted)",
-      "border-cell": "var(--_NS_-border-default)",
-      "bg-row-hover": "var(--_NS_-bg-neutral-soft)",
-      "bg-row-selected": "var(--_NS_-bg-brand-soft)",
-      "bg-sticky": "var(--_NS_-bg-background)",
-      "px-cell": "var(--_NS_-space-sm)",
-      "py-cell": "var(--_NS_-space-sm)",
-      "px-head": "var(--_NS_-space-sm)",
-      "py-head": "var(--_NS_-space-sm)",
+      "text-default": "var(--NS-text-foreground)",
+      "text-muted": "var(--NS-text-muted)",
+      "text-caption": "var(--NS-table-text-muted)",
+      "border-cell": "var(--NS-border-default)",
+      "bg-row-hover": "var(--NS-bg-neutral-soft)",
+      "bg-row-selected": "var(--NS-bg-brand-soft)",
+      "bg-sticky": "var(--NS-bg-background)",
+      "px-cell": "var(--NS-space-sm)",
+      "py-cell": "var(--NS-space-sm)",
+      "px-head": "var(--NS-space-sm)",
+      "py-head": "var(--NS-space-sm)",
       "top-sticky": "0px"
     },
     "tag": {
@@ -654,102 +655,103 @@ export default {
       "ps-avatar-border": "1px",
       "pe-avatar": "0.125rem",
       "pe-avatar-border": "1px",
-      "bg-primary-soft": "var(--_NS_-bg-brand-soft)",
-      "text-primary-soft": "var(--_NS_-text-brand)",
-      "bg-primary-solid": "var(--_NS_-bg-brand)",
-      "text-primary-solid": "var(--_NS_-text-on-brand)",
-      "bg-neutral-soft": "var(--_NS_-bg-neutral-soft)",
-      "text-neutral-soft": "var(--_NS_-text-neutral)",
-      "bg-neutral-solid": "var(--_NS_-bg-neutral)",
-      "text-neutral-solid": "var(--_NS_-text-on-neutral)",
-      "bg-danger-soft": "var(--_NS_-bg-danger-soft)",
-      "text-danger-soft": "var(--_NS_-text-danger)",
-      "bg-danger-solid": "var(--_NS_-bg-danger)",
-      "text-danger-solid": "var(--_NS_-text-on-danger)",
-      "bg-warning-soft": "var(--_NS_-bg-warning-soft)",
-      "text-warning-soft": "var(--_NS_-text-warning)",
-      "bg-warning-solid": "var(--_NS_-bg-warning)",
-      "text-warning-solid": "var(--_NS_-text-on-warning)",
-      "bg-info-soft": "var(--_NS_-bg-info-soft)",
-      "text-info-soft": "var(--_NS_-text-info)",
-      "bg-info-solid": "var(--_NS_-bg-info)",
-      "text-info-solid": "var(--_NS_-text-on-info)",
-      "bg-success-soft": "var(--_NS_-bg-success-soft)",
-      "text-success-soft": "var(--_NS_-text-success)",
-      "bg-success-solid": "var(--_NS_-bg-success)",
-      "text-success-solid": "var(--_NS_-text-on-success)"
+      "bg-primary-soft": "var(--NS-bg-brand-soft)",
+      "text-primary-soft": "var(--NS-text-brand)",
+      "bg-primary-solid": "var(--NS-bg-brand)",
+      "text-primary-solid": "var(--NS-text-on-brand)",
+      "bg-neutral-soft": "var(--NS-bg-neutral-soft)",
+      "text-neutral-soft": "var(--NS-text-neutral)",
+      "bg-neutral-solid": "var(--NS-bg-neutral)",
+      "text-neutral-solid": "var(--NS-text-on-neutral)",
+      "bg-danger-soft": "var(--NS-bg-danger-soft)",
+      "text-danger-soft": "var(--NS-text-danger)",
+      "bg-danger-solid": "var(--NS-bg-danger)",
+      "text-danger-solid": "var(--NS-text-on-danger)",
+      "bg-warning-soft": "var(--NS-bg-warning-soft)",
+      "text-warning-soft": "var(--NS-text-warning)",
+      "bg-warning-solid": "var(--NS-bg-warning)",
+      "text-warning-solid": "var(--NS-text-on-warning)",
+      "bg-info-soft": "var(--NS-bg-info-soft)",
+      "text-info-soft": "var(--NS-text-info)",
+      "bg-info-solid": "var(--NS-bg-info)",
+      "text-info-solid": "var(--NS-text-on-info)",
+      "bg-success-soft": "var(--NS-bg-success-soft)",
+      "text-success-soft": "var(--NS-text-success)",
+      "bg-success-solid": "var(--NS-bg-success)",
+      "text-success-solid": "var(--NS-text-on-success)"
     },
     "textarea": {
-      "bg-soft": "var(--_NS_-bg-neutral-soft)",
-      "bg-outlined": "var(--_NS_-bg-background)",
-      "border-outlined": "var(--_NS_-border-neutral)",
-      "border-focus": "var(--_NS_-border-brand)",
-      "border-invalid": "var(--_NS_-border-danger)",
-      "text-default": "var(--_NS_-text-foreground)",
-      "text-placeholder": "var(--_NS_-text-placeholder)",
-      "px-sm": "var(--_NS_-space-sm)",
-      "px-md": "var(--_NS_-space-md)",
-      "px-lg": "var(--_NS_-space-lg)",
-      "type-sm": "var(--_NS_-type-sm)",
-      "type-md": "var(--_NS_-type-md)",
-      "type-lg": "var(--_NS_-textarea-type-md)",
-      "rounded": "var(--_NS_-radius-md)"
+      "bg-soft": "var(--NS-bg-neutral-soft)",
+      "bg-outlined": "var(--NS-bg-background)",
+      "border-outlined": "var(--NS-border-neutral)",
+      "border-focus": "var(--NS-border-brand)",
+      "border-invalid": "var(--NS-border-danger)",
+      "text-default": "var(--NS-text-foreground)",
+      "text-placeholder": "var(--NS-text-placeholder)",
+      "px-sm": "var(--NS-space-sm)",
+      "px-md": "var(--NS-space-md)",
+      "px-lg": "var(--NS-space-lg)",
+      "type-sm": "var(--NS-type-sm)",
+      "type-md": "var(--NS-type-md)",
+      "type-lg": "var(--NS-textarea-type-md)",
+      "rounded": "var(--NS-radius-md)"
     },
     "skeleton": {
       "bg": [
-        "var(--_NS_-neutral-200)",
-        "var(--_NS_-neutral-700)"
+        "var(--NS-neutral-200)",
+        "var(--NS-neutral-700)"
       ],
       "rounded": "4px"
     },
     "progress": {
-      "bg-primary": "var(--_NS_-bg-brand)",
-      "bg-neutral": "var(--_NS_-bg-neutral)",
-      "bg-danger": "var(--_NS_-bg-danger)",
-      "bg-warning": "var(--_NS_-bg-warning)",
-      "bg-info": "var(--_NS_-bg-info)",
-      "bg-success": "var(--_NS_-bg-success)"
+      "bg-primary": "var(--NS-bg-brand)",
+      "bg-neutral": "var(--NS-bg-neutral)",
+      "bg-danger": "var(--NS-bg-danger)",
+      "bg-warning": "var(--NS-bg-warning)",
+      "bg-info": "var(--NS-bg-info)",
+      "bg-success": "var(--NS-bg-success)"
     },
     "pagination": {
-      "bg-item": "var(--_NS_-bg-neutral-soft)",
-      "bg-item-selected": "var(--_NS_-bg-neutral-soft-hover)",
-      "text-default": "var(--_NS_-text-muted)",
-      "text-selected": "var(--_NS_-text-foreground)",
-      "px-sm": "var(--_NS_-space-xs)",
-      "px-md": "var(--_NS_-space-sm)",
-      "px-lg": "var(--_NS_-space-md)",
-      "h-sm": "var(--_NS_-size-xs)",
-      "h-md": "var(--_NS_-size-sm)",
-      "h-lg": "var(--_NS_-size-md)",
-      "gap-sm": "var(--_NS_-gap-sm)",
-      "gap-md": "var(--_NS_-gap-md)",
-      "gap-lg": "var(--_NS_-gap-lg)"
+      "bg-item": "var(--NS-bg-neutral-soft)",
+      "bg-item-selected": "var(--NS-bg-neutral-soft-hover)",
+      "text-default": "var(--NS-text-muted)",
+      "text-selected": "var(--NS-text-foreground)",
+      "px-sm": "var(--NS-space-xs)",
+      "px-md": "var(--NS-space-sm)",
+      "px-lg": "var(--NS-space-md)",
+      "h-sm": "var(--NS-size-xs)",
+      "h-md": "var(--NS-size-sm)",
+      "h-lg": "var(--NS-size-md)",
+      "gap-sm": "var(--NS-gap-sm)",
+      "gap-md": "var(--NS-gap-md)",
+      "gap-lg": "var(--NS-gap-lg)"
     },
     "layout": {
       "h-header": "56px",
-      "w-sidebar": "240px"
+      "w-sidebar": "240px",
+      "duration": "350ms"
     },
     "tabs": {
-      "border-default": "var(--_NS_-border-neutral)",
-      "border-selected": "var(--_NS_-border-brand)",
-      "border-outlined": "var(--_NS_-border-neutral)",
-      "bg-soft": "var(--_NS_-bg-neutral-soft)",
-      "bg-outlined": "var(--_NS_-bg-background)",
+      "border-default": "var(--NS-border-neutral)",
+      "border-selected": "var(--NS-border-brand)",
+      "border-outlined": "var(--NS-border-neutral)",
+      "bg-soft": "var(--NS-bg-neutral-soft)",
+      "bg-outlined": "var(--NS-bg-background)",
       "bg-item": [
-        "var(--_NS_-white)",
-        "var(--_NS_-neutral-800)"
+        "var(--NS-white)",
+        "var(--NS-neutral-800)"
       ],
-      "text-default": "var(--_NS_-text-muted)",
-      "text-selected": "var(--_NS_-text-foreground)",
-      "px-sm": "var(--_NS_-space-sm)",
-      "px-md": "var(--_NS_-space-md)",
-      "px-lg": "var(--_NS_-space-lg)",
-      "h-sm": "var(--_NS_-size-sm)",
-      "h-md": "var(--_NS_-size-md)",
-      "h-lg": "var(--_NS_-size-lg)",
-      "gap-sm": "var(--_NS_-gap-sm)",
-      "gap-md": "var(--_NS_-gap-md)",
-      "gap-lg": "var(--_NS_-gap-lg)"
+      "text-default": "var(--NS-text-muted)",
+      "text-selected": "var(--NS-text-foreground)",
+      "px-sm": "var(--NS-space-sm)",
+      "px-md": "var(--NS-space-md)",
+      "px-lg": "var(--NS-space-lg)",
+      "h-sm": "var(--NS-size-sm)",
+      "h-md": "var(--NS-size-md)",
+      "h-lg": "var(--NS-size-lg)",
+      "gap-sm": "var(--NS-gap-sm)",
+      "gap-md": "var(--NS-gap-md)",
+      "gap-lg": "var(--NS-gap-lg)"
     }
   }
 }

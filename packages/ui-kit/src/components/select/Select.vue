@@ -82,6 +82,7 @@ function restoreFocus() {
 function toggleDropdown(event: Event) {
   if (ui.disabled) return
   floatingRef.value?.toggle(event)
+  comboboxRef.value?.focus()
 }
 
 function closeDropdown() {
@@ -139,8 +140,8 @@ const tui = asTemplateRef(ui)
 </script>
 
 <template>
-  <Floating ref="floating" #default="{ ref, style }" :offset="2" auto-update fit @click-outside="closeAndBlur">
-    <div :class="rootClass" tabindex="-1" @click="toggleDropdown" @keydown="onKeyDown">
+  <Floating ref="floating" #default="{ ref, style, isOpen }" :offset="2" auto-update fit @click-outside="closeAndBlur">
+    <div :class="rootClass" @click="toggleDropdown" @keydown="onKeyDown">
       <span ref="combobox" v-bind="comboboxAttrs" @focus="isFocused = true">
         {{ displayLabel || tui.placeholder }}
       </span>

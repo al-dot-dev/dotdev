@@ -1,3 +1,4 @@
+export { useMediaQuery } from './useMediaQuery.ts'
 export { useUiKitTheme, type UiKitThemeContext } from './useUiKitTheme.ts'
 export { useTypeahead } from './useTypeahead.ts'
 export { useGlobalEvent } from './useGlobalEvent.ts'

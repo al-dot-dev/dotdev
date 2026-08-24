@@ -1,8 +1,9 @@
-import { onBeforeUnmount, onMounted, type Ref, unref } from 'vue'
+import { type Ref, unref } from 'vue'
+import { useGlobalEvent } from './useGlobalEvent.ts'
 
 type TargetElement = HTMLElement | Ref<HTMLElement | null> | (HTMLElement | Ref<HTMLElement | null>)[]
 
-export function useClickOutside(target: TargetElement, callback: (event: MouseEvent) => void) {
+export function useClickOutside(target: TargetElement, callback: (event: MouseEvent) => void, enabled?: Ref<boolean>) {
   const listener = (event: MouseEvent) => {
     const targets = Array.isArray(target) ? target : [target]
 
@@ -17,11 +18,5 @@ export function useClickOutside(target: TargetElement, callback: (event: MouseEv
     }
   }
 
-  onMounted(() => {
-    document.addEventListener('pointerdown', listener, true)
-  })
-
-  onBeforeUnmount(() => {
-    document.removeEventListener('pointerdown', listener, true)
-  })
+  useGlobalEvent('click', listener, { watch: enabled })
 }

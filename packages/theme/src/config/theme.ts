@@ -137,6 +137,8 @@ export const themeConfig = defineTheme({
     black: '#000000',
   },
   semantics: {
+    'bg-backdrop': 'black/30',
+
     'bg-background': ['white', 'neutral-950'],
     'bg-surface': ['white', 'neutral-950'],
     'text-foreground': ['neutral-900', 'neutral-100'],

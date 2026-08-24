@@ -95,6 +95,7 @@ export interface ThemeDefinition<T = string | [string, string]> {
     "black"?: T
   }
   "semantics"?: {
+    "bg-backdrop"?: T
     "bg-background"?: T
     "bg-surface"?: T
     "text-foreground"?: T
@@ -576,6 +577,7 @@ export interface ThemeDefinition<T = string | [string, string]> {
     "layout"?: {
       "h-header"?: T
       "w-sidebar"?: T
+      "duration"?: T
     }
     "tabs"?: {
       "border-default"?: T

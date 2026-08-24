@@ -20,7 +20,7 @@ const DEFAULT_CONFIG = {
 export function useFloating(
   anchor: ElementRef,
   floating: ElementRef,
-  config: MaybeRefOrGetter<UIFloatingConfig & { handleScroll?: () => void }> = {}
+  config: MaybeRefOrGetter<UIFloatingConfig & { handleScroll?: () => void }> = {},
 ) {
   const options = computed(() => ({
     ...DEFAULT_CONFIG,
@@ -39,7 +39,7 @@ export function useFloating(
   let updateId = 0
 
   async function update(event?: Event) {
-    if (event?.type === 'scroll' && event.target !== document) {
+    if (event?.type === 'scroll' && event.target instanceof Element) {
       options.value.handleScroll?.()
     }
 
@@ -88,7 +88,7 @@ export function useFloating(
     {
       immediate: true,
       flush: 'post',
-    }
+    },
   )
 
   onScopeDispose(cleanup)

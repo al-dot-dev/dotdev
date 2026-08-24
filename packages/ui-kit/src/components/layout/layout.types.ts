@@ -1,16 +1,35 @@
 import type { VNode } from 'vue'
 import type { UiKitBaseProps } from '@dotdev/ui-kit'
 
-export interface UILayoutProps extends UiKitBaseProps {}
+//
+// Layout
+//
 
-export interface UILayoutSlots {
-  default?(): VNode[]
-  body?(): VNode[]
-}
+export interface UILayoutProps extends UiKitBaseProps {}
 
 export interface UILayoutEmits {}
 
-export interface UILayoutSidebarProps extends UiKitBaseProps {}
+export interface UILayoutDefaultSlot {
+  toggleSidebar: () => void
+  isExpanded: boolean
+  isMobile: boolean
+}
+
+export interface UILayoutSlots {
+  default?(scope: UILayoutDefaultSlot): VNode[]
+}
+
+//
+// LayoutSidebar
+//
+
+export type UILayoutSidebarMode = 'desktop' | 'mobile'
+
+export interface UILayoutSidebarProps extends UiKitBaseProps {
+  mode?: UILayoutSidebarMode
+}
+
+export interface UILayoutSidebarEmits {}
 
 export interface UILayoutSidebarSlots {
   header?(): VNode[]
@@ -18,12 +37,28 @@ export interface UILayoutSidebarSlots {
   footer?(): VNode[]
 }
 
-export interface UILayoutSidebarEmits {}
+//
+// LayoutHeader
+//
 
 export interface UILayoutHeaderProps extends UiKitBaseProps {}
 
+export interface UILayoutHeaderEmits {}
+
 export interface UILayoutHeaderSlots {
+  left?(): VNode[]
   default?(): VNode[]
+  right?(): VNode[]
 }
 
-export interface UILayoutHeaderEmits {}
+//
+// LayoutContent
+//
+
+export interface UILayoutContentProps extends UiKitBaseProps {}
+
+export interface UILayoutContentEmits {}
+
+export interface UILayoutContentSlots {
+  default?(): VNode[]
+}

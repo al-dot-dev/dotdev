@@ -14,25 +14,26 @@ import type {
   UIInputProps,
   UiKitIcon,
   UiKitNamespace,
+  UILayoutContentProps,
+  UILayoutHeaderProps,
+  UILayoutProps,
+  UILayoutSidebarProps,
   UIListBoxProps,
   UIMenuItemProps,
   UIMenuProps,
   UIMessageProps,
+  UIPaginationProps,
+  UIProgressProps,
   UIRadioProps,
   UIScrollAreaProps,
   UISelectButtonProps,
   UISelectProps,
+  UISkeletonProps,
   UISwitchProps,
   UITableProps,
+  UITabsProps,
   UITagProps,
   UITextareaProps,
-  UISkeletonProps,
-  UIProgressProps,
-  UIPaginationProps,
-  UILayoutProps,
-  UILayoutSidebarProps,
-  UILayoutHeaderProps,
-  UITabsProps,
 } from '@dotdev/ui-kit'
 
 export interface UiKitConfig {
@@ -68,6 +69,7 @@ export interface UiKitConfig {
     layout?: Partial<UILayoutProps>
     'layout-sidebar'?: Partial<UILayoutSidebarProps>
     'layout-header'?: Partial<UILayoutHeaderProps>
+    'layout-content'?: Partial<UILayoutContentProps>
     tabs?: Partial<UITabsProps>
   }
   icons?: Partial<Record<UiKitIcon, Component>>

@@ -1,423 +1,428 @@
 @theme {
-  --_NS_-brand-50: oklch(96.2% 0.018 272.314);
-  --_NS_-brand-100: oklch(93% 0.034 272.788);
-  --_NS_-brand-200: oklch(87% 0.065 274.039);
-  --_NS_-brand-300: oklch(78.5% 0.115 274.713);
-  --_NS_-brand-400: oklch(67.3% 0.182 276.935);
-  --_NS_-brand-500: oklch(58.5% 0.233 277.117);
-  --_NS_-brand-600: oklch(51.1% 0.262 276.966);
-  --_NS_-brand-700: oklch(45.7% 0.24 277.023);
-  --_NS_-brand-800: oklch(39.8% 0.195 277.366);
-  --_NS_-brand-900: oklch(35.9% 0.144 278.697);
-  --_NS_-brand-950: oklch(25.7% 0.09 281.288);
-  --_NS_-neutral-50: oklch(95.58% 0.007 277.16);
-  --_NS_-neutral-100: oklch(91.19% 0.014 281.55);
-  --_NS_-neutral-200: oklch(82.14% 0.03 279.26);
-  --_NS_-neutral-300: oklch(72.91% 0.045 279.43);
-  --_NS_-neutral-400: oklch(63.44% 0.062 279.07);
-  --_NS_-neutral-500: oklch(53.68% 0.082 277.4);
-  --_NS_-neutral-600: oklch(45.93% 0.067 278.07);
-  --_NS_-neutral-700: oklch(37.8% 0.053 277.88);
-  --_NS_-neutral-800: oklch(29.2% 0.039 277.47);
-  --_NS_-neutral-900: oklch(19.96% 0.02 279.96);
-  --_NS_-neutral-950: oklch(17.08% 0.015 278.37);
-  --_NS_-danger-50: oklch(97.1% 0.013 17.38);
-  --_NS_-danger-100: oklch(93.6% 0.032 17.717);
-  --_NS_-danger-200: oklch(88.5% 0.062 18.334);
-  --_NS_-danger-300: oklch(80.8% 0.114 19.571);
-  --_NS_-danger-400: oklch(70.4% 0.191 22.216);
-  --_NS_-danger-500: oklch(63.7% 0.237 25.331);
-  --_NS_-danger-600: oklch(57.7% 0.245 27.325);
-  --_NS_-danger-700: oklch(50.5% 0.213 27.518);
-  --_NS_-danger-800: oklch(44.4% 0.177 26.899);
-  --_NS_-danger-900: oklch(39.6% 0.141 25.723);
-  --_NS_-danger-950: oklch(25.8% 0.092 26.042);
-  --_NS_-warning-50: oklch(98.7% 0.022 95.277);
-  --_NS_-warning-100: oklch(96.2% 0.059 95.617);
-  --_NS_-warning-200: oklch(92.4% 0.12 95.746);
-  --_NS_-warning-300: oklch(87.9% 0.169 91.605);
-  --_NS_-warning-400: oklch(82.8% 0.189 84.429);
-  --_NS_-warning-500: oklch(76.9% 0.188 70.08);
-  --_NS_-warning-600: oklch(66.6% 0.179 58.318);
-  --_NS_-warning-700: oklch(55.5% 0.163 48.998);
-  --_NS_-warning-800: oklch(47.3% 0.137 46.201);
-  --_NS_-warning-900: oklch(41.4% 0.112 45.904);
-  --_NS_-warning-950: oklch(27.9% 0.077 45.635);
-  --_NS_-info-50: oklch(97.7% 0.013 236.62);
-  --_NS_-info-100: oklch(95.1% 0.026 236.824);
-  --_NS_-info-200: oklch(90.1% 0.058 230.902);
-  --_NS_-info-300: oklch(82.8% 0.111 230.318);
-  --_NS_-info-400: oklch(74.6% 0.16 232.661);
-  --_NS_-info-500: oklch(68.5% 0.169 237.323);
-  --_NS_-info-600: oklch(58.8% 0.158 241.966);
-  --_NS_-info-700: oklch(50% 0.134 242.749);
-  --_NS_-info-800: oklch(44.3% 0.11 240.79);
-  --_NS_-info-900: oklch(39.1% 0.09 240.876);
-  --_NS_-info-950: oklch(29.3% 0.066 243.157);
-  --_NS_-success-50: oklch(97.9% 0.021 166.113);
-  --_NS_-success-100: oklch(95% 0.052 163.051);
-  --_NS_-success-200: oklch(90.5% 0.093 164.15);
-  --_NS_-success-300: oklch(84.5% 0.143 164.978);
-  --_NS_-success-400: oklch(76.5% 0.177 163.223);
-  --_NS_-success-500: oklch(69.6% 0.17 162.48);
-  --_NS_-success-600: oklch(59.6% 0.145 163.225);
-  --_NS_-success-700: oklch(50.8% 0.118 165.612);
-  --_NS_-success-800: oklch(43.2% 0.095 166.913);
-  --_NS_-success-900: oklch(37.8% 0.077 168.94);
-  --_NS_-success-950: oklch(26.2% 0.051 172.552);
-  --_NS_-space-xs: 0.5rem;
-  --_NS_-space-sm: 0.625rem;
-  --_NS_-space-md: 0.75rem;
-  --_NS_-space-lg: 1rem;
-  --_NS_-space-xl: 1.25rem;
-  --_NS_-radius-xs: 0.125rem;
-  --_NS_-radius-sm: 0.375rem;
-  --_NS_-radius-md: 0.5rem;
-  --_NS_-radius-lg: 0.75rem;
-  --_NS_-radius-xl: 1rem;
-  --_NS_-size-xs: 2rem;
-  --_NS_-size-sm: 2.25rem;
-  --_NS_-size-md: 2.5rem;
-  --_NS_-size-lg: 2.75rem;
-  --_NS_-size-xl: 3rem;
-  --_NS_-gap-xs: 0.25rem;
-  --_NS_-gap-sm: 0.375rem;
-  --_NS_-gap-md: 0.5rem;
-  --_NS_-gap-lg: 0.625rem;
-  --_NS_-gap-xl: 0.75rem;
-  --_NS_-type-xs: 0.75rem;
-  --_NS_-type-sm: 0.875rem;
-  --_NS_-type-md: 1rem;
-  --_NS_-type-lg: 1.125rem;
-  --_NS_-type-xl: 1.25rem;
-  --_NS_-white: #ffffff;
-  --_NS_-black: #000000;
-  --_NS_-bg-background: var(--_NS_-white);
-  --_NS_-bg-surface: var(--_NS_-white);
-  --_NS_-text-foreground: var(--_NS_-neutral-900);
-  --_NS_-text-muted: var(--_NS_-neutral-500);
-  --_NS_-border-default: var(--_NS_-neutral-100);
-  --_NS_-text-placeholder: var(--_NS_-neutral-400);
-  --_NS_-bg-brand: var(--_NS_-brand-500);
-  --_NS_-bg-brand-hover: var(--_NS_-brand-600);
-  --_NS_-text-brand: var(--_NS_-brand-600);
-  --_NS_-text-on-brand: var(--_NS_-neutral-50);
-  --_NS_-bg-brand-soft: var(--_NS_-brand-50);
-  --_NS_-bg-brand-soft-hover: var(--_NS_-brand-100);
-  --_NS_-border-brand: var(--_NS_-brand-500);
-  --_NS_-border-brand-soft: color-mix(in oklab, var(--_NS_-brand-500) 26%, transparent);
-  --_NS_-ring-brand: color-mix(in oklab, var(--_NS_-brand-500) 50%, transparent);
-  --_NS_-bg-neutral: var(--_NS_-neutral-800);
-  --_NS_-bg-neutral-hover: var(--_NS_-neutral-700);
-  --_NS_-text-neutral: var(--_NS_-neutral-700);
-  --_NS_-text-on-neutral: var(--_NS_-neutral-50);
-  --_NS_-bg-neutral-soft: var(--_NS_-neutral-50);
-  --_NS_-bg-neutral-soft-hover: var(--_NS_-neutral-100);
-  --_NS_-border-neutral: var(--_NS_-neutral-200);
-  --_NS_-ring-neutral: color-mix(in oklab, var(--_NS_-neutral-500) 50%, transparent);
-  --_NS_-bg-danger: var(--_NS_-danger-600);
-  --_NS_-bg-danger-hover: var(--_NS_-danger-700);
-  --_NS_-text-danger: var(--_NS_-danger-600);
-  --_NS_-text-on-danger: var(--_NS_-neutral-50);
-  --_NS_-bg-danger-soft: var(--_NS_-danger-50);
-  --_NS_-bg-danger-soft-hover: var(--_NS_-danger-100);
-  --_NS_-border-danger: var(--_NS_-danger-500);
-  --_NS_-ring-danger: color-mix(in oklab, var(--_NS_-danger-500) 50%, transparent);
-  --_NS_-bg-warning: var(--_NS_-warning-500);
-  --_NS_-bg-warning-hover: var(--_NS_-warning-600);
-  --_NS_-text-warning: var(--_NS_-warning-700);
-  --_NS_-text-on-warning: var(--_NS_-neutral-950);
-  --_NS_-bg-warning-soft: var(--_NS_-warning-50);
-  --_NS_-bg-warning-soft-hover: var(--_NS_-warning-100);
-  --_NS_-border-warning: var(--_NS_-warning-600);
-  --_NS_-ring-warning: color-mix(in oklab, var(--_NS_-warning-500) 50%, transparent);
-  --_NS_-bg-info: var(--_NS_-info-700);
-  --_NS_-bg-info-hover: var(--_NS_-info-800);
-  --_NS_-text-info: var(--_NS_-info-700);
-  --_NS_-text-on-info: var(--_NS_-neutral-50);
-  --_NS_-bg-info-soft: var(--_NS_-info-50);
-  --_NS_-bg-info-soft-hover: var(--_NS_-info-100);
-  --_NS_-border-info: var(--_NS_-info-600);
-  --_NS_-ring-info: color-mix(in oklab, var(--_NS_-info-500) 50%, transparent);
-  --_NS_-bg-success: var(--_NS_-success-700);
-  --_NS_-bg-success-hover: var(--_NS_-success-800);
-  --_NS_-text-success: var(--_NS_-success-700);
-  --_NS_-text-on-success: var(--_NS_-neutral-50);
-  --_NS_-bg-success-soft: var(--_NS_-success-50);
-  --_NS_-bg-success-soft-hover: var(--_NS_-success-100);
-  --_NS_-border-success: var(--_NS_-success-600);
-  --_NS_-ring-success: color-mix(in oklab, var(--_NS_-success-500) 50%, transparent);
+  --NS-brand-50: oklch(96.2% 0.018 272.314);
+  --NS-brand-100: oklch(93% 0.034 272.788);
+  --NS-brand-200: oklch(87% 0.065 274.039);
+  --NS-brand-300: oklch(78.5% 0.115 274.713);
+  --NS-brand-400: oklch(67.3% 0.182 276.935);
+  --NS-brand-500: oklch(58.5% 0.233 277.117);
+  --NS-brand-600: oklch(51.1% 0.262 276.966);
+  --NS-brand-700: oklch(45.7% 0.24 277.023);
+  --NS-brand-800: oklch(39.8% 0.195 277.366);
+  --NS-brand-900: oklch(35.9% 0.144 278.697);
+  --NS-brand-950: oklch(25.7% 0.09 281.288);
+  --NS-neutral-50: oklch(95.58% 0.007 277.16);
+  --NS-neutral-100: oklch(91.19% 0.014 281.55);
+  --NS-neutral-200: oklch(82.14% 0.03 279.26);
+  --NS-neutral-300: oklch(72.91% 0.045 279.43);
+  --NS-neutral-400: oklch(63.44% 0.062 279.07);
+  --NS-neutral-500: oklch(53.68% 0.082 277.4);
+  --NS-neutral-600: oklch(45.93% 0.067 278.07);
+  --NS-neutral-700: oklch(37.8% 0.053 277.88);
+  --NS-neutral-800: oklch(29.2% 0.039 277.47);
+  --NS-neutral-900: oklch(19.96% 0.02 279.96);
+  --NS-neutral-950: oklch(17.08% 0.015 278.37);
+  --NS-danger-50: oklch(97.1% 0.013 17.38);
+  --NS-danger-100: oklch(93.6% 0.032 17.717);
+  --NS-danger-200: oklch(88.5% 0.062 18.334);
+  --NS-danger-300: oklch(80.8% 0.114 19.571);
+  --NS-danger-400: oklch(70.4% 0.191 22.216);
+  --NS-danger-500: oklch(63.7% 0.237 25.331);
+  --NS-danger-600: oklch(57.7% 0.245 27.325);
+  --NS-danger-700: oklch(50.5% 0.213 27.518);
+  --NS-danger-800: oklch(44.4% 0.177 26.899);
+  --NS-danger-900: oklch(39.6% 0.141 25.723);
+  --NS-danger-950: oklch(25.8% 0.092 26.042);
+  --NS-warning-50: oklch(98.7% 0.022 95.277);
+  --NS-warning-100: oklch(96.2% 0.059 95.617);
+  --NS-warning-200: oklch(92.4% 0.12 95.746);
+  --NS-warning-300: oklch(87.9% 0.169 91.605);
+  --NS-warning-400: oklch(82.8% 0.189 84.429);
+  --NS-warning-500: oklch(76.9% 0.188 70.08);
+  --NS-warning-600: oklch(66.6% 0.179 58.318);
+  --NS-warning-700: oklch(55.5% 0.163 48.998);
+  --NS-warning-800: oklch(47.3% 0.137 46.201);
+  --NS-warning-900: oklch(41.4% 0.112 45.904);
+  --NS-warning-950: oklch(27.9% 0.077 45.635);
+  --NS-info-50: oklch(97.7% 0.013 236.62);
+  --NS-info-100: oklch(95.1% 0.026 236.824);
+  --NS-info-200: oklch(90.1% 0.058 230.902);
+  --NS-info-300: oklch(82.8% 0.111 230.318);
+  --NS-info-400: oklch(74.6% 0.16 232.661);
+  --NS-info-500: oklch(68.5% 0.169 237.323);
+  --NS-info-600: oklch(58.8% 0.158 241.966);
+  --NS-info-700: oklch(50% 0.134 242.749);
+  --NS-info-800: oklch(44.3% 0.11 240.79);
+  --NS-info-900: oklch(39.1% 0.09 240.876);
+  --NS-info-950: oklch(29.3% 0.066 243.157);
+  --NS-success-50: oklch(97.9% 0.021 166.113);
+  --NS-success-100: oklch(95% 0.052 163.051);
+  --NS-success-200: oklch(90.5% 0.093 164.15);
+  --NS-success-300: oklch(84.5% 0.143 164.978);
+  --NS-success-400: oklch(76.5% 0.177 163.223);
+  --NS-success-500: oklch(69.6% 0.17 162.48);
+  --NS-success-600: oklch(59.6% 0.145 163.225);
+  --NS-success-700: oklch(50.8% 0.118 165.612);
+  --NS-success-800: oklch(43.2% 0.095 166.913);
+  --NS-success-900: oklch(37.8% 0.077 168.94);
+  --NS-success-950: oklch(26.2% 0.051 172.552);
+  --NS-space-xs: 0.5rem;
+  --NS-space-sm: 0.625rem;
+  --NS-space-md: 0.75rem;
+  --NS-space-lg: 1rem;
+  --NS-space-xl: 1.25rem;
+  --NS-radius-xs: 0.125rem;
+  --NS-radius-sm: 0.375rem;
+  --NS-radius-md: 0.5rem;
+  --NS-radius-lg: 0.75rem;
+  --NS-radius-xl: 1rem;
+  --NS-size-xs: 2rem;
+  --NS-size-sm: 2.25rem;
+  --NS-size-md: 2.5rem;
+  --NS-size-lg: 2.75rem;
+  --NS-size-xl: 3rem;
+  --NS-gap-xs: 0.25rem;
+  --NS-gap-sm: 0.375rem;
+  --NS-gap-md: 0.5rem;
+  --NS-gap-lg: 0.625rem;
+  --NS-gap-xl: 0.75rem;
+  --NS-type-xs: 0.75rem;
+  --NS-type-sm: 0.875rem;
+  --NS-type-md: 1rem;
+  --NS-type-lg: 1.125rem;
+  --NS-type-xl: 1.25rem;
+  --NS-white: #ffffff;
+  --NS-black: #000000;
+  --NS-bg-backdrop: color-mix(in oklab, var(--NS-black) 30%, transparent);
+  --NS-bg-background: var(--NS-white);
+  --NS-bg-surface: var(--NS-white);
+  --NS-text-foreground: var(--NS-neutral-900);
+  --NS-text-muted: var(--NS-neutral-500);
+  --NS-border-default: var(--NS-neutral-100);
+  --NS-text-placeholder: var(--NS-neutral-400);
+  --NS-bg-brand: var(--NS-brand-500);
+  --NS-bg-brand-hover: var(--NS-brand-600);
+  --NS-text-brand: var(--NS-brand-600);
+  --NS-text-on-brand: var(--NS-neutral-50);
+  --NS-bg-brand-soft: var(--NS-brand-50);
+  --NS-bg-brand-soft-hover: var(--NS-brand-100);
+  --NS-border-brand: var(--NS-brand-500);
+  --NS-border-brand-soft: color-mix(in oklab, var(--NS-brand-500) 26%, transparent);
+  --NS-ring-brand: color-mix(in oklab, var(--NS-brand-500) 50%, transparent);
+  --NS-bg-neutral: var(--NS-neutral-800);
+  --NS-bg-neutral-hover: var(--NS-neutral-700);
+  --NS-text-neutral: var(--NS-neutral-700);
+  --NS-text-on-neutral: var(--NS-neutral-50);
+  --NS-bg-neutral-soft: var(--NS-neutral-50);
+  --NS-bg-neutral-soft-hover: var(--NS-neutral-100);
+  --NS-border-neutral: var(--NS-neutral-200);
+  --NS-ring-neutral: color-mix(in oklab, var(--NS-neutral-500) 50%, transparent);
+  --NS-bg-danger: var(--NS-danger-600);
+  --NS-bg-danger-hover: var(--NS-danger-700);
+  --NS-text-danger: var(--NS-danger-600);
+  --NS-text-on-danger: var(--NS-neutral-50);
+  --NS-bg-danger-soft: var(--NS-danger-50);
+  --NS-bg-danger-soft-hover: var(--NS-danger-100);
+  --NS-border-danger: var(--NS-danger-500);
+  --NS-ring-danger: color-mix(in oklab, var(--NS-danger-500) 50%, transparent);
+  --NS-bg-warning: var(--NS-warning-500);
+  --NS-bg-warning-hover: var(--NS-warning-600);
+  --NS-text-warning: var(--NS-warning-700);
+  --NS-text-on-warning: var(--NS-neutral-950);
+  --NS-bg-warning-soft: var(--NS-warning-50);
+  --NS-bg-warning-soft-hover: var(--NS-warning-100);
+  --NS-border-warning: var(--NS-warning-600);
+  --NS-ring-warning: color-mix(in oklab, var(--NS-warning-500) 50%, transparent);
+  --NS-bg-info: var(--NS-info-700);
+  --NS-bg-info-hover: var(--NS-info-800);
+  --NS-text-info: var(--NS-info-700);
+  --NS-text-on-info: var(--NS-neutral-50);
+  --NS-bg-info-soft: var(--NS-info-50);
+  --NS-bg-info-soft-hover: var(--NS-info-100);
+  --NS-border-info: var(--NS-info-600);
+  --NS-ring-info: color-mix(in oklab, var(--NS-info-500) 50%, transparent);
+  --NS-bg-success: var(--NS-success-700);
+  --NS-bg-success-hover: var(--NS-success-800);
+  --NS-text-success: var(--NS-success-700);
+  --NS-text-on-success: var(--NS-neutral-50);
+  --NS-bg-success-soft: var(--NS-success-50);
+  --NS-bg-success-soft-hover: var(--NS-success-100);
+  --NS-border-success: var(--NS-success-600);
+  --NS-ring-success: color-mix(in oklab, var(--NS-success-500) 50%, transparent);
 }
 
 .dark {
-  --_NS_-bg-background: var(--_NS_-neutral-950);
-  --_NS_-bg-surface: var(--_NS_-neutral-950);
-  --_NS_-text-foreground: var(--_NS_-neutral-100);
-  --_NS_-text-muted: var(--_NS_-neutral-400);
-  --_NS_-border-default: var(--_NS_-neutral-800);
-  --_NS_-text-placeholder: var(--_NS_-neutral-600);
-  --_NS_-bg-brand: var(--_NS_-brand-400);
-  --_NS_-bg-brand-hover: var(--_NS_-brand-300);
-  --_NS_-text-brand: var(--_NS_-brand-400);
-  --_NS_-text-on-brand: var(--_NS_-neutral-950);
-  --_NS_-bg-brand-soft: color-mix(in oklab, var(--_NS_-brand-500) 16%, transparent);
-  --_NS_-bg-brand-soft-hover: color-mix(in oklab, var(--_NS_-brand-500) 26%, transparent);
-  --_NS_-border-brand: var(--_NS_-brand-400);
-  --_NS_-bg-neutral: var(--_NS_-neutral-200);
-  --_NS_-bg-neutral-hover: var(--_NS_-neutral-300);
-  --_NS_-text-neutral: var(--_NS_-neutral-300);
-  --_NS_-text-on-neutral: var(--_NS_-neutral-900);
-  --_NS_-bg-neutral-soft: color-mix(in oklab, var(--_NS_-neutral-500) 16%, transparent);
-  --_NS_-bg-neutral-soft-hover: color-mix(in oklab, var(--_NS_-neutral-500) 26%, transparent);
-  --_NS_-border-neutral: var(--_NS_-neutral-700);
-  --_NS_-bg-danger: var(--_NS_-danger-400);
-  --_NS_-bg-danger-hover: var(--_NS_-danger-300);
-  --_NS_-text-danger: var(--_NS_-danger-400);
-  --_NS_-text-on-danger: var(--_NS_-neutral-950);
-  --_NS_-bg-danger-soft: color-mix(in oklab, var(--_NS_-danger-500) 16%, transparent);
-  --_NS_-bg-danger-soft-hover: color-mix(in oklab, var(--_NS_-danger-500) 26%, transparent);
-  --_NS_-border-danger: var(--_NS_-danger-400);
-  --_NS_-bg-warning: var(--_NS_-warning-400);
-  --_NS_-bg-warning-hover: var(--_NS_-warning-300);
-  --_NS_-text-warning: var(--_NS_-warning-400);
-  --_NS_-text-on-warning: var(--_NS_-neutral-950);
-  --_NS_-bg-warning-soft: color-mix(in oklab, var(--_NS_-warning-500) 16%, transparent);
-  --_NS_-bg-warning-soft-hover: color-mix(in oklab, var(--_NS_-warning-500) 26%, transparent);
-  --_NS_-border-warning: var(--_NS_-warning-400);
-  --_NS_-bg-info: var(--_NS_-info-400);
-  --_NS_-bg-info-hover: var(--_NS_-info-300);
-  --_NS_-text-info: var(--_NS_-info-400);
-  --_NS_-text-on-info: var(--_NS_-neutral-950);
-  --_NS_-bg-info-soft: color-mix(in oklab, var(--_NS_-info-500) 16%, transparent);
-  --_NS_-bg-info-soft-hover: color-mix(in oklab, var(--_NS_-info-500) 26%, transparent);
-  --_NS_-border-info: var(--_NS_-info-400);
-  --_NS_-bg-success: var(--_NS_-success-400);
-  --_NS_-bg-success-hover: var(--_NS_-success-300);
-  --_NS_-text-success: var(--_NS_-success-400);
-  --_NS_-text-on-success: var(--_NS_-neutral-950);
-  --_NS_-bg-success-soft: color-mix(in oklab, var(--_NS_-success-500) 16%, transparent);
-  --_NS_-bg-success-soft-hover: color-mix(in oklab, var(--_NS_-success-500) 26%, transparent);
-  --_NS_-border-success: var(--_NS_-success-400);
+  --NS-bg-background: var(--NS-neutral-950);
+  --NS-bg-surface: var(--NS-neutral-950);
+  --NS-text-foreground: var(--NS-neutral-100);
+  --NS-text-muted: var(--NS-neutral-400);
+  --NS-border-default: var(--NS-neutral-800);
+  --NS-text-placeholder: var(--NS-neutral-600);
+  --NS-bg-brand: var(--NS-brand-400);
+  --NS-bg-brand-hover: var(--NS-brand-300);
+  --NS-text-brand: var(--NS-brand-400);
+  --NS-text-on-brand: var(--NS-neutral-950);
+  --NS-bg-brand-soft: color-mix(in oklab, var(--NS-brand-500) 16%, transparent);
+  --NS-bg-brand-soft-hover: color-mix(in oklab, var(--NS-brand-500) 26%, transparent);
+  --NS-border-brand: var(--NS-brand-400);
+  --NS-bg-neutral: var(--NS-neutral-200);
+  --NS-bg-neutral-hover: var(--NS-neutral-300);
+  --NS-text-neutral: var(--NS-neutral-300);
+  --NS-text-on-neutral: var(--NS-neutral-900);
+  --NS-bg-neutral-soft: color-mix(in oklab, var(--NS-neutral-500) 16%, transparent);
+  --NS-bg-neutral-soft-hover: color-mix(in oklab, var(--NS-neutral-500) 26%, transparent);
+  --NS-border-neutral: var(--NS-neutral-700);
+  --NS-bg-danger: var(--NS-danger-400);
+  --NS-bg-danger-hover: var(--NS-danger-300);
+  --NS-text-danger: var(--NS-danger-400);
+  --NS-text-on-danger: var(--NS-neutral-950);
+  --NS-bg-danger-soft: color-mix(in oklab, var(--NS-danger-500) 16%, transparent);
+  --NS-bg-danger-soft-hover: color-mix(in oklab, var(--NS-danger-500) 26%, transparent);
+  --NS-border-danger: var(--NS-danger-400);
+  --NS-bg-warning: var(--NS-warning-400);
+  --NS-bg-warning-hover: var(--NS-warning-300);
+  --NS-text-warning: var(--NS-warning-400);
+  --NS-text-on-warning: var(--NS-neutral-950);
+  --NS-bg-warning-soft: color-mix(in oklab, var(--NS-warning-500) 16%, transparent);
+  --NS-bg-warning-soft-hover: color-mix(in oklab, var(--NS-warning-500) 26%, transparent);
+  --NS-border-warning: var(--NS-warning-400);
+  --NS-bg-info: var(--NS-info-400);
+  --NS-bg-info-hover: var(--NS-info-300);
+  --NS-text-info: var(--NS-info-400);
+  --NS-text-on-info: var(--NS-neutral-950);
+  --NS-bg-info-soft: color-mix(in oklab, var(--NS-info-500) 16%, transparent);
+  --NS-bg-info-soft-hover: color-mix(in oklab, var(--NS-info-500) 26%, transparent);
+  --NS-border-info: var(--NS-info-400);
+  --NS-bg-success: var(--NS-success-400);
+  --NS-bg-success-hover: var(--NS-success-300);
+  --NS-text-success: var(--NS-success-400);
+  --NS-text-on-success: var(--NS-neutral-950);
+  --NS-bg-success-soft: color-mix(in oklab, var(--NS-success-500) 16%, transparent);
+  --NS-bg-success-soft-hover: color-mix(in oklab, var(--NS-success-500) 26%, transparent);
+  --NS-border-success: var(--NS-success-400);
+}
+
+@utility bg-backdrop {
+  @apply bg-(--NS-bg-backdrop);
 }
 
 @utility bg-background {
-  @apply bg-(--_NS_-bg-background);
+  @apply bg-(--NS-bg-background);
 }
 
 @utility bg-surface {
-  @apply bg-(--_NS_-bg-surface);
+  @apply bg-(--NS-bg-surface);
 }
 
 @utility text-foreground {
-  @apply text-(--_NS_-text-foreground);
+  @apply text-(--NS-text-foreground);
 }
 
 @utility text-muted {
-  @apply text-(--_NS_-text-muted);
+  @apply text-(--NS-text-muted);
 }
 
 @utility border-default {
-  @apply border-(--_NS_-border-default);
+  @apply border-(--NS-border-default);
 }
 
 @utility text-placeholder {
-  @apply text-(--_NS_-text-placeholder);
+  @apply text-(--NS-text-placeholder);
 }
 
 @utility bg-brand {
-  @apply bg-(--_NS_-bg-brand);
+  @apply bg-(--NS-bg-brand);
 }
 
 @utility bg-brand-hover {
-  @apply bg-(--_NS_-bg-brand-hover);
+  @apply bg-(--NS-bg-brand-hover);
 }
 
 @utility text-brand {
-  @apply text-(--_NS_-text-brand);
+  @apply text-(--NS-text-brand);
 }
 
 @utility text-on-brand {
-  @apply text-(--_NS_-text-on-brand);
+  @apply text-(--NS-text-on-brand);
 }
 
 @utility bg-brand-soft {
-  @apply bg-(--_NS_-bg-brand-soft);
+  @apply bg-(--NS-bg-brand-soft);
 }
 
 @utility bg-brand-soft-hover {
-  @apply bg-(--_NS_-bg-brand-soft-hover);
+  @apply bg-(--NS-bg-brand-soft-hover);
 }
 
 @utility border-brand {
-  @apply border-(--_NS_-border-brand);
+  @apply border-(--NS-border-brand);
 }
 
 @utility border-brand-soft {
-  @apply border-(--_NS_-border-brand-soft);
+  @apply border-(--NS-border-brand-soft);
 }
 
 @utility ring-brand {
-  @apply ring-(--_NS_-ring-brand);
+  @apply ring-(--NS-ring-brand);
 }
 
 @utility bg-neutral {
-  @apply bg-(--_NS_-bg-neutral);
+  @apply bg-(--NS-bg-neutral);
 }
 
 @utility bg-neutral-hover {
-  @apply bg-(--_NS_-bg-neutral-hover);
+  @apply bg-(--NS-bg-neutral-hover);
 }
 
 @utility text-neutral {
-  @apply text-(--_NS_-text-neutral);
+  @apply text-(--NS-text-neutral);
 }
 
 @utility text-on-neutral {
-  @apply text-(--_NS_-text-on-neutral);
+  @apply text-(--NS-text-on-neutral);
 }
 
 @utility bg-neutral-soft {
-  @apply bg-(--_NS_-bg-neutral-soft);
+  @apply bg-(--NS-bg-neutral-soft);
 }
 
 @utility bg-neutral-soft-hover {
-  @apply bg-(--_NS_-bg-neutral-soft-hover);
+  @apply bg-(--NS-bg-neutral-soft-hover);
 }
 
 @utility border-neutral {
-  @apply border-(--_NS_-border-neutral);
+  @apply border-(--NS-border-neutral);
 }
 
 @utility ring-neutral {
-  @apply ring-(--_NS_-ring-neutral);
+  @apply ring-(--NS-ring-neutral);
 }
 
 @utility bg-danger {
-  @apply bg-(--_NS_-bg-danger);
+  @apply bg-(--NS-bg-danger);
 }
 
 @utility bg-danger-hover {
-  @apply bg-(--_NS_-bg-danger-hover);
+  @apply bg-(--NS-bg-danger-hover);
 }
 
 @utility text-danger {
-  @apply text-(--_NS_-text-danger);
+  @apply text-(--NS-text-danger);
 }
 
 @utility text-on-danger {
-  @apply text-(--_NS_-text-on-danger);
+  @apply text-(--NS-text-on-danger);
 }
 
 @utility bg-danger-soft {
-  @apply bg-(--_NS_-bg-danger-soft);
+  @apply bg-(--NS-bg-danger-soft);
 }
 
 @utility bg-danger-soft-hover {
-  @apply bg-(--_NS_-bg-danger-soft-hover);
+  @apply bg-(--NS-bg-danger-soft-hover);
 }
 
 @utility border-danger {
-  @apply border-(--_NS_-border-danger);
+  @apply border-(--NS-border-danger);
 }
 
 @utility ring-danger {
-  @apply ring-(--_NS_-ring-danger);
+  @apply ring-(--NS-ring-danger);
 }
 
 @utility bg-warning {
-  @apply bg-(--_NS_-bg-warning);
+  @apply bg-(--NS-bg-warning);
 }
 
 @utility bg-warning-hover {
-  @apply bg-(--_NS_-bg-warning-hover);
+  @apply bg-(--NS-bg-warning-hover);
 }
 
 @utility text-warning {
-  @apply text-(--_NS_-text-warning);
+  @apply text-(--NS-text-warning);
 }
 
 @utility text-on-warning {
-  @apply text-(--_NS_-text-on-warning);
+  @apply text-(--NS-text-on-warning);
 }
 
 @utility bg-warning-soft {
-  @apply bg-(--_NS_-bg-warning-soft);
+  @apply bg-(--NS-bg-warning-soft);
 }
 
 @utility bg-warning-soft-hover {
-  @apply bg-(--_NS_-bg-warning-soft-hover);
+  @apply bg-(--NS-bg-warning-soft-hover);
 }
 
 @utility border-warning {
-  @apply border-(--_NS_-border-warning);
+  @apply border-(--NS-border-warning);
 }
 
 @utility ring-warning {
-  @apply ring-(--_NS_-ring-warning);
+  @apply ring-(--NS-ring-warning);
 }
 
 @utility bg-info {
-  @apply bg-(--_NS_-bg-info);
+  @apply bg-(--NS-bg-info);
 }
 
 @utility bg-info-hover {
-  @apply bg-(--_NS_-bg-info-hover);
+  @apply bg-(--NS-bg-info-hover);
 }
 
 @utility text-info {
-  @apply text-(--_NS_-text-info);
+  @apply text-(--NS-text-info);
 }
 
 @utility text-on-info {
-  @apply text-(--_NS_-text-on-info);
+  @apply text-(--NS-text-on-info);
 }
 
 @utility bg-info-soft {
-  @apply bg-(--_NS_-bg-info-soft);
+  @apply bg-(--NS-bg-info-soft);
 }
 
 @utility bg-info-soft-hover {
-  @apply bg-(--_NS_-bg-info-soft-hover);
+  @apply bg-(--NS-bg-info-soft-hover);
 }
 
 @utility border-info {
-  @apply border-(--_NS_-border-info);
+  @apply border-(--NS-border-info);
 }
 
 @utility ring-info {
-  @apply ring-(--_NS_-ring-info);
+  @apply ring-(--NS-ring-info);
 }
 
 @utility bg-success {
-  @apply bg-(--_NS_-bg-success);
+  @apply bg-(--NS-bg-success);
 }
 
 @utility bg-success-hover {
-  @apply bg-(--_NS_-bg-success-hover);
+  @apply bg-(--NS-bg-success-hover);
 }
 
 @utility text-success {
-  @apply text-(--_NS_-text-success);
+  @apply text-(--NS-text-success);
 }
 
 @utility text-on-success {
-  @apply text-(--_NS_-text-on-success);
+  @apply text-(--NS-text-on-success);
 }
 
 @utility bg-success-soft {
-  @apply bg-(--_NS_-bg-success-soft);
+  @apply bg-(--NS-bg-success-soft);
 }
 
 @utility bg-success-soft-hover {
-  @apply bg-(--_NS_-bg-success-soft-hover);
+  @apply bg-(--NS-bg-success-soft-hover);
 }
 
 @utility border-success {
-  @apply border-(--_NS_-border-success);
+  @apply border-(--NS-border-success);
 }
 
 @utility ring-success {
-  @apply ring-(--_NS_-ring-success);
+  @apply ring-(--NS-ring-success);
 }
 
 @utility type-* {
@@ -425,243 +430,243 @@
 }
 
 @utility h-xs {
-  @apply h-(--_NS_-size-xs);
+  @apply h-(--NS-size-xs);
 }
 
 @utility h-sm {
-  @apply h-(--_NS_-size-sm);
+  @apply h-(--NS-size-sm);
 }
 
 @utility h-md {
-  @apply h-(--_NS_-size-md);
+  @apply h-(--NS-size-md);
 }
 
 @utility h-lg {
-  @apply h-(--_NS_-size-lg);
+  @apply h-(--NS-size-lg);
 }
 
 @utility h-xl {
-  @apply h-(--_NS_-size-xl);
+  @apply h-(--NS-size-xl);
 }
 
 @utility size-xs {
-  @apply size-(--_NS_-size-xs);
+  @apply size-(--NS-size-xs);
 }
 
 @utility size-sm {
-  @apply size-(--_NS_-size-sm);
+  @apply size-(--NS-size-sm);
 }
 
 @utility size-md {
-  @apply size-(--_NS_-size-md);
+  @apply size-(--NS-size-md);
 }
 
 @utility size-lg {
-  @apply size-(--_NS_-size-lg);
+  @apply size-(--NS-size-lg);
 }
 
 @utility size-xl {
-  @apply size-(--_NS_-size-xl);
+  @apply size-(--NS-size-xl);
 }
 
 @utility px-xs {
-  @apply px-(--_NS_-space-xs);
+  @apply px-(--NS-space-xs);
 }
 
 @utility px-sm {
-  @apply px-(--_NS_-space-sm);
+  @apply px-(--NS-space-sm);
 }
 
 @utility px-md {
-  @apply px-(--_NS_-space-md);
+  @apply px-(--NS-space-md);
 }
 
 @utility px-lg {
-  @apply px-(--_NS_-space-lg);
+  @apply px-(--NS-space-lg);
 }
 
 @utility px-xl {
-  @apply px-(--_NS_-space-xl);
+  @apply px-(--NS-space-xl);
 }
 
 @utility py-xs {
-  @apply py-(--_NS_-space-xs);
+  @apply py-(--NS-space-xs);
 }
 
 @utility py-sm {
-  @apply py-(--_NS_-space-sm);
+  @apply py-(--NS-space-sm);
 }
 
 @utility py-md {
-  @apply py-(--_NS_-space-md);
+  @apply py-(--NS-space-md);
 }
 
 @utility py-lg {
-  @apply py-(--_NS_-space-lg);
+  @apply py-(--NS-space-lg);
 }
 
 @utility py-xl {
-  @apply py-(--_NS_-space-xl);
+  @apply py-(--NS-space-xl);
 }
 
 @utility p-xs {
-  @apply p-(--_NS_-space-xs);
+  @apply p-(--NS-space-xs);
 }
 
 @utility p-sm {
-  @apply p-(--_NS_-space-sm);
+  @apply p-(--NS-space-sm);
 }
 
 @utility p-md {
-  @apply p-(--_NS_-space-md);
+  @apply p-(--NS-space-md);
 }
 
 @utility p-lg {
-  @apply p-(--_NS_-space-lg);
+  @apply p-(--NS-space-lg);
 }
 
 @utility p-xl {
-  @apply p-(--_NS_-space-xl);
+  @apply p-(--NS-space-xl);
 }
 
 @utility pl-xs {
-  @apply pl-(--_NS_-space-xs);
+  @apply pl-(--NS-space-xs);
 }
 
 @utility pl-sm {
-  @apply pl-(--_NS_-space-sm);
+  @apply pl-(--NS-space-sm);
 }
 
 @utility pl-md {
-  @apply pl-(--_NS_-space-md);
+  @apply pl-(--NS-space-md);
 }
 
 @utility pl-lg {
-  @apply pl-(--_NS_-space-lg);
+  @apply pl-(--NS-space-lg);
 }
 
 @utility pl-xl {
-  @apply pl-(--_NS_-space-xl);
+  @apply pl-(--NS-space-xl);
 }
 
 @utility pr-xs {
-  @apply pr-(--_NS_-space-xs);
+  @apply pr-(--NS-space-xs);
 }
 
 @utility pr-sm {
-  @apply pr-(--_NS_-space-sm);
+  @apply pr-(--NS-space-sm);
 }
 
 @utility pr-md {
-  @apply pr-(--_NS_-space-md);
+  @apply pr-(--NS-space-md);
 }
 
 @utility pr-lg {
-  @apply pr-(--_NS_-space-lg);
+  @apply pr-(--NS-space-lg);
 }
 
 @utility pr-xl {
-  @apply pr-(--_NS_-space-xl);
+  @apply pr-(--NS-space-xl);
 }
 
 @utility pt-xs {
-  @apply pt-(--_NS_-space-xs);
+  @apply pt-(--NS-space-xs);
 }
 
 @utility pt-sm {
-  @apply pt-(--_NS_-space-sm);
+  @apply pt-(--NS-space-sm);
 }
 
 @utility pt-md {
-  @apply pt-(--_NS_-space-md);
+  @apply pt-(--NS-space-md);
 }
 
 @utility pt-lg {
-  @apply pt-(--_NS_-space-lg);
+  @apply pt-(--NS-space-lg);
 }
 
 @utility pt-xl {
-  @apply pt-(--_NS_-space-xl);
+  @apply pt-(--NS-space-xl);
 }
 
 @utility pb-xs {
-  @apply pb-(--_NS_-space-xs);
+  @apply pb-(--NS-space-xs);
 }
 
 @utility pb-sm {
-  @apply pb-(--_NS_-space-sm);
+  @apply pb-(--NS-space-sm);
 }
 
 @utility pb-md {
-  @apply pb-(--_NS_-space-md);
+  @apply pb-(--NS-space-md);
 }
 
 @utility pb-lg {
-  @apply pb-(--_NS_-space-lg);
+  @apply pb-(--NS-space-lg);
 }
 
 @utility pb-xl {
-  @apply pb-(--_NS_-space-xl);
+  @apply pb-(--NS-space-xl);
 }
 
 @utility gap-xs {
-  @apply gap-(--_NS_-gap-xs);
+  @apply gap-(--NS-gap-xs);
 }
 
 @utility gap-sm {
-  @apply gap-(--_NS_-gap-sm);
+  @apply gap-(--NS-gap-sm);
 }
 
 @utility gap-md {
-  @apply gap-(--_NS_-gap-md);
+  @apply gap-(--NS-gap-md);
 }
 
 @utility gap-lg {
-  @apply gap-(--_NS_-gap-lg);
+  @apply gap-(--NS-gap-lg);
 }
 
 @utility gap-xl {
-  @apply gap-(--_NS_-gap-xl);
+  @apply gap-(--NS-gap-xl);
 }
 
 @utility type-xs {
-  @apply text-(length:--_NS_-type-xs);
+  @apply text-(length:--NS-type-xs);
 }
 
 @utility type-sm {
-  @apply text-(length:--_NS_-type-sm);
+  @apply text-(length:--NS-type-sm);
 }
 
 @utility type-md {
-  @apply text-(length:--_NS_-type-md);
+  @apply text-(length:--NS-type-md);
 }
 
 @utility type-lg {
-  @apply text-(length:--_NS_-type-lg);
+  @apply text-(length:--NS-type-lg);
 }
 
 @utility type-xl {
-  @apply text-(length:--_NS_-type-xl);
+  @apply text-(length:--NS-type-xl);
 }
 
 @utility radius-xs {
-  @apply rounded-(--_NS_-radius-xs);
+  @apply rounded-(--NS-radius-xs);
 }
 
 @utility radius-sm {
-  @apply rounded-(--_NS_-radius-sm);
+  @apply rounded-(--NS-radius-sm);
 }
 
 @utility radius-md {
-  @apply rounded-(--_NS_-radius-md);
+  @apply rounded-(--NS-radius-md);
 }
 
 @utility radius-lg {
-  @apply rounded-(--_NS_-radius-lg);
+  @apply rounded-(--NS-radius-lg);
 }
 
 @utility radius-xl {
-  @apply rounded-(--_NS_-radius-xl);
+  @apply rounded-(--NS-radius-xl);
 }
 
 @utility disabled {

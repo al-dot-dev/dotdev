@@ -21,24 +21,20 @@ export const select = defineComponent({
     'type-md': 'type-md',
     'type-lg': 'type-md',
 
-    'gap-sm': 'gap-sm',
-    'gap-md': 'gap-md',
-    'gap-lg': 'gap-lg',
-
     rounded: 'radius-md',
   },
   utilities: {
-    'size-sm': 'select-type-sm select-h-sm select-pl-sm select-gap-sm',
-    'size-md': 'select-type-md select-h-md select-pl-md select-gap-md',
-    'size-lg': 'select-type-lg select-h-lg select-pl-lg select-gap-lg',
+    'size-sm': 'select-type-sm select-h-sm select-pl-sm',
+    'size-md': 'select-type-md select-h-md select-pl-md',
+    'size-lg': 'select-type-lg select-h-lg select-pl-lg',
     transition: 'transition-[background-color,opacity,border,color]',
   },
   rules: {
-    '&': 'select-transition flex min-w-50 outline-none',
+    '&': 'select-transition flex items-center min-w-50 outline-none',
 
-    '&__label': 'select-text-default outline-none h-full w-full flex items-center',
+    '&__label': 'select-text-default whitespace-nowrap truncate outline-none',
     '&__label--placeholder': 'select-text-placeholder',
-    '&__dropdown': `flex items-center justify-center aspect-square text-muted`,
+    '&__dropdown': `flex items-center justify-center h-full aspect-square text-muted ml-auto pointer-events-none`,
 
     '&--outlined, &--underlined': 'select-border-outlined',
     '&--outlined, &--soft': 'select-rounded',

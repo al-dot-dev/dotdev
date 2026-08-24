@@ -1,45 +1,41 @@
 import { onMounted, onUnmounted, type Ref, watch } from 'vue'
 
-type GlobalEventMap = {
-  window: WindowEventMap
-  document: DocumentEventMap
-}
-
-type GlobalEventOptions<T extends keyof GlobalEventMap> = {
+type GlobalEventOptions<T> = {
   target?: T
   watch?: Ref<boolean>
   immediate?: boolean
 }
 
-export function useGlobalEvent<K extends keyof DocumentEventMap>(
-  event: K,
-  handler: (event: DocumentEventMap[K]) => void,
-  options?: GlobalEventOptions<'document'>
+export function useGlobalEvent<E extends keyof DocumentEventMap>(
+  event: E,
+  handler: (event: DocumentEventMap[E]) => void,
+  options?: GlobalEventOptions<Document>,
 ): void
 
-export function useGlobalEvent<K extends keyof WindowEventMap>(
-  event: K,
-  handler: (event: WindowEventMap[K]) => void,
-  options: GlobalEventOptions<'window'>
+export function useGlobalEvent<E extends keyof WindowEventMap>(
+  event: E,
+  handler: (event: WindowEventMap[E]) => void,
+  options: GlobalEventOptions<Window>,
 ): void
 
-export function useGlobalEvent<T extends keyof GlobalEventMap, K extends keyof GlobalEventMap[T]>(
-  event: K,
-  handler: (event: GlobalEventMap[T][K]) => void,
-  options?: GlobalEventOptions<T>
-) {
-  const target = options?.target ?? 'document'
-  const targetObject = target === 'window' ? window : document
+export function useGlobalEvent<E extends keyof MediaQueryListEventMap>(
+  event: E,
+  handler: (event: MediaQueryListEventMap[E]) => void,
+  options: GlobalEventOptions<MediaQueryList>,
+): void
+
+export function useGlobalEvent(event: string, handler: any, options?: GlobalEventOptions<any>) {
+  const target = options?.target ?? document
 
   let cleanup: (() => void) | undefined
 
   const addListener = () => {
     if (cleanup) return
 
-    targetObject.addEventListener(event as string, handler as EventListener)
+    target.addEventListener(event as string, handler as EventListener)
 
     cleanup = () => {
-      targetObject.removeEventListener(event as string, handler as EventListener)
+      target.removeEventListener(event as string, handler as EventListener)
       cleanup = undefined
     }
   }

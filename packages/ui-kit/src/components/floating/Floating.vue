@@ -54,11 +54,13 @@ function toggle(event?: Event) {
   isOpen.value ? close() : open(event)
 }
 
+function outsideClose(event: MouseEvent) {
+  close()
+  emits('click-outside', event)
+}
+
 if (props.dismissable) {
-  useClickOutside([anchor, floating], (event) => {
-    close()
-    emits('click-outside', event)
-  })
+  useClickOutside([anchor, floating], outsideClose, isOpen)
 }
 
 defineExpose({
