@@ -3,11 +3,9 @@ export type * from './types/component.ts'
 export type * from './types/helpers.ts'
 export type * from './types/ui-kit.ts'
 
-/* Utils */
-export * from './utils'
-
-/* Config */
+/* Runtime */
 export * from './config'
+export * from './utils'
 
 /* Components */
 export * from './components'

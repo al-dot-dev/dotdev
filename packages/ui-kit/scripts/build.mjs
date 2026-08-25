@@ -29,9 +29,19 @@ const COMPONENTS_SRC = join(SRC, 'components')
 const THEME_SRC = resolve(PKG_DIR, '..', 'theme', 'src')
 const THEME_OUT = join(DIST, 'theme')
 
-const INFRA_UNITS = ['utils', 'config', 'composables']
+const INFRA_UNITS = readdirSync(SRC, { withFileTypes: true })
+  .filter((e) => e.isDirectory() && e.name !== 'components' && e.name !== 'types' && existsSync(join(SRC, e.name, 'index.ts')))
+  .map((e) => e.name)
 
-const EXTERNAL_RE = /^(?:vue(?:\/|$)|vue-router(?:\/|$)|@floating-ui\/|@dotdev\/)/
+const pkg = JSON.parse(readFileSync(join(PKG_DIR, 'package.json'), 'utf8'))
+const EXTERNAL_RE = new RegExp(
+  `^(?:${[...new Set([...Object.keys(pkg.peerDependencies || {}), ...Object.keys(pkg.dependencies || {}), '@dotdev/'])]
+    .map((e) => {
+      const safe = e.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+      return e.startsWith('@') ? safe : `${safe}(?:\\/|$)`
+    })
+    .join('|')})`,
+)
 
 const isExternal = (id) => !id.startsWith('.') && !id.startsWith('/') && !id.startsWith('\0') && EXTERNAL_RE.test(id)
 
@@ -115,10 +125,9 @@ async function buildInfraJs(unit) {
  */
 async function buildThemeJs() {
   const entries = Object.fromEntries([
-    ...['runtime/constants', 'runtime/resolve-template', 'runtime/create-theme'].map((p) => [
-      p,
-      join(THEME_SRC, `${p}.ts`),
-    ]),
+    ...walkFiles(join(THEME_SRC, 'runtime'))
+      .filter((f) => f.endsWith('.ts'))
+      .map((f) => [`runtime/${f.replace(/\.ts$/, '')}`, join(THEME_SRC, 'runtime', f)]),
     ...walkFiles(join(THEME_SRC, 'generated'))
       .filter((f) => f.endsWith('.ts'))
       .map((f) => [`generated/${f.replace(/\.ts$/, '')}`, join(THEME_SRC, 'generated', f)]),
@@ -151,24 +160,30 @@ async function buildThemeJs() {
 }
 
 function writeThemeBarrels() {
+  const runtimeFiles = walkFiles(join(THEME_SRC, 'runtime'))
+    .filter((f) => f.endsWith('.ts'))
+    .map((f) => f.replace(/\.ts$/, ''))
+
   writeFileSync(
     join(THEME_OUT, 'index.mjs'),
-    [`export * from './generated/index.mjs'`, `export { createTheme } from './runtime/create-theme.mjs'`].join('\n') +
+    [`export * from './generated/index.mjs'`, ...runtimeFiles.map((f) => `export * from './runtime/${f}.mjs'`)].join(
       '\n',
+    ) + '\n',
   )
   writeFileSync(
     join(THEME_OUT, 'index.d.ts'),
-    [
-      `export * from './generated/index.js'`,
-      `export { createTheme } from './runtime/create-theme.js'`,
-      `export type { DefineThemeConfig, ThemeAPI } from './runtime/create-theme.js'`,
-    ].join('\n') + '\n',
+    [`export * from './generated/index.js'`, ...runtimeFiles.map((f) => `export * from './runtime/${f}.js'`)].join(
+      '\n',
+    ) + '\n',
   )
 }
 
 /** Copy theme declarations emitted next to ui-kit's (.types/theme/src) */
 function copyThemeDts() {
-  for (const dir of ['runtime', 'generated']) {
+  const themeDirs = readdirSync(join(TYPES, 'theme', 'src'), { withFileTypes: true })
+    .filter((e) => e.isDirectory())
+    .map((e) => e.name)
+  for (const dir of themeDirs) {
     cpSync(join(TYPES, 'theme', 'src', dir), join(THEME_OUT, dir), { recursive: true })
   }
   rewriteDtsSpecifiers(THEME_OUT)
@@ -272,23 +287,52 @@ function assertInfraMirror(unit) {
 /** Phase C: root barrels; order mirrors src/index.ts */
 function writeRootBarrels(components) {
   const runtimeUnits = ['utils', 'config', ...components.map((c) => `components/${c}`), 'composables']
+  const typeExports = readdirSync(join(SRC, 'types'))
+    .filter((f) => f.endsWith('.ts'))
+    .map((f) => `export * from './types/${f.replace(/\.ts$/, '.js')}'`)
 
   writeFileSync(join(DIST, 'index.mjs'), runtimeUnits.map((u) => `export * from './${u}/index.mjs'`).join('\n') + '\n')
   writeFileSync(
     join(DIST, 'index.d.ts'),
-    [
-      `export * from './types/component.js'`,
-      `export * from './types/helpers.js'`,
-      `export * from './types/ui-kit.js'`,
-      ...runtimeUnits.map((u) => `export * from './${u}/index.js'`),
-    ].join('\n') + '\n',
+    [...typeExports, ...runtimeUnits.map((u) => `export * from './${u}/index.js'`)].join('\n') + '\n',
   )
+}
+
+/** Auto-generate src/components/index.ts from discovered components */
+function generateComponentsBarrel(components) {
+  const content = components.sort().map((c) => `export * from './${c}'`).join('\n') + '\n'
+  writeFileSync(join(COMPONENTS_SRC, 'index.ts'), content)
+}
+
+/** Auto-generate src/index.ts with type + runtime exports */
+function generateIndexBarrel(infraUnits) {
+  const typeExports = readdirSync(join(SRC, 'types'))
+    .filter((f) => f.endsWith('.ts'))
+    .map((f) => `export type * from './types/${f}'`)
+
+  const infraExports = infraUnits.filter((u) => u !== 'composables').map((u) => `export * from './${u}'`)
+
+  const lines = [
+    '/* Types */',
+    ...typeExports,
+    '',
+    '/* Runtime */',
+    ...infraExports,
+    '',
+    '/* Components */',
+    `export * from './components'`,
+    `export * from './composables'`,
+  ]
+
+  writeFileSync(join(SRC, 'index.ts'), lines.join('\n') + '\n')
 }
 
 async function main() {
   const t0 = performance.now()
   const units = discoverUnits()
 
+  generateComponentsBarrel(units)
+  generateIndexBarrel(INFRA_UNITS)
   console.log(`ui-kit build: ${units.length} components + ${INFRA_UNITS.join(', ')} + types`)
   rmSync(DIST, { recursive: true, force: true })
   rmSync(TYPES, { recursive: true, force: true })
