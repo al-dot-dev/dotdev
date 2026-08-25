@@ -12,11 +12,10 @@ export interface UIRadioEmits {}
 
 export type UIRadioSize = UiKitOverride<UiKitSize, 'radioSize'>
 
-interface UiKitRadioVariants {
+export interface UiKitRadioVariants {
   outlined: true
   soft: true
 }
-type UiKitRadioVariantDefault = keyof UiKitRadioVariants | (string & {})
-export type UIRadioVariant = UiKitOverride<UiKitRadioVariantDefault, 'radioVariant'>
+export type UIRadioVariant = UiKitOverride<keyof UiKitRadioVariants, 'radioVariant'>
 
 declare const Radio: DefineComponent<UIRadioProps, UIRadioSlots, EmitFn<UIRadioEmits>>

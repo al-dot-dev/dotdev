@@ -28,14 +28,12 @@ export interface UITabsSlots<T> {
   panel?(props: UITabsSlotScope<T>): VNode[]
 }
 
-interface UITabsVariants {
+export interface UITabsVariants {
   underlined: true
   soft: true
   outlined: true
 }
 
-type UITabsVariantDefault = keyof UITabsVariants | (string & {})
-
-export type UITabsVariant = UiKitOverride<UITabsVariantDefault, 'tabsVariant'>
+export type UITabsVariant = UiKitOverride<keyof UITabsVariants, 'tabsVariant'>
 
 declare const Tabs: DefineComponent<UITabsProps, UITabsSlots<any>, EmitFn<UITabsEmits>>

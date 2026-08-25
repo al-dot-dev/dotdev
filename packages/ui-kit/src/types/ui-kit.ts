@@ -1,6 +1,5 @@
 export interface UiKitRegister {}
 
-// type OpenKeys<T> = keyof T | (string & {})
 export type UiKitOverride<T, K extends string> = K extends keyof UiKitRegister ? UiKitRegister[K] : T
 
 export interface UiKitBaseProps {
@@ -8,25 +7,22 @@ export interface UiKitBaseProps {
   ui?: string
 }
 
-interface UiKitIcons {}
-type UiKitIconDefault = keyof UiKitIcons
-export type UiKitIcon = keyof UiKitOverride<UiKitIconDefault, 'icons'>
+export interface UiKitIcons {}
+export type UiKitIcon = keyof UiKitOverride<keyof UiKitIcons, 'icons'>
 
-interface UiKitNamespaces {
+export interface UiKitNamespaces {
   d: true
 }
-type UiKitNamespaceDefault = keyof UiKitNamespaces | (string & {})
-export type UiKitNamespace = UiKitOverride<UiKitNamespaceDefault, 'namespace'>
+export type UiKitNamespace = UiKitOverride<keyof UiKitNamespaces, 'namespace'>
 
-interface UiKitSizes {
+export interface UiKitSizes {
   sm: true
   md: true
   lg: true
 }
-type UiKitSizeDefault = keyof UiKitSizes | (string & {})
-export type UiKitSize = UiKitOverride<UiKitSizeDefault, 'size'>
+export type UiKitSize = UiKitOverride<keyof UiKitSizes, 'size'>
 
-interface UiKitColors {
+export interface UiKitColors {
   primary: true
   neutral: true
   warning: true
@@ -34,14 +30,12 @@ interface UiKitColors {
   danger: true
   info: true
 }
-type UiKitColorDefault = keyof UiKitColors | (string & {})
-export type UiKitColor = UiKitOverride<UiKitColorDefault, 'color'>
+export type UiKitColor = UiKitOverride<keyof UiKitColors, 'color'>
 
-interface UiKitFieldVariants {
+export interface UiKitFieldVariants {
   outlined: true
   soft: true
   underlined: true
   plain: true
 }
-type UiKitFieldVariantDefault = keyof UiKitFieldVariants | (string & {})
-export type UiKitFieldVariant = UiKitOverride<UiKitFieldVariantDefault, 'fieldVariant'>
+export type UiKitFieldVariant = UiKitOverride<keyof UiKitFieldVariants, 'fieldVariant'>

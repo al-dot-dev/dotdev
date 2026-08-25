@@ -12,11 +12,10 @@ export interface UICheckboxEmits {}
 
 export type UICheckboxSize = UiKitOverride<UiKitSize, 'checkboxSize'>
 
-interface UiKitCheckboxVariants {
+export interface UiKitCheckboxVariants {
   outlined: true
   soft: true
 }
-type UiKitCheckboxVariantDefault = keyof UiKitCheckboxVariants | (string & {})
-export type UICheckboxVariant = UiKitOverride<UiKitCheckboxVariantDefault, 'checkboxVariant'>
+export type UICheckboxVariant = UiKitOverride<keyof UiKitCheckboxVariants, 'checkboxVariant'>
 
 declare const Checkbox: DefineComponent<UICheckboxProps, UICheckboxSlots, EmitFn<UICheckboxEmits>>

@@ -42,13 +42,12 @@ export interface UIListBoxExpose {
 
 export type UIListBoxSize = UiKitOverride<UiKitSize, 'listBoxSize'>
 
-interface UiKitListBoxVariants {
+export interface UiKitListBoxVariants {
   outlined: true
   soft: true
   plain: true
 }
-type UiKitListBoxVariantDefault = keyof UiKitListBoxVariants | (string & {})
-export type UIListBoxVariant = UiKitOverride<UiKitListBoxVariantDefault, 'listBoxVariant'>
+export type UIListBoxVariant = UiKitOverride<keyof UiKitListBoxVariants, 'listBoxVariant'>
 
 export interface UIListBoxItemProps {
   label: string

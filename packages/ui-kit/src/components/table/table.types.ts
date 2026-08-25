@@ -45,7 +45,7 @@ type UITableHeaderSlot<T extends UITableData> = {
 
 type StringKey<T> = Extract<keyof T, string>
 
-interface UiKitTableBorders {
+export interface UiKitTableBorders {
   none: true
   rows: true
   columns: true

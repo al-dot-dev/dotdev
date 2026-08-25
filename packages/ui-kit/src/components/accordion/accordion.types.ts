@@ -23,9 +23,8 @@ export interface UIAccordionSlots<T> {
 
 export interface UIAccordionEmits {}
 
-export type UIAccordionVariant = UiKitOverride<UIAccordionVariantDefault, 'accordionVariant'>
-type UIAccordionVariantDefault = keyof UIAccordionVariants | (string & {})
-interface UIAccordionVariants {
+export type UIAccordionVariant = UiKitOverride<keyof UIAccordionVariants, 'accordionVariant'>
+export interface UIAccordionVariants {
   outlined: true
   soft: true
   plain: true

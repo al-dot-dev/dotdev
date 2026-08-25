@@ -23,12 +23,11 @@ export interface UISelectButtonSlotScope<T> {
   index: number
 }
 
-interface UiSelectButtonVariants {
+export interface UiSelectButtonVariants {
   outlined: true
   soft: true
   plain: true
 }
-type UiSelectButtonVariantDefault = keyof UiSelectButtonVariants | (string & {})
-export type UiSelectButtonVariant = UiKitOverride<UiSelectButtonVariantDefault, 'selectButtonVariant'>
+export type UiSelectButtonVariant = UiKitOverride<keyof UiSelectButtonVariants, 'selectButtonVariant'>
 
 declare const SelectButton: DefineComponent<UISelectButtonProps, UISelectButtonSlots, EmitFn<UISelectButtonEmits>>

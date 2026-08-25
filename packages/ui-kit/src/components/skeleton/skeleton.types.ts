@@ -19,9 +19,8 @@ export interface UISkeletonEmits {}
 
 export type UISkeletonElement = keyof HTMLElementTagNameMap
 
-export type UISkeletonVariant = UiKitOverride<UISkeletonVariantDefault, 'skeletonVariant'>
-type UISkeletonVariantDefault = keyof UISkeletonVariants | (string & {})
-interface UISkeletonVariants {
+export type UISkeletonVariant = UiKitOverride<keyof UISkeletonVariants, 'skeletonVariant'>
+export interface UISkeletonVariants {
   pulse: true
   static: true
 }

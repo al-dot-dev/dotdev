@@ -21,9 +21,8 @@ export type UIDividerOrientation = 'horizontal' | 'vertical'
 
 export type UIDividerColor = UiKitOverride<UiKitColor, 'dividerColor'>
 
-export type UIDividerVariant = UiKitOverride<UIDividerVariantDefault, 'dividerVariant'>
-type UIDividerVariantDefault = keyof UIDividerVariants | (string & {})
-interface UIDividerVariants {
+export type UIDividerVariant = UiKitOverride<keyof UIDividerVariants, 'dividerVariant'>
+export interface UIDividerVariants {
   solid: true
   dashed: true
   dotted: true

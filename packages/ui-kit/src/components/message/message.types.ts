@@ -25,9 +25,8 @@ export type UIMessageElement = keyof HTMLElementTagNameMap | Component
 
 export type UIMessageColor = UiKitOverride<UiKitColor, 'messageColor'>
 
-export type UIMessageVariant = UiKitOverride<UIMessageVariantDefault, 'messageVariant'>
-type UIMessageVariantDefault = keyof UIMessageVariants | (string & {})
-interface UIMessageVariants {
+export type UIMessageVariant = UiKitOverride<keyof UIMessageVariants, 'messageVariant'>
+export interface UIMessageVariants {
   soft: true
   plain: true
 }

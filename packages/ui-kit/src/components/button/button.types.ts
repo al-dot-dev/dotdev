@@ -37,9 +37,8 @@ export type UIButtonSize = UiKitOverride<UiKitSize, 'buttonSize'>
 
 export type UIButtonColor = UiKitOverride<UiKitColor, 'buttonColor'>
 
-export type UIButtonVariant = UiKitOverride<UiKitButtonVariant, 'buttonVariant'>
-type UiKitButtonVariant = keyof UiKitButtonVariants | (string & {})
-interface UiKitButtonVariants {
+export type UIButtonVariant = UiKitOverride<keyof UiKitButtonVariants, 'buttonVariant'>
+export interface UiKitButtonVariants {
   solid: true
   outlined: true
   ghost: true

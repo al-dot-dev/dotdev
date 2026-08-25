@@ -7,12 +7,11 @@ export interface UISwitchProps extends UiKitBaseProps {
   variant?: UISwitchVariant
 }
 
-interface UiKitSwitchVariants {
+export interface UiKitSwitchVariants {
   outlined: true
   soft: true
 }
-type UiKitSwitchVariantDefault = keyof UiKitSwitchVariants | (string & {})
-export type UISwitchVariant = UiKitOverride<UiKitSwitchVariantDefault, 'switchVariant'>
+export type UISwitchVariant = UiKitOverride<keyof UiKitSwitchVariants, 'switchVariant'>
 
 export interface UISwitchSlots {
   default(): VNode[]

@@ -31,9 +31,8 @@ export interface UITagEmits {}
 
 export type UITagColor = UiKitOverride<UiKitColor, 'tagColor'>
 
-export type UITagVariant = UiKitOverride<UiKitTagVariant, 'tagVariant'>
-type UiKitTagVariant = keyof UiKitTagVariants | (string & {})
-interface UiKitTagVariants {
+export type UITagVariant = UiKitOverride<keyof UiKitTagVariants, 'tagVariant'>
+export interface UiKitTagVariants {
   soft: true
   solid: true
   plain: true

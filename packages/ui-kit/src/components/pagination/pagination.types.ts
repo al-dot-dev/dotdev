@@ -21,12 +21,11 @@ export interface UIPaginationEmits {
   change: [page: number]
 }
 
-interface UiKitPaginationSizes {
+export interface UiKitPaginationSizes {
   sm: true
   md: true
   lg: true
 }
-type UiKitPaginationSizeDefault = keyof UiKitPaginationSizes | (string & {})
-export type UIPaginationSize = UiKitOverride<UiKitPaginationSizeDefault, 'paginationSize'>
+export type UIPaginationSize = UiKitOverride<keyof UiKitPaginationSizes, 'paginationSize'>
 
 declare const Pagination: DefineComponent<UIPaginationProps, UIPaginationSlots, EmitFn<UIPaginationEmits>>

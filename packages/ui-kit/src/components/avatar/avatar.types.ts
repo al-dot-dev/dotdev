@@ -21,9 +21,8 @@ export interface UIAvatarEmits {}
 
 export type UIAvatarColor = UiKitOverride<UiKitColor, 'avatarColor'>
 
-export type UIAvatarVariant = UiKitOverride<UiKitAvatarVariant, 'avatarVariant'>
-type UiKitAvatarVariant = keyof UiKitAvatarVariants | (string & {})
-interface UiKitAvatarVariants {
+export type UIAvatarVariant = UiKitOverride<keyof UiKitAvatarVariants, 'avatarVariant'>
+export interface UiKitAvatarVariants {
   soft: true
   solid: true
 }
