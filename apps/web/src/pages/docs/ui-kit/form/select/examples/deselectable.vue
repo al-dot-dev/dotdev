@@ -8,6 +8,6 @@ const options = ['Berlin', 'London', 'Paris', 'Tokyo', 'New York']
 </script>
 
 <template>
-  <Select v-model="value" :options="options" deselectable placeholder="Choose a city" />
-  <Select v-model="valueList" :options="options" deselectable multiple placeholder="Choose cities" />
+  <Select v-model="value" :items="options" deselectable placeholder="Choose a city" />
+  <Select v-model="valueList" :items="options" deselectable multiple placeholder="Choose cities" />
 </template>

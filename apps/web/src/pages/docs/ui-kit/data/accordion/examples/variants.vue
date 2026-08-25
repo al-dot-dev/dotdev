@@ -10,9 +10,9 @@ const items = [
 
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start w-full">
-    <Accordion :options="items" label-key="label" value-key="value" variant="outlined" />
-    <Accordion :options="items" label-key="label" value-key="value" variant="soft" />
-    <Accordion :options="items" label-key="label" value-key="value" variant="underline" />
-    <Accordion :options="items" label-key="label" value-key="value" variant="plain" />
+    <Accordion :items="items" label-key="label" value-key="value" variant="outlined" />
+    <Accordion :items="items" label-key="label" value-key="value" variant="soft" />
+    <Accordion :items="items" label-key="label" value-key="value" variant="underline" />
+    <Accordion :items="items" label-key="label" value-key="value" variant="plain" />
   </div>
 </template>

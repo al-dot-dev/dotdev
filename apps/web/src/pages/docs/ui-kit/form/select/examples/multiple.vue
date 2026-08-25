@@ -7,5 +7,5 @@ const options = ['Berlin', 'London', 'Paris', 'Tokyo', 'New York']
 </script>
 
 <template>
-  <Select v-model="value" :options="options" multiple placeholder="Choose cities" />
+  <Select v-model="value" :items="options" multiple placeholder="Choose cities" />
 </template>

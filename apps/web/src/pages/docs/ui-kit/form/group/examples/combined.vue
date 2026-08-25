@@ -33,7 +33,7 @@ const options = [
 
       <Group>
         <GroupAddon label="Select" />
-        <Select :options="options" placeholder="Choose" />
+        <Select :items="options" placeholder="Choose" />
       </Group>
     </Group>
   </div>

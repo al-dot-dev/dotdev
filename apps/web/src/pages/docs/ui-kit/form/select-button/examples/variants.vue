@@ -7,7 +7,7 @@ const options = ['Berlin', 'London', 'Paris', 'Tokyo', 'New York']
 </script>
 
 <template>
-  <SelectButton v-model="value" :options="options" variant="soft" />
-  <SelectButton v-model="value" :options="options" variant="outlined" />
-  <SelectButton v-model="value" :options="options" variant="plain" />
+  <SelectButton v-model="value" :items="options" variant="soft" />
+  <SelectButton v-model="value" :items="options" variant="outlined" />
+  <SelectButton v-model="value" :items="options" variant="plain" />
 </template>

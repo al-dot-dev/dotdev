@@ -15,7 +15,7 @@ const modifierOptions: UiKitIcon[] = ['font-bold', 'font-italic', 'underline', '
     <SelectButton
       v-model="alignment"
       #default="{ option }"
-      :options="alignOptions"
+      :items="alignOptions"
       class="-mx-px"
       square
       variant="outlined"
@@ -25,7 +25,7 @@ const modifierOptions: UiKitIcon[] = ['font-bold', 'font-italic', 'underline', '
     <SelectButton
       v-model="modifiers"
       #default="{ option }"
-      :options="modifierOptions"
+      :items="modifierOptions"
       deselectable
       multiple
       square
@@ -37,13 +37,13 @@ const modifierOptions: UiKitIcon[] = ['font-bold', 'font-italic', 'underline', '
 
   <Group>
     <Input class="w-30" placeholder="Font size" variant="soft" />
-    <SelectButton v-model="alignment" #default="{ option }" :options="alignOptions" square variant="soft">
+    <SelectButton v-model="alignment" #default="{ option }" :items="alignOptions" square variant="soft">
       <Icon :name="option" />
     </SelectButton>
     <SelectButton
       v-model="modifiers"
       #default="{ option }"
-      :options="modifierOptions"
+      :items="modifierOptions"
       deselectable
       multiple
       square

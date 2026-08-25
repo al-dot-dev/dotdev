@@ -33,7 +33,7 @@ const value = ref(items[0])
   <Accordion
     v-model="value"
     :option-disabled="(option) => !!option.disabled"
-    :options="items"
+    :items="items"
     label-key="label"
     value-key="value"
   />

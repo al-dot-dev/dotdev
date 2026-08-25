@@ -18,5 +18,5 @@ const options: City[] = [
 </script>
 
 <template>
-  <ListBox v-model="value" :options="options" class="w-3xs" label-key="name" value-key="id" />
+  <ListBox v-model="value" :items="options" class="w-3xs" label-key="name" value-key="id" />
 </template>

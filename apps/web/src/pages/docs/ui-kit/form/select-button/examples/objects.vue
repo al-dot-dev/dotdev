@@ -16,5 +16,5 @@ const options: City[] = [
 </script>
 
 <template>
-  <SelectButton v-model="value" :options="options" label-key="name" value-key="id" />
+  <SelectButton v-model="value" :items="options" label-key="name" value-key="id" />
 </template>

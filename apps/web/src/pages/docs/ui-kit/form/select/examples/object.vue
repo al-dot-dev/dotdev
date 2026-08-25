@@ -18,5 +18,5 @@ const options: City[] = [
 </script>
 
 <template>
-  <Select v-model="value" :options="options" label-key="name" value-key="id" placeholder="Choose a city" />
+  <Select v-model="value" :items="options" label-key="name" value-key="id" placeholder="Choose a city" />
 </template>

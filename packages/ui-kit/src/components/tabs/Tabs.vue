@@ -1,5 +1,5 @@
 <script generic="T, L extends keyof T, V extends keyof T" lang="ts" setup>
-import type { UITabsEmits, UITabsProps, UITabsSlotScope, UITabsSlots } from './tabs.types.ts'
+import type { UITabsEmits, UITabsProps, UITabsSlots, UITabsSlotScope } from './tabs.types.ts'
 import { computed, ref, useId, watch } from 'vue'
 import { useArrayModel, useKeyboardNavigation, useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
 import { tabsStyle } from '@dotdev/theme'
@@ -24,8 +24,10 @@ const id = useId()
 
 const listRef = ref<HTMLElement | null>(null)
 
-const { isSelected, select, findSelectedIndex } = useArrayModel<T>(model, {
+const { isSelected, select, findSelectedIndex, getItemLabel, getItemValue, isItemDisabled } = useArrayModel<T>(model, {
   valueKey: ui.valueKey,
+  labelKey: ui.labelKey,
+  optionDisabled: () => ui.optionDisabled,
 })
 
 const nav = useKeyboardNavigation(() => props.options, {
@@ -50,28 +52,13 @@ watch(
   },
 )
 
-function getLabel(option: T) {
-  if (option !== null && typeof option === 'object' && ui.labelKey) return String(option[ui.labelKey])
-  return String(option)
-}
-
-function getValue(option: T) {
-  if (option !== null && typeof option === 'object' && ui.valueKey) return String(option[ui.valueKey])
-  return String(option)
-}
-
-function isItemDisabled(option: T) {
-  if (ui.disabled) return true
-  return Boolean(ui.optionDisabled?.(option))
-}
-
 function scope(option: T, index: number): UITabsSlotScope<T> {
   return {
     option,
     index,
     selected: isSelected(option),
-    label: getLabel(option),
-    value: getValue(option),
+    label: getItemLabel(option),
+    value: getItemValue(option),
   }
 }
 
@@ -117,7 +104,7 @@ const rootClass = computed(() => bem([ui.size, ui.variant]))
         @click="onSelect(option, idx)"
         @keydown="onKeydown"
       >
-        <slot name="item" v-bind="scope(option, idx)">{{ getLabel(option) }}</slot>
+        <slot name="item" v-bind="scope(option, idx)">{{ getItemLabel(option) }}</slot>
       </button>
     </div>
 

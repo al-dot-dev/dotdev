@@ -47,7 +47,7 @@ const iterate = computed(() => {
 <template>
   <DocCard :class="{ 'play--full': isFullScreen }">
     <template #header>
-      <SelectButton v-model="store.activeVariant" :options="store.variantOptions" label-key="label" value-key="value" />
+      <SelectButton v-model="store.activeVariant" :items="store.variantOptions" label-key="label" value-key="value" />
 
       <div class="play__group">
         <IconButton icon="enter-full-screen" @click="isFullScreen = !isFullScreen" />
@@ -63,7 +63,7 @@ const iterate = computed(() => {
     <template v-if="isOpenMeta" #footer>
       <div class="play__controls">
         <div class="play__controls-header">
-          <SelectButton v-model="activeControl" :options="controls" size="sm" />
+          <SelectButton v-model="activeControl" :items="controls" size="sm" />
         </div>
 
         <PlaySlots v-if="activeControl === 'Slots'" :meta="manifest.meta" />

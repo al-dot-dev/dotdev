@@ -7,6 +7,6 @@ const options = ['Berlin', 'London', 'Paris', 'Tokyo', 'New York']
 </script>
 
 <template>
-  <SelectButton v-model="value" :options="options" disabled />
-  <SelectButton v-model="value" :options="options" :option-disabled="(option: string) => option === 'Paris'" />
+  <SelectButton v-model="value" :items="options" disabled />
+  <SelectButton v-model="value" :items="options" :option-disabled="(option: string) => option === 'Paris'" />
 </template>

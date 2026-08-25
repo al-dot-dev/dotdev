@@ -21,7 +21,7 @@ const options = computed(() => props.meta.options?.map((o) => o.value) ?? [])
       v-if="meta.controlType === 'select' && options.length < 10"
       v-model="model[meta.name]"
       :deselectable="!meta.required"
-      :options="options"
+      :items="options"
       size="sm"
     />
 
@@ -29,7 +29,7 @@ const options = computed(() => props.meta.options?.map((o) => o.value) ?? [])
       v-if="meta.controlType === 'select' && options.length >= 10"
       v-model="model[meta.name]"
       :deselectable="!meta.required"
-      :options="options"
+      :items="options"
       :placeholder="`Select ${meta.name}`"
       size="sm"
     />

@@ -280,9 +280,9 @@ const demoCheck = ref(true)
 
         <div class="landing__demo-stage">
           <div class="landing__demo-controls">
-            <SelectButton v-model="pgVariant" :options="['soft', 'outlined', 'solid']" size="sm" />
-            <SelectButton v-model="pgColor" :options="['primary', 'neutral', 'success', 'danger']" size="sm" />
-            <SelectButton v-model="pgSize" :options="['sm', 'md', 'lg']" size="sm" />
+            <SelectButton v-model="pgVariant" :items="['soft', 'outlined', 'solid']" size="sm" />
+            <SelectButton v-model="pgColor" :items="['primary', 'neutral', 'success', 'danger']" size="sm" />
+            <SelectButton v-model="pgSize" :items="['sm', 'md', 'lg']" size="sm" />
           </div>
 
           <div class="landing__demo-output">
@@ -419,7 +419,7 @@ const demoCheck = ref(true)
           <div class="landing__gallery-stage landing__gallery-stage--fields">
             <Input placeholder="Email address" variant="outlined" />
             <Textarea placeholder="Message" />
-            <Select v-model="city" :options="['Berlin', 'London', 'Paris', 'Tokyo']" placeholder="City" />
+            <Select v-model="city" :items="['Berlin', 'London', 'Paris', 'Tokyo']" placeholder="City" />
           </div>
         </article>
 
@@ -445,7 +445,7 @@ const demoCheck = ref(true)
               <Switch v-model="publicProfile" />
               Public profile
             </label>
-            <SelectButton v-model="tab" :options="['Day', 'Week', 'Month']" size="sm" />
+            <SelectButton v-model="tab" :items="['Day', 'Week', 'Month']" size="sm" />
           </div>
         </article>
 

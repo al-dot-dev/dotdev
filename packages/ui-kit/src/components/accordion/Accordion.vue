@@ -1,5 +1,5 @@
 <script generic="T, L extends keyof T, V extends keyof T, M extends boolean" lang="ts" setup>
-import type { UIAccordionEmits, UIAccordionProps, UIAccordionSlots } from './accordion.types'
+import type { UIAccordionEmits, UIAccordionProps, UIAccordionSlots } from './accordion.types.ts'
 import { computed, useId } from 'vue'
 import {
   asTemplateRef,
@@ -20,7 +20,7 @@ defineSlots<UIAccordionSlots<T>>()
 const props = withDefaults(defineProps<UIAccordionProps<T, L, V, M>>(), {
   ui: 'accordion',
   variant: 'outlined',
-  options: () => [],
+  items: () => [],
   deselectable: true,
 })
 
@@ -31,10 +31,12 @@ const bem = useUiKitBem(ui)
 useUiKitTheme(ui, accordionStyle)
 const id = useId()
 
-const { toggle, isSelected } = useArrayModel<T>(model, {
+const { toggle, isSelected, getItemLabel, getItemValue, isItemDisabled } = useArrayModel<T>(model, {
   multiple: () => normalizeBooleanProp(ui.multiple),
   deselectable: () => ui.deselectable,
   valueKey: ui.valueKey,
+  labelKey: ui.labelKey,
+  optionDisabled: () => ui.optionDisabled,
 })
 
 const rootClass = computed(() => bem([ui.variant], { disabled: ui.disabled }))
@@ -43,29 +45,13 @@ function getItemId(index: number, part: 'trigger' | 'panel') {
   return `${id}-${part}-${index}`
 }
 
-function getItemLabel(item: T) {
-  if (item !== null && typeof item === 'object' && ui.labelKey) return String(item[ui.labelKey])
-  return String(item)
-}
-
-function getItemValue(item: T) {
-  if (item !== null && typeof item === 'object' && ui.valueKey) return String(item[ui.valueKey])
-  return String(item)
-}
-
-function isItemDisabled(item: T) {
-  if (ui.disabled) return true
-  if (ui.optionDisabled) return Boolean(ui.optionDisabled(item))
-  return false
-}
-
 const uit = asTemplateRef(ui)
 </script>
 
 <template>
   <div :class="rootClass">
     <Scope
-      v-for="(option, idx) in uit.options"
+      v-for="(option, idx) in uit.items"
       :key="idx"
       #default="scope"
       :scope="{

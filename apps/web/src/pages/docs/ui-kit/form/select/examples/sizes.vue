@@ -8,8 +8,8 @@ const options = ['Berlin', 'London', 'Paris', 'Tokyo', 'New York']
 
 <template>
   <div class="flex flex-col gap-4">
-    <Select v-model="value" :options="options" placeholder="Size sm" size="sm" />
-    <Select v-model="value" :options="options" placeholder="Size md" size="md" />
-    <Select v-model="value" :options="options" placeholder="Size lg" size="lg" />
+    <Select v-model="value" :items="options" placeholder="Size sm" size="sm" />
+    <Select v-model="value" :items="options" placeholder="Size md" size="md" />
+    <Select v-model="value" :items="options" placeholder="Size lg" size="lg" />
   </div>
 </template>

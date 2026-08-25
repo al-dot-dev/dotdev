@@ -36,7 +36,7 @@ const isGridVisible = ref(false)
           v-if="tabs.length > 1"
           v-model="activeTab"
           #default="{ label }"
-          :options="tabs"
+          :items="tabs"
           variant="outlined"
         >
           <span class="font-mono">{{ label }}</span>
@@ -71,7 +71,7 @@ const isGridVisible = ref(false)
             v-if="showFiles"
             v-model="activeFileName"
             #default="{ label }"
-            :options="files"
+            :items="files"
             class="doc-example__code-toggle"
             size="sm"
             variant="soft"

@@ -29,7 +29,7 @@ function updateValue(valueString: string) {
       v-model="value"
       :checkmark="false"
       :columns="6"
-      :options="options"
+      :items="options"
       class="h-53 overflow-y-auto text-2xl!"
       deselectable
       multiple

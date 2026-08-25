@@ -7,7 +7,7 @@ const options = ['Berlin', 'London', 'Paris', 'Tokyo', 'New York']
 </script>
 
 <template>
-  <ListBox v-model="value" :options="options" checkmark="right" class="w-40" size="sm" />
-  <ListBox v-model="value" :options="options" checkmark="right" class="w-40" size="md" />
-  <ListBox v-model="value" :options="options" checkmark="right" class="w-40" size="lg" />
+  <ListBox v-model="value" :items="options" checkmark="right" class="w-40" size="sm" />
+  <ListBox v-model="value" :items="options" checkmark="right" class="w-40" size="md" />
+  <ListBox v-model="value" :items="options" checkmark="right" class="w-40" size="lg" />
 </template>

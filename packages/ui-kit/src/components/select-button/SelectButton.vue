@@ -8,7 +8,7 @@ defineEmits<UISelectButtonEmits>()
 defineSlots<UISelectButtonSlots<T>>()
 const props = withDefaults(defineProps<UISelectButtonProps<T, L, V, M>>(), {
   ui: 'select-button',
-  options: () => [],
+  items: () => [],
   square: false,
   disabled: false,
   deselectable: false,
@@ -20,10 +20,12 @@ const model = defineModel<M extends true ? T[] : T | undefined>()
 
 const ui = useUiKitProps('select-button', props)
 
-const { toggle, isSelected } = useArrayModel<T>(model, {
+const { toggle, isSelected, getItemLabel, isItemDisabled } = useArrayModel<T>(model, {
   multiple: () => normalizeBooleanProp(ui.multiple),
   deselectable: () => ui.deselectable,
   valueKey: ui.valueKey,
+  labelKey: ui.labelKey,
+  optionDisabled: () => ui.optionDisabled,
 })
 
 const bem = useUiKitBem(ui)
@@ -40,7 +42,7 @@ function optionBindings(option: T) {
   return {
     class: bem('item', { selected }),
     ariaPressed: selected,
-    disabled: ui.disabled || ui.optionDisabled?.(option),
+    disabled: ui.disabled || isItemDisabled(option),
   }
 }
 
@@ -50,23 +52,19 @@ function getOptionKey(option: T, index: number) {
   }
   return typeof option === 'object' ? index : String(option)
 }
-
-function getOptionLabel(option: T) {
-  return String(ui.labelKey ? option[ui.labelKey] : option)
-}
 </script>
 
 <template>
   <div :class="rootClass" role="group">
     <button
-      v-for="(option, idx) in options"
+      v-for="(option, idx) in items"
       :key="getOptionKey(option, idx)"
       type="button"
       v-bind="optionBindings(option)"
       @click="toggle(option)"
     >
-      <slot :index="idx" :label="getOptionLabel(option)" :option="option" :selected="isSelected(option)">
-        {{ getOptionLabel(option) }}
+      <slot :index="idx" :label="getItemLabel(option)" :option="option" :selected="isSelected(option)">
+        {{ getItemLabel(option) }}
       </slot>
     </button>
   </div>

@@ -31,7 +31,7 @@ export function useListBoxFilter<T>(options: MaybeRefOrGetter<T[]>, filter?: (op
     },
     listboxBindings: computed(() => ({
       ref: listbox,
-      options: filteredOptions.value,
+      items: filteredOptions.value,
       typeahead: !isFocused.value,
     })),
   }

@@ -1,7 +1,7 @@
 import { type MaybeRefOrGetter, type Ref, toValue } from 'vue'
 
 export interface ArrayModelConfig<T, L, V, M> {
-  options: T[]
+  items: T[]
   labelKey?: L
   valueKey?: V
   multiple?: M
@@ -12,12 +12,14 @@ export interface ArrayModelConfig<T, L, V, M> {
 
 export interface ArrayModelOptions<T> {
   valueKey?: MaybeRefOrGetter<keyof T | undefined>
+  labelKey?: MaybeRefOrGetter<keyof T | undefined>
   multiple?: MaybeRefOrGetter<boolean>
   deselectable?: MaybeRefOrGetter<boolean>
+  optionDisabled?: MaybeRefOrGetter<((option: T) => boolean) | undefined>
 }
 
 export function useArrayModel<T>(model: Ref<T[] | T | undefined>, options: ArrayModelOptions<T>) {
-  const { valueKey, multiple = false, deselectable = false } = options
+  const { valueKey, labelKey, multiple = false, deselectable = false, optionDisabled } = options
 
   const equals = (a: T, b: T) => {
     const key = toValue(valueKey)
@@ -76,11 +78,34 @@ export function useArrayModel<T>(model: Ref<T[] | T | undefined>, options: Array
     return items.findLastIndex((item) => isSelected(item))
   }
 
+  function getItemLabel(item: T) {
+    const key = toValue(labelKey)
+
+    if (item !== null && typeof item === 'object' && key) return String(item[key])
+
+    return String(item)
+  }
+
+  function getItemValue(item: T) {
+    const key = toValue(valueKey)
+
+    if (item !== null && typeof item === 'object' && key) return String(item[key])
+
+    return String(item)
+  }
+
+  function isItemDisabled(item: T) {
+    return Boolean(toValue(optionDisabled)?.(item))
+  }
+
   return {
     isSelected,
     select,
     unselect,
     toggle,
     findSelectedIndex,
+    getItemLabel,
+    getItemValue,
+    isItemDisabled,
   }
 }

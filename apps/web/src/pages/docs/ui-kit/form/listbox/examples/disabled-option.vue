@@ -11,6 +11,6 @@ function isOptionDisabled(option: string) {
 </script>
 
 <template>
-  <ListBox v-model="value" :option-disabled="isOptionDisabled" :options="options" class="w-3xs" />
-  <ListBox v-model="value" :options="options" class="w-3xs" disabled />
+  <ListBox v-model="value" :option-disabled="isOptionDisabled" :items="options" class="w-3xs" />
+  <ListBox v-model="value" :items="options" class="w-3xs" disabled />
 </template>

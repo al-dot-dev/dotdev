@@ -7,7 +7,7 @@ const options: UiKitIcon[] = ['text-align-left', 'text-align-center', 'text-alig
 </script>
 
 <template>
-  <SelectButton v-model="value" :options="options" square>
+  <SelectButton v-model="value" :items="options" square>
     <template #default="{ option }">
       <Icon :name="option" />
     </template>

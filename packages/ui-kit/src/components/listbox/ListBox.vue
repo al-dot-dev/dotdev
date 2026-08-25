@@ -22,7 +22,7 @@ defineEmits<UIListBoxEmits>()
 defineSlots<UIListBoxSlots<T>>()
 const props = withDefaults(defineProps<UIListBoxProps<T, L, V, M>>(), {
   ui: 'listbox',
-  options: () => [],
+  items: () => [],
   disabled: false,
   deselectable: false,
   typeahead: true,
@@ -41,10 +41,12 @@ const ui = useUiKitProps('listbox', props)
 
 const bem = useUiKitBem(ui)
 useUiKitTheme(ui, listboxStyle)
-const { toggle, isSelected, findSelectedIndex } = useArrayModel<T>(model, {
+const { toggle, isSelected, findSelectedIndex, getItemLabel, isItemDisabled } = useArrayModel<T>(model, {
   multiple: () => normalizeBooleanProp(ui.multiple),
   deselectable: () => ui.deselectable,
   valueKey: () => props.valueKey,
+  labelKey: ui.labelKey,
+  optionDisabled: () => ui.optionDisabled,
 })
 
 function getListboxId() {
@@ -62,16 +64,16 @@ const hasNativeFocus = ref(false)
 const isMouseNavigation = ref(false)
 const isGrid = computed(() => typeof ui.columns === 'number' && ui.columns > 0)
 
-const nav = useKeyboardNavigation<T>(() => ui.options, {
+const nav = useKeyboardNavigation<T>(() => ui.items, {
   columns: () => ui.columns,
   isEnabled: () => isFocused.value,
-  isSkipped: isOptionDisabled,
+  isSkipped: isItemDisabled,
 })
 
 const { search } = useTypeahead({
-  options: () => ui.options,
-  getLabel: getOptionLabel,
-  isDisabled: isOptionDisabled,
+  options: () => ui.items,
+  getLabel: getItemLabel,
+  isDisabled: isItemDisabled,
   getCurrentIndex: () => nav.currentIndex.value,
   onMatch: (index) => {
     nav.setCurrentIndex(index)
@@ -85,7 +87,7 @@ function onFocusIn(direction: FocusDirection = 1) {
   if (direction === 0) return
 
   if (!nav.hasCurrentItem.value) {
-    const selectedIndex = findSelectedIndex(ui.options, direction === 1 ? 'first' : 'last')
+    const selectedIndex = findSelectedIndex(ui.items, direction === 1 ? 'first' : 'last')
 
     if (selectedIndex !== -1) {
       nav.setCurrentIndex(selectedIndex)
@@ -138,7 +140,7 @@ function onKeyDown(event: KeyboardEvent) {
 
   switch (event.code) {
     case 'PageDown':
-      scrollIntoView(ui.options.length - 1)
+      scrollIntoView(ui.items.length - 1)
       break
 
     case 'PageUp':
@@ -172,7 +174,7 @@ useGlobalEvent('keydown', onKeyDown, { watch: isFocused })
 function onEnter() {
   if (!nav.hasCurrentItem.value) return
   const index = nav.currentIndex.value
-  toggleOptionSelect(ui.options[index], index)
+  toggleOptionSelect(ui.items[index], index)
 }
 
 function scrollIntoView(index = -1) {
@@ -183,20 +185,12 @@ function scrollIntoView(index = -1) {
 }
 
 /* Option handler */
-function getOptionLabel(option: T) {
-  return String(ui.labelKey ? option[ui.labelKey] : option)
-}
-
-function isOptionDisabled(option: T) {
-  return ui.optionDisabled ? ui.optionDisabled(option) : false
-}
-
 function isOptionFocused(index: number) {
   return nav.currentIndex.value === index
 }
 
 function toggleOptionSelect(option: T, index: number) {
-  if (isOptionDisabled(option)) return
+  if (isItemDisabled(option)) return
 
   toggle(option)
   nav.setCurrentIndex(index)
@@ -204,11 +198,11 @@ function toggleOptionSelect(option: T, index: number) {
 
 function getOptionBindings(option: T, index: number) {
   const id = getOptionId(index)
-  const label = getOptionLabel(option)
-  const disabled = isOptionDisabled(option)
+  const label = getItemLabel(option)
+  const disabled = isItemDisabled(option)
   const selected = isSelected(option)
   const focused = isOptionFocused(index)
-  const size = ui.options.length
+  const size = ui.items.length
   const highlighted = !isMouseNavigation.value && focused
   const cls = bem('item', { selected, disabled, focused })
   const props = { index, focused, selected, disabled, label, size, highlighted }
@@ -260,7 +254,7 @@ const tui = asTemplateRef(ui)
     @focusout="onNativeFocusOut"
     @mousedown="onMouseDown"
   >
-    <Scope v-for="(item, idx) in tui.options" :key="idx" #default="scope" :scope="getOptionBindings(item, idx)">
+    <Scope v-for="(item, idx) in tui.items" :key="idx" #default="scope" :scope="getOptionBindings(item, idx)">
       <li
         :id="scope.id"
         :aria-disabled="disabled"

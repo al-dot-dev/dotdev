@@ -8,9 +8,9 @@ const options = ['Berlin', 'London', 'Paris', 'Tokyo', 'New York']
 
 <template>
   <div class="flex flex-col gap-4">
-    <Select v-model="value" :options="options" placeholder="Outlined" variant="outlined" />
-    <Select v-model="value" :options="options" placeholder="Soft" variant="soft" />
-    <Select v-model="value" :options="options" placeholder="Underlined" variant="underlined" />
-    <Select v-model="value" :options="options" placeholder="Plain" variant="plain" />
+    <Select v-model="value" :items="options" placeholder="Outlined" variant="outlined" />
+    <Select v-model="value" :items="options" placeholder="Soft" variant="soft" />
+    <Select v-model="value" :items="options" placeholder="Underlined" variant="underlined" />
+    <Select v-model="value" :items="options" placeholder="Plain" variant="plain" />
   </div>
 </template>
