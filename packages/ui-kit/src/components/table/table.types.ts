@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import type { UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
 
 export interface UITableProps<T extends UITableData = UITableData> extends UiKitBaseProps {
   data: T[]
@@ -61,3 +61,5 @@ export interface UITableColumn<T> {
   header?: string
   width?: string
 }
+
+declare const Table: DefineComponent<UITableProps, UITableSlots, EmitFn<UITableEmits>>

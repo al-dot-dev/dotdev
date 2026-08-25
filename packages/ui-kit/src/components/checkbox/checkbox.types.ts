@@ -1,4 +1,4 @@
-import type { UiKitBaseProps, UiKitOverride, UiKitSize } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitOverride, UiKitSize } from '@dotdev/ui-kit'
 
 export interface UICheckboxProps extends UiKitBaseProps {
   size?: UICheckboxSize
@@ -18,3 +18,5 @@ interface UiKitCheckboxVariants {
 }
 type UiKitCheckboxVariantDefault = keyof UiKitCheckboxVariants | (string & {})
 export type UICheckboxVariant = UiKitOverride<UiKitCheckboxVariantDefault, 'checkboxVariant'>
+
+declare const Checkbox: DefineComponent<UICheckboxProps, UICheckboxSlots, EmitFn<UICheckboxEmits>>

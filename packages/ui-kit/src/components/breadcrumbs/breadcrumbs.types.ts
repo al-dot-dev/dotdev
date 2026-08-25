@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import type { UiKitBaseProps, UiKitIcon } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitIcon } from '@dotdev/ui-kit'
 import type { RouteLocationRaw } from 'vue-router'
 
 export interface UIBreadcrumbItem {
@@ -22,3 +22,5 @@ export interface UIBreadcrumbsSlots {
 }
 
 export interface UIBreadcrumbsEmits {}
+
+declare const Breadcrumbs: DefineComponent<UIBreadcrumbsProps, UIBreadcrumbsSlots, EmitFn<UIBreadcrumbsEmits>>

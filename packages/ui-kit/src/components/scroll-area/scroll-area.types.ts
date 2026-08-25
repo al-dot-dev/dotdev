@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import type { UiKitBaseProps } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps } from '@dotdev/ui-kit'
 
 export interface UIScrollAreaProps extends UiKitBaseProps {
   /** Минимальный размер ползунка в пикселях */
@@ -25,3 +25,5 @@ export interface UIScrollAreaThumbSlotProps {
   size: number
   offset: number
 }
+
+declare const ScrollArea: DefineComponent<UIScrollAreaProps, UIScrollAreaSlots, EmitFn<UIScrollAreaEmits>>

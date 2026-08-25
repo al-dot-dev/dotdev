@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import type { UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
 
 export interface UIPaginationProps extends UiKitBaseProps {
   size?: UIPaginationSize
@@ -28,3 +28,5 @@ interface UiKitPaginationSizes {
 }
 type UiKitPaginationSizeDefault = keyof UiKitPaginationSizes | (string & {})
 export type UIPaginationSize = UiKitOverride<UiKitPaginationSizeDefault, 'paginationSize'>
+
+declare const Pagination: DefineComponent<UIPaginationProps, UIPaginationSlots, EmitFn<UIPaginationEmits>>

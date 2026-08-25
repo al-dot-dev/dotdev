@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import type { UiKitBaseProps, UiKitOverride, UiKitSize } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitOverride, UiKitSize } from '@dotdev/ui-kit'
 
 export interface UITabsProps<T = any, L = any, V = any> extends UiKitBaseProps {
   options: T[]
@@ -37,3 +37,5 @@ interface UITabsVariants {
 type UITabsVariantDefault = keyof UITabsVariants | (string & {})
 
 export type UITabsVariant = UiKitOverride<UITabsVariantDefault, 'tabsVariant'>
+
+declare const Tabs: DefineComponent<UITabsProps, UITabsSlots<any>, EmitFn<UITabsEmits>>

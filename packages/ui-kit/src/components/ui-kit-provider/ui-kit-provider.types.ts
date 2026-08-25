@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import type { UiKitNamespace } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitNamespace } from '@dotdev/ui-kit'
 
 export interface UIKitProviderProps {
   namespace: UiKitNamespace
@@ -10,3 +10,5 @@ export interface UIKitProviderSlots {
 }
 
 export interface UIKitProviderEmits {}
+
+declare const UiKitProvider: DefineComponent<UIKitProviderProps, UIKitProviderSlots, EmitFn<UIKitProviderEmits>>

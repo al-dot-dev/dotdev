@@ -462,9 +462,6 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "type-sm"?: T
       "type-md"?: T
       "type-lg"?: T
-      "gap-sm"?: T
-      "gap-md"?: T
-      "gap-lg"?: T
       "rounded"?: T
     }
     "switch"?: {

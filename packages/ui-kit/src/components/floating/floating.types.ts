@@ -1,5 +1,5 @@
 import type { CSSProperties, VNode, VNodeRef } from 'vue'
-import type { UIFloatingConfig } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UIFloatingConfig } from '@dotdev/ui-kit'
 
 export type UIFloatingFn = (event?: Event) => void
 export interface UIFloatingProps extends UIFloatingConfig {
@@ -21,3 +21,5 @@ export interface UIFloatingSlots {
 export interface UIFloatingEmits {
   'click-outside': [event: MouseEvent]
 }
+
+declare const Floating: DefineComponent<UIFloatingProps, UIFloatingSlots, EmitFn<UIFloatingEmits>>

@@ -1,5 +1,5 @@
 <script generic="T, L extends keyof T, V extends keyof T, M extends boolean" lang="ts" setup>
-import type { UIListBoxEmits, UIListBoxProps, UIListBoxSlots } from './listbox.types.ts'
+import type { UIListBoxEmits, UIListBoxExpose, UIListBoxProps, UIListBoxSlots } from './listbox.types.ts'
 import {
   asTemplateRef,
   Icon,
@@ -238,7 +238,7 @@ const rootAttrs = computed(() => {
   }
 })
 
-defineExpose({
+defineExpose<UIListBoxExpose>({
   id: getListboxId(),
   hasNativeFocus,
   isFocused,

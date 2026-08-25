@@ -1,5 +1,12 @@
 import type { VNode } from 'vue'
-import type { UiKitBaseProps, UiKitFieldVariant, UiKitOverride, UiKitSize } from '@dotdev/ui-kit'
+import type {
+  DefineComponent,
+  EmitFn,
+  UiKitBaseProps,
+  UiKitFieldVariant,
+  UiKitOverride,
+  UiKitSize,
+} from '@dotdev/ui-kit'
 
 export interface UIGroupProps extends UiKitBaseProps {
   axis?: 'x' | 'y'
@@ -25,3 +32,6 @@ export interface UIGroupAddonSlots {
 export interface UIGroupAddonEmits {}
 export type UIGroupAddonSize = UiKitOverride<UiKitSize, 'groupAddonSize'>
 export type UIGroupAddonVariant = UiKitOverride<UiKitFieldVariant, 'groupAddonVariant'>
+
+declare const Group: DefineComponent<UIGroupProps, UIGroupSlots, EmitFn<UIGroupEmits>>
+declare const GroupAddon: DefineComponent<UIGroupAddonProps, UIGroupAddonSlots, EmitFn<UIGroupAddonEmits>>

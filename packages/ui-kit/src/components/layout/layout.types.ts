@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import type { UiKitBaseProps } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps } from '@dotdev/ui-kit'
 
 //
 // Layout
@@ -62,3 +62,8 @@ export interface UILayoutContentEmits {}
 export interface UILayoutContentSlots {
   default?(): VNode[]
 }
+
+declare const Layout: DefineComponent<UILayoutProps, UILayoutSlots, EmitFn<UILayoutEmits>>
+declare const LayoutSidebar: DefineComponent<UILayoutSidebarProps, UILayoutSidebarSlots, EmitFn<UILayoutSidebarEmits>>
+declare const LayoutHeader: DefineComponent<UILayoutHeaderProps, UILayoutHeaderSlots, EmitFn<UILayoutHeaderEmits>>
+declare const LayoutContent: DefineComponent<UILayoutContentProps, UILayoutContentSlots, EmitFn<UILayoutContentEmits>>

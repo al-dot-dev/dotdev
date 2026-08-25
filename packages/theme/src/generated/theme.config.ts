@@ -611,9 +611,6 @@ export default {
       "type-sm": "var(--NS-type-sm)",
       "type-md": "var(--NS-type-md)",
       "type-lg": "var(--NS-select-type-md)",
-      "gap-sm": "var(--NS-gap-sm)",
-      "gap-md": "var(--NS-gap-md)",
-      "gap-lg": "var(--NS-gap-lg)",
       "rounded": "var(--NS-radius-md)"
     },
     "switch": {

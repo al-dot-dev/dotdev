@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import type { UiKitBaseProps, UiKitColor, UiKitIcon, UiKitOverride } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitColor, UiKitIcon, UiKitOverride } from '@dotdev/ui-kit'
 
 export interface UIAvatarProps extends UiKitBaseProps {
   label?: string
@@ -27,3 +27,5 @@ interface UiKitAvatarVariants {
   soft: true
   solid: true
 }
+
+declare const Avatar: DefineComponent<UIAvatarProps, UIAvatarSlots, EmitFn<UIAvatarEmits>>

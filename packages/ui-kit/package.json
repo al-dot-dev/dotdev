@@ -1,16 +1,59 @@
 {
   "name": "@dotdev/ui-kit",
-  "private": true,
+  "version": "0.0.11",
   "type": "module",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "description": "Themeable Vue 3 UI component library with first-class TypeScript support",
+  "keywords": [
+    "vue",
+    "vue3",
+    "ui",
+    "components",
+    "component-library",
+    "design-system",
+    "typescript"
+  ],
+  "author": {
+    "name": "Alex Pavlov",
+    "email": "alexander.kurylchyk@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/al-dot-dev/dotdev.git",
+    "directory": "packages/ui-kit"
+  },
+  "bugs": {
+    "url": "https://github.com/al-dot-dev/dotdev/issues"
+  },
+  "homepage": "https://github.com/al-dot-dev/dotdev/tree/main/packages/ui-kit#readme",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.8.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.39",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@dotdev/theme": "workspace:*",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "vite": "^8.1.1",
     "vue": "^3.5.39",
     "vue-router": "^5.2.0",
-    "@floating-ui/dom": "^1.8.0",
-    "@dotdev/theme": "workspace:*"
+    "vue-tsc": "^3.3.10"
   }
 }

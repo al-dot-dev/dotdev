@@ -1,4 +1,4 @@
-import type { ArrayModelConfig, UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
+import type { ArrayModelConfig, DefineComponent, UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
 
 export interface UIAccordionProps<T = any, L = any, V = any, M = any>
   extends ArrayModelConfig<T, L, V, M>, UiKitBaseProps {
@@ -31,3 +31,6 @@ interface UIAccordionVariants {
   plain: true
   underline: true
 }
+
+declare const Accordion: DefineComponent<UIAccordionProps>
+declare const Collapse: DefineComponent<UIAccordionProps>

@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import type { ArrayModelConfig, UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
+import type { ArrayModelConfig, DefineComponent, EmitFn, UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
 
 export interface UISelectButtonProps<T = any, L = any, V = any, M = any>
   extends ArrayModelConfig<T, L, V, M>, UiKitBaseProps {
@@ -8,7 +8,7 @@ export interface UISelectButtonProps<T = any, L = any, V = any, M = any>
   variant?: UiSelectButtonVariant
 }
 
-export interface UISelectButtonSlots<T> {
+export interface UISelectButtonSlots<T = any> {
   default?(props: UISelectButtonSlotScope<T>): VNode[]
   prefix?(props: UISelectButtonSlotScope<T>): VNode[]
   suffix?(props: UISelectButtonSlotScope<T>): VNode[]
@@ -30,3 +30,5 @@ interface UiSelectButtonVariants {
 }
 type UiSelectButtonVariantDefault = keyof UiSelectButtonVariants | (string & {})
 export type UiSelectButtonVariant = UiKitOverride<UiSelectButtonVariantDefault, 'selectButtonVariant'>
+
+declare const SelectButton: DefineComponent<UISelectButtonProps, UISelectButtonSlots, EmitFn<UISelectButtonEmits>>

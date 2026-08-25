@@ -1,5 +1,5 @@
 import { theme, type ThemeDefinition } from '../generated'
-import { NAMESPACE, type TokenValue } from '@dotdev/design'
+import { NAMESPACE, type TokenValue } from './constants'
 
 type PrimitiveMap = NonNullable<ThemeDefinition['primitives']>
 type SemanticMap = NonNullable<ThemeDefinition['semantics']>

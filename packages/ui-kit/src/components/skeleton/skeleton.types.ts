@@ -1,5 +1,4 @@
-import type { InjectionKey } from 'vue'
-import type { UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
+import type { DefineComponent, UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
 
 export interface UISkeletonProps<T extends boolean = false> extends UiKitBaseProps {
   is?: UISkeletonElement
@@ -27,4 +26,5 @@ interface UISkeletonVariants {
   static: true
 }
 
-export const SKELETON_PROVIDE_KEY: InjectionKey<() => boolean> = Symbol('skeleton-provider')
+declare const Skeleton: DefineComponent<UISkeletonProps>
+declare const SkeletonProvider: DefineComponent<UISkeletonProps>

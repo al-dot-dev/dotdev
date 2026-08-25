@@ -27,7 +27,7 @@ export function useRouterBreadcrumbs(options: UseRouterBreadcrumbsOptions = {}) 
         label: String(label),
         href: options.href?.(record) ?? record.path,
         to: options.to?.(record) ?? record.path,
-        icon: options.icon?.(record) ?? record.meta.icon,
+        icon: options.icon?.(record) ?? (record.meta.icon as UIBreadcrumbItem['icon'] | undefined),
       })
     }
 

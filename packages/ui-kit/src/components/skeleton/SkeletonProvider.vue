@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { SKELETON_PROVIDE_KEY, type UISkeletonElement } from './skeleton.types'
+import { SKELETON_PROVIDE_KEY } from './skeleton.constants'
+import type { UISkeletonElement } from './skeleton.types'
 import { provide } from 'vue'
 
 interface Props {

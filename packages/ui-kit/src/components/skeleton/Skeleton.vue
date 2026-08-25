@@ -3,8 +3,8 @@ import { computed, inject } from 'vue'
 import { asTemplateRef, useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
 import { skeletonStyle } from '@dotdev/theme'
 
+import { SKELETON_PROVIDE_KEY } from './skeleton.constants'
 import {
-  SKELETON_PROVIDE_KEY,
   type UISkeletonEmits,
   type UISkeletonProps,
   type UISkeletonSlots,

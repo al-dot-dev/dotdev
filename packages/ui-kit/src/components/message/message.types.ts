@@ -1,5 +1,5 @@
 import type { Component, VNode } from 'vue'
-import type { UiKitBaseProps, UiKitColor, UiKitIcon, UiKitOverride } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitColor, UiKitIcon, UiKitOverride } from '@dotdev/ui-kit'
 
 export interface UIMessageProps extends UiKitBaseProps {
   is?: UIMessageElement
@@ -33,3 +33,5 @@ interface UIMessageVariants {
 }
 
 export type UIMessageRole = 'status' | 'alert' | 'none'
+
+declare const Message: DefineComponent<UIMessageProps, UIMessageSlots, EmitFn<UIMessageEmits>>

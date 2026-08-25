@@ -1,4 +1,4 @@
-import type { Component, InjectionKey } from 'vue'
+import type { Component } from 'vue'
 import type { DefineThemeConfig, ThemeAPI } from '@dotdev/theme'
 import type {
   UIAccordionProps,
@@ -79,6 +79,3 @@ export interface UiKitConfigWithTheme {
   config: UiKitConfig
   theme: ThemeAPI
 }
-
-export const UI_KIT_CONFIG_KEY: InjectionKey<Map<string, UiKitConfigWithTheme>> = Symbol('dotdev-ui-config')
-export const UI_KIT_NAMESPACE_KEY: InjectionKey<string> = Symbol('dotdev-ui-namespace')

@@ -1,4 +1,4 @@
-import type { UiKitBaseProps, UiKitOverride, UiKitSize } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitOverride, UiKitSize } from '@dotdev/ui-kit'
 
 export interface UIRadioProps extends UiKitBaseProps {
   size?: UIRadioSize
@@ -18,3 +18,5 @@ interface UiKitRadioVariants {
 }
 type UiKitRadioVariantDefault = keyof UiKitRadioVariants | (string & {})
 export type UIRadioVariant = UiKitOverride<UiKitRadioVariantDefault, 'radioVariant'>
+
+declare const Radio: DefineComponent<UIRadioProps, UIRadioSlots, EmitFn<UIRadioEmits>>

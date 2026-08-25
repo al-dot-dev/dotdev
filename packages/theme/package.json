@@ -11,5 +11,6 @@
   "dependencies": {
     "@dotdev/design": "workspace:*"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "version": "0.0.0"
 }

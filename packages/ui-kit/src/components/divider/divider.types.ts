@@ -1,5 +1,5 @@
 import type { Component, VNode } from 'vue'
-import type { UiKitBaseProps, UiKitColor, UiKitOverride } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitColor, UiKitOverride } from '@dotdev/ui-kit'
 
 export interface UIDividerProps extends UiKitBaseProps {
   is?: UIDividerElement
@@ -28,3 +28,5 @@ interface UIDividerVariants {
   dashed: true
   dotted: true
 }
+
+declare const Divider: DefineComponent<UIDividerProps, UIDividerSlots, EmitFn<UIDividerEmits>>

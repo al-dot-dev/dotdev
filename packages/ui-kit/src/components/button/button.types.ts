@@ -1,5 +1,13 @@
 import type { VNode } from 'vue'
-import type { UiKitBaseProps, UiKitColor, UiKitIcon, UiKitOverride, UiKitSize } from '@dotdev/ui-kit'
+import type {
+  DefineComponent,
+  EmitFn,
+  UiKitBaseProps,
+  UiKitColor,
+  UiKitIcon,
+  UiKitOverride,
+  UiKitSize,
+} from '@dotdev/ui-kit'
 
 export interface UIButtonProps extends UiKitBaseProps {
   size?: UIButtonSize
@@ -38,3 +46,5 @@ interface UiKitButtonVariants {
   soft: true
   text: true
 }
+
+declare const Button: DefineComponent<UIButtonProps, UIButtonSlots, EmitFn<UIButtonEmits>>

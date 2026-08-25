@@ -7,11 +7,11 @@ const navItems = ['Getting started', 'Theming', 'Components', 'Hooks', 'Migratio
 </script>
 
 <template>
-  <Layout #default="{ toggleSidebar, sidebarMode }">
+  <Layout #default="{ toggleSidebar, isMobile }">
     <LayoutSidebar>
       <template #header>
         <span class="font-bold tracking-tight">dotdev</span>
-        <IconButton v-if="sidebarMode === 'mobile'" class="ml-auto" icon="cross-1" @click="toggleSidebar" />
+        <IconButton v-if="isMobile" class="ml-auto" icon="cross-1" @click="toggleSidebar" />
       </template>
 
       <nav class="flex flex-col gap-1">

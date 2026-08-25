@@ -1,5 +1,6 @@
 import { type ComponentInternalInstance, getCurrentInstance, inject } from 'vue'
-import { UI_KIT_CONFIG_KEY, UI_KIT_NAMESPACE_KEY, type UiKitConfig } from './config.types.ts'
+import { UI_KIT_CONFIG_KEY, UI_KIT_NAMESPACE_KEY } from './config.keys'
+import type { UiKitConfig } from './config.types'
 import type { UiKitBaseProps } from '@dotdev/ui-kit'
 
 type UiKitComponent = keyof NonNullable<UiKitConfig['components']>

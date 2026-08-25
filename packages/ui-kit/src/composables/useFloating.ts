@@ -1,4 +1,4 @@
-import { computed, type CSSProperties, type MaybeRefOrGetter, onScopeDispose, ref, toValue, watch } from 'vue'
+import { computed, type CSSProperties, type MaybeRefOrGetter, type Ref, onScopeDispose, ref, toValue, watch } from 'vue'
 import { autoUpdate, computePosition, flip, offset, type Placement, shift, type Strategy } from '@floating-ui/dom'
 
 export interface UIFloatingConfig {
@@ -9,6 +9,13 @@ export interface UIFloatingConfig {
 }
 
 type ElementRef = MaybeRefOrGetter<HTMLElement | null>
+
+export interface UIFloatingBinding {
+  placement: Ref<Placement>
+  styles: Ref<CSSProperties>
+  update: (event?: Event) => Promise<void>
+  cleanup: () => void
+}
 
 const DEFAULT_CONFIG = {
   placement: 'bottom' as Placement,
@@ -21,7 +28,7 @@ export function useFloating(
   anchor: ElementRef,
   floating: ElementRef,
   config: MaybeRefOrGetter<UIFloatingConfig & { handleScroll?: () => void }> = {},
-) {
+): UIFloatingBinding {
   const options = computed(() => ({
     ...DEFAULT_CONFIG,
     ...toValue(config),

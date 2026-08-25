@@ -1,9 +1,10 @@
 import type { ClassValue, MaybeRefOrGetter, VNode } from 'vue'
-import type { HtmlLinkTarget, UiKitBaseProps, UiKitIcon } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, HtmlLinkTarget, UiKitBaseProps, UiKitIcon } from '@dotdev/ui-kit'
 
 export interface UIMenuItem {
   label?: string
   icon?: UiKitIcon
+  to?: string
   href?: string
   target?: HtmlLinkTarget
   visible?: MaybeRefOrGetter<boolean>
@@ -36,3 +37,6 @@ export interface UIMenuEmits {
 type Resolved<T> = {
   [K in keyof T]: T[K] extends MaybeRefOrGetter<infer U> ? U : T[K]
 }
+
+declare const Menu: DefineComponent<UIMenuProps, UIMenuSlots, EmitFn<UIMenuEmits>>
+declare const MenuItem: DefineComponent<UIMenuItemProps>

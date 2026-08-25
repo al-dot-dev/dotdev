@@ -1,4 +1,4 @@
-import type { UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
 import type { VNode } from 'vue'
 
 export interface UISwitchProps extends UiKitBaseProps {
@@ -19,3 +19,5 @@ export interface UISwitchSlots {
 }
 
 export interface UISwitchEmits {}
+
+declare const Switch: DefineComponent<UISwitchProps, UISwitchSlots, EmitFn<UISwitchEmits>>

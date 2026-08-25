@@ -1,5 +1,5 @@
 import type { Component, VNode } from 'vue'
-import type { UiKitBaseProps, UiKitIcon } from '@dotdev/ui-kit'
+import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitIcon } from '@dotdev/ui-kit'
 
 export interface UIIconProps extends UiKitBaseProps {
   name?: UiKitIcon
@@ -11,3 +11,5 @@ export interface UIIconSlots {
 }
 
 export interface UIIconEmits {}
+
+declare const Icon: DefineComponent<UIIconProps, UIIconSlots, EmitFn<UIIconEmits>>

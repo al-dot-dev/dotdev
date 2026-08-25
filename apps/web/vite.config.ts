@@ -1,8 +1,8 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
 import VueRouter from 'vue-router/vite'
-import AutoImport from 'unplugin-auto-import/vite'
 import svgLoader from 'vite-svg-loader'
 import { uiKitIcons } from '@dotdev/icons'
 import { extendRoute } from '@dotdev/studio/vite'
@@ -12,17 +12,21 @@ const svgoConfig = {
 }
 
 export default defineConfig({
+  resolve: {
+    alias: [
+      {
+        find: '@dotdev/ui-kit',
+        replacement: fileURLToPath(new URL('../../packages/ui-kit/src/index.ts', import.meta.url)),
+      },
+    ],
+  },
   server: {
     host: true,
-  },
-  optimizeDeps: {
-    exclude: ['@dotdev/studio'],
   },
   plugins: [
     VueRouter({ routesFolder: ['./src/pages'], exclude: ['**/examples/**'], extendRoute }),
     vue(),
     tailwindcss(),
-    AutoImport({ imports: { '@dotdev/studio': ['defineExample'] } }),
     svgLoader({ svgoConfig }),
     uiKitIcons({ outDir: './src/generated/icons' }),
   ],

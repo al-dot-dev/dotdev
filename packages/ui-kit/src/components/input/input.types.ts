@@ -1,4 +1,11 @@
-import type { UiKitBaseProps, UiKitFieldVariant, UiKitOverride, UiKitSize } from '@dotdev/ui-kit'
+import type {
+  DefineComponent,
+  EmitFn,
+  UiKitBaseProps,
+  UiKitFieldVariant,
+  UiKitOverride,
+  UiKitSize,
+} from '@dotdev/ui-kit'
 
 export interface UIInputProps extends UiKitBaseProps {
   size?: UIInputSize
@@ -12,3 +19,5 @@ export interface UIInputEmits {}
 
 export type UIInputSize = UiKitOverride<UiKitSize, 'inputSize'>
 export type UIInputVariant = UiKitOverride<UiKitFieldVariant, 'inputVariant'>
+
+declare const Input: DefineComponent<UIInputProps, UIInputSlots, EmitFn<UIInputEmits>>

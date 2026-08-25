@@ -1,6 +1,8 @@
 import type { VNode } from 'vue'
 import type {
   ArrayModelConfig,
+  DefineComponent,
+  EmitFn,
   UiKitBaseProps,
   UiKitFieldVariant,
   UiKitOverride,
@@ -25,3 +27,5 @@ export interface UISelectEmits {}
 
 export type UISelectSize = UiKitOverride<UiKitSize, 'selectSize'>
 export type UISelectVariant = UiKitOverride<UiKitFieldVariant, 'selectVariant'>
+
+declare const Select: DefineComponent<UISelectProps, UISelectSlots, EmitFn<UISelectEmits>>
