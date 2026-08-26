@@ -21,3 +21,17 @@
     animation: none;
   }
 }
+
+:root {
+  --color-graphite-50: oklch(95.58% 0.007 277.16);
+  --color-graphite-100: oklch(91.19% 0.014 281.55);
+  --color-graphite-200: oklch(82.14% 0.03 279.26);
+  --color-graphite-300: oklch(72.91% 0.045 279.43);
+  --color-graphite-400: oklch(63.44% 0.062 279.07);
+  --color-graphite-500: oklch(53.68% 0.082 277.4);
+  --color-graphite-600: oklch(45.93% 0.067 278.07);
+  --color-graphite-700: oklch(37.8% 0.053 277.88);
+  --color-graphite-800: oklch(29.2% 0.039 277.47);
+  --color-graphite-900: oklch(19.96% 0.02 279.96);
+  --color-graphite-950: oklch(17.08% 0.015 278.37);
+}
