@@ -8,10 +8,9 @@ import { icons } from './generated/icons'
 
 const app = createApp(App)
 
-const base = defineUiKitConfig({ namespace: 'd', icons })
+const base = defineUiKitConfig({ namespace: 'd' })
 const landing = defineUiKitConfig({
   namespace: 'landing',
-  icons,
   theme: {
     primitives: {
       /* Violet ramp — louder than the indigo workbench */
@@ -78,7 +77,7 @@ const landing = defineUiKitConfig({
   },
 })
 
-app.use(createUiKit([base, landing]))
+app.use(createUiKit({ base, icons, configs: [landing] }))
 app.use(router)
 app.use(studio)
 

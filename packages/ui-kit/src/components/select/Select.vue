@@ -5,9 +5,7 @@ import {
   Icon,
   ListBox,
   normalizeBooleanProp,
-  useUiKitBem,
-  useUiKitProps,
-  useUiKitTheme,
+  useUiKit,
 } from '@dotdev/ui-kit'
 import type { UISelectEmits, UISelectProps, UISelectSlots } from './select.types.ts'
 import { computed, nextTick, ref, useId, useTemplateRef } from 'vue'
@@ -25,9 +23,7 @@ const props = withDefaults(defineProps<UISelectProps<T, L, V, M>>(), {
 
 const model = defineModel<M extends true ? T[] : T | undefined>()
 
-const ui = useUiKitProps(UI_NAME, props)
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, selectStyle)
+const { ui, bem } = useUiKit(UI_NAME, props, selectStyle)
 
 const floatingRef = useTemplateRef('floating')
 const comboboxRef = useTemplateRef('combobox')

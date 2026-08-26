@@ -7,21 +7,22 @@ export interface UiKitBaseProps {
   ui?: string
 }
 
-export interface UiKitIcons {}
 export type UiKitIcon = keyof UiKitOverride<keyof UiKitIcons, 'icons'>
+export interface UiKitIcons {}
 
+export type UiKitNamespace = UiKitOverride<keyof UiKitNamespaces, 'namespace'>
 export interface UiKitNamespaces {
   d: true
 }
-export type UiKitNamespace = UiKitOverride<keyof UiKitNamespaces, 'namespace'>
 
+export type UiKitSize = UiKitOverride<keyof UiKitSizes, 'size'>
 export interface UiKitSizes {
   sm: true
   md: true
   lg: true
 }
-export type UiKitSize = UiKitOverride<keyof UiKitSizes, 'size'>
 
+export type UiKitColor = UiKitOverride<keyof UiKitColors, 'color'>
 export interface UiKitColors {
   primary: true
   neutral: true
@@ -30,12 +31,11 @@ export interface UiKitColors {
   danger: true
   info: true
 }
-export type UiKitColor = UiKitOverride<keyof UiKitColors, 'color'>
 
+export type UiKitFieldVariant = UiKitOverride<keyof UiKitFieldVariants, 'fieldVariant'>
 export interface UiKitFieldVariants {
   outlined: true
   soft: true
   underlined: true
   plain: true
 }
-export type UiKitFieldVariant = UiKitOverride<keyof UiKitFieldVariants, 'fieldVariant'>

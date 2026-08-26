@@ -1,5 +1,7 @@
 export * from './config.types.ts'
 export * from './config.keys.ts'
 export * from './merge.ts'
-export * from './plugin.ts'
+export * from './create.ts'
 export * from './useUiKitProps.ts'
+export { useBem, useUiKitBem } from './useUiKitBem.ts'
+export { useUiKit } from './useUiKit.ts'

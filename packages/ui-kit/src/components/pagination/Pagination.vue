@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { clamp, Icon, useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { clamp, Icon, useUiKit } from '@dotdev/ui-kit'
 import type { UIPaginationEmits, UIPaginationProps, UIPaginationSlots } from './pagination.types.ts'
 import { PAGINATION_ELLIPSIS, usePagination } from './usePagination.ts'
 import { paginationStyle } from '@dotdev/theme'
@@ -20,10 +20,7 @@ const props = withDefaults(defineProps<UIPaginationProps>(), {
 
 const model = defineModel<number>({ default: 1 })
 
-const ui = useUiKitProps(UI_NAME, props)
-useUiKitTheme(ui, paginationStyle)
-
-const bem = useUiKitBem(ui)
+const { ui, bem } = useUiKit(UI_NAME, props, paginationStyle)
 
 const rootClass = computed(() => {
   const { size, disabled } = ui

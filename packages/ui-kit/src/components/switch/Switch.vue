@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import type { UISwitchEmits, UISwitchProps, UISwitchSlots } from './switch.types.ts'
-import { useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { useUiKit } from '@dotdev/ui-kit'
 import { switchStyle } from '@dotdev/theme'
 
 defineSlots<UISwitchSlots>()
@@ -12,10 +12,7 @@ const props = withDefaults(defineProps<UISwitchProps>(), {
 })
 
 const model = defineModel<boolean>({ default: false })
-const ui = useUiKitProps('switch', props)
-
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, switchStyle)
+const { ui, bem } = useUiKit('switch', props, switchStyle)
 const rootClass = computed(() => {
   const { disabled, invalid, variant } = ui
   return bem([variant], { disabled, invalid, checked: model.value })

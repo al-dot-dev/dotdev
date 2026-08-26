@@ -7,9 +7,7 @@ import {
   normalizeBooleanProp,
   Scope,
   useArrayModel,
-  useUiKitBem,
-  useUiKitProps,
-  useUiKitTheme,
+  useUiKit,
 } from '@dotdev/ui-kit'
 import Collapse from './Collapse.vue'
 import { accordionStyle } from '@dotdev/theme'
@@ -26,9 +24,7 @@ const props = withDefaults(defineProps<UIAccordionProps<T, L, V, M>>(), {
 
 const model = defineModel<M extends true ? T[] : T | undefined>()
 
-const ui = useUiKitProps('accordion', props)
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, accordionStyle)
+const { ui, bem } = useUiKit('accordion', props, accordionStyle)
 const id = useId()
 
 const { toggle, isSelected, getItemLabel, getItemValue, isItemDisabled } = useArrayModel<T>(model, {

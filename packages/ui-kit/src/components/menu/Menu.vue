@@ -2,7 +2,7 @@
 import { toValue } from 'vue'
 import type { NormalizedMenuItem, UIMenuEmits, UIMenuProps, UIMenuSlots } from './menu.types.ts'
 import MenuItem from './MenuItem.vue'
-import { useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { useUiKit } from '@dotdev/ui-kit'
 import { menuStyle } from '@dotdev/theme'
 
 defineSlots<UIMenuSlots>()
@@ -12,10 +12,7 @@ const props = withDefaults(defineProps<UIMenuProps>(), {
   size: 'md',
 })
 
-const ui = useUiKitProps('menu', props)
-
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, menuStyle)
+const { ui, bem } = useUiKit('menu', props, menuStyle)
 
 function onSelect(item: NormalizedMenuItem, event?: Event) {
   emit('select', item, event)

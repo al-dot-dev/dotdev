@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import type { UICheckboxEmits, UICheckboxProps, UICheckboxSlots } from './checkbox.types.ts'
-import { useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { useUiKit } from '@dotdev/ui-kit'
 import { checkboxStyle } from '@dotdev/theme'
 
 defineSlots<UICheckboxSlots>()
@@ -13,10 +13,7 @@ const props = withDefaults(defineProps<UICheckboxProps>(), {
 })
 
 const model = defineModel<boolean>({ default: false })
-const ui = useUiKitProps('checkbox', props)
-
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, checkboxStyle)
+const { ui, bem } = useUiKit('checkbox', props, checkboxStyle)
 const rootClass = computed(() => {
   const { disabled, invalid, size, variant } = ui
   return bem([size, variant], { disabled, invalid })

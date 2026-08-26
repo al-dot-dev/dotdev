@@ -1,9 +1,7 @@
-import { type ComponentInternalInstance, getCurrentInstance, inject } from 'vue'
-import { UI_KIT_CONFIG_KEY, UI_KIT_NAMESPACE_KEY } from './config.keys'
-import type { UiKitConfig } from './config.types'
-import type { UiKitBaseProps } from '@dotdev/ui-kit'
+import { type ComponentInternalInstance, getCurrentInstance } from 'vue'
+import type { UiKitBaseProps, UiKitConfig, UiKitConfigComponents } from '@dotdev/ui-kit'
 
-type UiKitComponent = keyof NonNullable<UiKitConfig['components']>
+type UiKitComponentKeys = keyof UiKitConfigComponents
 
 export function toKebabCase(str = '') {
   if (toKebabCase.cache.has(str)) {
@@ -29,18 +27,20 @@ function propIsDefined(vnode: ComponentInternalInstance | null, prop: string) {
   return props[prop] !== undefined || props[toKebabCase(prop)] !== undefined
 }
 
-export function useUiKitProps<C extends UiKitComponent, P extends UiKitBaseProps>(component: C, props: P): P {
+interface UiKitPropsOptions<P extends UiKitBaseProps> {
+  component: UiKitComponentKeys
+  props: P
+  namespace: string
+  config: UiKitConfig
+}
+
+export function useUiKitProps<P extends UiKitBaseProps>(options: UiKitPropsOptions<P>): P {
   const vm = getCurrentInstance()
+  if (!vm) throw new Error('[dotdev/ui-kit] useUiKitProps() can only be used inside setup()')
 
-  if (!vm) {
-    throw new Error('[dotdev/ui-kit] useUiKitProps() can only be used inside setup()')
-  }
+  const { component, props, namespace, config } = options
 
-  const provided = inject(UI_KIT_CONFIG_KEY)
-  const namespace = inject(UI_KIT_NAMESPACE_KEY, null) ?? props.namespace ?? 'd'
-
-  const state = provided?.get(namespace)
-  const defaults = state?.config?.components?.[component] as Partial<P> | undefined
+  const defaults = config.components?.[component] as Partial<P> | undefined
 
   return new Proxy(props, {
     get(target, _prop, receiver) {
@@ -51,11 +51,11 @@ export function useUiKitProps<C extends UiKitComponent, P extends UiKitBaseProps
         return [defaults?.[prop], value].filter(Boolean)
       }
 
+      if (propIsDefined(vm, prop)) return value
+
       if (prop === 'namespace') {
         return namespace
       }
-
-      if (propIsDefined(vm, prop)) return value
 
       const configValue = defaults?.[prop]
 

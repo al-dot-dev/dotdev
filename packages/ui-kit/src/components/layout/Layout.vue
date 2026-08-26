@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { UILayoutEmits, UILayoutProps, UILayoutSlots } from './layout.types.ts'
-import { useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { useUiKit } from '@dotdev/ui-kit'
 import { layoutStyle } from '@dotdev/theme'
 import { computed } from 'vue'
 import { useProvideLayoutScope } from './useLayoutScope.ts'
@@ -12,9 +12,7 @@ const props = withDefaults(defineProps<UILayoutProps>(), {
   ui: 'layout',
 })
 
-const ui = useUiKitProps('layout', props)
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, layoutStyle)
+const { bem } = useUiKit('layout', props, layoutStyle)
 
 const layout = useProvideLayoutState()
 const scope = useProvideLayoutScope()

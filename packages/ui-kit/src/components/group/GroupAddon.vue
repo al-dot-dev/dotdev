@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { UIGroupAddonEmits, UIGroupAddonProps, UIGroupAddonSlots } from './group.types.ts'
-import { useUiKitBem, useUiKitProps } from '@dotdev/ui-kit'
+import { useUiKit } from '@dotdev/ui-kit'
 import { computed } from 'vue'
 
 defineEmits<UIGroupAddonEmits>()
@@ -11,8 +11,7 @@ const props = withDefaults(defineProps<UIGroupAddonProps>(), {
   variant: 'outlined',
 })
 
-const ui = useUiKitProps('group-addon', props)
-const bem = useUiKitBem(ui)
+const { ui, bem } = useUiKit('group-addon', props)
 
 const rootClass = computed(() => bem([ui.size, ui.variant], { attach: ui.attach }))
 </script>

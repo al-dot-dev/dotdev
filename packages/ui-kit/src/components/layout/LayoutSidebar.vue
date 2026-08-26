@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { UILayoutSidebarEmits, UILayoutSidebarProps, UILayoutSidebarSlots } from './layout.types.ts'
-import { useMediaQuery, useUiKitBem, useUiKitProps } from '@dotdev/ui-kit'
+import { useMediaQuery, useUiKit } from '@dotdev/ui-kit'
 import { watchEffect } from 'vue'
 import { useLayoutScope } from './useLayoutScope.ts'
 import { useLayoutState } from './useLayoutState.ts'
@@ -12,8 +12,7 @@ const props = withDefaults(defineProps<UILayoutSidebarProps>(), {
   mode: 'desktop',
 })
 
-const ui = useUiKitProps('layout-sidebar', props)
-const bem = useUiKitBem(ui)
+const { ui, bem } = useUiKit('layout-sidebar', props)
 
 const state = useLayoutState()
 useLayoutScope()?.registerSidebar()

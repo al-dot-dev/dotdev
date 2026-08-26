@@ -1,11 +1,8 @@
-import type { UiKitConfig } from './config.types.ts'
+import type { PartialNested, UiKitConfig, UiKitConfigComponents } from '@dotdev/ui-kit'
 
-type UiKitComponents = NonNullable<UiKitConfig['components']>
+type UiKitComponents = PartialNested<UiKitConfigComponents>
 
-function mergeComponents(
-  base: UiKitConfig['components'],
-  override: UiKitConfig['components'],
-): UiKitConfig['components'] {
+function mergeComponents(base?: UiKitComponents, override?: UiKitComponents): UiKitComponents | undefined {
   if (override === undefined) return undefined
 
   const baseEntries = Object.entries(base ?? {})
@@ -18,7 +15,7 @@ function mergeComponents(
     return [key, { ...baseProps, ...overrideProps }]
   })
 
-  return Object.fromEntries([...baseEntries, ...overrideEntries]) as UiKitComponents
+  return Object.fromEntries([...baseEntries, ...overrideEntries])
 }
 
 export function mergeUiKitConfig(base: UiKitConfig, override: UiKitConfig): UiKitConfig {

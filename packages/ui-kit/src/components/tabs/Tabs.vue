@@ -1,7 +1,7 @@
 <script generic="T, L extends keyof T, V extends keyof T" lang="ts" setup>
 import type { UITabsEmits, UITabsProps, UITabsSlots, UITabsSlotScope } from './tabs.types.ts'
 import { computed, ref, useId, watch } from 'vue'
-import { useArrayModel, useKeyboardNavigation, useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { useArrayModel, useKeyboardNavigation, useUiKit } from '@dotdev/ui-kit'
 import { tabsStyle } from '@dotdev/theme'
 
 defineEmits<UITabsEmits>()
@@ -17,9 +17,7 @@ const props = withDefaults(defineProps<UITabsProps<T, L, V>>(), {
 
 const model = defineModel<T | undefined>()
 
-const ui = useUiKitProps('tabs', props)
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, tabsStyle)
+const { ui, bem } = useUiKit('tabs', props, tabsStyle)
 const id = useId()
 
 const listRef = ref<HTMLElement | null>(null)

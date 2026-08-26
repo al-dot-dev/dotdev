@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { UILayoutHeaderEmits, UILayoutHeaderProps, UILayoutHeaderSlots } from './layout.types.ts'
-import { useUiKitBem, useUiKitProps } from '@dotdev/ui-kit'
+import { useUiKit } from '@dotdev/ui-kit'
 import { useLayoutScope } from './useLayoutScope.ts'
 
 defineEmits<UILayoutHeaderEmits>()
@@ -9,8 +9,7 @@ const props = withDefaults(defineProps<UILayoutHeaderProps>(), {
   ui: 'layout-header',
 })
 
-const ui = useUiKitProps('layout-header', props)
-const bem = useUiKitBem(ui)
+const { bem } = useUiKit('layout-header', props)
 
 useLayoutScope()?.registerHeader()
 </script>

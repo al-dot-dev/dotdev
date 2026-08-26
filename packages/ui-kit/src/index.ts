@@ -4,7 +4,7 @@ export type * from './types/helpers.ts'
 export type * from './types/ui-kit.ts'
 
 /* Runtime */
-export * from './config'
+export * from './core'
 export * from './utils'
 
 /* Components */

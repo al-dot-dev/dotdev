@@ -1,7 +1,7 @@
 <script generic="T extends UITableData" lang="ts" setup>
 import type { UITableData, UITableEmits, UITableProps, UITableSlots } from './table.types.ts'
 import { computed } from 'vue'
-import { asTemplateRef, Scope, useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { asTemplateRef, Scope, useUiKit } from '@dotdev/ui-kit'
 import { tableStyle } from '@dotdev/theme'
 
 defineEmits<UITableEmits>()
@@ -14,10 +14,7 @@ const props = withDefaults(defineProps<UITableProps<T>>(), {
   stickyHeader: false,
 })
 
-const ui = useUiKitProps('table', props)
-
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, tableStyle)
+const { ui, bem } = useUiKit('table', props, tableStyle)
 
 const rootClass = computed(() => {
   const { striped, stickyHeader, border, align, hover } = ui

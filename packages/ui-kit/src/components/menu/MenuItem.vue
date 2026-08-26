@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { Component } from 'vue'
 import { computed, toValue } from 'vue'
-import { Icon, useUiKitBem } from '@dotdev/ui-kit'
+import { Icon, useUiKit } from '@dotdev/ui-kit'
 import type { NormalizedMenuItem, UIMenuEmits, UIMenuItem, UIMenuItemProps } from './menu.types.ts'
 
 const props = defineProps<UIMenuItemProps>()
@@ -28,7 +28,7 @@ const bindProps = computed(() => {
   }
 })
 
-const bem = useUiKitBem(props)
+const { bem } = useUiKit('menu-item', props)
 
 const classes = computed(() => [
   bem('item', {

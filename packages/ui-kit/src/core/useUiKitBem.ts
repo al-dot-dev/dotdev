@@ -18,13 +18,13 @@ export function useBem(block: string): UseBemReturn {
   }
 }
 
-export function useUiKitBem(props: UiKitBaseProps): UseBemReturn {
-  const namespace = props.namespace || 'd'
+export function useUiKitBem(props: UiKitBaseProps, namespace?: string): UseBemReturn {
+  const ns = namespace || props.namespace || 'd'
   const name = props.ui
 
   if (!name) {
     throw new Error('[dotdev/ui-kit]: The "ui" prop is required for useUiKitBem.')
   }
 
-  return useBem(`${namespace}-${name}`)
+  return useBem(`${ns}-${name}`)
 }

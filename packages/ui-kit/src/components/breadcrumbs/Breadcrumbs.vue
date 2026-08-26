@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Icon, useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { Icon, useUiKit } from '@dotdev/ui-kit'
 import type { UIBreadcrumbsEmits, UIBreadcrumbsProps, UIBreadcrumbsSlots } from './breadcrumbs.types.ts'
 import { breadcrumbsStyle } from '@dotdev/theme'
 
@@ -13,9 +13,7 @@ const props = withDefaults(defineProps<UIBreadcrumbsProps>(), {
   ariaLabel: 'Breadcrumb',
 })
 
-const ui = useUiKitProps('breadcrumbs', props)
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, breadcrumbsStyle)
+const { ui, bem } = useUiKit('breadcrumbs', props, breadcrumbsStyle)
 
 function isCurrent(index: number) {
   return index === ui.items.length - 1

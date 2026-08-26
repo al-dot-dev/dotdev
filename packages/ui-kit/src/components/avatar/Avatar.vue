@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { UIAvatarEmits, UIAvatarProps, UIAvatarSlots } from './avatar.types.ts'
-import { useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { useUiKit } from '@dotdev/ui-kit'
 import { computed } from 'vue'
 import { Icon } from '../icon'
 import { avatarStyle } from '@dotdev/theme'
@@ -15,9 +15,7 @@ const props = withDefaults(defineProps<UIAvatarProps>(), {
   variant: 'soft',
 })
 
-const ui = useUiKitProps('avatar', props)
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, avatarStyle)
+const { ui, bem } = useUiKit('avatar', props, avatarStyle)
 const rootClass = computed(() => {
   const { border, color, square, variant } = ui
   return bem([color, variant], { border, square })

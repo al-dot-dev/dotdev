@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import type { UIInputEmits, UIInputProps, UIInputSlots } from './input.types.ts'
-import { useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { useUiKit } from '@dotdev/ui-kit'
 import { inputStyle } from '@dotdev/theme'
 
 defineSlots<UIInputSlots>()
@@ -13,10 +13,7 @@ const props = withDefaults(defineProps<UIInputProps>(), {
 })
 
 const model = defineModel<string>({ default: '' })
-const ui = useUiKitProps('input', props)
-
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, inputStyle)
+const { ui, bem } = useUiKit('input', props, inputStyle)
 const rootClass = computed(() => {
   const { disabled, invalid, size, variant } = ui
   return bem([size, variant], { disabled, invalid })

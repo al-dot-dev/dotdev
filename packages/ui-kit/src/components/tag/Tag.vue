@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import type { UITagEmits, UITagProps, UITagSlots } from './tag.types.ts'
-import { Icon, useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { Icon, useUiKit } from '@dotdev/ui-kit'
 import { tagStyle } from '@dotdev/theme'
 
 defineEmits<UITagEmits>()
@@ -14,10 +14,7 @@ const props = withDefaults(defineProps<UITagProps>(), {
   variant: 'soft',
 })
 
-const ui = useUiKitProps('tag', props)
-
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, tagStyle)
+const { ui, bem } = useUiKit('tag', props, tagStyle)
 const rootClass = computed(() => {
   const { border, rounded, color, variant } = ui
   return bem([color, variant], { border, rounded })

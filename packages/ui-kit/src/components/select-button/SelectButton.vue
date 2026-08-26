@@ -1,5 +1,5 @@
 <script generic="T, L extends keyof T, V extends keyof T, M extends boolean" lang="ts" setup>
-import { normalizeBooleanProp, useArrayModel, useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { normalizeBooleanProp, useArrayModel, useUiKit } from '@dotdev/ui-kit'
 import { computed } from 'vue'
 import type { UISelectButtonEmits, UISelectButtonProps, UISelectButtonSlots } from './select-button.types.ts'
 import { selectButtonStyle } from '@dotdev/theme'
@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<UISelectButtonProps<T, L, V, M>>(), {
 
 const model = defineModel<M extends true ? T[] : T | undefined>()
 
-const ui = useUiKitProps('select-button', props)
+const { ui, bem } = useUiKit('select-button', props, selectButtonStyle)
 
 const { toggle, isSelected, getItemLabel, isItemDisabled } = useArrayModel<T>(model, {
   multiple: () => normalizeBooleanProp(ui.multiple),
@@ -27,9 +27,6 @@ const { toggle, isSelected, getItemLabel, isItemDisabled } = useArrayModel<T>(mo
   labelKey: ui.labelKey,
   optionDisabled: () => ui.optionDisabled,
 })
-
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, selectButtonStyle)
 
 const rootClass = computed(() => {
   const { size, disabled, square, variant } = ui

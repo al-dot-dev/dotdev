@@ -9,9 +9,7 @@ import {
   useGlobalEvent,
   useKeyboardNavigation,
   useTypeahead,
-  useUiKitBem,
-  useUiKitProps,
-  useUiKitTheme,
+  useUiKit,
 } from '@dotdev/ui-kit'
 import { computed, ref, useId, useTemplateRef } from 'vue'
 import { listboxStyle } from '@dotdev/theme'
@@ -37,10 +35,7 @@ const props = withDefaults(defineProps<UIListBoxProps<T, L, V, M>>(), {
 const model = defineModel<M extends true ? T[] : T | undefined>()
 
 const id = useId()
-const ui = useUiKitProps('listbox', props)
-
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, listboxStyle)
+const { ui, bem } = useUiKit('listbox', props, listboxStyle)
 const { toggle, isSelected, findSelectedIndex, getItemLabel, isItemDisabled } = useArrayModel<T>(model, {
   multiple: () => normalizeBooleanProp(ui.multiple),
   deselectable: () => ui.deselectable,

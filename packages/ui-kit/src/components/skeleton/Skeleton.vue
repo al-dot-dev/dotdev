@@ -1,6 +1,6 @@
 <script generic="T extends boolean = false" lang="ts" setup>
 import { computed, inject } from 'vue'
-import { asTemplateRef, useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { asTemplateRef, useUiKit } from '@dotdev/ui-kit'
 import { skeletonStyle } from '@dotdev/theme'
 
 import { SKELETON_PROVIDE_KEY } from './skeleton.constants'
@@ -24,9 +24,7 @@ const props = withDefaults(defineProps<UISkeletonProps<T>>(), {
   loading: true,
 })
 
-const ui = useUiKitProps('skeleton', props)
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, skeletonStyle)
+const { ui, bem } = useUiKit('skeleton', props, skeletonStyle)
 
 const providedLoading = inject(SKELETON_PROVIDE_KEY, null)
 

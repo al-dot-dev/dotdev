@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import type { UIProgressEmits, UIProgressProps, UIProgressSlots } from './progress.types.ts'
-import { useUiKitBem, useUiKitProps, useUiKitTheme } from '@dotdev/ui-kit'
+import { useUiKit } from '@dotdev/ui-kit'
 import { progressStyle } from '@dotdev/theme'
 
 defineEmits<UIProgressEmits>()
@@ -12,10 +12,7 @@ const props = withDefaults(defineProps<UIProgressProps>(), {
   color: 'primary',
 })
 
-const ui = useUiKitProps('progress', props)
-
-const bem = useUiKitBem(ui)
-useUiKitTheme(ui, progressStyle)
+const { ui, bem } = useUiKit('progress', props, progressStyle)
 
 const percent = computed(() => {
   if (ui.value == null) return null
