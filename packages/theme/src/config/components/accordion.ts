@@ -13,7 +13,7 @@ export const accordion = defineComponent({
     'text-indicator': 'text-muted',
     'text-indicator-open': 'text-foreground',
     'ring-focus': 'ring-brand',
-    gap: '0.5rem',
+    gap: 'gap-sm',
 
     'px-item': 'space-lg',
     'py-item': 'space-md',
@@ -46,8 +46,10 @@ export const accordion = defineComponent({
 
     '&__label': 'truncate',
 
-    '&__indicator': `ml-auto accordion-text-indicator accordion-transition-indicator`,
-    '&__trigger--open &__indicator': 'rotate-180 accordion-text-indicator-open',
+    '&__indicator': `ml-auto accordion-text-indicator`,
+    '&__indicator-icon': `accordion-transition-indicator`,
+    '&__trigger--expanded &__indicator': 'accordion-text-indicator-open',
+    '&__trigger--expanded &__indicator-icon': 'rotate-180',
 
     '&__panel': 'accordion-transition-panel overflow-hidden',
     '&__value': 'block accordion-px-item accordion-pb-item accordion-text-size-item accordion-text-value',

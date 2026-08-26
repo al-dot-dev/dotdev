@@ -41,7 +41,7 @@ const { toggle, isSelected, findSelectedIndex, getItemLabel, isItemDisabled } = 
   deselectable: () => ui.deselectable,
   valueKey: () => props.valueKey,
   labelKey: ui.labelKey,
-  optionDisabled: () => ui.optionDisabled,
+  itemDisabled: () => ui.itemDisabled,
 })
 
 function getListboxId() {

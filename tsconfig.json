@@ -4,8 +4,6 @@
     "paths": {
       "@dotdev/theme": ["./packages/theme/src"],
       "@dotdev/theme/*": ["./packages/theme/src/*"],
-      "@dotdev/ui-kit": ["./packages/ui-kit/src"],
-      "@dotdev/ui-kit/*": ["./packages/ui-kit/src/*"],
       "@dotdev/studio": ["./packages/studio/src"],
       "@dotdev/studio/*": ["./packages/studio/src/*"]
     }

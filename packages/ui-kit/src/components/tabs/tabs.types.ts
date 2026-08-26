@@ -8,7 +8,7 @@ export interface UITabsProps<T = any, L = any, V = any> extends UiKitBaseProps {
   size?: UiKitSize
   variant?: UITabsVariant
   disabled?: boolean
-  optionDisabled?: (option: T) => boolean
+  itemDisabled?: (option: T) => boolean
   /** Select the focused tab automatically while navigating with arrow keys */
   activateOnFocus?: boolean
 }

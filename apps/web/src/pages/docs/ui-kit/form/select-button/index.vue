@@ -49,7 +49,7 @@ defineDocPage({
     },
     {
       title: 'Disabled state',
-      description: `Disable the whole control with <code>disabled</code> or individual options by returning <code>true</code> from <code>option-disabled</code>.`,
+      description: `Disable the whole control with <code>disabled</code> or individual options by returning <code>true</code> from <code>item-disabled</code>.`,
       preview: disabled,
     },
     {

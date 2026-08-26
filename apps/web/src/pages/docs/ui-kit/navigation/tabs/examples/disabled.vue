@@ -21,15 +21,13 @@ const selected = ref<Plan>(plans[0])
   <div class="w-96">
     <Tabs
       v-model="selected"
+      :item-disabled="(plan) => plan.id === 'legacy'"
       :options="plans"
-      :option-disabled="(plan) => plan.id === 'legacy'"
       label-key="name"
       value-key="id"
     >
       <template #panel="{ option }">
-        <p class="bg-surface rounded-lg p-4 text-sm text-muted">
-          Comparing the {{ option.name }} plan.
-        </p>
+        <p class="bg-surface rounded-lg p-4 text-sm text-muted">Comparing the {{ option.name }} plan.</p>
       </template>
     </Tabs>
 

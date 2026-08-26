@@ -7,7 +7,7 @@ export interface ArrayModelConfig<T, L, V, M> {
   multiple?: M
   deselectable?: boolean
   disabled?: boolean
-  optionDisabled?: (option: T) => boolean
+  itemDisabled?: (item: T) => boolean
 }
 
 export interface ArrayModelOptions<T> {
@@ -15,11 +15,11 @@ export interface ArrayModelOptions<T> {
   labelKey?: MaybeRefOrGetter<keyof T | undefined>
   multiple?: MaybeRefOrGetter<boolean>
   deselectable?: MaybeRefOrGetter<boolean>
-  optionDisabled?: MaybeRefOrGetter<((option: T) => boolean) | undefined>
+  itemDisabled?: MaybeRefOrGetter<((item: T) => boolean) | undefined>
 }
 
 export function useArrayModel<T>(model: Ref<T[] | T | undefined>, options: ArrayModelOptions<T>) {
-  const { valueKey, labelKey, multiple = false, deselectable = false, optionDisabled } = options
+  const { valueKey, labelKey, multiple = false, deselectable = false, itemDisabled } = options
 
   const equals = (a: T, b: T) => {
     const key = toValue(valueKey)
@@ -95,7 +95,7 @@ export function useArrayModel<T>(model: Ref<T[] | T | undefined>, options: Array
   }
 
   function isItemDisabled(item: T) {
-    return Boolean(toValue(optionDisabled)?.(item))
+    return Boolean(toValue(itemDisabled)?.(item))
   }
 
   return {

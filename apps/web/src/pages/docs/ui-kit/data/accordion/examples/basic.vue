@@ -2,7 +2,13 @@
 import { ref } from 'vue'
 import { Accordion } from '@dotdev/ui-kit'
 
-const items = [
+interface Item {
+  label: string
+  value: string
+  disabled?: boolean
+}
+
+const items: Item[] = [
   {
     value: 'Accordion is a UI component that lets users expand and collapse sections of content.',
     label: 'What is Accordion?',
@@ -26,13 +32,13 @@ const items = [
   },
 ]
 
-const value = ref(items[0])
+const value = ref<Item | undefined>(items[0])
 </script>
 
 <template>
   <Accordion
     v-model="value"
-    :option-disabled="(option) => !!option.disabled"
+    :item-disabled="(option) => !!option.disabled"
     :items="items"
     label-key="label"
     value-key="value"

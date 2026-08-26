@@ -25,7 +25,7 @@ const { toggle, isSelected, getItemLabel, isItemDisabled } = useArrayModel<T>(mo
   deselectable: () => ui.deselectable,
   valueKey: ui.valueKey,
   labelKey: ui.labelKey,
-  optionDisabled: () => ui.optionDisabled,
+  itemDisabled: () => ui.itemDisabled,
 })
 
 const rootClass = computed(() => {

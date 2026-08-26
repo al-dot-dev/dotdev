@@ -30,7 +30,10 @@ const THEME_SRC = resolve(PKG_DIR, '..', 'theme', 'src')
 const THEME_OUT = join(DIST, 'theme')
 
 const INFRA_UNITS = readdirSync(SRC, { withFileTypes: true })
-  .filter((e) => e.isDirectory() && e.name !== 'components' && e.name !== 'types' && existsSync(join(SRC, e.name, 'index.ts')))
+  .filter(
+    (e) =>
+      e.isDirectory() && e.name !== 'components' && e.name !== 'types' && existsSync(join(SRC, e.name, 'index.ts')),
+  )
   .map((e) => e.name)
 
 const pkg = JSON.parse(readFileSync(join(PKG_DIR, 'package.json'), 'utf8'))
@@ -286,7 +289,7 @@ function assertInfraMirror(unit) {
 
 /** Phase C: root barrels; order mirrors src/index.ts */
 function writeRootBarrels(components) {
-  const runtimeUnits = ['utils', 'config', ...components.map((c) => `components/${c}`), 'composables']
+  const runtimeUnits = ['utils', 'core', ...components.map((c) => `components/${c}`), 'composables']
   const typeExports = readdirSync(join(SRC, 'types'))
     .filter((f) => f.endsWith('.ts'))
     .map((f) => `export * from './types/${f.replace(/\.ts$/, '.js')}'`)
@@ -300,7 +303,11 @@ function writeRootBarrels(components) {
 
 /** Auto-generate src/components/index.ts from discovered components */
 function generateComponentsBarrel(components) {
-  const content = components.sort().map((c) => `export * from './${c}'`).join('\n') + '\n'
+  const content =
+    components
+      .sort()
+      .map((c) => `export * from './${c}'`)
+      .join('\n') + '\n'
   writeFileSync(join(COMPONENTS_SRC, 'index.ts'), content)
 }
 

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "moduleDetection": "force",
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "skipLibCheck": true,
+    "types": [],
+    "allowImportingTsExtensions": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": ".types",
+    "rootDir": "..",
+    "noEmit": false,
+    "paths": {
+      "@dotdev/ui-kit": ["./src"],
+      "@dotdev/ui-kit/*": ["./src/*"],
+      "@dotdev/theme": ["../theme/src"],
+      "@dotdev/theme/*": ["../theme/src/*"],
+      "@dotdev/design": ["../design/src"],
+      "@dotdev/design/*": ["../design/src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.vue"]
+}

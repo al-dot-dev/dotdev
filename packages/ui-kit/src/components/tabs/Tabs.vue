@@ -25,7 +25,7 @@ const listRef = ref<HTMLElement | null>(null)
 const { isSelected, select, findSelectedIndex, getItemLabel, getItemValue, isItemDisabled } = useArrayModel<T>(model, {
   valueKey: ui.valueKey,
   labelKey: ui.labelKey,
-  optionDisabled: () => ui.optionDisabled,
+  itemDisabled: () => ui.itemDisabled,
 })
 
 const nav = useKeyboardNavigation(() => props.options, {

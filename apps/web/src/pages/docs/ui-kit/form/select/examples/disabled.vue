@@ -13,7 +13,7 @@ function isOptionDisabled(option: string) {
 
 <template>
   <div class="flex flex-col gap-4">
-    <Select :option-disabled="isOptionDisabled" v-model="value" :items="options" placeholder="Choose a city" />
-    <Select disabled v-model="valueList" :items="options" placeholder="Disabled" />
+    <Select v-model="value" :item-disabled="isOptionDisabled" :items="options" placeholder="Choose a city" />
+    <Select v-model="valueList" :items="options" disabled placeholder="Disabled" />
   </div>
 </template>

@@ -57,7 +57,7 @@ defineDocPage({
 
     {
       title: 'Disabled state',
-      description: `Use the <code>disabled</code> prop to disable the entire component or <code>option-disabled</code> to disable specific options. Disabled options remain visible but cannot be selected.`,
+      description: `Use the <code>disabled</code> prop to disable the entire component or <code>item-disabled</code> to disable specific options. Disabled options remain visible but cannot be selected.`,
       preview: disabledOption,
     },
     {

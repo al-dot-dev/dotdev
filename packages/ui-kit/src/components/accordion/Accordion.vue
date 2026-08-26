@@ -1,18 +1,11 @@
 <script generic="T, L extends keyof T, V extends keyof T, M extends boolean" lang="ts" setup>
-import type { UIAccordionEmits, UIAccordionProps, UIAccordionSlots } from './accordion.types.ts'
+import type { UIAccordionEmits, UIAccordionExpose, UIAccordionProps, UIAccordionSlots } from './accordion.types.ts'
 import { computed, useId } from 'vue'
-import {
-  asTemplateRef,
-  Icon,
-  normalizeBooleanProp,
-  Scope,
-  useArrayModel,
-  useUiKit,
-} from '@dotdev/ui-kit'
+import { asTemplateRef, Icon, normalizeBooleanProp, Scope, useArrayModel, useUiKit } from '@dotdev/ui-kit'
 import Collapse from './Collapse.vue'
 import { accordionStyle } from '@dotdev/theme'
 
-defineEmits<UIAccordionEmits>()
+defineEmits<UIAccordionEmits<T, M>>()
 defineSlots<UIAccordionSlots<T>>()
 
 const props = withDefaults(defineProps<UIAccordionProps<T, L, V, M>>(), {
@@ -28,18 +21,23 @@ const { ui, bem } = useUiKit('accordion', props, accordionStyle)
 const id = useId()
 
 const { toggle, isSelected, getItemLabel, getItemValue, isItemDisabled } = useArrayModel<T>(model, {
-  multiple: () => normalizeBooleanProp(ui.multiple),
-  deselectable: () => ui.deselectable,
   valueKey: ui.valueKey,
   labelKey: ui.labelKey,
-  optionDisabled: () => ui.optionDisabled,
+  deselectable: () => ui.deselectable,
+  itemDisabled: () => ui.itemDisabled,
+  multiple: () => normalizeBooleanProp(ui.multiple),
 })
 
-const rootClass = computed(() => bem([ui.variant], { disabled: ui.disabled }))
+const rootClass = computed(() => {
+  const { variant, disabled } = ui
+  return bem([variant], { disabled })
+})
 
 function getItemId(index: number, part: 'trigger' | 'panel') {
   return `${id}-${part}-${index}`
 }
+
+defineExpose<UIAccordionExpose<T>>({ toggle })
 
 const uit = asTemplateRef(ui)
 </script>
@@ -47,28 +45,28 @@ const uit = asTemplateRef(ui)
 <template>
   <div :class="rootClass">
     <Scope
-      v-for="(option, idx) in uit.items"
+      v-for="(item, idx) in uit.items"
       :key="idx"
       #default="scope"
       :scope="{
-        disabled: isItemDisabled(option),
+        disabled: isItemDisabled(item),
         index: idx,
-        item: option,
-        label: getItemLabel(option),
-        open: isSelected(option),
-        toggle: () => toggle(option),
-        value: getItemValue(option),
+        item: item,
+        label: getItemLabel(item),
+        expanded: isSelected(item),
+        toggle: () => toggle(item),
+        value: getItemValue(item),
       }"
     >
       <div :class="bem('item', { disabled: scope.disabled })">
         <button
           :id="getItemId(idx, 'trigger')"
           :aria-controls="getItemId(idx, 'panel')"
-          :aria-expanded="isSelected(option)"
-          :class="bem('trigger', { open: scope.open, disabled: scope.disabled })"
+          :aria-expanded="scope.expanded"
+          :class="bem('trigger', { expanded: scope.expanded, disabled: scope.disabled })"
           :disabled="scope.disabled"
           type="button"
-          @click="toggle(option)"
+          @click="toggle(item)"
         >
           <slot v-bind="scope">
             <span :class="bem('label')">{{ scope.label }}</span>
@@ -76,12 +74,12 @@ const uit = asTemplateRef(ui)
 
           <span :class="bem('indicator')">
             <slot name="indicator" v-bind="scope">
-              <Icon aria-hidden="true" name="chevron-down" />
+              <Icon :class="bem('indicator-icon')" aria-hidden="true" name="chevron-down" />
             </slot>
           </span>
         </button>
 
-        <Collapse :open="scope.open">
+        <Collapse :open="scope.expanded">
           <div
             :id="getItemId(idx, 'panel')"
             :aria-labelledby="getItemId(idx, 'trigger')"

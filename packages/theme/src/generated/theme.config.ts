@@ -369,7 +369,7 @@ export default {
       "text-indicator": "var(--NS-text-muted)",
       "text-indicator-open": "var(--NS-text-foreground)",
       "ring-focus": "var(--NS-ring-brand)",
-      "gap": "0.5rem",
+      "gap": "var(--NS-gap-sm)",
       "px-item": "var(--NS-space-lg)",
       "py-item": "var(--NS-space-md)",
       "pb-item": "var(--NS-space-md)",
