@@ -92,6 +92,7 @@
   --s-type-xl: 1.25rem;
   --s-white: #ffffff;
   --s-black: #000000;
+  --s-bg-backdrop: color-mix(in oklab, var(--s-black) 30%, transparent);
   --s-bg-background: var(--s-white);
   --s-bg-surface: var(--s-white);
   --s-text-foreground: var(--s-neutral-900);
@@ -147,6 +148,13 @@
   --s-bg-success-soft-hover: var(--s-success-100);
   --s-border-success: var(--s-success-600);
   --s-ring-success: color-mix(in oklab, var(--s-success-500) 50%, transparent);
+  --s-z-sticky: 10;
+  --s-z-dropdown: 20;
+  --s-z-overlay: 30;
+  --s-z-dialog: 40;
+  --s-z-popover: 50;
+  --s-z-toast: 60;
+  --s-z-tooltip: 70;
 }
 
 .dark {
@@ -198,6 +206,10 @@
   --s-bg-success-soft: color-mix(in oklab, var(--s-success-500) 16%, transparent);
   --s-bg-success-soft-hover: color-mix(in oklab, var(--s-success-500) 26%, transparent);
   --s-border-success: var(--s-success-400);
+}
+
+@utility bg-backdrop {
+  @apply bg-(--s-bg-backdrop);
 }
 
 @utility bg-background {
@@ -418,6 +430,34 @@
 
 @utility ring-success {
   @apply ring-(--s-ring-success);
+}
+
+@utility z-sticky {
+  @apply z-(--s-z-sticky);
+}
+
+@utility z-dropdown {
+  @apply z-(--s-z-dropdown);
+}
+
+@utility z-overlay {
+  @apply z-(--s-z-overlay);
+}
+
+@utility z-dialog {
+  @apply z-(--s-z-dialog);
+}
+
+@utility z-popover {
+  @apply z-(--s-z-popover);
+}
+
+@utility z-toast {
+  @apply z-(--s-z-toast);
+}
+
+@utility z-tooltip {
+  @apply z-(--s-z-tooltip);
 }
 
 @utility type-* {
@@ -1351,7 +1391,7 @@
     @apply font-mono text-muted tabular-nums;
   }
   .doc-tokens__grid {
-    @apply grid grid-cols-3 gap-3;
+    @apply grid grid-cols-1 md:grid-cols-3 gap-3;
   }
   .doc-token {
     @apply flex flex-col radius-lg overflow-hidden border border-default transition-[border-color] hover:border-neutral;

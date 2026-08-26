@@ -33,10 +33,11 @@
   ],
   "sideEffects": false,
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.mjs"
-    }
+    ".": "./src/index.ts"
+  },
+  "build-exports": {
+    "types": "./dist/index.d.ts",
+    "default": "./dist/index.mjs"
   },
   "scripts": {
     "build": "node scripts/build.mjs"

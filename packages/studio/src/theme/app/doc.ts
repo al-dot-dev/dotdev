@@ -77,7 +77,7 @@ export const doc = defineComponent({
     '.doc-tokens__group-label': `flex items-center gap-3 font-mono text-xs uppercase tracking-wider text-muted`,
     '.doc-tokens__group-rule': `flex-1 border-t border-default`,
     '.doc-tokens__group-count': `font-mono text-muted tabular-nums`,
-    '.doc-tokens__grid': `grid grid-cols-3 gap-3`,
+    '.doc-tokens__grid': `grid grid-cols-1 md:grid-cols-3 gap-3`,
 
     '.doc-token': `flex flex-col radius-lg overflow-hidden border border-default transition-[border-color] hover:border-neutral`,
     '.doc-token__well': `h-20 flex items-center justify-center doc-bg-token-preview`,

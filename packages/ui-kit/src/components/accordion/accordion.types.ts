@@ -16,7 +16,7 @@ export interface UIAccordionProps<T = any, L = any, V = any, M = any>
 }
 
 export interface UIAccordionSlots<T> {
-  default(scope: UIAccordionSlotsScope<T>): void
+  label(scope: UIAccordionSlotsScope<T>): void
   content(scope: UIAccordionSlotsScope<T>): void
   indicator(scope: UIAccordionSlotsScope<T>): void
 }

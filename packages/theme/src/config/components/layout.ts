@@ -18,11 +18,11 @@ export const layout = defineComponent({
     '&--has-header': 'flex-col',
 
     '&-sidebar': `shrink-0`,
-    '&--sidebar-desktop &-sidebar': 'sticky top-0 z-50 h-dvh overflow-hidden layout-w-sidebar',
+    '&--sidebar-desktop &-sidebar': 'sticky top-0 z-dialog h-dvh overflow-hidden layout-w-sidebar',
     '&--sidebar-desktop &-sidebar__wrapper': 'absolute inset-y-0 right-0',
     '&--sidebar-desktop.&--has-header &-sidebar': `top-(--$ns-layout-h-header) h-[calc(100dvh-var(--$ns-layout-h-header))]`,
 
-    '&--sidebar-mobile &-sidebar': 'z-105 fixed inset-0 bg-backdrop',
+    '&--sidebar-mobile &-sidebar': 'z-dialog fixed inset-0 bg-backdrop',
     '&--sidebar-mobile &-sidebar__wrapper': 'w-(--$ns-layout-w-sidebar)',
 
     '&-sidebar__wrapper': 'flex h-full flex-col min-w-(--$ns-layout-w-sidebar) border-r layout-panel',
@@ -30,7 +30,7 @@ export const layout = defineComponent({
     '&-sidebar__body': 'flex-1 overflow-y-auto p-4',
     '&-sidebar__footer': 'flex shrink-0 items-center justify-between px-4 py-4',
 
-    '&-header': `sticky top-0 z-100 flex shrink-0 items-center justify-between gap-2 border-b px-4 layout-panel layout-h-header`,
+    '&-header': `sticky top-0 z-overlay flex shrink-0 items-center justify-between gap-2 border-b px-4 layout-panel layout-h-header`,
     '&-header__group': 'flex items-center gap-2',
 
     '&-content': 'flex-1 min-w-[0]',

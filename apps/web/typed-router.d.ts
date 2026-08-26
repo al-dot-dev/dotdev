@@ -52,6 +52,7 @@ declare module 'vue-router/auto-routes' {
       | 'Components'
       | 'Config'
       | 'Data'
+      | 'Dialog'
       | 'Divider'
       | 'Documentations'
       | 'Form'
@@ -63,6 +64,7 @@ declare module 'vue-router/auto-routes' {
       | 'ListBox'
       | 'Message'
       | 'Navigation'
+      | 'Overlay'
       | 'Pagination'
       | 'Progress'
       | 'Radio'
@@ -364,6 +366,20 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    'Overlay': RouteRecordInfo<
+      'Overlay',
+      '/docs/ui-kit/overlay',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'Dialog': RouteRecordInfo<
+      'Dialog',
+      '/docs/ui-kit/overlay/dialog',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     'Layout': RouteRecordInfo<
       'Layout',
       '/layout',
@@ -411,6 +427,7 @@ declare module 'vue-router/auto-routes' {
         | 'Components'
         | 'Config'
         | 'Data'
+        | 'Dialog'
         | 'Divider'
         | 'Documentations'
         | 'Form'
@@ -422,6 +439,7 @@ declare module 'vue-router/auto-routes' {
         | 'ListBox'
         | 'Message'
         | 'Navigation'
+        | 'Overlay'
         | 'Pagination'
         | 'Progress'
         | 'Radio'
@@ -762,6 +780,22 @@ declare module 'vue-router/auto-routes' {
     'src/pages/docs/ui-kit/navigation/tabs/index.vue': {
       routes:
         | 'Tabs'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/ui-kit/overlay/index.vue': {
+      routes:
+        | 'Overlay'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/ui-kit/overlay/dialog/index.vue': {
+      routes:
+        | 'Dialog'
       views:
         | never
       pathParamNames:

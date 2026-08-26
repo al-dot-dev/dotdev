@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-interface Props {
-  open: boolean
-}
+import { TransitionHooks, TransitionProps } from 'vue'
 
-const props = defineProps<Props>()
+const props = defineProps<TransitionProps>()
+defineEmits<TransitionHooks>()
 
 const setHeight = (el: Element, height: string) => {
   if (el instanceof HTMLElement) el.style.height = height
@@ -36,6 +35,7 @@ const onAfterLeave = (el: Element) => {
 
 <template>
   <Transition
+    :name="name"
     @enter="onEnter"
     @leave="onLeave"
     @before-enter="onBeforeEnter"
@@ -43,6 +43,6 @@ const onAfterLeave = (el: Element) => {
     @before-leave="onBeforeLeave"
     @after-leave="onAfterLeave"
   >
-    <slot v-if="props.open" />
+    <slot />
   </Transition>
 </template>

@@ -19,6 +19,14 @@ const TOKEN_ALPHA = /^(.+)\/(\d+(?:\.\d+)?)$/
 export function parseTokenValue(value: string): TokenExpression {
   const input = value.trim()
 
+  if (input === '') {
+    return { kind: 'css', value: '' }
+  }
+
+  if (Number.isFinite(Number(input))) {
+    return { kind: 'css', value: input }
+  }
+
   if (input.startsWith('--')) {
     return { kind: 'css', value: `var(${input})` }
   }

@@ -2,7 +2,7 @@
 import type { UIAccordionEmits, UIAccordionExpose, UIAccordionProps, UIAccordionSlots } from './accordion.types.ts'
 import { computed, useId } from 'vue'
 import { asTemplateRef, Icon, normalizeBooleanProp, Scope, useArrayModel, useUiKit } from '@dotdev/ui-kit'
-import Collapse from './Collapse.vue'
+import TransitionCollapse from './TransitionCollapse.vue'
 import { accordionStyle } from '@dotdev/theme'
 
 defineEmits<UIAccordionEmits<T, M>>()
@@ -68,7 +68,7 @@ const uit = asTemplateRef(ui)
           type="button"
           @click="toggle(item)"
         >
-          <slot v-bind="scope">
+          <slot name="label" v-bind="scope">
             <span :class="bem('label')">{{ scope.label }}</span>
           </slot>
 
@@ -79,8 +79,9 @@ const uit = asTemplateRef(ui)
           </span>
         </button>
 
-        <Collapse :open="scope.expanded">
+        <TransitionCollapse>
           <div
+            v-show="scope.expanded"
             :id="getItemId(idx, 'panel')"
             :aria-labelledby="getItemId(idx, 'trigger')"
             :class="bem('panel')"
@@ -90,7 +91,7 @@ const uit = asTemplateRef(ui)
               <span :class="bem('value')">{{ scope.value }}</span>
             </slot>
           </div>
-        </Collapse>
+        </TransitionCollapse>
       </div>
     </Scope>
   </div>

@@ -23,7 +23,7 @@ const items: { value: string; label: string; icon: UiKitIcon }[] = [
 
 <template>
   <Accordion :items="items" label-key="label" multiple value-key="value" variant="soft">
-    <template #default="{ item }">
+    <template #label="{ item }">
       <Icon :name="item.icon" class="text-muted" />
       <span>{{ item.label }}</span>
     </template>
