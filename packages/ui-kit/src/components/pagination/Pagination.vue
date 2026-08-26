@@ -48,7 +48,7 @@ function go(page: number) {
 </script>
 
 <template>
-  <nav :aria-label="ui.ariaLabel" :class="rootClass">
+  <nav :aria-label="ui.ariaLabel" :class="rootClass" v-bind="el">
     <ul :class="bem('list')">
       <li>
         <button

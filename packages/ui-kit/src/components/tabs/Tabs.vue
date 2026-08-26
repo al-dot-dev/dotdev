@@ -86,7 +86,7 @@ const rootClass = computed(() => bem([ui.size, ui.variant]))
 </script>
 
 <template>
-  <div :class="rootClass">
+  <div :class="rootClass" v-bind="el">
     <div ref="listRef" :class="bem('list')" role="tablist">
       <button
         v-for="(option, idx) in options"

@@ -22,7 +22,7 @@ const rootClass = computed(() => {
 </script>
 
 <template>
-  <component :is="ui.is" :aria-orientation="ui.orientation" :class="rootClass" role="separator">
+  <component :is="ui.is" :aria-orientation="ui.orientation" :class="rootClass" role="separator" v-bind="el">
     <span aria-hidden="true" :class="bem('line')" />
     <span v-if="label || $slots.default" :class="bem('label')">
       <slot>{{ label }}</slot>

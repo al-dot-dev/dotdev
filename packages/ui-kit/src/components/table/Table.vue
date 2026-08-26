@@ -25,7 +25,7 @@ const uit = asTemplateRef(ui)
 </script>
 
 <template>
-  <component is="table" :class="rootClass">
+  <component is="table" :class="rootClass" v-bind="el">
     <caption v-if="$slots.caption" :class="bem('caption')">
       <slot name="caption" />
     </caption>

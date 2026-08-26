@@ -20,7 +20,7 @@ function onSelect(item: NormalizedMenuItem, event?: Event) {
 </script>
 
 <template>
-  <ul :class="bem([ui.size])" role="menu">
+  <ul :class="bem([ui.size])" role="menu" v-bind="el">
     <template v-for="(item, idx) in items" :key="idx">
       <li v-if="item.kind === 'heading'" :class="[...bem('heading'), toValue(item.class)]">
         {{ item.label }}

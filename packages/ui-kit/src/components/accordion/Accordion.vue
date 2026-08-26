@@ -43,7 +43,7 @@ const uit = asTemplateRef(ui)
 </script>
 
 <template>
-  <div :class="rootClass">
+  <div :class="rootClass" v-bind="el">
     <Scope
       v-for="(item, idx) in uit.items"
       :key="idx"

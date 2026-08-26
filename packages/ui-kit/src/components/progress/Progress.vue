@@ -35,6 +35,7 @@ const indicatorStyle = computed(() => (percent.value === null ? undefined : { wi
     :class="rootClass"
     aria-valuemin="0"
     role="progressbar"
+    v-bind="el"
   >
     <span :class="bem('indicator')" :style="indicatorStyle" />
   </div>

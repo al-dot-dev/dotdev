@@ -22,7 +22,7 @@ const rootClass = computed(() => {
 </script>
 
 <template>
-  <component :is="ui.is" :class="rootClass">
+  <component :is="ui.is" :class="rootClass" v-bind="el">
     <slot name="prefix" />
     <Icon v-if="prefixIcon" :class="bem('icon')" :name="prefixIcon" />
     <slot />

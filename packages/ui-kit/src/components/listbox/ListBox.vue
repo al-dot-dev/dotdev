@@ -244,7 +244,7 @@ const tui = asTemplateRef(ui)
   <ul
     ref="listbox"
     :style="isGrid ? { '--ui-listbox-columns': tui.columns } : undefined"
-    v-bind="rootAttrs"
+    v-bind="{ ...rootAttrs, ...el }"
     @focusin="onNativeFocusIn"
     @focusout="onNativeFocusOut"
     @mousedown="onMouseDown"

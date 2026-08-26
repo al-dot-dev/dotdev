@@ -46,10 +46,10 @@ const tui = asTemplateRef(ui)
 <template>
   <template v-if="loading">
     <div v-if="isText" :class="[bem('wrapper'), tui.skeletonClass ?? $attrs.class]">
-      <span v-for="line in lineCount" :key="line" :class="rootClass" />
+      <span v-for="line in lineCount" :key="line" :class="rootClass" v-bind="el" />
     </div>
 
-    <div v-else :class="[rootClass, tui.skeletonClass ?? $attrs.class]" />
+    <div v-else :class="[rootClass, tui.skeletonClass ?? $attrs.class]" v-bind="el" />
   </template>
 
   <component :is="tui.is" v-else-if="tui.is" v-bind="$attrs">

@@ -22,5 +22,5 @@ const rootClass = computed(() => {
 </script>
 
 <template>
-  <textarea v-model="model" :class="rootClass" :disabled="disabled" />
+  <textarea v-model="model" :class="rootClass" :disabled="disabled" v-bind="el" />
 </template>

@@ -17,7 +17,7 @@ const rootClass = computed(() => bem([ui.axis]))
 </script>
 
 <template>
-  <div :class="rootClass">
+  <div :class="rootClass" v-bind="el">
     <slot />
   </div>
 </template>

@@ -21,5 +21,5 @@ const rootClass = computed(() => {
 </script>
 
 <template>
-  <input v-model="model" :class="rootClass" :disabled="disabled" type="checkbox" />
+  <input v-model="model" :class="rootClass" :disabled="disabled" type="checkbox" v-bind="el" />
 </template>

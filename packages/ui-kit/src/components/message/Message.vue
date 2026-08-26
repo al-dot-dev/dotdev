@@ -29,7 +29,7 @@ const rootAttrs = computed(() => {
 </script>
 
 <template>
-  <component :is="ui.is" :class="rootClass" v-bind="rootAttrs">
+  <component :is="ui.is" :class="rootClass" v-bind="{ ...rootAttrs, ...el }">
     <slot name="icon">
       <Icon v-if="icon" aria-hidden="true" :class="bem('icon')" :name="icon" />
     </slot>

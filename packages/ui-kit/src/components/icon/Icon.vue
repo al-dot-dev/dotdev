@@ -14,7 +14,7 @@ const icons = config.icons ?? {}
 </script>
 
 <template>
-  <span v-if="ui.name || ui.is" :class="bem()">
+  <span v-if="ui.name || ui.is" :class="bem()" v-bind="el">
     <component :is="ui.is" v-if="ui.is" />
     <component :is="icons[ui.name]" v-else-if="ui.name && icons[ui.name]" />
   </span>

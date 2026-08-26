@@ -62,7 +62,7 @@ function normalizeItem(item: UIMenuItem): NormalizedMenuItem {
 </script>
 
 <template>
-  <li :class="bem('item-wrapper')" role="none">
+  <li :class="bem('item-wrapper')" role="none" v-bind="el">
     <component :is="tag" :class="classes" role="menuitem" v-bind="bindProps" @click="onClick">
       <Icon v-if="item.icon" :class="bem('item-icon')" :name="item.icon" />
       <span :class="bem('item-label')">

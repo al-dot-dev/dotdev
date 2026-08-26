@@ -52,7 +52,7 @@ function getOptionKey(option: T, index: number) {
 </script>
 
 <template>
-  <div :class="rootClass" role="group">
+  <div :class="rootClass" role="group" v-bind="el">
     <button
       v-for="(option, idx) in items"
       :key="getOptionKey(option, idx)"

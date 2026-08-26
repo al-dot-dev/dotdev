@@ -17,7 +17,7 @@ const rootClass = computed(() => bem([ui.size, ui.variant], { attach: ui.attach 
 </script>
 
 <template>
-  <div :class="rootClass">
+  <div :class="rootClass" v-bind="el">
     {{ label }}
     <slot />
   </div>

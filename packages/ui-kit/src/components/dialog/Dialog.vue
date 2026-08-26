@@ -143,7 +143,7 @@ defineExpose<UIDialogExpose>({
 <template>
   <Teleport to="body">
     <Transition :name="ui.ui">
-      <div v-if="visible" :class="rootClass" @click="onBackdropClick">
+      <div v-if="visible" :class="rootClass" v-bind="el" @click="onBackdropClick">
         <div :class="bem('panel')" v-bind="{ ...panelAttrs, ...$attrs }" @click.stop>
           <div v-if="$slots.header || title || closable" :class="bem('header')">
             <h2 v-if="title" :id="titleId" :class="bem('title')">

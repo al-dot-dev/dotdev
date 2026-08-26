@@ -15,7 +15,7 @@ useLayoutScope()?.registerHeader()
 </script>
 
 <template>
-  <header :class="bem()">
+  <header :class="bem()" v-bind="el">
     <div :class="bem('group')">
       <slot name="left" />
     </div>

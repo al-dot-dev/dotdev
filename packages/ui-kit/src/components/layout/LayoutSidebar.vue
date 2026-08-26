@@ -31,7 +31,7 @@ function closeOnBackdrop() {
 
 <template>
   <transition name="layout-sidebar">
-    <aside v-show="state.isSidebarExpanded" :class="bem()" @click="closeOnBackdrop">
+    <aside v-show="state.isSidebarExpanded" :class="bem()" v-bind="el" @click="closeOnBackdrop">
       <div :class="bem('wrapper')" @click.stop>
         <div v-if="$slots.header" :class="bem('header')">
           <slot name="header" />

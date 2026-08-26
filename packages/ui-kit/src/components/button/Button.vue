@@ -44,7 +44,7 @@ function onClick(event: MouseEvent) {
 </script>
 
 <template>
-  <component :is="ui.href ? 'a' : 'button'" :class="rootClass" v-bind="rootAttrs" @click="onClick">
+  <component :is="ui.href ? 'a' : 'button'" :class="rootClass" v-bind="{ ...rootAttrs, ...el }" @click="onClick">
     <slot name="prefix" />
     <Icon
       v-if="(ui.icon && ui.iconPos === 'prefix') || ui.loading"

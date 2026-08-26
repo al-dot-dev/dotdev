@@ -21,7 +21,7 @@ function isCurrent(index: number) {
 </script>
 
 <template>
-  <nav :aria-label="ui.ariaLabel" :class="bem()">
+  <nav :aria-label="ui.ariaLabel" :class="bem()" v-bind="el">
     <ol :class="bem('list')">
       <li
         v-for="(item, index) in ui.items"

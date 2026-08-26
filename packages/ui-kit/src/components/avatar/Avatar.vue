@@ -23,7 +23,7 @@ const rootClass = computed(() => {
 </script>
 
 <template>
-  <div :class="rootClass">
+  <div :class="rootClass" v-bind="el">
     <img v-if="src" :alt="alt" :class="bem('image')" :src="src" />
     <span v-else-if="label" :class="bem('label')">{{ label }}</span>
     <Icon v-else-if="icon" :class="bem('icon')" :name="icon" />

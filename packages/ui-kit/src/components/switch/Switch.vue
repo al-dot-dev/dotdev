@@ -24,7 +24,7 @@ function toggle() {
 </script>
 
 <template>
-  <button :aria-checked="model" :class="rootClass" :disabled="ui.disabled" role="switch" type="button" @click="toggle">
+  <button :aria-checked="model" :class="rootClass" :disabled="ui.disabled" role="switch" type="button" v-bind="el" @click="toggle">
     <span :class="bem('track')">
       <span :class="bem('thumb')" />
     </span>

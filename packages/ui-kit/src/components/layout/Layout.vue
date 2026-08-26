@@ -29,7 +29,7 @@ const rootClass = computed(() =>
 </script>
 
 <template>
-  <div :class="rootClass">
+  <div :class="rootClass" v-bind="el">
     <slot
       :is-expanded="layout.state.isSidebarExpanded"
       :isMobile="layout.state.sidebarMode === 'mobile'"

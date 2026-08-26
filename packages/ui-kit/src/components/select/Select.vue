@@ -137,7 +137,7 @@ const tui = asTemplateRef(ui)
 
 <template>
   <Floating ref="floating" #default="{ ref, style, isOpen }" :offset="2" auto-update fit @click-outside="closeAndBlur">
-    <div :class="rootClass" @click="toggleDropdown" @keydown="onKeyDown">
+    <div :class="rootClass" v-bind="el" @click="toggleDropdown" @keydown="onKeyDown">
       <span ref="combobox" v-bind="comboboxAttrs" @focus="isFocused = true">
         {{ displayLabel || tui.placeholder }}
       </span>

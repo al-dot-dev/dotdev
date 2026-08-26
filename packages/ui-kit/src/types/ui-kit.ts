@@ -5,6 +5,7 @@ export type UiKitOverride<T, K extends string> = K extends keyof UiKitRegister ?
 export interface UiKitBaseProps {
   namespace?: UiKitNamespace
   ui?: string
+  el?: any
 }
 
 export type UiKitIcon = keyof UiKitOverride<keyof UiKitIcons, 'icons'>

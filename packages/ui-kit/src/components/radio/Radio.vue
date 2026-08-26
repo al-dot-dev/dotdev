@@ -25,5 +25,5 @@ function onInput(event: Event) {
 </script>
 
 <template>
-  <input :checked="model" :class="rootClass" :disabled="disabled" type="radio" @change="onInput" />
+  <input :checked="model" :class="rootClass" :disabled="disabled" type="radio" v-bind="el" @change="onInput" />
 </template>

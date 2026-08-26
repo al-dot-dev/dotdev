@@ -12,7 +12,7 @@ const { bem } = useUiKit('layout-content', props)
 </script>
 
 <template>
-  <main :class="bem()">
+  <main :class="bem()" v-bind="el">
     <slot />
   </main>
 </template>

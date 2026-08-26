@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div :class="bem()" :style="styleVariables">
+  <div :class="bem()" :style="styleVariables" v-bind="el">
     <div ref="viewport" :class="bem('viewport')" tabindex="0" @scroll="throttledUpdateScroll">
       <slot />
     </div>
