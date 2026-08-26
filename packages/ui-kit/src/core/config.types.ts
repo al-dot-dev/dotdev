@@ -37,6 +37,7 @@ import type {
   UITagProps,
   UITextareaProps,
 } from '@dotdev/ui-kit'
+import type { UIDrawerProps } from '@dotdev/ui-kit/components/drawer'
 
 export interface UiKitConfigComponents {
   accordion: UIAccordionProps
@@ -44,6 +45,7 @@ export interface UiKitConfigComponents {
   breadcrumbs: UIBreadcrumbsProps
   button: UIButtonProps
   dialog: UIDialogProps
+  drawer: UIDrawerProps
   'icon-button': UIIconButtonProps
   'select-button': UISelectButtonProps
   menu: UIMenuProps

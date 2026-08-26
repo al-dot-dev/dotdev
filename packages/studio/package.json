@@ -10,8 +10,8 @@
     "./style.css": "./src/style.css"
   },
   "scripts": {
-    "watch": "dotdev-design watch -d ./src/theme -n s -i ./src/theme/index.ts -o ./src/style.css",
-    "build": "dotdev-design build -d ./src/theme -n s -i ./src/theme/index.ts -o ./src/style.css"
+    "watch": "dotdev-design watch -d ./src/theme -n d -i ./src/theme/index.ts -o ./src/style.css",
+    "build": "dotdev-design build -d ./src/theme -n d -i ./src/theme/index.ts -o ./src/style.css -k utilities,rules"
   },
   "dependencies": {
     "vue": "^3.5.39",

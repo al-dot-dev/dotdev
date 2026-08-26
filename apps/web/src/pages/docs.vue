@@ -11,6 +11,7 @@ import {
 } from '@dotdev/ui-kit'
 import Logo from '../components/Logo.vue'
 import SidebarMenu from '../components/SidebarMenu.vue'
+import ColorPallete from '../components/ColorPallete.vue'
 
 const { scheme } = useColorScheme()
 
@@ -45,6 +46,7 @@ const { items } = useRouterBreadcrumbs({
         </template>
 
         <template #right>
+          <ColorPallete />
           <IconButton
             :icon="scheme === 'light' ? 'moon' : 'sun'"
             aria-label="Toggle color scheme"

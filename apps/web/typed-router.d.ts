@@ -55,6 +55,7 @@ declare module 'vue-router/auto-routes' {
       | 'Dialog'
       | 'Divider'
       | 'Documentations'
+      | 'Drawer'
       | 'Form'
       | 'Group'
       | 'Hooks'
@@ -380,6 +381,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    'Drawer': RouteRecordInfo<
+      'Drawer',
+      '/docs/ui-kit/overlay/drawer',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     'Layout': RouteRecordInfo<
       'Layout',
       '/layout',
@@ -430,6 +438,7 @@ declare module 'vue-router/auto-routes' {
         | 'Dialog'
         | 'Divider'
         | 'Documentations'
+        | 'Drawer'
         | 'Form'
         | 'Group'
         | 'Hooks'
@@ -796,6 +805,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/docs/ui-kit/overlay/dialog/index.vue': {
       routes:
         | 'Dialog'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/ui-kit/overlay/drawer/index.vue': {
+      routes:
+        | 'Drawer'
       views:
         | never
       pathParamNames:

@@ -28,7 +28,7 @@ export function useUiKit<P extends UiKitBaseProps>(component: UiKitComponentKeys
   const uiKitProps = useUiKitProps({ component, props, namespace, config: state.config })
   const bem = useUiKitBem(uiKitProps, namespace)
 
-  if (styles) {
+  if (styles && component === props.ui) {
     const theme = state.theme
     const components = (state.theme.config?.components ?? {}) as any
     const cssVars = components[component]

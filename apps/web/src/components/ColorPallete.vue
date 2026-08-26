@@ -1,0 +1,446 @@
+<script lang="ts" setup>
+import { Floating, Icon, IconButton, updateThemeConfig } from '@dotdev/ui-kit'
+import { reactive } from 'vue'
+
+interface Palette {
+  name: string
+  colors: Record<string, string>
+}
+
+const neutrals: Palette[] = [
+  {
+    name: 'Slate',
+    colors: {
+      'neutral-50': 'var(--color-slate-50)',
+      'neutral-100': 'var(--color-slate-100)',
+      'neutral-200': 'var(--color-slate-200)',
+      'neutral-300': 'var(--color-slate-300)',
+      'neutral-400': 'var(--color-slate-400)',
+      'neutral-500': 'var(--color-slate-500)',
+      'neutral-600': 'var(--color-slate-600)',
+      'neutral-700': 'var(--color-slate-700)',
+      'neutral-800': 'var(--color-slate-800)',
+      'neutral-900': 'var(--color-slate-900)',
+      'neutral-950': 'var(--color-slate-950)',
+    },
+  },
+  {
+    name: 'Gray',
+    colors: {
+      'neutral-50': 'var(--color-gray-50)',
+      'neutral-100': 'var(--color-gray-100)',
+      'neutral-200': 'var(--color-gray-200)',
+      'neutral-300': 'var(--color-gray-300)',
+      'neutral-400': 'var(--color-gray-400)',
+      'neutral-500': 'var(--color-gray-500)',
+      'neutral-600': 'var(--color-gray-600)',
+      'neutral-700': 'var(--color-gray-700)',
+      'neutral-800': 'var(--color-gray-800)',
+      'neutral-900': 'var(--color-gray-900)',
+      'neutral-950': 'var(--color-gray-950)',
+    },
+  },
+  {
+    name: 'Zinc',
+    colors: {
+      'neutral-50': 'var(--color-zinc-50)',
+      'neutral-100': 'var(--color-zinc-100)',
+      'neutral-200': 'var(--color-zinc-200)',
+      'neutral-300': 'var(--color-zinc-300)',
+      'neutral-400': 'var(--color-zinc-400)',
+      'neutral-500': 'var(--color-zinc-500)',
+      'neutral-600': 'var(--color-zinc-600)',
+      'neutral-700': 'var(--color-zinc-700)',
+      'neutral-800': 'var(--color-zinc-800)',
+      'neutral-900': 'var(--color-zinc-900)',
+      'neutral-950': 'var(--color-zinc-950)',
+    },
+  },
+  {
+    name: 'Neutral',
+    colors: {
+      'neutral-50': 'var(--color-neutral-50)',
+      'neutral-100': 'var(--color-neutral-100)',
+      'neutral-200': 'var(--color-neutral-200)',
+      'neutral-300': 'var(--color-neutral-300)',
+      'neutral-400': 'var(--color-neutral-400)',
+      'neutral-500': 'var(--color-neutral-500)',
+      'neutral-600': 'var(--color-neutral-600)',
+      'neutral-700': 'var(--color-neutral-700)',
+      'neutral-800': 'var(--color-neutral-800)',
+      'neutral-900': 'var(--color-neutral-900)',
+      'neutral-950': 'var(--color-neutral-950)',
+    },
+  },
+  {
+    name: 'Stone',
+    colors: {
+      'neutral-50': 'var(--color-stone-50)',
+      'neutral-100': 'var(--color-stone-100)',
+      'neutral-200': 'var(--color-stone-200)',
+      'neutral-300': 'var(--color-stone-300)',
+      'neutral-400': 'var(--color-stone-400)',
+      'neutral-500': 'var(--color-stone-500)',
+      'neutral-600': 'var(--color-stone-600)',
+      'neutral-700': 'var(--color-stone-700)',
+      'neutral-800': 'var(--color-stone-800)',
+      'neutral-900': 'var(--color-stone-900)',
+      'neutral-950': 'var(--color-stone-950)',
+    },
+  },
+]
+
+const colors: Palette[] = [
+  {
+    name: 'Red',
+    colors: {
+      'brand-50': 'var(--color-red-50)',
+      'brand-100': 'var(--color-red-100)',
+      'brand-200': 'var(--color-red-200)',
+      'brand-300': 'var(--color-red-300)',
+      'brand-400': 'var(--color-red-400)',
+      'brand-500': 'var(--color-red-500)',
+      'brand-600': 'var(--color-red-600)',
+      'brand-700': 'var(--color-red-700)',
+      'brand-800': 'var(--color-red-800)',
+      'brand-900': 'var(--color-red-900)',
+      'brand-950': 'var(--color-red-950)',
+    },
+  },
+  {
+    name: 'Orange',
+    colors: {
+      'brand-50': 'var(--color-orange-50)',
+      'brand-100': 'var(--color-orange-100)',
+      'brand-200': 'var(--color-orange-200)',
+      'brand-300': 'var(--color-orange-300)',
+      'brand-400': 'var(--color-orange-400)',
+      'brand-500': 'var(--color-orange-500)',
+      'brand-600': 'var(--color-orange-600)',
+      'brand-700': 'var(--color-orange-700)',
+      'brand-800': 'var(--color-orange-800)',
+      'brand-900': 'var(--color-orange-900)',
+      'brand-950': 'var(--color-orange-950)',
+    },
+  },
+  {
+    name: 'Amber',
+    colors: {
+      'brand-50': 'var(--color-amber-50)',
+      'brand-100': 'var(--color-amber-100)',
+      'brand-200': 'var(--color-amber-200)',
+      'brand-300': 'var(--color-amber-300)',
+      'brand-400': 'var(--color-amber-400)',
+      'brand-500': 'var(--color-amber-500)',
+      'brand-600': 'var(--color-amber-600)',
+      'brand-700': 'var(--color-amber-700)',
+      'brand-800': 'var(--color-amber-800)',
+      'brand-900': 'var(--color-amber-900)',
+      'brand-950': 'var(--color-amber-950)',
+    },
+  },
+  {
+    name: 'Yellow',
+    colors: {
+      'brand-50': 'var(--color-yellow-50)',
+      'brand-100': 'var(--color-yellow-100)',
+      'brand-200': 'var(--color-yellow-200)',
+      'brand-300': 'var(--color-yellow-300)',
+      'brand-400': 'var(--color-yellow-400)',
+      'brand-500': 'var(--color-yellow-500)',
+      'brand-600': 'var(--color-yellow-600)',
+      'brand-700': 'var(--color-yellow-700)',
+      'brand-800': 'var(--color-yellow-800)',
+      'brand-900': 'var(--color-yellow-900)',
+      'brand-950': 'var(--color-yellow-950)',
+    },
+  },
+  {
+    name: 'Lime',
+    colors: {
+      'brand-50': 'var(--color-lime-50)',
+      'brand-100': 'var(--color-lime-100)',
+      'brand-200': 'var(--color-lime-200)',
+      'brand-300': 'var(--color-lime-300)',
+      'brand-400': 'var(--color-lime-400)',
+      'brand-500': 'var(--color-lime-500)',
+      'brand-600': 'var(--color-lime-600)',
+      'brand-700': 'var(--color-lime-700)',
+      'brand-800': 'var(--color-lime-800)',
+      'brand-900': 'var(--color-lime-900)',
+      'brand-950': 'var(--color-lime-950)',
+    },
+  },
+  {
+    name: 'Green',
+    colors: {
+      'brand-50': 'var(--color-green-50)',
+      'brand-100': 'var(--color-green-100)',
+      'brand-200': 'var(--color-green-200)',
+      'brand-300': 'var(--color-green-300)',
+      'brand-400': 'var(--color-green-400)',
+      'brand-500': 'var(--color-green-500)',
+      'brand-600': 'var(--color-green-600)',
+      'brand-700': 'var(--color-green-700)',
+      'brand-800': 'var(--color-green-800)',
+      'brand-900': 'var(--color-green-900)',
+      'brand-950': 'var(--color-green-950)',
+    },
+  },
+  {
+    name: 'Emerald',
+    colors: {
+      'brand-50': 'var(--color-emerald-50)',
+      'brand-100': 'var(--color-emerald-100)',
+      'brand-200': 'var(--color-emerald-200)',
+      'brand-300': 'var(--color-emerald-300)',
+      'brand-400': 'var(--color-emerald-400)',
+      'brand-500': 'var(--color-emerald-500)',
+      'brand-600': 'var(--color-emerald-600)',
+      'brand-700': 'var(--color-emerald-700)',
+      'brand-800': 'var(--color-emerald-800)',
+      'brand-900': 'var(--color-emerald-900)',
+      'brand-950': 'var(--color-emerald-950)',
+    },
+  },
+  {
+    name: 'Teal',
+    colors: {
+      'brand-50': 'var(--color-teal-50)',
+      'brand-100': 'var(--color-teal-100)',
+      'brand-200': 'var(--color-teal-200)',
+      'brand-300': 'var(--color-teal-300)',
+      'brand-400': 'var(--color-teal-400)',
+      'brand-500': 'var(--color-teal-500)',
+      'brand-600': 'var(--color-teal-600)',
+      'brand-700': 'var(--color-teal-700)',
+      'brand-800': 'var(--color-teal-800)',
+      'brand-900': 'var(--color-teal-900)',
+      'brand-950': 'var(--color-teal-950)',
+    },
+  },
+  {
+    name: 'Cyan',
+    colors: {
+      'brand-50': 'var(--color-cyan-50)',
+      'brand-100': 'var(--color-cyan-100)',
+      'brand-200': 'var(--color-cyan-200)',
+      'brand-300': 'var(--color-cyan-300)',
+      'brand-400': 'var(--color-cyan-400)',
+      'brand-500': 'var(--color-cyan-500)',
+      'brand-600': 'var(--color-cyan-600)',
+      'brand-700': 'var(--color-cyan-700)',
+      'brand-800': 'var(--color-cyan-800)',
+      'brand-900': 'var(--color-cyan-900)',
+      'brand-950': 'var(--color-cyan-950)',
+    },
+  },
+  {
+    name: 'Sky',
+    colors: {
+      'brand-50': 'var(--color-sky-50)',
+      'brand-100': 'var(--color-sky-100)',
+      'brand-200': 'var(--color-sky-200)',
+      'brand-300': 'var(--color-sky-300)',
+      'brand-400': 'var(--color-sky-400)',
+      'brand-500': 'var(--color-sky-500)',
+      'brand-600': 'var(--color-sky-600)',
+      'brand-700': 'var(--color-sky-700)',
+      'brand-800': 'var(--color-sky-800)',
+      'brand-900': 'var(--color-sky-900)',
+      'brand-950': 'var(--color-sky-950)',
+    },
+  },
+  {
+    name: 'Blue',
+    colors: {
+      'brand-50': 'var(--color-blue-50)',
+      'brand-100': 'var(--color-blue-100)',
+      'brand-200': 'var(--color-blue-200)',
+      'brand-300': 'var(--color-blue-300)',
+      'brand-400': 'var(--color-blue-400)',
+      'brand-500': 'var(--color-blue-500)',
+      'brand-600': 'var(--color-blue-600)',
+      'brand-700': 'var(--color-blue-700)',
+      'brand-800': 'var(--color-blue-800)',
+      'brand-900': 'var(--color-blue-900)',
+      'brand-950': 'var(--color-blue-950)',
+    },
+  },
+  {
+    name: 'Indigo',
+    colors: {
+      'brand-50': 'var(--color-indigo-50)',
+      'brand-100': 'var(--color-indigo-100)',
+      'brand-200': 'var(--color-indigo-200)',
+      'brand-300': 'var(--color-indigo-300)',
+      'brand-400': 'var(--color-indigo-400)',
+      'brand-500': 'var(--color-indigo-500)',
+      'brand-600': 'var(--color-indigo-600)',
+      'brand-700': 'var(--color-indigo-700)',
+      'brand-800': 'var(--color-indigo-800)',
+      'brand-900': 'var(--color-indigo-900)',
+      'brand-950': 'var(--color-indigo-950)',
+    },
+  },
+  {
+    name: 'Violet',
+    colors: {
+      'brand-50': 'var(--color-violet-50)',
+      'brand-100': 'var(--color-violet-100)',
+      'brand-200': 'var(--color-violet-200)',
+      'brand-300': 'var(--color-violet-300)',
+      'brand-400': 'var(--color-violet-400)',
+      'brand-500': 'var(--color-violet-500)',
+      'brand-600': 'var(--color-violet-600)',
+      'brand-700': 'var(--color-violet-700)',
+      'brand-800': 'var(--color-violet-800)',
+      'brand-900': 'var(--color-violet-900)',
+      'brand-950': 'var(--color-violet-950)',
+    },
+  },
+  {
+    name: 'Purple',
+    colors: {
+      'brand-50': 'var(--color-purple-50)',
+      'brand-100': 'var(--color-purple-100)',
+      'brand-200': 'var(--color-purple-200)',
+      'brand-300': 'var(--color-purple-300)',
+      'brand-400': 'var(--color-purple-400)',
+      'brand-500': 'var(--color-purple-500)',
+      'brand-600': 'var(--color-purple-600)',
+      'brand-700': 'var(--color-purple-700)',
+      'brand-800': 'var(--color-purple-800)',
+      'brand-900': 'var(--color-purple-900)',
+      'brand-950': 'var(--color-purple-950)',
+    },
+  },
+  {
+    name: 'Fuchsia',
+    colors: {
+      'brand-50': 'var(--color-fuchsia-50)',
+      'brand-100': 'var(--color-fuchsia-100)',
+      'brand-200': 'var(--color-fuchsia-200)',
+      'brand-300': 'var(--color-fuchsia-300)',
+      'brand-400': 'var(--color-fuchsia-400)',
+      'brand-500': 'var(--color-fuchsia-500)',
+      'brand-600': 'var(--color-fuchsia-600)',
+      'brand-700': 'var(--color-fuchsia-700)',
+      'brand-800': 'var(--color-fuchsia-800)',
+      'brand-900': 'var(--color-fuchsia-900)',
+      'brand-950': 'var(--color-fuchsia-950)',
+    },
+  },
+  {
+    name: 'Pink',
+    colors: {
+      'brand-50': 'var(--color-pink-50)',
+      'brand-100': 'var(--color-pink-100)',
+      'brand-200': 'var(--color-pink-200)',
+      'brand-300': 'var(--color-pink-300)',
+      'brand-400': 'var(--color-pink-400)',
+      'brand-500': 'var(--color-pink-500)',
+      'brand-600': 'var(--color-pink-600)',
+      'brand-700': 'var(--color-pink-700)',
+      'brand-800': 'var(--color-pink-800)',
+      'brand-900': 'var(--color-pink-900)',
+      'brand-950': 'var(--color-pink-950)',
+    },
+  },
+  {
+    name: 'Rose',
+    colors: {
+      'brand-50': 'var(--color-rose-50)',
+      'brand-100': 'var(--color-rose-100)',
+      'brand-200': 'var(--color-rose-200)',
+      'brand-300': 'var(--color-rose-300)',
+      'brand-400': 'var(--color-rose-400)',
+      'brand-500': 'var(--color-rose-500)',
+      'brand-600': 'var(--color-rose-600)',
+      'brand-700': 'var(--color-rose-700)',
+      'brand-800': 'var(--color-rose-800)',
+      'brand-900': 'var(--color-rose-900)',
+      'brand-950': 'var(--color-rose-950)',
+    },
+  },
+]
+
+const active = reactive({
+  brand: colors.find((p) => p.name === 'Indigo')!,
+  neutral: neutrals.find((p) => p.name === 'Slate')!,
+})
+
+function select(group: 'brand' | 'neutral', palette: Palette) {
+  active[group] = palette
+
+  updateThemeConfig({
+    namespace: 'd',
+    primitives: {
+      ...active.brand.colors,
+      ...active.neutral.colors,
+    },
+  })
+}
+</script>
+
+<template>
+  <Floating #default="{ isOpen, ref, style, toggle }" :offset="4" auto-update placement="bottom-end">
+    <IconButton class="text-muted" icon="color-wheel" @click="toggle" />
+
+    <Teleport to="body">
+      <div v-if="isOpen" :ref="ref" :style="style" class="w-72 rounded-xl border border-default bg-surface shadow-lg">
+        <div class="max-h-80 overflow-y-auto p-1">
+          <div class="px-2 pt-1.5 pb-1 text-xs font-medium uppercase tracking-wider text-muted">Brand</div>
+
+          <button
+            v-for="palette in colors"
+            :key="palette.name"
+            :class="{ 'bg-neutral-soft': active.brand.name === palette.name }"
+            class="flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-left text-sm transition-colors hover:bg-neutral-soft"
+            type="button"
+            @click="select('brand', palette)"
+          >
+            <div class="flex shrink-0 gap-px">
+              <div
+                v-for="shade in [50, 300, 500, 700, 900]"
+                :key="shade"
+                :style="{ backgroundColor: `var(--color-${palette.name.toLowerCase()}-${shade})` }"
+                class="size-4 first:rounded-l-full last:rounded-r-full"
+              />
+            </div>
+
+            <span class="flex-1 truncate text-muted">{{ palette.name }}</span>
+
+            <Icon v-if="active.brand.name === palette.name" class="size-4 shrink-0 text-brand" name="check" />
+          </button>
+
+          <div class="mx-2 my-1 border-t border-default" />
+
+          <div class="px-2 pt-1 pb-1 text-xs font-medium uppercase tracking-wider text-muted">Neutral</div>
+
+          <button
+            v-for="palette in neutrals"
+            :key="palette.name"
+            :class="{ 'bg-neutral-soft': active.neutral.name === palette.name }"
+            class="flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-left text-sm transition-colors hover:bg-neutral-soft"
+            type="button"
+            @click="select('neutral', palette)"
+          >
+            <div class="flex shrink-0 gap-px">
+              <div
+                v-for="shade in [50, 300, 500, 700, 900]"
+                :key="shade"
+                :style="{ backgroundColor: `var(--color-${palette.name.toLowerCase()}-${shade})` }"
+                class="size-4 first:rounded-l-full last:rounded-r-full"
+              />
+            </div>
+
+            <span class="flex-1 truncate text-muted">{{ palette.name }}</span>
+
+            <Icon v-if="active.neutral.name === palette.name" class="size-4 shrink-0 text-brand" name="check" />
+          </button>
+        </div>
+      </div>
+    </Teleport>
+  </Floating>
+</template>

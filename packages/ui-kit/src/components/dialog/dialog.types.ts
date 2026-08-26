@@ -3,7 +3,6 @@ import type { DefineComponent, EmitFn, UiKitBaseProps } from '@dotdev/ui-kit'
 
 export interface UIDialogProps extends UiKitBaseProps {
   title?: string
-  description?: string
   closable?: boolean
   modelValue?: boolean
   dismissable?: boolean

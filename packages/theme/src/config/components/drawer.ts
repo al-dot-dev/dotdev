@@ -1,7 +1,7 @@
 import { defineComponent } from '@dotdev/design'
 
-export const dialog = defineComponent({
-  ui: 'dialog',
+export const drawer = defineComponent({
+  ui: 'drawer',
 
   semantics: {
     'bg-backdrop': 'bg-backdrop',
@@ -16,30 +16,33 @@ export const dialog = defineComponent({
   },
 
   rules: {
-    '&': 'fixed inset-0 z-dialog flex p-4 bg-backdrop',
+    '&': 'fixed inset-0 z-dialog flex bg-backdrop',
 
-    '&--center': 'items-center justify-center',
     '&--left': 'items-center justify-start',
     '&--right': 'items-center justify-end',
     '&--top': 'items-start justify-center',
     '&--bottom': 'items-end justify-center',
-    '&--top-left': 'items-start justify-start',
-    '&--top-right': 'items-start justify-end',
-    '&--bottom-left': 'items-end justify-start',
-    '&--bottom-right': 'items-end justify-end',
 
-    '&__panel': `w-md text-foreground relative z-10 flex flex-col dialog-bg-panel dialog-border-panel border shadow-lg rounded-xl max-w-svw max-h-dvh w-full overflow-hidden`,
+    '&--left &__panel': 'border-r w-md max-w-svw h-dvh',
+    '&--right &__panel': 'border-l w-md max-w-svw h-dvh',
+    '&--top &__panel': 'border-b w-svw max-h-dvh',
+    '&--bottom &__panel': 'border-t w-svw max-h-dvh',
+
+    '&__panel': `text-foreground relative z-10 flex flex-col drawer-bg-panel drawer-border-panel shadow-lg overflow-hidden`,
     '&__header': 'flex items-center justify-between px-5 pt-5',
     '&__title': 'type-lg font-semibold',
     '&__body': 'flex-1 overflow-y-auto p-5',
     '&__footer': 'flex items-center justify-end gap-2 px-5 pb-5',
-    '&__close': `outline-none dialog-text-close hover:dialog-text-close-hover transition-colors cursor-pointer p-2 ml-auto -mt-2 -mr-2 flex radius-sm hover:bg-neutral-soft focus-visible:ring-1  focus-visible:ring-brand`,
+    '&__close': `outline-none drawer-text-close hover:drawer-text-close-hover transition-colors cursor-pointer p-2 ml-auto -mt-2 -mr-2 flex radius-sm hover:bg-neutral-soft focus-visible:ring-1  focus-visible:ring-brand`,
 
     // animations
-    '.dialog-enter-active, .dialog-leave-active': `transition-opacity duration-300`,
-    '.dialog-enter-from, .dialog-leave-to': `opacity-0`,
+    '.drawer-enter-active, .drawer-leave-active': `transition-[background-color] duration-300`,
+    '.drawer-enter-from, .drawer-leave-to': `bg-transparent`,
 
-    '.dialog-enter-active &__panel, .dialog-leave-active &__panel': `transition-[scale] duration-300`,
-    '.dialog-enter-from &__panel, .dialog-leave-to &__panel': `scale-95`,
+    '.drawer-enter-active &__panel, .drawer-leave-active &__panel': `transition-[translate] duration-300`,
+    '&--left.drawer-enter-from &__panel, &--left.drawer-leave-to &__panel': `-translate-x-full`,
+    '&--right.drawer-enter-from &__panel, &--right.drawer-leave-to &__panel': `translate-x-full`,
+    '&--top.drawer-enter-from &__panel, &--top.drawer-leave-to &__panel': `-translate-y-full`,
+    '&--bottom.drawer-enter-from &__panel, &--bottom.drawer-leave-to &__panel': `translate-y-full`,
   },
 })

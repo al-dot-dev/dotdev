@@ -10,9 +10,8 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const emit = defineEmits<UIDialogEmits>()
 defineSlots<UIDialogSlots>()
-
+const emit = defineEmits<UIDialogEmits>()
 const props = withDefaults(defineProps<UIDialogProps>(), {
   ui: UI_NAME,
   closable: true,
@@ -31,7 +30,6 @@ const closeRef = useTemplateRef<HTMLElement>('closeRef')
 
 const id = useId()
 const titleId = `${UI_NAME}-title-${id}`
-const bodyId = `${UI_NAME}-body-${id}`
 
 const rootClass = computed(() => {
   const { placement } = ui
@@ -46,10 +44,6 @@ const panelAttrs = computed(() => {
 
   if (props.title) {
     attrs['aria-labelledby'] = titleId
-  }
-
-  if (props.description) {
-    attrs['aria-describedby'] = bodyId
   }
 
   return attrs
@@ -173,7 +167,7 @@ defineExpose<UIDialogExpose>({
             </button>
           </div>
 
-          <div :id="bodyId" :class="bem('body')">
+          <div :class="bem('body')">
             <slot />
           </div>
 

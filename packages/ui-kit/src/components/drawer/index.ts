@@ -1,2 +1,2 @@
-export { default as Dialog } from './Dialog.vue'
-export type * from './dialog.types.ts'
+export { default as Drawer } from './Drawer.vue'
+export type * from './drawer.types.ts'

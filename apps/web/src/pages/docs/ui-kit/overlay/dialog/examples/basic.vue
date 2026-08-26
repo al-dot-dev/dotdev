@@ -8,7 +8,7 @@ const isOpen = ref(false)
 <template>
   <Button @click="isOpen = true">Open dialog</Button>
 
-  <Dialog v-model="isOpen" description="This is a basic dialog description for screen readers." title="Dialog title">
+  <Dialog v-model="isOpen" title="Dialog title">
     <p class="text-sm text-muted">This is a basic dialog with a header, body content, and a close button.</p>
     <template #footer>
       <Button variant="soft" @click="isOpen = false">Cancel</Button>

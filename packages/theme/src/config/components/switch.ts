@@ -27,7 +27,7 @@ export const switchComponent = defineComponent({
 
   rules: {
     '&': `flex switch-h switch-p switch-rounded border switch-border outline-none cursor-pointer switch-transition`,
-    '&__track': 'flex aspect-2/1 rounded-[inherit]',
+    '&__track': 'flex aspect-2/1 h-full rounded-[inherit]',
     '&__thumb': `aspect-square rounded-[inherit] switch-transition-thumb shadow-xs`,
     '&--checked &__thumb': 'translate-x-full',
 

@@ -6,7 +6,7 @@ import {
   type UiKitConfig,
   type UiKitConfigWithTheme,
 } from '@dotdev/ui-kit'
-import { createTheme } from '@dotdev/theme'
+import { createTheme, DefineThemeConfig } from '@dotdev/theme'
 
 export const DEFAULT_CONFIG: UiKitConfig = {
   namespace: 'd',
@@ -46,4 +46,11 @@ export function createUiKit(options?: UiKitOptions): Plugin {
       app.provide(UI_KIT_CONFIG_KEY, configMap)
     },
   }
+}
+
+export function updateThemeConfig(options: Omit<DefineThemeConfig, 'components'>) {
+  const { namespace, ...config } = options
+  const theme = createTheme({ namespace, ...config })
+  const css = theme.toCSS({ ...theme.config.primitives, ...theme.config.semantics })
+  theme.injectCSS(css, `${namespace}-theme`, true)
 }

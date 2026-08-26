@@ -28,7 +28,7 @@ export const dialog = defineComponent({
     '&--bottom-left': 'items-end justify-start',
     '&--bottom-right': 'items-end justify-end',
 
-    '&__panel': `w-md text-foreground relative z-10 flex flex-col dialog-bg-panel dialog-border-panel border shadow-lg rounded-xl max-w-svw max-h-dvh w-full overflow-hidden`,
+    '&__panel': `w-md text-foreground relative z-10 flex flex-col dialog-bg-panel dialog-border-panel border shadow-lg rounded-xl max-w-svw max-h-dvh overflow-hidden`,
     '&__header': 'flex items-center justify-between px-5 pt-5',
     '&__title': 'type-lg font-semibold',
     '&__body': 'flex-1 overflow-y-auto p-5',

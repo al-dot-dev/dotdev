@@ -3,7 +3,6 @@ import type { DefineComponent, EmitFn, UiKitBaseProps } from '@dotdev/ui-kit'
 
 export interface UIDrawerProps extends UiKitBaseProps {
   title?: string
-  description?: string
   closable?: boolean
   modelValue?: boolean
   dismissable?: boolean
@@ -32,7 +31,6 @@ export interface UIDrawerExpose {
   toggle: () => void
 }
 
-export type UIDrawerPlacement =
-  'left' | 'right' | 'top' | 'bottom' | 'center' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+export type UIDrawerPlacement = 'left' | 'right' | 'top' | 'bottom'
 
 declare const Drawer: DefineComponent<UIDrawerProps, UIDrawerSlots, EmitFn<UIDrawerEmits>>

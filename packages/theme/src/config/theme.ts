@@ -5,6 +5,7 @@ import { avatar } from './components/avatar.ts'
 import { breadcrumbs } from './components/breadcrumbs.ts'
 import { checkbox } from './components/checkbox.ts'
 import { dialog } from './components/dialog.ts'
+import { drawer } from './components/drawer.ts'
 import { divider } from './components/divider.ts'
 import { group } from './components/group.ts'
 import { iconButton } from './components/icon-button.ts'
@@ -268,6 +269,7 @@ export default defineTheme({
     breadcrumbs,
     checkbox,
     dialog,
+    drawer,
     divider,
     group,
     iconButton,

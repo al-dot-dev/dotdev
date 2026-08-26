@@ -441,6 +441,13 @@ export default {
       "text-close": "var(--NS-text-muted)",
       "text-close-hover": "var(--NS-text-foreground)"
     },
+    "drawer": {
+      "bg-backdrop": "var(--NS-bg-backdrop)",
+      "bg-panel": "var(--NS-bg-background)",
+      "border-panel": "var(--NS-border-default)",
+      "text-close": "var(--NS-text-muted)",
+      "text-close-hover": "var(--NS-text-foreground)"
+    },
     "divider": {
       "border-primary": "var(--NS-border-brand)",
       "text-primary": "var(--NS-text-brand)",

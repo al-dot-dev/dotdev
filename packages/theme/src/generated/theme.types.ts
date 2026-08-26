@@ -297,6 +297,13 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "text-close"?: T
       "text-close-hover"?: T
     }
+    "drawer"?: {
+      "bg-backdrop"?: T
+      "bg-panel"?: T
+      "border-panel"?: T
+      "text-close"?: T
+      "text-close-hover"?: T
+    }
     "divider"?: {
       "border-primary"?: T
       "text-primary"?: T
