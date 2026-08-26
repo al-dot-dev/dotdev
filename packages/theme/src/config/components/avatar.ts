@@ -37,7 +37,7 @@ export const avatar = defineComponent({
   },
 
   rules: {
-    '&': `avatar-size box-border flex items-center justify-center relative rounded-full avatar-border`,
+    '&': `avatar-size box-border flex shrink-0 items-center justify-center relative rounded-full avatar-border`,
 
     '&--solid': `shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)]`,
 
