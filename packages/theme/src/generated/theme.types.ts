@@ -151,6 +151,13 @@ export interface ThemeDefinition<T = string | [string, string]> {
     "bg-success-soft-hover"?: T
     "border-success"?: T
     "ring-success"?: T
+    "z-sticky"?: T
+    "z-dropdown"?: T
+    "z-overlay"?: T
+    "z-dialog"?: T
+    "z-popover"?: T
+    "z-toast"?: T
+    "z-tooltip"?: T
   }
   "components"?: {
     "button"?: {
@@ -282,6 +289,13 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "size-sm"?: T
       "size-md"?: T
       "size-lg"?: T
+    }
+    "dialog"?: {
+      "bg-backdrop"?: T
+      "bg-panel"?: T
+      "border-panel"?: T
+      "text-close"?: T
+      "text-close-hover"?: T
     }
     "divider"?: {
       "border-primary"?: T

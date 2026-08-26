@@ -32,10 +32,10 @@ export function useGlobalEvent(event: string, handler: any, options?: GlobalEven
   const addListener = () => {
     if (cleanup) return
 
-    target.addEventListener(event as string, handler as EventListener)
+    target.addEventListener(event, handler)
 
     cleanup = () => {
-      target.removeEventListener(event as string, handler as EventListener)
+      target.removeEventListener(event, handler)
       cleanup = undefined
     }
   }
@@ -47,9 +47,9 @@ export function useGlobalEvent(event: string, handler: any, options?: GlobalEven
   if (options?.watch) {
     /* prettier-ignore */
     watch(options.watch, (enabled, _, onCleanup) => {
-      if (enabled) addListener()
+      setTimeout(() => enabled && addListener())
       onCleanup(removeListener)
-    }, { immediate: options.immediate ?? false })
+    }, { immediate: options.immediate ?? false, flush: "post" })
   } else {
     onMounted(addListener)
     onUnmounted(removeListener)

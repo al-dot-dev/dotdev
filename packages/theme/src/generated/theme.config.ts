@@ -294,7 +294,14 @@ export default {
       "var(--NS-success-600)",
       "var(--NS-success-400)"
     ],
-    "ring-success": "color-mix(in oklab, var(--NS-success-500) 50%, transparent)"
+    "ring-success": "color-mix(in oklab, var(--NS-success-500) 50%, transparent)",
+    "z-sticky": "10",
+    "z-dropdown": "20",
+    "z-overlay": "30",
+    "z-dialog": "40",
+    "z-popover": "50",
+    "z-toast": "60",
+    "z-tooltip": "70"
   },
   "components": {
     "button": {
@@ -426,6 +433,13 @@ export default {
       "size-sm": "1rem",
       "size-md": "1.25rem",
       "size-lg": "1.5rem"
+    },
+    "dialog": {
+      "bg-backdrop": "var(--NS-bg-backdrop)",
+      "bg-panel": "var(--NS-bg-background)",
+      "border-panel": "var(--NS-border-default)",
+      "text-close": "var(--NS-text-muted)",
+      "text-close-hover": "var(--NS-text-foreground)"
     },
     "divider": {
       "border-primary": "var(--NS-border-brand)",

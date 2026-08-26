@@ -148,6 +148,13 @@
   --NS-bg-success-soft-hover: var(--NS-success-100);
   --NS-border-success: var(--NS-success-600);
   --NS-ring-success: color-mix(in oklab, var(--NS-success-500) 50%, transparent);
+  --NS-z-sticky: 10;
+  --NS-z-dropdown: 20;
+  --NS-z-overlay: 30;
+  --NS-z-dialog: 40;
+  --NS-z-popover: 50;
+  --NS-z-toast: 60;
+  --NS-z-tooltip: 70;
 }
 
 .dark {
@@ -423,6 +430,34 @@
 
 @utility ring-success {
   @apply ring-(--NS-ring-success);
+}
+
+@utility z-sticky {
+  @apply z-(--NS-z-sticky);
+}
+
+@utility z-dropdown {
+  @apply z-(--NS-z-dropdown);
+}
+
+@utility z-overlay {
+  @apply z-(--NS-z-overlay);
+}
+
+@utility z-dialog {
+  @apply z-(--NS-z-dialog);
+}
+
+@utility z-popover {
+  @apply z-(--NS-z-popover);
+}
+
+@utility z-toast {
+  @apply z-(--NS-z-toast);
+}
+
+@utility z-tooltip {
+  @apply z-(--NS-z-tooltip);
 }
 
 @utility type-* {

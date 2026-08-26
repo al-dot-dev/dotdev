@@ -7,6 +7,7 @@ import type {
   UIBreadcrumbsProps,
   UIButtonProps,
   UICheckboxProps,
+  UIDialogProps,
   UIDividerProps,
   UIGroupAddonProps,
   UIGroupProps,
@@ -42,6 +43,7 @@ export interface UiKitConfigComponents {
   avatar: UIAvatarProps
   breadcrumbs: UIBreadcrumbsProps
   button: UIButtonProps
+  dialog: UIDialogProps
   'icon-button': UIIconButtonProps
   'select-button': UISelectButtonProps
   menu: UIMenuProps

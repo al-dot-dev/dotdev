@@ -4,6 +4,7 @@ import { accordion } from './components/accordion.ts'
 import { avatar } from './components/avatar.ts'
 import { breadcrumbs } from './components/breadcrumbs.ts'
 import { checkbox } from './components/checkbox.ts'
+import { dialog } from './components/dialog.ts'
 import { divider } from './components/divider.ts'
 import { group } from './components/group.ts'
 import { iconButton } from './components/icon-button.ts'
@@ -206,6 +207,14 @@ export const themeConfig = defineTheme({
     'bg-success-soft-hover': ['success-100', 'success-500/26'],
     'border-success': ['success-600', 'success-400'],
     'ring-success': 'success-500/50',
+
+    'z-sticky': '10',
+    'z-dropdown': '20',
+    'z-overlay': '30',
+    'z-dialog': '40',
+    'z-popover': '50',
+    'z-toast': '60',
+    'z-tooltip': '70',
   },
   utilities: {
     'type-*': 'text-[length:--value([*])]',
@@ -258,6 +267,7 @@ export default defineTheme({
     avatar,
     breadcrumbs,
     checkbox,
+    dialog,
     divider,
     group,
     iconButton,

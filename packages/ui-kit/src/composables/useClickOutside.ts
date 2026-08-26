@@ -9,13 +9,10 @@ export function useClickOutside(target: TargetElement, callback: (event: MouseEv
 
     const isInside = targets.some((targetRef) => {
       const el = unref(targetRef)
-
       return el && (el === event.target || el.contains(event.target as Node))
     })
 
-    if (!isInside) {
-      callback(event)
-    }
+    if (!isInside) callback(event)
   }
 
   useGlobalEvent('click', listener, { watch: enabled })
