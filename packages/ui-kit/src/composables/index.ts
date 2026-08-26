@@ -1,3 +1,4 @@
+export { useElementRef } from './useElementRef.ts'
 export { useMediaQuery } from './useMediaQuery.ts'
 export { useTypeahead } from './useTypeahead.ts'
 export { useGlobalEvent } from './useGlobalEvent.ts'
