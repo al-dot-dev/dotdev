@@ -1,5 +1,6 @@
 export { default as theme } from './theme.config.ts'
 export type { ThemeDefinition } from './theme.types.ts'
+export { default as badgeStyle } from './badge.ts'
 export { default as buttonStyle } from './button.ts'
 export { default as accordionStyle } from './accordion.ts'
 export { default as avatarStyle } from './avatar.ts'

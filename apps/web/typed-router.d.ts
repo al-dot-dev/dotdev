@@ -45,6 +45,7 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | 'Accordion'
       | 'Avatar'
+      | 'Badge'
       | 'Breadcrumbs'
       | 'Button'
       | 'Buttons'
@@ -209,6 +210,13 @@ declare module 'vue-router/auto-routes' {
     'Avatar': RouteRecordInfo<
       'Avatar',
       '/docs/ui-kit/data/avatar',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'Badge': RouteRecordInfo<
+      'Badge',
+      '/docs/ui-kit/data/badge',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -428,6 +436,7 @@ declare module 'vue-router/auto-routes' {
         | '/docs'
         | 'Accordion'
         | 'Avatar'
+        | 'Badge'
         | 'Breadcrumbs'
         | 'Button'
         | 'Buttons'
@@ -613,6 +622,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/docs/ui-kit/data/avatar/index.vue': {
       routes:
         | 'Avatar'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/ui-kit/data/badge/index.vue': {
+      routes:
+        | 'Badge'
       views:
         | never
       pathParamNames:

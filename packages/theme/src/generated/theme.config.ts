@@ -133,7 +133,7 @@ export default {
       "var(--NS-brand-400)"
     ],
     "text-on-brand": [
-      "var(--NS-neutral-50)",
+      "var(--NS-white)",
       "var(--NS-neutral-950)"
     ],
     "bg-brand-soft": [
@@ -163,7 +163,7 @@ export default {
       "var(--NS-neutral-300)"
     ],
     "text-on-neutral": [
-      "var(--NS-neutral-50)",
+      "var(--NS-white)",
       "var(--NS-neutral-900)"
     ],
     "bg-neutral-soft": [
@@ -192,7 +192,7 @@ export default {
       "var(--NS-danger-400)"
     ],
     "text-on-danger": [
-      "var(--NS-neutral-50)",
+      "var(--NS-white)",
       "var(--NS-neutral-950)"
     ],
     "bg-danger-soft": [
@@ -250,7 +250,7 @@ export default {
       "var(--NS-info-400)"
     ],
     "text-on-info": [
-      "var(--NS-neutral-50)",
+      "var(--NS-white)",
       "var(--NS-neutral-950)"
     ],
     "bg-info-soft": [
@@ -279,7 +279,7 @@ export default {
       "var(--NS-success-400)"
     ],
     "text-on-success": [
-      "var(--NS-neutral-50)",
+      "var(--NS-white)",
       "var(--NS-neutral-950)"
     ],
     "bg-success-soft": [
@@ -304,6 +304,35 @@ export default {
     "z-tooltip": "70"
   },
   "components": {
+    "badge": {
+      "gap": "0.35em",
+      "px": "0.4em",
+      "size-dot": "0.5em",
+      "bg-primary-soft": "var(--NS-bg-brand-soft)",
+      "text-primary-soft": "var(--NS-text-brand)",
+      "bg-primary-solid": "var(--NS-bg-brand)",
+      "text-primary-solid": "var(--NS-text-on-brand)",
+      "bg-neutral-soft": "var(--NS-bg-neutral-soft)",
+      "text-neutral-soft": "var(--NS-text-neutral)",
+      "bg-neutral-solid": "var(--NS-bg-neutral)",
+      "text-neutral-solid": "var(--NS-text-on-neutral)",
+      "bg-danger-soft": "var(--NS-bg-danger-soft)",
+      "text-danger-soft": "var(--NS-text-danger)",
+      "bg-danger-solid": "var(--NS-bg-danger)",
+      "text-danger-solid": "var(--NS-text-on-danger)",
+      "bg-warning-soft": "var(--NS-bg-warning-soft)",
+      "text-warning-soft": "var(--NS-text-warning)",
+      "bg-warning-solid": "var(--NS-bg-warning)",
+      "text-warning-solid": "var(--NS-text-on-warning)",
+      "bg-info-soft": "var(--NS-bg-info-soft)",
+      "text-info-soft": "var(--NS-text-info)",
+      "bg-info-solid": "var(--NS-bg-info)",
+      "text-info-solid": "var(--NS-text-on-info)",
+      "bg-success-soft": "var(--NS-bg-success-soft)",
+      "text-success-soft": "var(--NS-text-success)",
+      "bg-success-solid": "var(--NS-bg-success)",
+      "text-success-solid": "var(--NS-text-on-success)"
+    },
     "button": {
       "bg-primary-solid": "var(--NS-bg-brand)",
       "bg-primary-solid-hover": "var(--NS-bg-brand-hover)",

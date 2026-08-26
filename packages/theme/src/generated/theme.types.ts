@@ -160,6 +160,35 @@ export interface ThemeDefinition<T = string | [string, string]> {
     "z-tooltip"?: T
   }
   "components"?: {
+    "badge"?: {
+      "gap"?: T
+      "px"?: T
+      "size-dot"?: T
+      "bg-primary-soft"?: T
+      "text-primary-soft"?: T
+      "bg-primary-solid"?: T
+      "text-primary-solid"?: T
+      "bg-neutral-soft"?: T
+      "text-neutral-soft"?: T
+      "bg-neutral-solid"?: T
+      "text-neutral-solid"?: T
+      "bg-danger-soft"?: T
+      "text-danger-soft"?: T
+      "bg-danger-solid"?: T
+      "text-danger-solid"?: T
+      "bg-warning-soft"?: T
+      "text-warning-soft"?: T
+      "bg-warning-solid"?: T
+      "text-warning-solid"?: T
+      "bg-info-soft"?: T
+      "text-info-soft"?: T
+      "bg-info-solid"?: T
+      "text-info-solid"?: T
+      "bg-success-soft"?: T
+      "text-success-soft"?: T
+      "bg-success-solid"?: T
+      "text-success-solid"?: T
+    }
     "button"?: {
       "bg-primary-solid"?: T
       "bg-primary-solid-hover"?: T

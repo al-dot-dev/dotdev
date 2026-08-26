@@ -1,4 +1,5 @@
 import { defineTheme } from '@dotdev/design'
+import { badge } from './components/badge.ts'
 import { button } from './components/button.ts'
 import { accordion } from './components/accordion.ts'
 import { avatar } from './components/avatar.ts'
@@ -152,7 +153,7 @@ export const themeConfig = defineTheme({
     'bg-brand': ['brand-500', 'brand-400'],
     'bg-brand-hover': ['brand-600', 'brand-300'],
     'text-brand': ['brand-600', 'brand-400'],
-    'text-on-brand': ['neutral-50', 'neutral-950'],
+    'text-on-brand': ['white', 'neutral-950'],
     'bg-brand-soft': ['brand-50', 'brand-500/16'],
     'bg-brand-soft-hover': ['brand-100', 'brand-500/26'],
     'border-brand': ['brand-500', 'brand-400'],
@@ -163,7 +164,7 @@ export const themeConfig = defineTheme({
     'bg-neutral': ['neutral-800', 'neutral-200'],
     'bg-neutral-hover': ['neutral-700', 'neutral-300'],
     'text-neutral': ['neutral-700', 'neutral-300'],
-    'text-on-neutral': ['neutral-50', 'neutral-900'],
+    'text-on-neutral': ['white', 'neutral-900'],
     'bg-neutral-soft': ['neutral-50', 'neutral-500/16'],
     'bg-neutral-soft-hover': ['neutral-100', 'neutral-500/26'],
     'border-neutral': ['neutral-200', 'neutral-700'],
@@ -173,7 +174,7 @@ export const themeConfig = defineTheme({
     'bg-danger': ['danger-600', 'danger-400'],
     'bg-danger-hover': ['danger-700', 'danger-300'],
     'text-danger': ['danger-600', 'danger-400'],
-    'text-on-danger': ['neutral-50', 'neutral-950'],
+    'text-on-danger': ['white', 'neutral-950'],
     'bg-danger-soft': ['danger-50', 'danger-500/16'],
     'bg-danger-soft-hover': ['danger-100', 'danger-500/26'],
     'border-danger': ['danger-500', 'danger-400'],
@@ -193,7 +194,7 @@ export const themeConfig = defineTheme({
     'bg-info': ['info-700', 'info-400'],
     'bg-info-hover': ['info-800', 'info-300'],
     'text-info': ['info-700', 'info-400'],
-    'text-on-info': ['neutral-50', 'neutral-950'],
+    'text-on-info': ['white', 'neutral-950'],
     'bg-info-soft': ['info-50', 'info-500/16'],
     'bg-info-soft-hover': ['info-100', 'info-500/26'],
     'border-info': ['info-600', 'info-400'],
@@ -203,7 +204,7 @@ export const themeConfig = defineTheme({
     'bg-success': ['success-700', 'success-400'],
     'bg-success-hover': ['success-800', 'success-300'],
     'text-success': ['success-700', 'success-400'],
-    'text-on-success': ['neutral-50', 'neutral-950'],
+    'text-on-success': ['white', 'neutral-950'],
     'bg-success-soft': ['success-50', 'success-500/16'],
     'bg-success-soft-hover': ['success-100', 'success-500/26'],
     'border-success': ['success-600', 'success-400'],
@@ -263,6 +264,7 @@ export default defineTheme({
   ...themeConfig,
   components: {
     // ui-kit
+    badge,
     button,
     accordion,
     avatar,

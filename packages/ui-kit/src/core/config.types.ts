@@ -4,6 +4,7 @@ import type {
   PartialNested,
   UIAccordionProps,
   UIAvatarProps,
+  UIBadgeProps,
   UIBreadcrumbsProps,
   UIButtonProps,
   UICheckboxProps,
@@ -42,6 +43,7 @@ import type { UIDrawerProps } from '@dotdev/ui-kit/components/drawer'
 export interface UiKitConfigComponents {
   accordion: UIAccordionProps
   avatar: UIAvatarProps
+  badge: UIBadgeProps
   breadcrumbs: UIBreadcrumbsProps
   button: UIButtonProps
   dialog: UIDialogProps

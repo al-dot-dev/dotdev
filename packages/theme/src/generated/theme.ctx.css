@@ -102,7 +102,7 @@
   --NS-bg-brand: var(--NS-brand-500);
   --NS-bg-brand-hover: var(--NS-brand-600);
   --NS-text-brand: var(--NS-brand-600);
-  --NS-text-on-brand: var(--NS-neutral-50);
+  --NS-text-on-brand: var(--NS-white);
   --NS-bg-brand-soft: var(--NS-brand-50);
   --NS-bg-brand-soft-hover: var(--NS-brand-100);
   --NS-border-brand: var(--NS-brand-500);
@@ -111,7 +111,7 @@
   --NS-bg-neutral: var(--NS-neutral-800);
   --NS-bg-neutral-hover: var(--NS-neutral-700);
   --NS-text-neutral: var(--NS-neutral-700);
-  --NS-text-on-neutral: var(--NS-neutral-50);
+  --NS-text-on-neutral: var(--NS-white);
   --NS-bg-neutral-soft: var(--NS-neutral-50);
   --NS-bg-neutral-soft-hover: var(--NS-neutral-100);
   --NS-border-neutral: var(--NS-neutral-200);
@@ -119,7 +119,7 @@
   --NS-bg-danger: var(--NS-danger-600);
   --NS-bg-danger-hover: var(--NS-danger-700);
   --NS-text-danger: var(--NS-danger-600);
-  --NS-text-on-danger: var(--NS-neutral-50);
+  --NS-text-on-danger: var(--NS-white);
   --NS-bg-danger-soft: var(--NS-danger-50);
   --NS-bg-danger-soft-hover: var(--NS-danger-100);
   --NS-border-danger: var(--NS-danger-500);
@@ -135,7 +135,7 @@
   --NS-bg-info: var(--NS-info-700);
   --NS-bg-info-hover: var(--NS-info-800);
   --NS-text-info: var(--NS-info-700);
-  --NS-text-on-info: var(--NS-neutral-50);
+  --NS-text-on-info: var(--NS-white);
   --NS-bg-info-soft: var(--NS-info-50);
   --NS-bg-info-soft-hover: var(--NS-info-100);
   --NS-border-info: var(--NS-info-600);
@@ -143,7 +143,7 @@
   --NS-bg-success: var(--NS-success-700);
   --NS-bg-success-hover: var(--NS-success-800);
   --NS-text-success: var(--NS-success-700);
-  --NS-text-on-success: var(--NS-neutral-50);
+  --NS-text-on-success: var(--NS-white);
   --NS-bg-success-soft: var(--NS-success-50);
   --NS-bg-success-soft-hover: var(--NS-success-100);
   --NS-border-success: var(--NS-success-600);
