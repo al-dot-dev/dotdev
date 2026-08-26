@@ -1,13 +1,9 @@
-<script lang="ts" setup>
-import { Floating, Icon, IconButton, updateThemeConfig } from '@dotdev/ui-kit'
-import { reactive } from 'vue'
-
-interface Palette {
+export interface Palette {
   name: string
   colors: Record<string, string>
 }
 
-const neutrals: Palette[] = [
+export const neutrals: Palette[] = [
   {
     name: 'Slate',
     colors: {
@@ -88,9 +84,25 @@ const neutrals: Palette[] = [
       'neutral-950': 'var(--color-stone-950)',
     },
   },
+  {
+    name: 'Graphite',
+    colors: {
+      'neutral-50': 'var(--color-graphite-50)',
+      'neutral-100': 'var(--color-graphite-100)',
+      'neutral-200': 'var(--color-graphite-200)',
+      'neutral-300': 'var(--color-graphite-300)',
+      'neutral-400': 'var(--color-graphite-400)',
+      'neutral-500': 'var(--color-graphite-500)',
+      'neutral-600': 'var(--color-graphite-600)',
+      'neutral-700': 'var(--color-graphite-700)',
+      'neutral-800': 'var(--color-graphite-800)',
+      'neutral-900': 'var(--color-graphite-900)',
+      'neutral-950': 'var(--color-graphite-950)',
+    },
+  },
 ]
 
-const colors: Palette[] = [
+export const brandColors: Palette[] = [
   {
     name: 'Red',
     colors: {
@@ -364,83 +376,3 @@ const colors: Palette[] = [
     },
   },
 ]
-
-const active = reactive({
-  brand: colors.find((p) => p.name === 'Indigo')!,
-  neutral: neutrals.find((p) => p.name === 'Slate')!,
-})
-
-function select(group: 'brand' | 'neutral', palette: Palette) {
-  active[group] = palette
-
-  updateThemeConfig({
-    namespace: 'd',
-    primitives: {
-      ...active.brand.colors,
-      ...active.neutral.colors,
-    },
-  })
-}
-</script>
-
-<template>
-  <Floating #default="{ isOpen, ref, style, toggle }" :offset="4" auto-update placement="bottom-end">
-    <IconButton class="text-muted" icon="color-wheel" @click="toggle" />
-
-    <Teleport to="body">
-      <div v-if="isOpen" :ref="ref" :style="style" class="w-72 rounded-xl border border-default bg-surface shadow-lg">
-        <div class="max-h-80 overflow-y-auto p-1">
-          <div class="px-2 pt-1.5 pb-1 text-xs font-medium uppercase tracking-wider text-muted">Brand</div>
-
-          <button
-            v-for="palette in colors"
-            :key="palette.name"
-            :class="{ 'bg-neutral-soft': active.brand.name === palette.name }"
-            class="flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-left text-sm transition-colors hover:bg-neutral-soft"
-            type="button"
-            @click="select('brand', palette)"
-          >
-            <div class="flex shrink-0 gap-px">
-              <div
-                v-for="shade in [50, 300, 500, 700, 900]"
-                :key="shade"
-                :style="{ backgroundColor: `var(--color-${palette.name.toLowerCase()}-${shade})` }"
-                class="size-4 first:rounded-l-full last:rounded-r-full"
-              />
-            </div>
-
-            <span class="flex-1 truncate text-muted">{{ palette.name }}</span>
-
-            <Icon v-if="active.brand.name === palette.name" class="size-4 shrink-0 text-brand" name="check" />
-          </button>
-
-          <div class="mx-2 my-1 border-t border-default" />
-
-          <div class="px-2 pt-1 pb-1 text-xs font-medium uppercase tracking-wider text-muted">Neutral</div>
-
-          <button
-            v-for="palette in neutrals"
-            :key="palette.name"
-            :class="{ 'bg-neutral-soft': active.neutral.name === palette.name }"
-            class="flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-left text-sm transition-colors hover:bg-neutral-soft"
-            type="button"
-            @click="select('neutral', palette)"
-          >
-            <div class="flex shrink-0 gap-px">
-              <div
-                v-for="shade in [50, 300, 500, 700, 900]"
-                :key="shade"
-                :style="{ backgroundColor: `var(--color-${palette.name.toLowerCase()}-${shade})` }"
-                class="size-4 first:rounded-l-full last:rounded-r-full"
-              />
-            </div>
-
-            <span class="flex-1 truncate text-muted">{{ palette.name }}</span>
-
-            <Icon v-if="active.neutral.name === palette.name" class="size-4 shrink-0 text-brand" name="check" />
-          </button>
-        </div>
-      </div>
-    </Teleport>
-  </Floating>
-</template>

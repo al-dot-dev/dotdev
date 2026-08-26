@@ -11,7 +11,7 @@ import {
 } from '@dotdev/ui-kit'
 import Logo from '../components/Logo.vue'
 import SidebarMenu from '../components/SidebarMenu.vue'
-import ColorPallete from '../components/ColorPallete.vue'
+import { ColorPallete } from '../components/color-pallete'
 
 const { scheme } = useColorScheme()
 
