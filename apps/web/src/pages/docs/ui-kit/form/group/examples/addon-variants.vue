@@ -4,7 +4,7 @@ import { Group, GroupAddon, Input } from '@dotdev/ui-kit'
 
 <template>
   <div class="flex flex-col gap-4">
-    <Group>
+    <Group class="-space-x-px">
       <GroupAddon label="outlined" variant="outlined" />
       <Input placeholder="Outlined addon" />
     </Group>

@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-
 defineProps<{ title?: string; desc?: string }>()
 </script>
 
@@ -10,8 +9,6 @@ defineProps<{ title?: string; desc?: string }>()
       <p v-if="desc" class="doc-block__desc doc-desc" v-html="desc" />
     </div>
 
-    <div class="doc-block__body">
-      <slot />
-    </div>
+    <slot />
   </div>
 </template>

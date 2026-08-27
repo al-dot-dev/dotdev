@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { ScrollArea } from '@dotdev/ui-kit'
 import { useCodeHighlight } from './composables/useCodeHighlight.ts'
 
 interface Props {
@@ -30,9 +29,9 @@ const { htmlCode } = useCodeHighlight(() => props.code, { lang: LANG_BY_EXTENSIO
 </script>
 
 <template>
-  <ScrollArea class="doc-code">
+  <div class="doc-code">
     <div class="doc-code__raw" v-html="htmlCode" />
-  </ScrollArea>
+  </div>
 </template>
 
 <style>

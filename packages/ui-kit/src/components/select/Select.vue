@@ -1,17 +1,12 @@
 <script generic="T, L extends keyof T, V extends keyof T, M extends boolean | undefined" lang="ts" setup>
-import {
-  asTemplateRef,
-  Floating,
-  Icon,
-  ListBox,
-  normalizeBooleanProp,
-  useUiKit,
-} from '@dotdev/ui-kit'
+import { asTemplateRef, Floating, Icon, ListBox, normalizeBooleanProp, useUiKit } from '@dotdev/ui-kit'
 import type { UISelectEmits, UISelectProps, UISelectSlots } from './select.types.ts'
 import { computed, nextTick, ref, useId, useTemplateRef } from 'vue'
 import { selectStyle } from '@dotdev/theme'
 
 const UI_NAME = 'select'
+
+defineOptions({ inheritAttrs: false })
 
 defineEmits<UISelectEmits>()
 defineSlots<UISelectSlots>()
@@ -137,7 +132,7 @@ const tui = asTemplateRef(ui)
 
 <template>
   <Floating ref="floating" #default="{ ref, style, isOpen }" :offset="2" auto-update fit @click-outside="closeAndBlur">
-    <div :class="rootClass" v-bind="el" @click="toggleDropdown" @keydown="onKeyDown">
+    <div :class="rootClass" v-bind="{ ...$attrs, ...el }" @click="toggleDropdown" @keydown="onKeyDown">
       <span ref="combobox" v-bind="comboboxAttrs" @focus="isFocused = true">
         {{ displayLabel || tui.placeholder }}
       </span>
@@ -156,10 +151,10 @@ const tui = asTemplateRef(ui)
           #default="scope"
           :deselectable="tui.deselectable"
           :disabled="tui.disabled"
-          :label-key="tui.labelKey"
-          :multiple="multiple"
           :item-disabled="tui.itemDisabled"
           :items="tui.items"
+          :label-key="tui.labelKey"
+          :multiple="multiple"
           :placeholder="tui.placeholder"
           :size="tui.size"
           :value-key="tui.valueKey"

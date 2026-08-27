@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { IconButton, SelectButton, useClipboard } from '@dotdev/ui-kit'
+import { IconButton, ScrollArea, SelectButton, useClipboard } from '@dotdev/ui-kit'
 import DocBlock from './DocBlock.vue'
 import DocCard from './DocCard.vue'
 import DocCode from './DocCode.vue'
@@ -29,59 +29,56 @@ const isGridVisible = ref(false)
 </script>
 
 <template>
-  <DocBlock :desc="example.description" :title="example.title">
+  <DocBlock :desc="example.description" :title="example.title" class="doc-example">
     <div class="doc-example__header">
-      <div class="doc-example__nav">
-        <SelectButton
-          v-if="tabs.length > 1"
-          v-model="activeTab"
-          #default="{ label }"
-          :items="tabs"
-          variant="outlined"
-        >
-          <span class="font-mono">{{ label }}</span>
-        </SelectButton>
-      </div>
+      <SelectButton
+        v-if="tabs.length > 1"
+        v-model="activeTab"
+        :items="tabs"
+        class="doc-example__toggle"
+        variant="outlined"
+      />
 
-      <div class="doc-example__actions">
-        <IconButton
-          :aria-label="isGridVisible ? 'Hide canvas grid' : 'Show canvas grid'"
-          :aria-pressed="isGridVisible"
-          :class="isGridVisible ? 'text-brand' : 'text-muted'"
-          icon="grid"
-          @click="isGridVisible = !isGridVisible"
-        />
-        <IconButton :icon="copied ? 'check' : 'copy'" aria-label="Copy source" @click="copy()" />
-      </div>
+      <div class="doc-example__space" />
+
+      <IconButton
+        :class="isGridVisible ? 'text-brand' : 'text-muted'"
+        icon="grid"
+        @click="isGridVisible = !isGridVisible"
+      />
+      <IconButton :icon="copied ? 'check' : 'copy'" aria-label="Copy source" @click="copy()" />
     </div>
 
-    <DocCard class="doc-example">
-      <div class="doc-example__body">
+    <DocCard class="doc-example__body">
+      <SelectButton
+        v-if="showFiles"
+        v-model="activeFileName"
+        :items="files"
+        class="doc-example__toggle"
+        size="sm"
+        variant="soft"
+      />
+
+      <ScrollArea class="doc-example__scroll">
         <div
           v-if="example.preview"
           v-show="activeTab === 'Example'"
           :class="{ 'doc-bg-grid': isGridVisible }"
           class="doc-example__canvas"
         >
-          <component :is="example.preview" />
+          <div class="doc-example__canvas-inner">
+            <component :is="example.preview" />
+          </div>
         </div>
 
-        <div v-if="activeCode && activeTab === 'Code'" class="doc-example__code-view">
-          <SelectButton
-            v-if="showFiles"
-            v-model="activeFileName"
-            #default="{ label }"
-            :items="files"
-            class="doc-example__code-toggle"
-            size="sm"
-            variant="soft"
-          >
-            <span class="font-mono">{{ label }}</span>
-          </SelectButton>
-
-          <DocCode :key="activeCode.file" :code="activeCode.code" :lang="activeCode.ext" />
-        </div>
-      </div>
+        <DocCode
+          v-if="activeCode"
+          v-show="activeTab === 'Code'"
+          :key="activeCode.file"
+          :code="activeCode.code"
+          :lang="activeCode.ext"
+        />
+      </ScrollArea>
     </DocCard>
   </DocBlock>
 </template>

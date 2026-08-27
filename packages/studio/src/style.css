@@ -102,7 +102,7 @@
   --d-bg-brand: var(--d-brand-500);
   --d-bg-brand-hover: var(--d-brand-600);
   --d-text-brand: var(--d-brand-600);
-  --d-text-on-brand: var(--d-neutral-50);
+  --d-text-on-brand: var(--d-white);
   --d-bg-brand-soft: var(--d-brand-50);
   --d-bg-brand-soft-hover: var(--d-brand-100);
   --d-border-brand: var(--d-brand-500);
@@ -111,7 +111,7 @@
   --d-bg-neutral: var(--d-neutral-800);
   --d-bg-neutral-hover: var(--d-neutral-700);
   --d-text-neutral: var(--d-neutral-700);
-  --d-text-on-neutral: var(--d-neutral-50);
+  --d-text-on-neutral: var(--d-white);
   --d-bg-neutral-soft: var(--d-neutral-50);
   --d-bg-neutral-soft-hover: var(--d-neutral-100);
   --d-border-neutral: var(--d-neutral-200);
@@ -119,7 +119,7 @@
   --d-bg-danger: var(--d-danger-600);
   --d-bg-danger-hover: var(--d-danger-700);
   --d-text-danger: var(--d-danger-600);
-  --d-text-on-danger: var(--d-neutral-50);
+  --d-text-on-danger: var(--d-white);
   --d-bg-danger-soft: var(--d-danger-50);
   --d-bg-danger-soft-hover: var(--d-danger-100);
   --d-border-danger: var(--d-danger-500);
@@ -135,7 +135,7 @@
   --d-bg-info: var(--d-info-700);
   --d-bg-info-hover: var(--d-info-800);
   --d-text-info: var(--d-info-700);
-  --d-text-on-info: var(--d-neutral-50);
+  --d-text-on-info: var(--d-white);
   --d-bg-info-soft: var(--d-info-50);
   --d-bg-info-soft-hover: var(--d-info-100);
   --d-border-info: var(--d-info-600);
@@ -143,7 +143,7 @@
   --d-bg-success: var(--d-success-700);
   --d-bg-success-hover: var(--d-success-800);
   --d-text-success: var(--d-success-700);
-  --d-text-on-success: var(--d-neutral-50);
+  --d-text-on-success: var(--d-white);
   --d-bg-success-soft: var(--d-success-50);
   --d-bg-success-soft-hover: var(--d-success-100);
   --d-border-success: var(--d-success-600);
@@ -1324,25 +1324,28 @@
   .doc-card__footer {
     @apply border-t;
   }
-  .doc-example {
-    @apply flex flex-col min-h-50 overflow-hidden;
+  .doc-card__header {
+    @apply border-b;
   }
   .doc-example__header {
-    @apply flex justify-between pb-4 mt-8;
+    @apply flex gap-1 pb-4 mt-8;
   }
-  .doc-example__actions {
-    @apply flex gap-1;
+  .doc-example__space {
+    @apply flex-1;
   }
   .doc-example__body {
-    @apply flex flex-1 flex-col bg-background transition-[background-color];
+    @apply relative;
   }
   .doc-example__canvas {
-    @apply flex flex-1 items-center justify-center flex-wrap gap-4 px-6 py-6;
+    @apply flex;
   }
-  .doc-example__code-view {
-    @apply relative flex flex-1;
+  .doc-example__canvas-inner {
+    @apply flex flex-1 flex-wrap items-center justify-center gap-6 py-12 px-6;
   }
-  .doc-example__code-toggle {
+  .doc-example__toggle {
+    @apply font-mono;
+  }
+  .doc-example__body .doc-example__toggle {
     @apply absolute top-1 right-1 z-10;
   }
   .doc-code {

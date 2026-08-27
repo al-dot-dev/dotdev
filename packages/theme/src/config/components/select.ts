@@ -35,6 +35,7 @@ export const select = defineComponent({
     '&__label': 'select-text-default whitespace-nowrap truncate outline-none',
     '&__label--placeholder': 'select-text-placeholder',
     '&__dropdown': `flex items-center justify-center h-full aspect-square text-muted ml-auto pointer-events-none`,
+    '&__listbox-wrapper': `z-dropdown max-w-[calc(100svw-12px)]`,
 
     '&--outlined, &--underlined': 'select-border-outlined',
     '&--outlined, &--soft': 'select-rounded',

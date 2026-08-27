@@ -15,7 +15,7 @@ export const group = defineComponent({
     '&': 'flex relative',
     '& > &': 'flex-1',
 
-    // '& > *:not(&):is(:focus-visible,:focus-within)': 'z-10',
+    '& > *:not(&):is(:focus-visible,:focus-within)': 'z-1',
 
     '&--x > :not(&-addon--attach) + *': 'rounded-s-none',
     '&--x > *:has(+ :not(&-addon--attach))': 'rounded-e-none',
@@ -31,14 +31,14 @@ export const group = defineComponent({
     '&--y > &--x:not(:first-child) > *': 'rounded-t-none',
     '&--y > &--x:not(:last-child) > *': 'rounded-b-none',
 
-    '&-addon': `radius-md flex items-center justify-center text-muted`,
+    '&-addon': `flex items-center justify-center text-muted`,
     '&-addon--sm': 'group-size-sm',
     '&-addon--md': 'group-size-md',
     '&-addon--lg': 'group-size-lg',
 
-    '&-addon--outlined, &--soft': `radius-md`,
+    '&-addon--outlined, &-addon--soft': `radius-md`,
     '&-addon--outlined': `group-bg-outlined border border-neutral`,
-    '&-addon--underlined': `border-b`,
+    '&-addon--underlined': `border-b border-neutral`,
     '&-addon--soft': `group-bg-soft`,
 
     '&-addon--attach': 'absolute',
