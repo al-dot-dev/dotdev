@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<UIAvatarProps>(), {
   border: false,
   square: false,
   color: 'neutral',
-  variant: 'soft',
+  variant: 'solid',
 })
 
 const { ui, bem } = useUiKit('avatar', props, avatarStyle)

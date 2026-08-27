@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { defineDocPage, DocPage } from '@dotdev/studio'
 import base from './examples/base.vue'
+import counter from './examples/counter.vue'
 import dot from './examples/dot.vue'
 import slots from './examples/slots.vue'
 import variants from './examples/variants.vue'
@@ -26,6 +27,11 @@ defineDocPage({
       title: 'Dot indicator',
       description: `Set the <code>dot</code> prop to display a small colored circle before the text. Combine with <code>ring</code> for a ring-only status mark.`,
       preview: dot,
+    },
+    {
+      title: 'Counter',
+      description: `Use the default slot to render numeric values inside the badge. Combine with <code>label</code> for a text prefix, or with <code>dot</code> and <code>variant</code> for different styles.`,
+      preview: counter,
     },
     {
       title: 'Slots',

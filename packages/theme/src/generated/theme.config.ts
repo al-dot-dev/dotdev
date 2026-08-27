@@ -480,7 +480,7 @@ export default {
     "divider": {
       "border-primary": "var(--NS-border-brand)",
       "text-primary": "var(--NS-text-brand)",
-      "border-neutral": "var(--NS-border-default)",
+      "border-neutral": "var(--NS-border-neutral)",
       "text-neutral": "var(--NS-text-muted)",
       "border-danger": "var(--NS-border-danger)",
       "text-danger": "var(--NS-text-danger)",

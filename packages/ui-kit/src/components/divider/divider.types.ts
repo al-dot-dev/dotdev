@@ -1,8 +1,7 @@
-import type { Component, VNode } from 'vue'
+import type { VNode } from 'vue'
 import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitColor, UiKitOverride } from '@dotdev/ui-kit'
 
 export interface UIDividerProps extends UiKitBaseProps {
-  is?: UIDividerElement
   orientation?: UIDividerOrientation
   variant?: UIDividerVariant
   color?: UIDividerColor
@@ -14,8 +13,6 @@ export interface UIDividerSlots {
 }
 
 export interface UIDividerEmits {}
-
-export type UIDividerElement = keyof HTMLElementTagNameMap | Component
 
 export type UIDividerOrientation = 'horizontal' | 'vertical'
 

@@ -28,7 +28,7 @@ defineDocPage({
     },
     {
       title: 'Variants',
-      description: `Avatars support <code>soft</code> and <code>solid</code> variants. <code>soft</code> is used by default.`,
+      description: `Avatars support <code>soft</code> and <code>solid</code> variants. <code>solid</code> is used by default.`,
       preview: variants,
     },
     {

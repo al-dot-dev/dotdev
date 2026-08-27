@@ -58,6 +58,6 @@ export const selectButton = defineComponent({
     '&--md &__item': `select-button-size-item-md`,
     '&--lg &__item': `select-button-size-item-lg`,
 
-    '&.&--square &__item': `aspect-square px-0`,
+    '&.&--square &__item': `aspect-square h-full px-0`,
   },
 })

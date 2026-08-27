@@ -8,7 +8,6 @@ defineEmits<UIDividerEmits>()
 defineSlots<UIDividerSlots>()
 const props = withDefaults(defineProps<UIDividerProps>(), {
   ui: 'divider',
-  is: 'div',
   orientation: 'horizontal',
   variant: 'solid',
   color: 'neutral',
@@ -22,11 +21,11 @@ const rootClass = computed(() => {
 </script>
 
 <template>
-  <component :is="ui.is" :aria-orientation="ui.orientation" :class="rootClass" role="separator" v-bind="el">
-    <span aria-hidden="true" :class="bem('line')" />
+  <div :aria-orientation="ui.orientation" :class="rootClass" role="separator" v-bind="el">
+    <span :class="bem('line')" aria-hidden="true" />
     <span v-if="label || $slots.default" :class="bem('label')">
       <slot>{{ label }}</slot>
     </span>
-    <span v-if="label || $slots.default" aria-hidden="true" :class="bem('line')" />
-  </component>
+    <span v-if="label || $slots.default" :class="bem('line')" aria-hidden="true" />
+  </div>
 </template>

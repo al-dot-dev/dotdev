@@ -14,7 +14,7 @@ const colorBase: Record<(typeof dividerColors)[number], string> = {
 const dividerSemantics = dividerColors.flatMap((color) => {
   const base = colorBase[color]
   return [
-    [`border-${color}`, color === 'neutral' ? 'border-default' : `border-${base}`],
+    [`border-${color}`, color === 'neutral' ? 'border-neutral' : `border-${base}`],
     [`text-${color}`, color === 'neutral' ? 'text-muted' : `text-${base}`],
   ]
 })

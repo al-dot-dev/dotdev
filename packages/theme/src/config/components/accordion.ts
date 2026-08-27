@@ -40,11 +40,9 @@ export const accordion = defineComponent({
     '&--soft &__item': 'accordion-rounded-item accordion-bg-item-soft',
     '&--underline &__item': 'border-b accordion-border-item last:border-b-0',
 
-    '&__trigger': `rounded-[inherit] flex w-full items-center accordion-gap-item accordion-px-item accordion-py-item accordion-text-size-item accordion-text-item text-left font-medium outline-none cursor-pointer select-none accordion-transition`,
+    '&__trigger': `rounded-[inherit] flex items-center accordion-gap-item accordion-px-item accordion-py-item accordion-text-size-item accordion-text-item font-medium outline-none cursor-pointer select-none accordion-transition`,
     '&__trigger:focus-visible': 'ring-2 accordion-ring-focus',
     '&__trigger:disabled': 'disabled',
-
-    '&__label': 'truncate',
 
     '&__indicator': `ml-auto accordion-text-indicator`,
     '&__indicator-icon': `accordion-transition-indicator`,
