@@ -28,7 +28,7 @@ watch(
 <template>
   <nav class="app-menu">
     <Accordion v-model="openGroups" :items="items" label-key="label" multiple variant="plain">
-      <template #default="{ item }">
+      <template #label="{ item }">
         <Icon v-if="item.icon" :name="item.icon" class="app-menu__item-icon" />
         <span class="app-menu__item-label">{{ item.label }}</span>
       </template>

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { TransitionHooks, TransitionProps } from 'vue'
+import type { TransitionHooks, TransitionProps } from 'vue'
 
 const props = defineProps<TransitionProps>()
 defineEmits<TransitionHooks>()

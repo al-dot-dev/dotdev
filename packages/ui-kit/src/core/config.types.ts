@@ -10,6 +10,8 @@ import type {
   UICheckboxProps,
   UIDialogProps,
   UIDividerProps,
+  UIDrawerProps,
+  UIFlexProps,
   UIGroupAddonProps,
   UIGroupProps,
   UIIconButtonProps,
@@ -38,7 +40,6 @@ import type {
   UITagProps,
   UITextareaProps,
 } from '@dotdev/ui-kit'
-import type { UIDrawerProps } from '@dotdev/ui-kit/components/drawer'
 
 export interface UiKitConfigComponents {
   accordion: UIAccordionProps
@@ -62,6 +63,7 @@ export interface UiKitConfigComponents {
   tag: UITagProps
   message: UIMessageProps
   divider: UIDividerProps
+  flex: UIFlexProps
   checkbox: UICheckboxProps
   radio: UIRadioProps
   icon: UIIconProps

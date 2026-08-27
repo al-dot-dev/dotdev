@@ -5,6 +5,7 @@ import VueRouter from 'vue-router/vite'
 import svgLoader from 'vite-svg-loader'
 import { uiKitIcons } from '@dotdev/icons'
 import { extendRoute } from '@dotdev/studio/vite'
+import { dotdevUiCss } from './plugins/dotdev-ui-css'
 
 const svgoConfig = {
   plugins: [{ name: 'preset-default' as const, params: { overrides: { removeViewBox: false as const } } }],
@@ -15,6 +16,7 @@ export default defineConfig({
     host: true,
   },
   plugins: [
+    dotdevUiCss(),
     VueRouter({ routesFolder: ['./src/pages'], exclude: ['**/examples/**'], extendRoute }),
     vue(),
     tailwindcss(),

@@ -8,6 +8,7 @@ import { checkbox } from './components/checkbox.ts'
 import { dialog } from './components/dialog.ts'
 import { drawer } from './components/drawer.ts'
 import { divider } from './components/divider.ts'
+import { flex } from './components/flex.ts'
 import { group } from './components/group.ts'
 import { iconButton } from './components/icon-button.ts'
 import { icon } from './components/icon.ts'
@@ -273,6 +274,7 @@ export default defineTheme({
     dialog,
     drawer,
     divider,
+    flex,
     group,
     iconButton,
     icon,

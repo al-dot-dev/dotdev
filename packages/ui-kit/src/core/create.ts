@@ -6,7 +6,7 @@ import {
   type UiKitConfig,
   type UiKitConfigWithTheme,
 } from '@dotdev/ui-kit'
-import { createTheme, DefineThemeConfig } from '@dotdev/theme'
+import { createTheme, type DefineThemeConfig } from '@dotdev/theme'
 
 export const DEFAULT_CONFIG: UiKitConfig = {
   namespace: 'd',

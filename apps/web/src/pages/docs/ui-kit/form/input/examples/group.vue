@@ -13,13 +13,13 @@ const value = ref<string>('')
   </Group>
 
   <Group>
-    <GroupAddon attach>
+    <GroupAddon attach variant="plain">
       <Icon name="lock-closed" />
     </GroupAddon>
 
     <Input v-model="value" class="px-9!" placeholder="Enter email..." />
 
-    <GroupAddon attach size="none">
+    <GroupAddon attach size="none" variant="plain">
       <IconButton icon="eye-closed" variant="text" />
     </GroupAddon>
   </Group>

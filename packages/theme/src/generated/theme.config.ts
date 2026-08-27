@@ -491,6 +491,7 @@ export default {
       "border-success": "var(--NS-border-success)",
       "text-success": "var(--NS-text-success)"
     },
+    "flex": {},
     "group": {
       "bg-soft": "var(--NS-bg-neutral-soft)",
       "bg-outlined": "var(--NS-bg-background)"

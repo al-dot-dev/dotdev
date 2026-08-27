@@ -8,6 +8,12 @@ import { icons } from './generated/icons'
 
 const app = createApp(App)
 
+if (import.meta.hot) {
+  import.meta.hot.on('dotdev:log', (rootNode) => {
+    console.log('FROM DOTDEV PLUGIN:', rootNode)
+  })
+}
+
 const base = defineUiKitConfig({ namespace: 'd' })
 const landing = defineUiKitConfig({
   namespace: 'landing',

@@ -286,10 +286,10 @@ const demoCheck = ref(true)
           </div>
 
           <div class="landing__demo-output">
-            <Button :color="pgColor" :size="pgSize" :variant="pgVariant" label="Deploy" />
+            <Button :color="pgColor as any" :size="pgSize as any" :variant="pgVariant as any" label="Deploy" />
             <Input :size="pgSize === 'lg' ? 'lg' : 'md'" placeholder="Project name" variant="soft" />
             <Switch v-model="demoSwitch" />
-            <Tag :color="pgColor" label="live" />
+            <Tag :color="pgColor as any" label="live" />
           </div>
 
           <p class="landing__demo-hint">Real components, real props — flip the segments above.</p>
@@ -341,7 +341,7 @@ const demoCheck = ref(true)
         <UiKitProvider namespace="d">
           <article class="landing__ns-pane">
             <header class="landing__ns-bar">
-              <Tag is="code" label="namespace: 'd'" variant="outlined" />
+              <Tag is="code" label="namespace: 'd'" variant="soft" />
               <span class="landing__ns-note">indigo workbench</span>
             </header>
             <div class="landing__ns-stage">
@@ -354,7 +354,7 @@ const demoCheck = ref(true)
                 <Switch v-model="demoSwitch" />
                 <Checkbox v-model="demoCheck" />
                 <Tag color="primary" label="Production" />
-                <Tag label="v0.1.0" variant="outlined" />
+                <Tag label="v0.1.0" variant="soft" />
               </div>
             </div>
           </article>
@@ -363,7 +363,7 @@ const demoCheck = ref(true)
         <UiKitProvider namespace="landing">
           <article class="landing__ns-pane landing__ns-pane--violet">
             <header class="landing__ns-bar">
-              <Tag is="code" label="namespace: 'landing'" variant="outlined" />
+              <Tag is="code" label="namespace: 'landing'" variant="soft" />
               <span class="landing__ns-note">violet landing</span>
             </header>
             <div class="landing__ns-stage">
@@ -376,7 +376,7 @@ const demoCheck = ref(true)
                 <Switch v-model="demoSwitch" />
                 <Checkbox v-model="demoCheck" />
                 <Tag color="primary" label="Production" />
-                <Tag label="v0.1.0" variant="outlined" />
+                <Tag label="v0.1.0" variant="soft" />
               </div>
             </div>
           </article>
@@ -460,7 +460,7 @@ const demoCheck = ref(true)
               <Tag color="success" label="Passing" />
               <Tag color="warning" label="Beta" />
               <Tag color="danger" label="Legacy" />
-              <Tag color="neutral" label="v0.1.0" variant="outlined" />
+              <Tag color="neutral" label="v0.1.0" variant="soft" />
             </div>
             <div class="landing__ns-row">
               <Avatar label="AP" />

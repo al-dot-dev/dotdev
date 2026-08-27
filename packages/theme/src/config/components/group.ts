@@ -41,7 +41,7 @@ export const group = defineComponent({
     '&-addon--underlined': `border-b border-neutral`,
     '&-addon--soft': `group-bg-soft`,
 
-    '&-addon--attach': 'absolute',
+    '&-addon--attach': 'absolute z-2',
     '&--x &-addon--attach': 'inset-y-0',
     '&--y &-addon--attach': 'inset-x-0',
     '&--x &-addon--attach:first-child': 'left-0',

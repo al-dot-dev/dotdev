@@ -57,6 +57,7 @@ declare module 'vue-router/auto-routes' {
       | 'Divider'
       | 'Documentations'
       | 'Drawer'
+      | 'Flex'
       | 'Form'
       | 'Group'
       | 'Hooks'
@@ -68,6 +69,7 @@ declare module 'vue-router/auto-routes' {
       | 'Navigation'
       | 'Overlay'
       | 'Pagination'
+      | 'Primitives'
       | 'Progress'
       | 'Radio'
       | 'ScrollArea'
@@ -347,6 +349,20 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    'Primitives': RouteRecordInfo<
+      'Primitives',
+      '/docs/ui-kit/layout',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'Flex': RouteRecordInfo<
+      'Flex',
+      '/docs/ui-kit/layout/flex',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     'Navigation': RouteRecordInfo<
       'Navigation',
       '/docs/ui-kit/navigation',
@@ -448,6 +464,7 @@ declare module 'vue-router/auto-routes' {
         | 'Divider'
         | 'Documentations'
         | 'Drawer'
+        | 'Flex'
         | 'Form'
         | 'Group'
         | 'Hooks'
@@ -459,6 +476,7 @@ declare module 'vue-router/auto-routes' {
         | 'Navigation'
         | 'Overlay'
         | 'Pagination'
+        | 'Primitives'
         | 'Progress'
         | 'Radio'
         | 'ScrollArea'
@@ -774,6 +792,22 @@ declare module 'vue-router/auto-routes' {
     'src/pages/docs/ui-kit/form/textarea/index.vue': {
       routes:
         | 'Textarea'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/ui-kit/layout/index.vue': {
+      routes:
+        | 'Primitives'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/ui-kit/layout/flex/index.vue': {
+      routes:
+        | 'Flex'
       views:
         | never
       pathParamNames:

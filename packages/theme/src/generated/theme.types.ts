@@ -347,6 +347,9 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "border-success"?: T
       "text-success"?: T
     }
+    "flex"?: {
+
+    }
     "group"?: {
       "bg-soft"?: T
       "bg-outlined"?: T

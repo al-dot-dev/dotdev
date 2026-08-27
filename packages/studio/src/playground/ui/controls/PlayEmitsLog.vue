@@ -121,7 +121,6 @@ async function copyPayload(log: ActionLogEntry, event: Event) {
         <div class="play-emits-log__item-actions">
           <IconButton
             :icon="copiedId === log.id ? 'check' : 'copy'"
-            size="xs"
             title="Copy JSON Payload"
             @click="copyPayload(log, $event)"
           />

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { IconButton } from '@dotdev/ui-kit'
 
-const colors = ['primary', 'neutral', 'warning', 'success', 'danger', 'info']
-const variants = ['solid', 'outlined', 'soft', 'ghost', 'text']
+const colors = ['primary', 'neutral', 'warning', 'success', 'danger', 'info'] as const
+const variants = ['solid', 'outlined', 'soft', 'ghost', 'text'] as const
 </script>
 
 <template>
