@@ -3,6 +3,7 @@ import { defineDocPage, DocPage } from '@dotdev/studio'
 import base from './examples/base.vue'
 import border from './examples/border.vue'
 import colors from './examples/colors.vue'
+import group from './examples/group.vue'
 import sizes from './examples/sizes.vue'
 import slot from './examples/slot.vue'
 import square from './examples/square.vue'
@@ -49,6 +50,11 @@ defineDocPage({
       title: 'Square',
       description: `Use the <code>square</code> prop to render the avatar with squared corners instead of a circle.`,
       preview: square,
+    },
+    {
+      title: 'Group',
+      description: `Use Tailwind's <code>-space-x</code> utilities to overlap avatars into a stack. Combine with <code>border</code> to separate them visually.`,
+      preview: group,
     },
   ],
 })
