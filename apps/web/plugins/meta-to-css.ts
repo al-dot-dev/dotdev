@@ -64,5 +64,5 @@ export function metaToCss(meta: FlexMeta) {
 
   const classes = Object.entries(props).flatMap(([key, value]) => toClass(key, value))
 
-  return `<style>@reference 'tailwindcss'; .${className} { @apply ${classes.join(' ')};}</style>`
+  return `@reference 'tailwindcss'; .${className} { @apply ${classes.join(' ')};}`
 }
