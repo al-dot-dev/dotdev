@@ -1,5 +1,6 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "dotdev",
@@ -38,7 +39,7 @@
       "name": "@dotdev/design",
       "version": "0.0.0",
       "bin": {
-        "dotdev-design": "./bin/dotdev-design"
+        "dotdev-design": "./bin/dotdev-design",
       },
       "dependencies": {
         "@tailwindcss/postcss": "^4.3.3",

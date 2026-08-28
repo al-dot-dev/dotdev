@@ -80,61 +80,170 @@ export const button = defineComponent({
   },
 
   rules: {
-    '&': `button-rounded outline-none inline-flex items-center justify-center font-semibold button-transition cursor-pointer`,
-    '&--sm': `button-size-sm`,
-    '&--md': `button-size-md`,
-    '&--lg': `button-size-lg`,
+    '&': `
+        button-rounded
+        outline-none
+        inline-flex
+        items-center
+        justify-center
+        font-semibold
+        button-transition
+        cursor-pointer`,
 
-    '&--solid': `shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)]`,
-    '&--outlined': `border`,
-    '&:is(&--outlined, &--ghost, &--text)': `bg-transparent`,
+    '&--sm': `
+        button-size-sm`,
 
-    '&--disabled': `disabled`,
-    '&:not(:disabled):focus-visible': `ring-2`,
+    '&--md': `
+        button-size-md`,
 
-    '&--loading &__icon': `animate-spin`,
-    '&__icon': `text-[1.2em]`,
+    '&--lg': `
+        button-size-lg`,
 
-    '&--primary.&--solid': `button-bg-primary-solid hover:button-bg-primary-solid-hover button-text-primary-solid`,
-    '&--primary.&--soft': `button-bg-primary-soft hover:button-bg-primary-soft-hover`,
-    '&--primary:is(&--outlined)': `button-border-primary-outlined`,
-    '&--primary:is(&--outlined, &--ghost)': `hover:button-bg-primary-soft`,
-    '&--primary:is(&--outlined, &--ghost, &--soft, &--text)': `button-text-primary-outlined`,
-    '&--primary:focus-visible': `button-ring-primary`,
+    '&--solid': `
+        shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)]`,
 
-    '&--neutral.&--solid': `button-bg-neutral-solid hover:button-bg-neutral-solid-hover button-text-neutral-solid`,
-    '&--neutral.&--soft': `button-bg-neutral-soft hover:button-bg-neutral-soft-hover`,
-    '&--neutral:is(&--outlined)': `button-border-neutral-outlined`,
-    '&--neutral:is(&--outlined, &--ghost)': `hover:button-bg-neutral-soft`,
-    '&--neutral:is(&--outlined, &--ghost, &--soft, &--text)': `button-text-neutral-outlined`,
-    '&--neutral:focus-visible': `button-ring-neutral`,
+    '&--outlined': `
+        border`,
 
-    '&--danger.&--solid': `button-bg-danger-solid hover:button-bg-danger-solid-hover button-text-danger-solid`,
-    '&--danger.&--soft': `button-bg-danger-soft hover:button-bg-danger-soft-hover`,
-    '&--danger:is(&--outlined)': `button-border-danger-outlined`,
-    '&--danger:is(&--outlined, &--ghost)': `hover:button-bg-danger-soft`,
-    '&--danger:is(&--outlined, &--ghost, &--soft, &--text)': `button-text-danger-outlined`,
-    '&--danger:focus-visible': `button-ring-danger`,
+    '&:is(&--outlined, &--ghost, &--text)': `
+        bg-transparent`,
 
-    '&--warning.&--solid': `button-bg-warning-solid hover:button-bg-warning-solid-hover button-text-warning-solid`,
-    '&--warning.&--soft': `button-bg-warning-soft hover:button-bg-warning-soft-hover`,
-    '&--warning:is(&--outlined)': `button-border-warning-outlined`,
-    '&--warning:is(&--outlined, &--ghost)': `hover:button-bg-warning-soft`,
-    '&--warning:is(&--outlined, &--ghost, &--soft, &--text)': `button-text-warning-outlined`,
-    '&--warning:focus-visible': `button-ring-warning`,
+    '&--disabled': `
+        disabled`,
 
-    '&--info.&--solid': `button-bg-info-solid hover:button-bg-info-solid-hover button-text-info-solid`,
-    '&--info.&--soft': `button-bg-info-soft hover:button-bg-info-soft-hover`,
-    '&--info:is(&--outlined)': `button-border-info-outlined`,
-    '&--info:is(&--outlined, &--ghost)': `hover:button-bg-info-soft`,
-    '&--info:is(&--outlined, &--ghost, &--soft, &--text)': `button-text-info-outlined`,
-    '&--info:focus-visible': `button-ring-info`,
+    '&:not(:disabled):focus-visible': `
+        ring-2`,
 
-    '&--success.&--solid': `button-bg-success-solid hover:button-bg-success-solid-hover button-text-success-solid`,
-    '&--success.&--soft': `button-bg-success-soft hover:button-bg-success-soft-hover`,
-    '&--success:is(&--outlined)': `button-border-success-outlined`,
-    '&--success:is(&--outlined, &--ghost)': `hover:button-bg-success-soft`,
-    '&--success:is(&--outlined, &--ghost, &--soft, &--text)': `button-text-success-outlined`,
-    '&--success:focus-visible': `button-ring-success`,
+    '&--loading &__icon': `
+        animate-spin`,
+
+    '&__icon': `
+        text-[1.2em]`,
+
+    '&--primary.&--solid': `
+        button-bg-primary-solid
+        hover:button-bg-primary-solid-hover
+        button-text-primary-solid`,
+
+    '&--primary.&--soft': `
+        button-bg-primary-soft
+        hover:button-bg-primary-soft-hover`,
+
+    '&--primary:is(&--outlined)': `
+        button-border-primary-outlined`,
+
+    '&--primary:is(&--outlined, &--ghost)': `
+        hover:button-bg-primary-soft`,
+
+    '&--primary:is(&--outlined, &--ghost, &--soft, &--text)': `
+        button-text-primary-outlined`,
+
+    '&--primary:focus-visible': `
+        button-ring-primary`,
+
+    '&--neutral.&--solid': `
+        button-bg-neutral-solid
+        hover:button-bg-neutral-solid-hover
+        button-text-neutral-solid`,
+
+    '&--neutral.&--soft': `
+        button-bg-neutral-soft
+        hover:button-bg-neutral-soft-hover`,
+
+    '&--neutral:is(&--outlined)': `
+        button-border-neutral-outlined`,
+
+    '&--neutral:is(&--outlined, &--ghost)': `
+        hover:button-bg-neutral-soft`,
+
+    '&--neutral:is(&--outlined, &--ghost, &--soft, &--text)': `
+        button-text-neutral-outlined`,
+
+    '&--neutral:focus-visible': `
+        button-ring-neutral`,
+
+    '&--danger.&--solid': `
+        button-bg-danger-solid
+        hover:button-bg-danger-solid-hover
+        button-text-danger-solid`,
+
+    '&--danger.&--soft': `
+        button-bg-danger-soft
+        hover:button-bg-danger-soft-hover`,
+
+    '&--danger:is(&--outlined)': `
+        button-border-danger-outlined`,
+
+    '&--danger:is(&--outlined, &--ghost)': `
+        hover:button-bg-danger-soft`,
+
+    '&--danger:is(&--outlined, &--ghost, &--soft, &--text)': `
+        button-text-danger-outlined`,
+
+    '&--danger:focus-visible': `
+        button-ring-danger`,
+
+    '&--warning.&--solid': `
+        button-bg-warning-solid
+        hover:button-bg-warning-solid-hover
+        button-text-warning-solid`,
+
+    '&--warning.&--soft': `
+        button-bg-warning-soft
+        hover:button-bg-warning-soft-hover`,
+
+    '&--warning:is(&--outlined)': `
+        button-border-warning-outlined`,
+
+    '&--warning:is(&--outlined, &--ghost)': `
+        hover:button-bg-warning-soft`,
+
+    '&--warning:is(&--outlined, &--ghost, &--soft, &--text)': `
+        button-text-warning-outlined`,
+
+    '&--warning:focus-visible': `
+        button-ring-warning`,
+
+    '&--info.&--solid': `
+        button-bg-info-solid
+        hover:button-bg-info-solid-hover
+        button-text-info-solid`,
+
+    '&--info.&--soft': `
+        button-bg-info-soft
+        hover:button-bg-info-soft-hover`,
+
+    '&--info:is(&--outlined)': `
+        button-border-info-outlined`,
+
+    '&--info:is(&--outlined, &--ghost)': `
+        hover:button-bg-info-soft`,
+
+    '&--info:is(&--outlined, &--ghost, &--soft, &--text)': `
+        button-text-info-outlined`,
+
+    '&--info:focus-visible': `
+        button-ring-info`,
+
+    '&--success.&--solid': `
+        button-bg-success-solid
+        hover:button-bg-success-solid-hover
+        button-text-success-solid`,
+
+    '&--success.&--soft': `
+        button-bg-success-soft
+        hover:button-bg-success-soft-hover`,
+
+    '&--success:is(&--outlined)': `
+        button-border-success-outlined`,
+
+    '&--success:is(&--outlined, &--ghost)': `
+        hover:button-bg-success-soft`,
+
+    '&--success:is(&--outlined, &--ghost, &--soft, &--text)': `
+        button-text-success-outlined`,
+
+    '&--success:focus-visible': `
+        button-ring-success`,
   },
 })

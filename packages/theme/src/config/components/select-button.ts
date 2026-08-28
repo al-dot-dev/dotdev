@@ -38,26 +38,81 @@ export const selectButton = defineComponent({
   },
 
   rules: {
-    '&': `inline-flex self-start radius-md font-medium p-0.5 gap-0.5 select-button-transition`,
-    '&--sm': `select-button-size-sm`,
-    '&--md': `select-button-size-md`,
-    '&--lg': `select-button-size-lg`,
-    '&--outlined': `select-button-bg-outlined border select-button-border-outlined`,
-    '&--soft': `select-button-bg-soft`,
-    '&--disabled': `disabled`,
+    '&': `
+        inline-flex
+        self-start
+        radius-md
+        font-medium
+        p-0.5
+        gap-0.5
+        select-button-transition`,
 
-    '&__item': `inline-flex select-button-text-default items-center justify-center radius-sm bg-transparent select-none outline-none cursor-pointer select-button-transition-item`,
-    '&__item:focus-visible': `ring-1 ring-inset ring-neutral`,
-    '&__item:disabled': `disabled`,
-    '&__item:hover': `select-button-text-selected`,
-    '&__item--selected': `opacity-100 select-button-text-selected`,
-    '&--soft &__item--selected': `shadow-xs select-button-bg-item-soft`,
-    '&--outlined &__item--selected': `select-button-bg-item-outlined`,
+    '&--sm': `
+        select-button-size-sm`,
 
-    '&--sm &__item': `select-button-size-item-sm`,
-    '&--md &__item': `select-button-size-item-md`,
-    '&--lg &__item': `select-button-size-item-lg`,
+    '&--md': `
+        select-button-size-md`,
 
-    '&.&--square &__item': `aspect-square h-full px-0`,
+    '&--lg': `
+        select-button-size-lg`,
+
+    '&--outlined': `
+        select-button-bg-outlined
+        border
+        select-button-border-outlined`,
+
+    '&--soft': `
+        select-button-bg-soft`,
+
+    '&--disabled': `
+        disabled`,
+
+    '&__item': `
+        inline-flex
+        select-button-text-default
+        items-center
+        justify-center
+        radius-sm
+        bg-transparent
+        select-none
+        outline-none
+        cursor-pointer
+        select-button-transition-item`,
+
+    '&__item:focus-visible': `
+        ring-1
+        ring-inset
+        ring-neutral`,
+
+    '&__item:disabled': `
+        disabled`,
+
+    '&__item:hover': `
+        select-button-text-selected`,
+
+    '&__item--selected': `
+        opacity-100
+        select-button-text-selected`,
+
+    '&--soft &__item--selected': `
+        shadow-xs
+        select-button-bg-item-soft`,
+
+    '&--outlined &__item--selected': `
+        select-button-bg-item-outlined`,
+
+    '&--sm &__item': `
+        select-button-size-item-sm`,
+
+    '&--md &__item': `
+        select-button-size-item-md`,
+
+    '&--lg &__item': `
+        select-button-size-item-lg`,
+
+    '&.&--square &__item': `
+        aspect-square
+        h-full
+        px-0`,
   },
 })

@@ -26,22 +26,50 @@ export const radio = defineComponent({
   },
 
   rules: {
-    '&': `appearance-none cursor-pointer rounded-full radio-transition`,
+    '&': `
+        appearance-none
+        cursor-pointer
+        rounded-full
+        radio-transition`,
 
-    '&--outlined': `radio-bg-outlined border radio-border-outlined`,
-    '&--soft': `radio-bg-soft border border-transparent`,
+    '&--outlined': `
+        radio-bg-outlined
+        border
+        radio-border-outlined`,
 
-    '&:checked': `radio-border-checked radio-bg-checked bg-[${checkIcon}] bg-center bg-no-repeat bg-contain`,
+    '&--soft': `
+        radio-bg-soft
+        border
+        border-transparent`,
 
-    '&:hover:not(:disabled)': `radio-border-checked`,
-    '&:focus-visible': `outline-2 radio-ring-brand`,
+    '&:checked': `
+        radio-border-checked
+        radio-bg-checked
+        bg-[${checkIcon}]
+        bg-center
+        bg-no-repeat
+        bg-contain`,
 
-    '&.&--invalid': `radio-border-invalid!`,
+    '&:hover:not(:disabled)': `
+        radio-border-checked`,
 
-    '&--sm': `radio-size-sm`,
-    '&--md': `radio-size-md`,
-    '&--lg': `radio-size-lg`,
+    '&:focus-visible': `
+        outline-2
+        radio-ring-brand`,
 
-    '&:disabled': `disabled`,
+    '&.&--invalid': `
+        radio-border-invalid!`,
+
+    '&--sm': `
+        radio-size-sm`,
+
+    '&--md': `
+        radio-size-md`,
+
+    '&--lg': `
+        radio-size-lg`,
+
+    '&:disabled': `
+        disabled`,
   },
 })

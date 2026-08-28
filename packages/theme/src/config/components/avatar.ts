@@ -37,10 +37,25 @@ export const avatar = defineComponent({
   },
 
   rules: {
-    '&': `avatar-size box-border flex shrink-0 items-center justify-center relative rounded-full`,
-    '&--border': `border avatar-border`,
-    '&--square': `avatar-rounded-square`,
+    '&': `
+        avatar-size
+        box-border
+        flex
+        shrink-0
+        items-center
+        justify-center
+        relative
+        rounded-full`,
+
+    '&--border': `
+        border
+        avatar-border`,
+
+    '&--square': `
+        avatar-rounded-square`,
     ...Object.fromEntries(avatarColorRules),
-    '&__image': `rounded-[inherit]`,
+
+    '&__image': `
+        rounded-[inherit]`,
   },
 })

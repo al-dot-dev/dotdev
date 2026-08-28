@@ -27,22 +27,53 @@ export const textarea = defineComponent({
     transition: 'transition-[background-color,opacity,border,color]',
   },
   rules: {
-    '&': 'textarea-text-default textarea-transition outline-none resize-none py-[0.4em]',
-    '&:focus-visible': 'textarea-border-focus',
-    '&::placeholder': 'textarea-text-placeholder',
+    '&': `
+        textarea-text-default
+        textarea-transition
+        outline-none
+        resize-none
+        py-[0.4em]`,
 
-    '&--outlined, &--underlined': 'textarea-border-outlined',
-    '&--outlined, &--soft': 'textarea-rounded',
-    '&--outlined': 'textarea-bg-outlined border',
-    '&--underlined': 'border-b',
-    '&--soft': 'textarea-bg-soft border border-transparent',
+    '&:focus-visible': `
+        textarea-border-focus`,
 
-    '&:disabled': 'disabled',
-    '&--invalid': 'textarea-border-invalid',
-    '&--invalid:focus-visible': 'textarea-border-invalid',
+    '&::placeholder': `
+        textarea-text-placeholder`,
 
-    '&--sm': 'textarea-size-sm',
-    '&--md': 'textarea-size-md',
-    '&--lg': 'textarea-size-lg',
+    '&--outlined, &--underlined': `
+        textarea-border-outlined`,
+
+    '&--outlined, &--soft': `
+        textarea-rounded`,
+
+    '&--outlined': `
+        textarea-bg-outlined
+        border`,
+
+    '&--underlined': `
+        border-b`,
+
+    '&--soft': `
+        textarea-bg-soft
+        border
+        border-transparent`,
+
+    '&:disabled': `
+        disabled`,
+
+    '&--invalid': `
+        textarea-border-invalid`,
+
+    '&--invalid:focus-visible': `
+        textarea-border-invalid`,
+
+    '&--sm': `
+        textarea-size-sm`,
+
+    '&--md': `
+        textarea-size-md`,
+
+    '&--lg': `
+        textarea-size-lg`,
   },
 })

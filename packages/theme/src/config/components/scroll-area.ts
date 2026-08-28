@@ -22,21 +22,72 @@ export const scrollArea = defineComponent({
   },
 
   rules: {
-    '&': `relative flex h-full w-full`,
-    '&__viewport': `size-full outline-none min-w-0 overflow-auto scrollbar-none`,
-    '&__viewport::-webkit-scrollbar': `hidden`,
+    '&': `
+        relative
+        flex
+        h-full
+        w-full`,
 
-    '&__scrollbar': `absolute z-10 opacity-0 scroll-area-transition`,
-    '&:hover &__scrollbar, &:focus-within &__scrollbar': `opacity-100`,
+    '&__viewport': `
+        size-full
+        outline-none
+        min-w-0
+        overflow-auto
+        scrollbar-none`,
 
-    '&__scrollbar--y': `top-0 right-0 h-full scroll-area-w-scrollbar-y`,
-    '&__scrollbar--x': `bottom-0 left-0 w-full scroll-area-h-scrollbar-x`,
+    '&__viewport::-webkit-scrollbar': `
+        hidden`,
 
-    '&__thumb': `cursor-grab touch-none select-none scroll-area-bg-thumb rounded-(--d-scroll-area-rounded-thumb)`,
-    '&__thumb:active': `cursor-grabbing`,
-    '&__scrollbar:hover &__thumb': `scroll-area-bg-thumb-hover`,
+    '&__scrollbar': `
+        absolute
+        z-10
+        opacity-0
+        scroll-area-transition`,
 
-    '&__thumb--y': `absolute top-0 left-1/2 -translate-x-1/2 scroll-area-w-thumb-y translate-y-(--d-scroll-area-translate-thumb-y) h-(--d-scroll-area-size-thumb-y)`,
-    '&__thumb--x': `absolute left-0 top-1/2 -translate-y-1/2 scroll-area-h-thumb-x translate-x-(--d-scroll-area-translate-thumb-x) w-(--d-scroll-area-size-thumb-x)`,
+    '&:hover &__scrollbar, &:focus-within &__scrollbar': `
+        opacity-100`,
+
+    '&__scrollbar--y': `
+        top-0
+        right-0
+        h-full
+        scroll-area-w-scrollbar-y`,
+
+    '&__scrollbar--x': `
+        bottom-0
+        left-0
+        w-full
+        scroll-area-h-scrollbar-x`,
+
+    '&__thumb': `
+        cursor-grab
+        touch-none
+        select-none
+        scroll-area-bg-thumb
+        rounded-(--$ns-scroll-area-rounded-thumb)`,
+
+    '&__thumb:active': `
+        cursor-grabbing`,
+
+    '&__scrollbar:hover &__thumb': `
+        scroll-area-bg-thumb-hover`,
+
+    '&__thumb--y': `
+        absolute
+        top-0
+        left-1/2
+        -translate-x-1/2
+        scroll-area-w-thumb-y
+        translate-y-(--$ns-scroll-area-translate-thumb-y)
+        h-(--$ns-scroll-area-size-thumb-y)`,
+
+    '&__thumb--x': `
+        absolute
+        left-0
+        top-1/2
+        -translate-y-1/2
+        scroll-area-h-thumb-x
+        translate-x-(--$ns-scroll-area-translate-thumb-x)
+        w-(--$ns-scroll-area-size-thumb-x)`,
   },
 })

@@ -410,7 +410,7 @@ export default {
       "py-item": "var(--NS-space-md)",
       "pb-item": "var(--NS-space-md)",
       "gap-item": "var(--NS-gap-md)",
-      "text-size-item": "var(--NS-type-sm)",
+      "type-item": "var(--NS-type-sm)",
       "rounded-item": "var(--NS-radius-md)"
     },
     "avatar": {
@@ -491,7 +491,6 @@ export default {
       "border-success": "var(--NS-border-success)",
       "text-success": "var(--NS-text-success)"
     },
-    "flex": {},
     "group": {
       "bg-soft": "var(--NS-bg-neutral-soft)",
       "bg-outlined": "var(--NS-bg-background)"
@@ -544,7 +543,7 @@ export default {
       "gap": "0.125rem",
       "p": "0.25rem",
       "rounded": "var(--NS-radius-md)",
-      "rounded-item": "calc(var(--d-radius-md) - 4px)"
+      "rounded-item": "calc(var(--$ns-radius-md) - 4px)"
     },
     "menu": {
       "text-default": "var(--NS-text-muted)",

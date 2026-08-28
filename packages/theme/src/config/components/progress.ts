@@ -25,11 +25,25 @@ export const progress = defineComponent({
   },
 
   rules: {
-    '&': 'relative block h-2 w-full overflow-hidden rounded-full bg-neutral-soft',
+    '&': `
+        relative
+        block
+        h-2
+        w-full
+        overflow-hidden
+        rounded-full
+        bg-neutral-soft`,
 
-    '&__indicator': 'h-full rounded-[inherit] transition-[width] block duration-500',
+    '&__indicator': `
+        h-full
+        rounded-[inherit]
+        transition-[width]
+        block
+        duration-500`,
 
-    '&--indeterminate &__indicator': 'w-1/3 animate-pulse',
+    '&--indeterminate &__indicator': `
+        w-1/3
+        animate-pulse`,
 
     ...Object.fromEntries(progressColorRules),
   },

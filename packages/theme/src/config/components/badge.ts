@@ -37,10 +37,30 @@ export const badge = defineComponent({
   },
 
   rules: {
-    '&': `inline-flex items-center justify-center badge-gap rounded-full whitespace-nowrap text-[0.75em] leading-[1.5] font-medium`,
-    '&--label': 'badge-px min-w-[1.5em]',
-    '&--ring': 'p-1',
-    '&__dot': `rounded-full badge-size-dot shrink-0 bg-current`,
+    '&': `
+        inline-flex
+        items-center
+        justify-center
+        badge-gap
+        rounded-full
+        whitespace-nowrap
+        text-[0.75em]
+        leading-[1.5]
+        font-medium`,
+
+    '&--label': `
+        badge-px
+        min-w-[1.5em]`,
+
+    '&--ring': ` 
+        p-1`,
+
+    '&__dot': `
+        rounded-full
+        badge-size-dot
+        shrink-0
+        bg-current`,
+
     ...Object.fromEntries(badgeColorRules),
   },
 })

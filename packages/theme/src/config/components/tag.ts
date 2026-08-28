@@ -43,23 +43,47 @@ export const tag = defineComponent({
   },
 
   rules: {
-    '&': `inline-flex items-center tag-gap tag-h tag-px tag-rounded whitespace-nowrap`,
+    '&': `
+        inline-flex
+        items-center
+        tag-gap
+        tag-h
+        tag-px
+        tag-rounded
+        whitespace-nowrap`,
 
-    '&--solid': `shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)]`,
+    '&--solid': `
+        shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)]`,
 
-    '&--border': `border tag-border`,
-    '&--rounded': `rounded-full`,
+    '&--border': `
+        border
+        tag-border`,
+
+    '&--rounded': `
+        rounded-full`,
 
     ...Object.fromEntries(tagColorRules),
 
-    '&__label': `text-[0.875em]`,
-    '&__icon': `text-[1em]`,
-    '& .d-avatar': `text-[0.7em] size-[calc(2.5em-4px)]`,
+    '&__label': `
+        text-[0.875em]`,
 
-    '&:has(> .d-avatar:first-child)': 'tag-ps-avatar',
-    '&--border:has(> .d-avatar:first-child)': 'tag-ps-avatar-border',
+    '&__icon': `
+        text-[1em]`,
 
-    '&:has(> .d-avatar:last-child)': 'tag-pe-avatar',
-    '&--border:has(> .d-avatar:last-child)': 'tag-pe-avatar-border',
+    '& .d-avatar': `
+        text-[0.7em]
+        size-[calc(2.5em-4px)]`,
+
+    '&:has(> .d-avatar:first-child)': `
+        tag-ps-avatar`,
+
+    '&--border:has(> .d-avatar:first-child)': `
+        tag-ps-avatar-border`,
+
+    '&:has(> .d-avatar:last-child)': `
+        tag-pe-avatar`,
+
+    '&--border:has(> .d-avatar:last-child)': `
+        tag-pe-avatar-border`,
   },
 })

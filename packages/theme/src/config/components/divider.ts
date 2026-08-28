@@ -32,18 +32,42 @@ export const divider = defineComponent({
   },
 
   rules: {
-    '&': `flex items-center gap-2 w-full text-muted`,
+    '&': `
+        flex
+        items-center
+        gap-2
+        w-full
+        text-muted`,
 
-    '&--vertical': 'flex-col h-full w-auto',
+    '&--vertical': `
+        flex-col
+        h-full
+        w-auto`,
 
-    '&__line': 'shrink-0',
-    '&__label': 'shrink-0 whitespace-nowrap type-xs font-medium',
+    '&__line': `
+        shrink-0`,
 
-    '&--horizontal &__line': 'flex-1 h-0 border-t',
-    '&--vertical &__line': 'flex-1 w-0 border-l',
+    '&__label': `
+        shrink-0
+        whitespace-nowrap
+        type-xs
+        font-medium`,
 
-    '&--dashed &__line': 'border-dashed',
-    '&--dotted &__line': 'border-dotted',
+    '&--horizontal &__line': `
+        flex-1
+        h-0
+        border-t`,
+
+    '&--vertical &__line': `
+        flex-1
+        w-0
+        border-l`,
+
+    '&--dashed &__line': `
+        border-dashed`,
+
+    '&--dotted &__line': `
+        border-dotted`,
 
     ...Object.fromEntries(dividerColorRules),
   },

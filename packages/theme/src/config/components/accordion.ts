@@ -19,7 +19,7 @@ export const accordion = defineComponent({
     'py-item': 'space-md',
     'pb-item': 'space-md',
     'gap-item': 'gap-md',
-    'text-size-item': 'type-sm',
+    'type-item': 'type-sm',
     'rounded-item': 'radius-md',
   },
 
@@ -30,26 +30,83 @@ export const accordion = defineComponent({
   },
 
   rules: {
-    '&': 'flex w-full flex-col accordion-transition',
-    '&--outlined': 'accordion-gap',
-    '&--soft': 'accordion-gap',
-    '&--disabled': 'disabled',
+    '&': `
+        accordion-transition
+        flex 
+        flex-col 
+        w-full`,
 
-    '&__item': 'flex flex-col rounded-[inherit]',
-    '&--outlined &__item': 'accordion-rounded-item border accordion-border-item accordion-bg-item-outlined',
-    '&--soft &__item': 'accordion-rounded-item accordion-bg-item-soft',
-    '&--underline &__item': 'border-b accordion-border-item last:border-b-0',
+    '&--outlined, &--soft': `
+        accordion-gap`,
 
-    '&__trigger': `rounded-[inherit] flex items-center accordion-gap-item accordion-px-item accordion-py-item accordion-text-size-item accordion-text-item font-medium outline-none cursor-pointer select-none accordion-transition`,
-    '&__trigger:focus-visible': 'ring-2 accordion-ring-focus',
-    '&__trigger:disabled': 'disabled',
+    '&--disabled': `
+        disabled`,
 
-    '&__indicator': `ml-auto accordion-text-indicator`,
-    '&__indicator-icon': `accordion-transition-indicator`,
-    '&__trigger--expanded &__indicator': 'accordion-text-indicator-open',
-    '&__trigger--expanded &__indicator-icon': 'rotate-180',
+    '&__item': `
+        flex 
+        flex-col 
+        rounded-[inherit]`,
 
-    '&__panel': 'accordion-transition-panel overflow-hidden',
-    '&__value': 'block accordion-px-item accordion-pb-item accordion-text-size-item accordion-text-value',
+    '&--outlined &__item': `
+        accordion-rounded-item  
+        accordion-border-item 
+        accordion-bg-item-outlined
+        border`,
+
+    '&--soft &__item': `
+        accordion-rounded-item 
+        accordion-bg-item-soft`,
+
+    '&--underline &__item': `
+        accordion-border-item 
+        border-b
+        last:border-b-0`,
+
+    '&__trigger': `
+        accordion-gap-item
+        accordion-px-item
+        accordion-py-item
+        accordion-type-item
+        accordion-text-item
+        accordion-transition
+        rounded-[inherit]
+        flex 
+        items-center
+        text-left
+        font-medium
+        outline-none
+        cursor-pointer
+        select-none`,
+
+    '&__trigger:focus-visible': `
+        ring-2
+        accordion-ring-focus`,
+
+    '&__trigger:disabled': `
+        disabled`,
+
+    '&__indicator': `
+        accordion-text-indicator
+        ml-auto`,
+
+    '&__indicator-icon': `
+        accordion-transition-indicator`,
+
+    '&__trigger--expanded &__indicator': `
+        accordion-text-indicator-open`,
+
+    '&__trigger--expanded &__indicator-icon': `
+        rotate-180`,
+
+    '&__panel': `
+        accordion-transition-panel 
+        overflow-hidden`,
+
+    '&__value': `
+        accordion-px-item 
+        accordion-pb-item 
+        accordion-type-item 
+        accordion-text-value 
+        block`,
   },
 })

@@ -30,26 +30,73 @@ export const select = defineComponent({
     transition: 'transition-[background-color,opacity,border,color]',
   },
   rules: {
-    '&': 'select-transition flex items-center min-w-50 outline-none',
+    '&': `
+        select-transition
+        flex
+        items-center
+        min-w-50
+        outline-none`,
 
-    '&__label': 'select-text-default whitespace-nowrap truncate outline-none',
-    '&__label--placeholder': 'select-text-placeholder',
-    '&__dropdown': `flex items-center justify-center h-full aspect-square text-muted ml-auto pointer-events-none`,
-    '&__listbox-wrapper': `z-dropdown max-w-[calc(100svw-12px)]`,
+    '&__label': `
+        select-text-default
+        whitespace-nowrap
+        truncate
+        outline-none`,
 
-    '&--outlined, &--underlined': 'select-border-outlined',
-    '&--outlined, &--soft': 'select-rounded',
-    '&--outlined': 'select-bg-outlined border',
-    '&--underlined': 'border-b',
-    '&--soft': 'select-bg-soft border border-transparent',
+    '&__label--placeholder': `
+        select-text-placeholder`,
 
-    '&--disabled': 'disabled',
-    '&--focused': 'select-border-focus',
-    '&--invalid': 'select-border-invalid',
-    '&--invalid:focus-visible': 'select-border-invalid',
+    '&__dropdown': `
+        flex
+        items-center
+        justify-center
+        h-full
+        aspect-square
+        text-muted
+        ml-auto
+        pointer-events-none`,
 
-    '&--sm': 'select-size-sm',
-    '&--md': 'select-size-md',
-    '&--lg': 'select-size-lg',
+    '&__listbox-wrapper': `
+        z-dropdown
+        max-w-[calc(100svw-12px)]`,
+
+    '&--outlined, &--underlined': `
+        select-border-outlined`,
+
+    '&--outlined, &--soft': `
+        select-rounded`,
+
+    '&--outlined': `
+        select-bg-outlined
+        border`,
+
+    '&--underlined': `
+        border-b`,
+
+    '&--soft': `
+        select-bg-soft
+        border
+        border-transparent`,
+
+    '&--disabled': `
+        disabled`,
+
+    '&--focused': `
+        select-border-focus`,
+
+    '&--invalid': `
+        select-border-invalid`,
+
+    '&--invalid:focus-visible': `
+        select-border-invalid`,
+
+    '&--sm': `
+        select-size-sm`,
+
+    '&--md': `
+        select-size-md`,
+
+    '&--lg': `
+        select-size-lg`,
   },
 })

@@ -30,22 +30,51 @@ export const input = defineComponent({
     transition: 'transition-[background-color,opacity,border,color]',
   },
   rules: {
-    '&': 'input-text-default input-transition outline-none',
-    '&:focus-visible': 'input-border-focus',
-    '&::placeholder': 'input-text-placeholder',
+    '&': `
+        input-text-default
+        input-transition
+        outline-none`,
 
-    '&--outlined, &--underlined': 'input-border-outlined',
-    '&--outlined, &--soft': 'input-rounded',
-    '&--outlined': 'input-bg-outlined border',
-    '&--underlined': 'border-b',
-    '&--soft': 'input-bg-soft border border-transparent',
+    '&:focus-visible': `
+        input-border-focus`,
 
-    '&:disabled': 'disabled',
-    '&--invalid': 'input-border-invalid',
-    '&--invalid:focus-visible': 'input-border-invalid',
+    '&::placeholder': `
+        input-text-placeholder`,
 
-    '&--sm': 'input-size-sm',
-    '&--md': 'input-size-md',
-    '&--lg': 'input-size-lg',
+    '&--outlined, &--underlined': `
+        input-border-outlined`,
+
+    '&--outlined, &--soft': `
+        input-rounded`,
+
+    '&--outlined': `
+        input-bg-outlined
+        border`,
+
+    '&--underlined': `
+        border-b`,
+
+    '&--soft': `
+        input-bg-soft
+        border
+        border-transparent`,
+
+    '&:disabled': `
+        disabled`,
+
+    '&--invalid': `
+        input-border-invalid`,
+
+    '&--invalid:focus-visible': `
+        input-border-invalid`,
+
+    '&--sm': `
+        input-size-sm`,
+
+    '&--md': `
+        input-size-md`,
+
+    '&--lg': `
+        input-size-lg`,
   },
 })

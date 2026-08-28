@@ -43,23 +43,62 @@ export const menu = defineComponent({
   },
 
   rules: {
-    '&': `flex flex-col menu-gap menu-text-default`,
-    '&--sm': 'menu-type-sm',
-    '&--md': 'menu-type-md',
-    '&--lg': 'menu-type-lg',
+    '&': `
+        flex
+        flex-col
+        menu-gap
+        menu-text-default`,
 
-    '&__heading': `font-medium menu-py-heading transition-[color] menu-text-heading`,
-    '&--sm &__heading': 'menu-size-heading-sm',
-    '&--md &__heading': 'menu-size-heading-md',
-    '&--lg &__heading': 'menu-size-heading-lg',
+    '&--sm': `
+        menu-type-sm`,
 
-    '&__item': `flex w-full items-center outline-none cursor-pointer transition-[background-color,color,opacity] menu-text-item`,
-    '&__item:disabled': 'disabled',
-    '&__item:is(:hover, :focus-visible, &__item--active, &__item.router-link-exact-active)': `menu-text-item-hover menu-bg-item-hover`,
-    '&--sm &__item': 'menu-size-item-sm',
-    '&--md &__item': 'menu-size-item-md',
-    '&--lg &__item': 'menu-size-item-lg',
+    '&--md': `
+        menu-type-md`,
 
-    '&__item-icon': `text-[1.2em]`,
+    '&--lg': `
+        menu-type-lg`,
+
+    '&__heading': `
+        font-medium
+        menu-py-heading
+        transition-[color]
+        menu-text-heading`,
+
+    '&--sm &__heading': `
+        menu-size-heading-sm`,
+
+    '&--md &__heading': `
+        menu-size-heading-md`,
+
+    '&--lg &__heading': `
+        menu-size-heading-lg`,
+
+    '&__item': `
+        flex
+        w-full
+        items-center
+        outline-none
+        cursor-pointer
+        transition-[background-color,color,opacity]
+        menu-text-item`,
+
+    '&__item:disabled': `
+        disabled`,
+
+    '&__item:is(:hover, :focus-visible, &__item--active, &__item.router-link-exact-active)': `
+        menu-text-item-hover
+        menu-bg-item-hover`,
+
+    '&--sm &__item': `
+        menu-size-item-sm`,
+
+    '&--md &__item': `
+        menu-size-item-md`,
+
+    '&--lg &__item': `
+        menu-size-item-lg`,
+
+    '&__item-icon': `
+        text-[1.2em]`,
   },
 })

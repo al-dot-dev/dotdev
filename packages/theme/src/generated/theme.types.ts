@@ -266,7 +266,7 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "py-item"?: T
       "pb-item"?: T
       "gap-item"?: T
-      "text-size-item"?: T
+      "type-item"?: T
       "rounded-item"?: T
     }
     "avatar"?: {
@@ -346,9 +346,6 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "text-info"?: T
       "border-success"?: T
       "text-success"?: T
-    }
-    "flex"?: {
-
     }
     "group"?: {
       "bg-soft"?: T

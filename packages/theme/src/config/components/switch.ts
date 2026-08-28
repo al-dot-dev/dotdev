@@ -26,25 +26,62 @@ export const switchComponent = defineComponent({
   },
 
   rules: {
-    '&': `flex switch-h switch-p switch-rounded border switch-border outline-none cursor-pointer switch-transition`,
-    '&__track': 'flex aspect-2/1 h-full rounded-[inherit]',
-    '&__thumb': `aspect-square rounded-[inherit] switch-transition-thumb shadow-xs`,
-    '&--checked &__thumb': 'translate-x-full',
+    '&': `
+        flex
+        switch-h
+        switch-p
+        switch-rounded
+        border
+        switch-border
+        outline-none
+        cursor-pointer
+        switch-transition`,
 
-    '&:focus-visible': 'ring-2 switch-ring-brand',
+    '&__track': `
+        flex
+        aspect-2/1
+        h-full
+        rounded-[inherit]`,
 
-    '&--outlined': 'switch-bg-outlined',
-    '&--outlined &__thumb': 'switch-bg-thumb-outlined',
+    '&__thumb': `
+        aspect-square
+        rounded-[inherit]
+        switch-transition-thumb
+        shadow-xs`,
 
-    '&--outlined.&--checked': 'switch-border-checked',
-    '&--outlined.&--checked &__thumb': 'switch-bg-thumb-checked',
+    '&--checked &__thumb': `
+        translate-x-full`,
 
-    '&--soft': 'switch-bg-soft border-transparent',
-    '&--soft &__thumb': 'switch-bg-thumb-soft',
+    '&:focus-visible': `
+        ring-2
+        switch-ring-brand`,
 
-    '&--soft.&--checked': 'switch-bg-checked',
+    '&--outlined': `
+        switch-bg-outlined`,
 
-    '&.&--invalid': 'switch-border-invalid',
-    '&--disabled': 'disabled',
+    '&--outlined &__thumb': `
+        switch-bg-thumb-outlined`,
+
+    '&--outlined.&--checked': `
+        switch-border-checked`,
+
+    '&--outlined.&--checked &__thumb': `
+        switch-bg-thumb-checked`,
+
+    '&--soft': `
+        switch-bg-soft
+        border-transparent`,
+
+    '&--soft &__thumb': `
+        switch-bg-thumb-soft`,
+
+    '&--soft.&--checked': `
+        switch-bg-checked`,
+
+    '&.&--invalid': `
+        switch-border-invalid`,
+
+    '&--disabled': `
+        disabled`,
   },
 })

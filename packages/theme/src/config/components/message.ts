@@ -38,14 +38,37 @@ export const message = defineComponent({
   },
 
   rules: {
-    '&': `flex items-start gap-2.5 p-3 radius-md message-transition`,
+    '&': `
+        flex
+        items-start
+        gap-2.5
+        p-3
+        radius-md
+        message-transition`,
 
-    '&--border': 'border',
+    '&--border': `
+        border`,
 
-    '&__icon': 'shrink-0 text-[1.25em] mt-px',
-    '&__content': 'flex min-w-0 flex-col gap-0.5',
-    '&__title': 'type-md font-medium leading-snug',
-    '&__message': 'type-sm leading-snug text-muted',
+    '&__icon': `
+        shrink-0
+        text-[1.25em]
+        mt-px`,
+
+    '&__content': `
+        flex
+        min-w-0
+        flex-col
+        gap-0.5`,
+
+    '&__title': `
+        type-md
+        font-medium
+        leading-snug`,
+
+    '&__message': `
+        type-sm
+        leading-snug
+        text-muted`,
 
     ...Object.fromEntries(messageColorRules),
   },

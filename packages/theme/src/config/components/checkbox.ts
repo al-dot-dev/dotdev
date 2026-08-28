@@ -28,22 +28,53 @@ export const checkbox = defineComponent({
   },
 
   rules: {
-    '&': `appearance-none cursor-pointer checkbox-transition block`,
+    '&': `
+        appearance-none
+        cursor-pointer
+        checkbox-transition
+        block`,
 
-    '&--outlined': `checkbox-bg-outlined border checkbox-border-outlined`,
-    '&--soft': `checkbox-bg-soft border border-transparent`,
+    '&--outlined': `
+        checkbox-bg-outlined
+        border
+        checkbox-border-outlined`,
 
-    '&:checked': `checkbox-border-checked checkbox-bg-checked bg-[${checkIcon}] bg-center bg-no-repeat bg-contain`,
+    '&--soft': `
+        checkbox-bg-soft
+        border
+        border-transparent`,
 
-    '&:hover:not(:disabled)': `checkbox-border-checked`,
-    '&:focus-visible': `outline-2 checkbox-ring-brand`,
+    '&:checked': `
+        checkbox-border-checked
+        checkbox-bg-checked
+        bg-[${checkIcon}]
+        bg-center
+        bg-no-repeat
+        bg-contain`,
 
-    '&.&--invalid': `checkbox-border-invalid!`,
+    '&:hover:not(:disabled)': `
+        checkbox-border-checked`,
 
-    '&--sm': `checkbox-rounded-sm checkbox-size-sm`,
-    '&--md': `checkbox-rounded-md checkbox-size-md`,
-    '&--lg': `checkbox-rounded-lg checkbox-size-lg`,
+    '&:focus-visible': `
+        outline-2
+        checkbox-ring-brand`,
 
-    '&:disabled': `disabled`,
+    '&.&--invalid': `
+        checkbox-border-invalid!`,
+
+    '&--sm': `
+        checkbox-rounded-sm
+        checkbox-size-sm`,
+
+    '&--md': `
+        checkbox-rounded-md
+        checkbox-size-md`,
+
+    '&--lg': `
+        checkbox-rounded-lg
+        checkbox-size-lg`,
+
+    '&:disabled': `
+        disabled`,
   },
 })

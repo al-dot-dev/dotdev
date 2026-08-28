@@ -12,41 +12,93 @@ export const group = defineComponent({
     'size-lg': 'gap-lg px-lg',
   },
   rules: {
-    '&': 'flex relative',
-    '& > &': 'flex-1',
+    '&': `
+        flex
+        relative`,
 
-    '& > *:not(&):is(:focus-visible,:focus-within)': 'z-1',
+    '& > &': `
+        flex-1`,
 
-    '&--x > :not(&-addon--attach) + *': 'rounded-s-none',
-    '&--x > *:has(+ :not(&-addon--attach))': 'rounded-e-none',
+    '& > *:not(&):is(:focus-visible,:focus-within)': `
+        z-1`,
 
-    '&--x > &--y:not(:first-child) > *': 'rounded-s-none',
-    '&--x > &--y:not(:last-child) > *': 'rounded-e-none',
+    '&--x > :not(&-addon--attach) + *': `
+        rounded-s-none`,
 
-    '&--y': 'flex-col',
+    '&--x > *:has(+ :not(&-addon--attach))': `
+        rounded-e-none`,
 
-    '&--y > :not(&-addon--attach) + *': 'rounded-t-none',
-    '&--y > *:has(+ :not(&-addon--attach))': 'rounded-b-none',
+    '&--x > &--y:not(:first-child) > *': `
+        rounded-s-none`,
 
-    '&--y > &--x:not(:first-child) > *': 'rounded-t-none',
-    '&--y > &--x:not(:last-child) > *': 'rounded-b-none',
+    '&--x > &--y:not(:last-child) > *': `
+        rounded-e-none`,
 
-    '&-addon': `flex items-center justify-center text-muted`,
-    '&-addon--sm': 'group-size-sm',
-    '&-addon--md': 'group-size-md',
-    '&-addon--lg': 'group-size-lg',
+    '&--y': `
+        flex-col`,
 
-    '&-addon--outlined, &-addon--soft': `radius-md`,
-    '&-addon--outlined': `group-bg-outlined border border-neutral`,
-    '&-addon--underlined': `border-b border-neutral`,
-    '&-addon--soft': `group-bg-soft`,
+    '&--y > :not(&-addon--attach) + *': `
+        rounded-t-none`,
 
-    '&-addon--attach': 'absolute z-2',
-    '&--x &-addon--attach': 'inset-y-0',
-    '&--y &-addon--attach': 'inset-x-0',
-    '&--x &-addon--attach:first-child': 'left-0',
-    '&--x &-addon--attach:last-child': 'right-0',
-    '&--y &-addon--attach:first-child': 'top-0',
-    '&--y &-addon--attach:last-child': 'bottom-0',
+    '&--y > *:has(+ :not(&-addon--attach))': `
+        rounded-b-none`,
+
+    '&--y > &--x:not(:first-child) > *': `
+        rounded-t-none`,
+
+    '&--y > &--x:not(:last-child) > *': `
+        rounded-b-none`,
+
+    '&-addon': `
+        flex
+        items-center
+        justify-center
+        text-muted`,
+
+    '&-addon--sm': `
+        group-size-sm`,
+
+    '&-addon--md': `
+        group-size-md`,
+
+    '&-addon--lg': `
+        group-size-lg`,
+
+    '&-addon--outlined, &-addon--soft': `
+        radius-md`,
+
+    '&-addon--outlined': `
+        group-bg-outlined
+        border
+        border-neutral`,
+
+    '&-addon--underlined': `
+        border-b
+        border-neutral`,
+
+    '&-addon--soft': `
+        group-bg-soft`,
+
+    '&-addon--attach': `
+        absolute
+        z-2`,
+
+    '&--x &-addon--attach': `
+        inset-y-0`,
+
+    '&--y &-addon--attach': `
+        inset-x-0`,
+
+    '&--x &-addon--attach:first-child': `
+        left-0`,
+
+    '&--x &-addon--attach:last-child': `
+        right-0`,
+
+    '&--y &-addon--attach:first-child': `
+        top-0`,
+
+    '&--y &-addon--attach:last-child': `
+        bottom-0`,
   },
 })

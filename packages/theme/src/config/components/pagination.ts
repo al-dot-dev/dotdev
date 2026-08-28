@@ -32,23 +32,81 @@ export const pagination = defineComponent({
   },
 
   rules: {
-    '&': `inline-flex max-w-full items-center font-medium select-none`,
-    '&--sm': `p-0.5 gap-0.5 pagination-size-sm`,
-    '&--md': `p-0.5 gap-0.5 pagination-size-md`,
-    '&--lg': `p-0.5 gap-0.5 pagination-size-lg`,
-    '&--disabled': `disabled`,
+    '&': `
+        inline-flex
+        max-w-full
+        items-center
+        font-medium
+        select-none`,
 
-    '&__list': `flex items-center pagination-gap-sm min-w-0`,
-    '&__item': `inline-flex items-center justify-center whitespace-nowrap radius-sm cursor-pointer outline-none select-none pagination-text-default pagination-transition`,
-    '&__item:hover': `pagination-bg-item pagination-text-selected`,
-    '&__item:focus-visible': `ring-1 ring-inset ring-neutral`,
-    '&__item:disabled': `disabled`,
-    '&__item--selected': `shadow-xs pagination-bg-item-selected pagination-text-selected`,
+    '&--sm': `
+        p-0.5
+        gap-0.5
+        pagination-size-sm`,
 
-    '&--sm &__item': `pagination-size-item-sm`,
-    '&--md &__item': `pagination-size-item-md`,
-    '&--lg &__item': `pagination-size-item-lg`,
+    '&--md': `
+        p-0.5
+        gap-0.5
+        pagination-size-md`,
 
-    '&__ellipsis': `flex items-center justify-center pagination-text-default pointer-events-none select-none`,
+    '&--lg': `
+        p-0.5
+        gap-0.5
+        pagination-size-lg`,
+
+    '&--disabled': `
+        disabled`,
+
+    '&__list': `
+        flex
+        items-center
+        pagination-gap-sm
+        min-w-0`,
+
+    '&__item': `
+        inline-flex
+        items-center
+        justify-center
+        whitespace-nowrap
+        radius-sm
+        cursor-pointer
+        outline-none
+        select-none
+        pagination-text-default
+        pagination-transition`,
+
+    '&__item:hover': `
+        pagination-bg-item
+        pagination-text-selected`,
+
+    '&__item:focus-visible': `
+        ring-1
+        ring-inset
+        ring-neutral`,
+
+    '&__item:disabled': `
+        disabled`,
+
+    '&__item--selected': `
+        shadow-xs
+        pagination-bg-item-selected
+        pagination-text-selected`,
+
+    '&--sm &__item': `
+        pagination-size-item-sm`,
+
+    '&--md &__item': `
+        pagination-size-item-md`,
+
+    '&--lg &__item': `
+        pagination-size-item-lg`,
+
+    '&__ellipsis': `
+        flex
+        items-center
+        justify-center
+        pagination-text-default
+        pointer-events-none
+        select-none`,
   },
 })

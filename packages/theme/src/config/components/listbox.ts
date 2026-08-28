@@ -33,7 +33,7 @@ export const listbox = defineComponent({
     gap: '0.125rem',
     p: '0.25rem',
     rounded: 'radius-md',
-    'rounded-item': 'calc(var(--d-radius-md) - 4px)',
+    'rounded-item': 'calc(var(--$ns-radius-md) - 4px)',
   },
 
   utilities: {
@@ -47,42 +47,97 @@ export const listbox = defineComponent({
 
     transition: 'transition-[background-color,border-color,opacity]',
     'transition-item': 'transition-[background-color,color,box-shadow,opacity]',
-    'transition-checkmark': 'transition-[opacity]',
+    'transition-checkmark': 'transition-opacity',
   },
 
   rules: {
-    '&': `listbox-text-default grid listbox-gap select-none outline-none listbox-transition`,
+    '&': `
+        listbox-text-default
+        grid
+        listbox-gap
+        select-none
+        outline-none
+        listbox-transition`,
 
-    '&--grid': `grid-cols-[repeat(var(--ui-listbox-columns),minmax(0,1fr))]`,
+    '&--grid': `
+        grid-cols-[repeat(var(--ui-listbox-columns),minmax(0,1fr))]`,
 
-    '&--soft': 'listbox-bg-soft',
-    '&--outlined': `listbox-bg-outlined listbox-border-outlined border`,
-    '&--outlined, &--soft': 'listbox-size',
+    '&--soft': `
+        listbox-bg-soft`,
 
-    '&--invalid': 'listbox-border-invalid',
-    '&--disabled': 'disabled',
+    '&--outlined': `
+        listbox-bg-outlined
+        listbox-border-outlined
+        border`,
 
-    '&--sm': 'listbox-size-sm',
-    '&--md': 'listbox-size-md',
-    '&--lg': 'listbox-size-lg',
+    '&--outlined, &--soft': `
+        listbox-size`,
 
-    '&__item': `listbox-rounded-item flex items-center hover:listbox-bg-item-hover cursor-pointer listbox-transition-item`,
-    '&__item[data-highlighted]': 'listbox-ring-item-highlighted ring-1 ring-inset',
-    '&__item--disabled': 'disabled',
+    '&--invalid': `
+        listbox-border-invalid`,
 
-    '&--soft &__item': 'hover:listbox-bg-item-soft-hover',
-    '&--soft &__item--selected': 'listbox-bg-item-soft-selected listbox-text-item-selected',
+    '&--disabled': `
+        disabled`,
 
-    '&__item--selected': 'listbox-bg-item-selected listbox-text-item-selected',
+    '&--sm': `
+        listbox-size-sm`,
 
-    '&--sm &__item': 'listbox-size-item-sm',
-    '&--md &__item': 'listbox-size-item-md',
-    '&--lg &__item': 'listbox-size-item-lg',
+    '&--md': `
+        listbox-size-md`,
 
-    '&.&--square &__item': 'px-0 aspect-square justify-center',
+    '&--lg': `
+        listbox-size-lg`,
 
-    '&__checkmark': `opacity-0 text-[1.2em] listbox-transition-checkmark`,
-    '&__checkmark--right': 'ml-auto',
-    '&__item--selected &__checkmark': 'opacity-100',
+    '&__item': `
+        listbox-rounded-item
+        flex
+        items-center
+        hover:listbox-bg-item-hover
+        cursor-pointer
+        listbox-transition-item`,
+
+    '&__item[data-highlighted]': `
+        listbox-ring-item-highlighted
+        ring-1
+        ring-inset`,
+
+    '&__item--disabled': `
+        disabled`,
+
+    '&--soft &__item': `
+        hover:listbox-bg-item-soft-hover`,
+
+    '&--soft &__item--selected': `
+        listbox-bg-item-soft-selected
+        listbox-text-item-selected`,
+
+    '&__item--selected': `
+        listbox-bg-item-selected
+        listbox-text-item-selected`,
+
+    '&--sm &__item': `
+        listbox-size-item-sm`,
+
+    '&--md &__item': `
+        listbox-size-item-md`,
+
+    '&--lg &__item': `
+        listbox-size-item-lg`,
+
+    '&.&--square &__item': `
+        px-0
+        aspect-square
+        justify-center`,
+
+    '&__checkmark': `
+        opacity-0
+        text-[1.2em]
+        listbox-transition-checkmark`,
+
+    '&__checkmark--right': `
+        ml-auto`,
+
+    '&__item--selected &__checkmark': `
+        opacity-100`,
   },
 })
