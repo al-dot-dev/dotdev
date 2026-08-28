@@ -28,6 +28,8 @@ const TYPES = join(PKG_DIR, '.types')
 const COMPONENTS_SRC = join(SRC, 'components')
 const THEME_SRC = resolve(PKG_DIR, '..', 'theme', 'src')
 const THEME_OUT = join(DIST, 'theme')
+const PLUGIN_SRC = join(SRC, 'plugins', 'dotdev-ui-css')
+const PLUGIN_OUT = join(DIST, 'plugin')
 
 const INFRA_UNITS = readdirSync(SRC, { withFileTypes: true })
   .filter(
@@ -46,7 +48,8 @@ const EXTERNAL_RE = new RegExp(
     .join('|')})`,
 )
 
-const isExternal = (id) => !id.startsWith('.') && !id.startsWith('/') && !id.startsWith('\0') && EXTERNAL_RE.test(id)
+const isExternal = (id) =>
+  id.startsWith('node:') || (!id.startsWith('.') && !id.startsWith('/') && !id.startsWith('\0') && EXTERNAL_RE.test(id))
 
 /** Recursively list files under dir as paths relative to it */
 function walkFiles(dir, base = dir) {
@@ -162,6 +165,38 @@ async function buildThemeJs() {
   })
 }
 
+/**
+ * Phase A-4: emit the vite plugin (`@dotdev/ui-kit/plugin`) file-per-module.
+ * Deliberately NOT part of the root barrel: it is a build-time tool with its own
+ * externals (magic-string, @vue/compiler-*), so it ships as a separate subpath.
+ */
+async function buildPluginJs() {
+  await viteBuild({
+    configFile: false,
+    root: PKG_DIR,
+    logLevel: 'error',
+    build: {
+      outDir: 'dist/plugin',
+      emptyOutDir: false,
+      target: 'esnext',
+      minify: false,
+      sourcemap: false,
+      rollupOptions: {
+        input: { index: join(PLUGIN_SRC, 'index.ts') },
+        external: isExternal,
+        preserveEntrySignatures: 'allow-extension',
+        output: {
+          format: 'es',
+          preserveModules: true,
+          preserveModulesRoot: join(SRC, 'plugins', 'dotdev-ui-css'),
+          entryFileNames: '[name].mjs',
+          chunkFileNames: '[name].mjs',
+        },
+      },
+    },
+  })
+}
+
 function writeThemeBarrels() {
   const runtimeFiles = walkFiles(join(THEME_SRC, 'runtime'))
     .filter((f) => f.endsWith('.ts'))
@@ -190,6 +225,24 @@ function copyThemeDts() {
     cpSync(join(TYPES, 'theme', 'src', dir), join(THEME_OUT, dir), { recursive: true })
   }
   rewriteDtsSpecifiers(THEME_OUT)
+}
+
+/**
+ * Copy plugin declarations emitted to .types/ui-kit/src/plugins/dotdev-ui-css
+ * into dist/plugin, mirroring the infra handling (per-file + barrel synth).
+ */
+function copyPluginDts() {
+  const srcTypeDir = join(TYPES, 'ui-kit', 'src', 'plugins', 'dotdev-ui-css')
+  const outDir = PLUGIN_OUT
+
+  if (!existsSync(join(srcTypeDir, 'index.d.ts'))) return
+
+  cpSync(srcTypeDir, outDir, { recursive: true })
+  rewriteDtsSpecifiers(outDir)
+  for (const rel of walkFiles(srcTypeDir)) {
+    if (rel.endsWith('.ts')) synthesizeMissingBarrelMjs('plugin', rel.replace(/\.ts$/, ''))
+  }
+  console.log('  d.ts plugin/ (copied, mirrored)')
 }
 
 /**
@@ -352,6 +405,8 @@ async function main() {
     await buildInfraJs(unit)
     console.log(`  mjs  ${unit}/ (preserveModules)`)
   }
+  await buildPluginJs()
+  console.log('  mjs  plugin/ (preserveModules)')
   await buildThemeJs()
   writeThemeBarrels()
   console.log('  mjs  theme/ (inlined)')
@@ -379,6 +434,8 @@ async function main() {
   copyThemeDts()
   writeThemeBarrels()
   console.log('  d.ts theme/ (inlined)')
+
+  copyPluginDts()
 
   writeRootBarrels(units.sort())
   rewriteThemeSpecifiers()

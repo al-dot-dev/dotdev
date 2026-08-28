@@ -29,9 +29,9 @@ const rootAttrs = computed(() => {
 </script>
 
 <template>
-  <component :is="ui.is" :class="rootClass" v-bind="{ ...rootAttrs, ...el }">
+  <div :class="rootClass" v-bind="{ ...rootAttrs, ...el }">
     <slot name="icon">
-      <Icon v-if="icon" aria-hidden="true" :class="bem('icon')" :name="icon" />
+      <Icon v-if="icon" :class="bem('icon')" :name="icon" aria-hidden="true" />
     </slot>
     <div v-if="title || message || $slots.title || $slots.message" :class="bem('content')">
       <div v-if="title || $slots.title" :class="bem('title')">
@@ -42,5 +42,5 @@ const rootAttrs = computed(() => {
       </div>
       <slot />
     </div>
-  </component>
+  </div>
 </template>

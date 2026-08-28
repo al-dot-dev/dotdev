@@ -33,17 +33,26 @@
   ],
   "sideEffects": false,
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./plugin": "./src/plugins/dotdev-ui-css/index.ts"
   },
   "build-exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.mjs"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    },
+    "./plugin": {
+      "types": "./dist/plugin/index.d.ts",
+      "default": "./dist/plugin/index.mjs"
+    }
   },
   "scripts": {
     "build": "node scripts/build.mjs"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.8.0"
+    "@floating-ui/dom": "^1.8.0",
+    "@vue/compiler-core": "^3.5.0",
+    "magic-string": "^0.30.21"
   },
   "peerDependencies": {
     "vue": "^3.5.39",

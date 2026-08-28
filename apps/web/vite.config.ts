@@ -5,7 +5,7 @@ import VueRouter from 'vue-router/vite'
 import svgLoader from 'vite-svg-loader'
 import { uiKitIcons } from '@dotdev/icons'
 import { extendRoute } from '@dotdev/studio/vite'
-import { dotdevUiCss } from './plugins/dotdev-ui-css'
+import { dotdevUiCss } from '@dotdev/ui-kit/plugin'
 
 const svgoConfig = {
   plugins: [{ name: 'preset-default' as const, params: { overrides: { removeViewBox: false as const } } }],

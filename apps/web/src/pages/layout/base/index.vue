@@ -30,7 +30,7 @@ const navItems = ['Getting started', 'Theming', 'Components', 'Hooks', 'Migratio
     </LayoutSidebar>
 
     <Layout>
-      <LayoutHeader>
+      <LayoutHeader #left>
         <IconButton icon="hamburger-menu" @click="toggleSidebar" />
       </LayoutHeader>
 

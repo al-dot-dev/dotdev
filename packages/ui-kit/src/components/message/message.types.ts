@@ -1,8 +1,7 @@
-import type { Component, VNode } from 'vue'
+import type { VNode } from 'vue'
 import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitColor, UiKitIcon, UiKitOverride } from '@dotdev/ui-kit'
 
 export interface UIMessageProps extends UiKitBaseProps {
-  is?: UIMessageElement
   icon?: UiKitIcon
   title?: string
   message?: string
@@ -20,8 +19,6 @@ export interface UIMessageSlots {
 }
 
 export interface UIMessageEmits {}
-
-export type UIMessageElement = keyof HTMLElementTagNameMap | Component
 
 export type UIMessageColor = UiKitOverride<UiKitColor, 'messageColor'>
 
