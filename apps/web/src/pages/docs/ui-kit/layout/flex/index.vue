@@ -10,8 +10,8 @@ defineDocPage({
   sources: import.meta.glob('./examples/*.{vue,ts}', { query: '?raw', eager: true, import: 'default' }),
   examples: [
     {
-      title: 'Basic usage',
-      description: `Use <code>Flex</code> as a drop-in flex container. The example below centers three items horizontally with a medium gap.`,
+      title: 'Box covering the basics',
+      description: `A single <code>Box</code> drives flex layout, grid, item control, spacing, sizing, shapes, state variants and positioning — every prop maps straight to a Tailwind utility, using only the default palette.`,
       preview: base,
     },
   ],
