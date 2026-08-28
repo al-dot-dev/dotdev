@@ -85,9 +85,11 @@ declare module 'vue-router/auto-routes' {
       | 'useClickOutside'
       | 'useClipboard'
       | 'useColorScheme'
+      | 'useElementRef'
       | 'useFloating'
       | 'useGlobalEvent'
       | 'useKeyboardNavigation'
+      | 'useMediaQuery'
       | 'useTypeahead'
     >,
     'Documentations': RouteRecordInfo<
@@ -139,6 +141,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    'useElementRef': RouteRecordInfo<
+      'useElementRef',
+      '/docs/hooks/use-element-ref',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     'useFloating': RouteRecordInfo<
       'useFloating',
       '/docs/hooks/use-floating',
@@ -156,6 +165,13 @@ declare module 'vue-router/auto-routes' {
     'useKeyboardNavigation': RouteRecordInfo<
       'useKeyboardNavigation',
       '/docs/hooks/use-keyboard-navigation',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useMediaQuery': RouteRecordInfo<
+      'useMediaQuery',
+      '/docs/hooks/use-media-query',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -492,9 +508,11 @@ declare module 'vue-router/auto-routes' {
         | 'useClickOutside'
         | 'useClipboard'
         | 'useColorScheme'
+        | 'useElementRef'
         | 'useFloating'
         | 'useGlobalEvent'
         | 'useKeyboardNavigation'
+        | 'useMediaQuery'
         | 'useTypeahead'
       views:
         | 'default'
@@ -557,6 +575,14 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
+    'src/pages/docs/hooks/use-element-ref/index.vue': {
+      routes:
+        | 'useElementRef'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
     'src/pages/docs/hooks/use-floating/index.vue': {
       routes:
         | 'useFloating'
@@ -576,6 +602,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/docs/hooks/use-keyboard-navigation/index.vue': {
       routes:
         | 'useKeyboardNavigation'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/hooks/use-media-query/index.vue': {
+      routes:
+        | 'useMediaQuery'
       views:
         | never
       pathParamNames:

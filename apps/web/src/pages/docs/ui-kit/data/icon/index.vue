@@ -2,7 +2,6 @@
 import { defineDocPage, DocPage } from '@dotdev/studio'
 import base from './examples/base.vue'
 import custom from './examples/custom.vue'
-import namespace from './examples/namespace.vue'
 import sizes from './examples/sizes.vue'
 
 defineDocPage({
@@ -26,11 +25,6 @@ defineDocPage({
       title: 'Sizing',
       description: `Icon size follows the parent font-size. Use standard CSS to control size, or set <code>font-size</code> on the wrapper.`,
       preview: sizes,
-    },
-    {
-      title: 'Namespace',
-      description: `The rendered element uses the BEM namespace (default <code>d</code>). Override with <code>UiKitProvider namespace="landing"</code>.`,
-      preview: namespace,
     },
   ],
 })
