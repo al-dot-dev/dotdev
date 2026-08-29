@@ -82,12 +82,12 @@ export const button = defineComponent({
   rules: {
     '&': `
         button-rounded
+        button-transition
         outline-none
         inline-flex
         items-center
         justify-center
         font-semibold
-        button-transition
         cursor-pointer`,
 
     '&--sm': `

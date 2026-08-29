@@ -12,6 +12,6 @@ export function useDocPage() {
   return {
     ...doc,
     group: route.path.split('/').find(Boolean),
-    examples: normalizeExamples(doc.examples, doc.sources),
+    examples: normalizeExamples(doc.examples ?? [], doc.sources ?? {}),
   }
 }

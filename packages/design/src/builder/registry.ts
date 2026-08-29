@@ -171,14 +171,13 @@ export class Registry {
 
   private resolveTokenExpression(expression: TokenExpression, scope: TokenScope): string | undefined {
     if (expression.kind === 'css') {
-      return expression.value
+      return this.replaceNamespace(expression.value)
     }
 
     const primitive = this.findPrimitive(scope, expression.name)
 
     if (!primitive) {
       this.warnUnresolvedPrimitive(scope, expression.name)
-
       return undefined
     }
 

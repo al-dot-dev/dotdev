@@ -79,6 +79,7 @@ function toggleDropdown(event: Event) {
 function closeDropdown() {
   if (multiple.value) return
   floatingRef.value?.close()
+  isFocused.value = false
 }
 
 function closeAndBlur() {

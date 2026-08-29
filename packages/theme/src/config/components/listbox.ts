@@ -90,11 +90,11 @@ export const listbox = defineComponent({
 
     '&__item': `
         listbox-rounded-item
+        listbox-transition-item
+        hover:listbox-bg-item-hover
         flex
         items-center
-        hover:listbox-bg-item-hover
-        cursor-pointer
-        listbox-transition-item`,
+        cursor-pointer`,
 
     '&__item[data-highlighted]': `
         listbox-ring-item-highlighted

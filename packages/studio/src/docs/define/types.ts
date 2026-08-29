@@ -27,8 +27,8 @@ export interface DocPageMeta {
   description: string
   styleScope?: string // component root selector, need for autogenerate style docs, 'button' -> '.$ns-button'
   icon?: UiKitIcon
-  sources: DocExampleSources
-  examples: DocExampleMeta[]
+  sources?: DocExampleSources
+  examples?: DocExampleMeta[]
 }
 
 declare module 'vue-router' {

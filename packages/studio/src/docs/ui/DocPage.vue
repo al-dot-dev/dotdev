@@ -35,9 +35,9 @@ const doc = useDocPage()
         <p class="doc-page__desc doc-desc" v-html="doc.description" />
       </header>
 
-      <slot />
-
       <Divider class="doc-page__divider" variant="dashed" />
+
+      <slot />
 
       <div v-if="doc.examples.length" class="doc-section">
         <h3 class="doc-section__title">Examples</h3>

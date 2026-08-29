@@ -543,7 +543,7 @@ export default {
       "gap": "0.125rem",
       "p": "0.25rem",
       "rounded": "var(--NS-radius-md)",
-      "rounded-item": "calc(var(--$ns-radius-md) - 4px)"
+      "rounded-item": "calc(var(--NS-radius-md) - 4px)"
     },
     "menu": {
       "text-default": "var(--NS-text-muted)",

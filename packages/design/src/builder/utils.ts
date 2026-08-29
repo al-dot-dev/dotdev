@@ -22,7 +22,6 @@ export function parseTokenValue(value: string): TokenExpression {
   if (input === '') {
     return { kind: 'css', value: '' }
   }
-
   if (Number.isFinite(Number(input))) {
     return { kind: 'css', value: input }
   }

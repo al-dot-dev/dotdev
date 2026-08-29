@@ -51,6 +51,7 @@ declare module 'vue-router/auto-routes' {
       | 'Buttons'
       | 'Checkbox'
       | 'Components'
+      | 'Composables'
       | 'Config'
       | 'Data'
       | 'Dialog'
@@ -60,9 +61,10 @@ declare module 'vue-router/auto-routes' {
       | 'Flex'
       | 'Form'
       | 'Group'
-      | 'Hooks'
       | 'Icon'
       | 'IconButton'
+      | 'Icons'
+      | 'Icons list'
       | 'Input'
       | 'ListBox'
       | 'Message'
@@ -75,6 +77,7 @@ declare module 'vue-router/auto-routes' {
       | 'ScrollArea'
       | 'Select'
       | 'SelectButton'
+      | 'Setup'
       | 'Skeleton'
       | 'Switch'
       | 'Table'
@@ -92,6 +95,83 @@ declare module 'vue-router/auto-routes' {
       | 'useMediaQuery'
       | 'useTypeahead'
     >,
+    'Composables': RouteRecordInfo<
+      'Composables',
+      '/docs/composables',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useArrayModel': RouteRecordInfo<
+      'useArrayModel',
+      '/docs/composables/use-array-model',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useClickOutside': RouteRecordInfo<
+      'useClickOutside',
+      '/docs/composables/use-click-outside',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useClipboard': RouteRecordInfo<
+      'useClipboard',
+      '/docs/composables/use-clipboard',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useColorScheme': RouteRecordInfo<
+      'useColorScheme',
+      '/docs/composables/use-color-scheme',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useElementRef': RouteRecordInfo<
+      'useElementRef',
+      '/docs/composables/use-element-ref',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useFloating': RouteRecordInfo<
+      'useFloating',
+      '/docs/composables/use-floating',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useGlobalEvent': RouteRecordInfo<
+      'useGlobalEvent',
+      '/docs/composables/use-global-event',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useKeyboardNavigation': RouteRecordInfo<
+      'useKeyboardNavigation',
+      '/docs/composables/use-keyboard-navigation',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useMediaQuery': RouteRecordInfo<
+      'useMediaQuery',
+      '/docs/composables/use-media-query',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'useTypeahead': RouteRecordInfo<
+      'useTypeahead',
+      '/docs/composables/use-typeahead',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     'Documentations': RouteRecordInfo<
       'Documentations',
       '/docs/documentation',
@@ -106,79 +186,23 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    'Hooks': RouteRecordInfo<
-      'Hooks',
-      '/docs/hooks',
+    'Icons': RouteRecordInfo<
+      'Icons',
+      '/docs/icons',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    'useArrayModel': RouteRecordInfo<
-      'useArrayModel',
-      '/docs/hooks/use-array-model',
+    'Icons list': RouteRecordInfo<
+      'Icons list',
+      '/docs/icons/list',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    'useClickOutside': RouteRecordInfo<
-      'useClickOutside',
-      '/docs/hooks/use-click-outside',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    'useClipboard': RouteRecordInfo<
-      'useClipboard',
-      '/docs/hooks/use-clipboard',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    'useColorScheme': RouteRecordInfo<
-      'useColorScheme',
-      '/docs/hooks/use-color-scheme',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    'useElementRef': RouteRecordInfo<
-      'useElementRef',
-      '/docs/hooks/use-element-ref',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    'useFloating': RouteRecordInfo<
-      'useFloating',
-      '/docs/hooks/use-floating',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    'useGlobalEvent': RouteRecordInfo<
-      'useGlobalEvent',
-      '/docs/hooks/use-global-event',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    'useKeyboardNavigation': RouteRecordInfo<
-      'useKeyboardNavigation',
-      '/docs/hooks/use-keyboard-navigation',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    'useMediaQuery': RouteRecordInfo<
-      'useMediaQuery',
-      '/docs/hooks/use-media-query',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    'useTypeahead': RouteRecordInfo<
-      'useTypeahead',
-      '/docs/hooks/use-typeahead',
+    'Setup': RouteRecordInfo<
+      'Setup',
+      '/docs/icons/setup',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -474,6 +498,7 @@ declare module 'vue-router/auto-routes' {
         | 'Buttons'
         | 'Checkbox'
         | 'Components'
+        | 'Composables'
         | 'Config'
         | 'Data'
         | 'Dialog'
@@ -483,9 +508,10 @@ declare module 'vue-router/auto-routes' {
         | 'Flex'
         | 'Form'
         | 'Group'
-        | 'Hooks'
         | 'Icon'
         | 'IconButton'
+        | 'Icons'
+        | 'Icons list'
         | 'Input'
         | 'ListBox'
         | 'Message'
@@ -498,6 +524,7 @@ declare module 'vue-router/auto-routes' {
         | 'ScrollArea'
         | 'Select'
         | 'SelectButton'
+        | 'Setup'
         | 'Skeleton'
         | 'Switch'
         | 'Table'
@@ -519,6 +546,94 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
+    'src/pages/docs/composables/index.vue': {
+      routes:
+        | 'Composables'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/composables/use-array-model/index.vue': {
+      routes:
+        | 'useArrayModel'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/composables/use-click-outside/index.vue': {
+      routes:
+        | 'useClickOutside'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/composables/use-clipboard/index.vue': {
+      routes:
+        | 'useClipboard'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/composables/use-color-scheme/index.vue': {
+      routes:
+        | 'useColorScheme'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/composables/use-element-ref/index.vue': {
+      routes:
+        | 'useElementRef'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/composables/use-floating/index.vue': {
+      routes:
+        | 'useFloating'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/composables/use-global-event/index.vue': {
+      routes:
+        | 'useGlobalEvent'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/composables/use-keyboard-navigation/index.vue': {
+      routes:
+        | 'useKeyboardNavigation'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/composables/use-media-query/index.vue': {
+      routes:
+        | 'useMediaQuery'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/composables/use-typeahead/index.vue': {
+      routes:
+        | 'useTypeahead'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
     'src/pages/docs/documentation/index.vue': {
       routes:
         | 'Documentations'
@@ -535,89 +650,25 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/docs/hooks/index.vue': {
+    'src/pages/docs/icons/index.vue': {
       routes:
-        | 'Hooks'
+        | 'Icons'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/docs/hooks/use-array-model/index.vue': {
+    'src/pages/docs/icons/list/index.vue': {
       routes:
-        | 'useArrayModel'
+        | 'Icons list'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/docs/hooks/use-click-outside/index.vue': {
+    'src/pages/docs/icons/setup/index.vue': {
       routes:
-        | 'useClickOutside'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/docs/hooks/use-clipboard/index.vue': {
-      routes:
-        | 'useClipboard'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/docs/hooks/use-color-scheme/index.vue': {
-      routes:
-        | 'useColorScheme'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/docs/hooks/use-element-ref/index.vue': {
-      routes:
-        | 'useElementRef'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/docs/hooks/use-floating/index.vue': {
-      routes:
-        | 'useFloating'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/docs/hooks/use-global-event/index.vue': {
-      routes:
-        | 'useGlobalEvent'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/docs/hooks/use-keyboard-navigation/index.vue': {
-      routes:
-        | 'useKeyboardNavigation'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/docs/hooks/use-media-query/index.vue': {
-      routes:
-        | 'useMediaQuery'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/docs/hooks/use-typeahead/index.vue': {
-      routes:
-        | 'useTypeahead'
+        | 'Setup'
       views:
         | never
       pathParamNames:
