@@ -46,6 +46,7 @@ declare module 'vue-router/auto-routes' {
       | 'Accordion'
       | 'Avatar'
       | 'Badge'
+      | 'Box'
       | 'Breadcrumbs'
       | 'Button'
       | 'Buttons'
@@ -58,7 +59,6 @@ declare module 'vue-router/auto-routes' {
       | 'Divider'
       | 'Documentations'
       | 'Drawer'
-      | 'Flex'
       | 'Form'
       | 'Group'
       | 'Icon'
@@ -203,6 +203,20 @@ declare module 'vue-router/auto-routes' {
     'Setup': RouteRecordInfo<
       'Setup',
       '/docs/icons/setup',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'Primitives': RouteRecordInfo<
+      'Primitives',
+      '/docs/primitives',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    'Box': RouteRecordInfo<
+      'Box',
+      '/docs/primitives/box',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -389,20 +403,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    'Primitives': RouteRecordInfo<
-      'Primitives',
-      '/docs/ui-kit/layout',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    'Flex': RouteRecordInfo<
-      'Flex',
-      '/docs/ui-kit/layout/flex',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     'Navigation': RouteRecordInfo<
       'Navigation',
       '/docs/ui-kit/navigation',
@@ -493,6 +493,7 @@ declare module 'vue-router/auto-routes' {
         | 'Accordion'
         | 'Avatar'
         | 'Badge'
+        | 'Box'
         | 'Breadcrumbs'
         | 'Button'
         | 'Buttons'
@@ -505,7 +506,6 @@ declare module 'vue-router/auto-routes' {
         | 'Divider'
         | 'Documentations'
         | 'Drawer'
-        | 'Flex'
         | 'Form'
         | 'Group'
         | 'Icon'
@@ -669,6 +669,22 @@ declare module 'vue-router/auto-routes' {
     'src/pages/docs/icons/setup/index.vue': {
       routes:
         | 'Setup'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/primitives/index.vue': {
+      routes:
+        | 'Primitives'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/primitives/box/index.vue': {
+      routes:
+        | 'Box'
       views:
         | never
       pathParamNames:
@@ -877,22 +893,6 @@ declare module 'vue-router/auto-routes' {
     'src/pages/docs/ui-kit/form/textarea/index.vue': {
       routes:
         | 'Textarea'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/docs/ui-kit/layout/index.vue': {
-      routes:
-        | 'Primitives'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/docs/ui-kit/layout/flex/index.vue': {
-      routes:
-        | 'Flex'
       views:
         | never
       pathParamNames:
