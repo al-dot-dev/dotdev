@@ -1,38 +1,9 @@
-import { defineTheme } from '@dotdev/design'
-import { badge } from './components/badge.ts'
-import { button } from './components/button.ts'
 import { accordion } from './components/accordion.ts'
-import { avatar } from './components/avatar.ts'
-import { breadcrumbs } from './components/breadcrumbs.ts'
-import { checkbox } from './components/checkbox.ts'
-import { dialog } from './components/dialog.ts'
-import { drawer } from './components/drawer.ts'
-import { divider } from './components/divider.ts'
-import { group } from './components/group.ts'
-import { iconButton } from './components/icon-button.ts'
-import { icon } from './components/icon.ts'
-import { input } from './components/input.ts'
-import { listbox } from './components/listbox.ts'
-import { menu } from './components/menu.ts'
-import { message } from './components/message.ts'
-import { radio } from './components/radio.ts'
-import { scrollArea } from './components/scroll-area.ts'
-import { selectButton } from './components/select-button.ts'
-import { select } from './components/select.ts'
-import { switchComponent } from './components/switch.ts'
-import { table } from './components/table.ts'
-import { tag } from './components/tag.ts'
-import { textarea } from './components/textarea.ts'
-import { skeleton } from './components/skeleton.ts'
-import { progress } from './components/progress.ts'
-import { pagination } from './components/pagination.ts'
-import { layout } from './components/layout.ts'
-import { tabs } from './components/tabs.ts'
 
 const sizeKeys = ['h', 'size']
 const spaceKeys = ['px', 'py', 'p', 'pl', 'pr', 'pt', 'pb']
 
-export const themeConfig = defineTheme({
+export const themeConfig = {
   primitives: {
     'brand-50': 'oklch(96.2% 0.018 272.314)',
     'brand-100': 'oklch(93% 0.034 272.788)',
@@ -147,7 +118,7 @@ export const themeConfig = defineTheme({
     'text-foreground': ['neutral-900', 'neutral-100'],
     'text-muted': ['neutral-500', 'neutral-400'],
     'text-placeholder': ['neutral-400', 'neutral-600'],
-    
+
     'border-default': ['neutral-100', 'neutral-800'],
 
     /* Brand */
@@ -258,44 +229,17 @@ export const themeConfig = defineTheme({
 
     disabled: 'pointer-events-none opacity-60',
   },
-})
+}
 
-export default defineTheme({
+export default {
   name: 'Default',
   ...themeConfig,
   components: {
     // ui-kit
-    badge,
-    button,
+    // button,
     accordion,
-    avatar,
-    breadcrumbs,
-    checkbox,
-    dialog,
-    drawer,
-    divider,
-    group,
-    iconButton,
-    icon,
-    input,
-    listbox,
-    menu,
-    message,
-    radio,
-    scrollArea,
-    selectButton,
-    select,
-    switchComponent,
-    table,
-    tag,
-    textarea,
-    skeleton,
-    progress,
-    pagination,
-    layout,
-    tabs,
   },
-})
+}
 
 function flatMapObject<TKey extends PropertyKey, TValue>(
   keys: readonly TKey[],

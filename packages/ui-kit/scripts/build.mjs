@@ -340,7 +340,7 @@ function assertInfraMirror(unit) {
   }
 }
 
-/** Phase C: root barrels; order mirrors src/index.ts */
+/** Phase C: root barrels; order mirrors src/model.ts */
 function writeRootBarrels(components) {
   const runtimeUnits = ['utils', 'core', ...components.map((c) => `components/${c}`), 'composables']
   const typeExports = readdirSync(join(SRC, 'types'))
@@ -354,7 +354,7 @@ function writeRootBarrels(components) {
   )
 }
 
-/** Auto-generate src/components/index.ts from discovered components */
+/** Auto-generate src/components/model.ts from discovered components */
 function generateComponentsBarrel(components) {
   const content =
     components
@@ -364,7 +364,7 @@ function generateComponentsBarrel(components) {
   writeFileSync(join(COMPONENTS_SRC, 'index.ts'), content)
 }
 
-/** Auto-generate src/index.ts with type + runtime exports */
+/** Auto-generate src/model.ts with type + runtime exports */
 function generateIndexBarrel(infraUnits) {
   const typeExports = readdirSync(join(SRC, 'types'))
     .filter((f) => f.endsWith('.ts'))

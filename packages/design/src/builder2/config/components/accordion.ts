@@ -1,6 +1,4 @@
-import { defineComponent } from '@dotdev/design'
-
-export const accordion = defineComponent({
+export const accordion = {
   ui: 'accordion',
 
   semantics: {
@@ -64,13 +62,13 @@ export const accordion = defineComponent({
 
   rules: {
     '&': `
-        accordion-transition
+        &-transition
         flex 
         flex-col 
         w-full`,
 
     '&--outlined, &--soft': `
-        accordion-gap`,
+        &-gap`,
 
     '&--disabled': `
         disabled`,
@@ -81,27 +79,27 @@ export const accordion = defineComponent({
         rounded-[inherit]`,
 
     '&--outlined &__item': `
-        accordion-rounded-item  
-        accordion-border-item 
-        accordion-bg-item-outlined
+        &-rounded-item  
+        &-border-item 
+        &-bg-item-outlined
         border`,
 
     '&--soft &__item': `
-        accordion-rounded-item 
-        accordion-bg-item-soft`,
+        &-rounded-item 
+        &-bg-item-soft`,
 
     '&--underline &__item': `
-        accordion-border-item 
+        &-border-item 
         border-b
         last:border-b-0`,
 
     '&__trigger': `
-        accordion-gap-item
-        accordion-px-item
-        accordion-py-item
-        accordion-type-item
-        accordion-text-item
-        accordion-transition
+        &-gap-item
+        &-px-item
+        &-py-item
+        &-type-item
+        &-text-item
+        &-transition
         rounded-[inherit]
         flex 
         items-center
@@ -113,33 +111,33 @@ export const accordion = defineComponent({
 
     '&__trigger:focus-visible': `
         ring-2
-        accordion-ring-focus`,
+        &-ring-focus`,
 
     '&__trigger:disabled': `
         disabled`,
 
     '&__indicator': `
-        accordion-text-indicator
+        &-text-indicator
         ml-auto`,
 
     '&__indicator-icon': `
-        accordion-transition-indicator`,
+        &-transition-indicator`,
 
     '&__trigger--expanded &__indicator': `
-        accordion-text-indicator-open`,
+        &-text-indicator-open`,
 
     '&__trigger--expanded &__indicator-icon': `
         rotate-180`,
 
     '&__panel': `
-        accordion-transition-panel 
+        &-transition-panel 
         overflow-hidden`,
 
     '&__value': `
-        accordion-px-item 
-        accordion-pb-item 
-        accordion-type-item 
-        accordion-text-value 
+        &-px-item 
+        &-pb-item 
+        &-type-item 
+        &-text-value 
         block`,
   },
-})
+}
