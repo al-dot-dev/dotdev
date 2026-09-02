@@ -1,8 +1,9 @@
-import type { CSSProperties, VNode, VNodeRef } from 'vue'
+import type { CSSProperties, MaybeRefOrGetter, VNode, VNodeRef } from 'vue'
 import type { DefineComponent, EmitFn, UIFloatingConfig } from '@dotdev/ui-kit'
 
 export type UIFloatingFn = (event?: Event) => void
 export interface UIFloatingProps extends UIFloatingConfig {
+  target?: MaybeRefOrGetter<HTMLElement | undefined>
   fit?: boolean
   dismissable?: boolean
 }

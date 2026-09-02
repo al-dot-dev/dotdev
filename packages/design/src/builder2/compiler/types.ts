@@ -1,12 +1,13 @@
 import type { DesignDefinition } from '../types/model.ts'
 
 export type Owner = { kind: 'design' } | { kind: 'component'; name: string }
+export type TokenReference = { ref: string; alpha?: number } | string
 
 export interface TokenIR {
   name: string
   owner: Owner
-  light: string
-  dark?: string
+  light: TokenReference
+  dark?: TokenReference
 }
 
 export interface SemanticIR {

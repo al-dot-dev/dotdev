@@ -4,7 +4,8 @@ const sizeKeys = ['h', 'size']
 const spaceKeys = ['px', 'py', 'p', 'pl', 'pr', 'pt', 'pb']
 
 export const themeConfig = {
-  primitives: {
+  namespace: 'd',
+  tokens: {
     'brand-50': 'oklch(96.2% 0.018 272.314)',
     'brand-100': 'oklch(93% 0.034 272.788)',
     'brand-200': 'oklch(87% 0.065 274.039)',

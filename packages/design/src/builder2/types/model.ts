@@ -12,6 +12,8 @@ export interface Semantics {
 }
 
 export interface DesignDefinition {
+  namespace?: string
+  dark?: string
   tokens?: Tokens
   semantics?: Semantics
   utilities?: Utilities

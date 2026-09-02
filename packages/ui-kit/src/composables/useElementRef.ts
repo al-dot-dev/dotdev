@@ -1,18 +1,14 @@
 import { ref, type Ref, type VNode } from 'vue'
 
-export type ElementRef<T extends HTMLElement = HTMLElement> = Ref<T | null>
+export type ElementRef<T extends HTMLElement> = Ref<T | undefined>
 
-export function useElementRef<T extends HTMLElement = HTMLElement>(): ElementRef<T> {
-  const state = ref<T | null>(null)
+export function useElementRef<T extends HTMLElement>() {
+  const element = ref<T>()
 
-  const callback = {
-    onVnodeMounted: (vnode: VNode) => (state.value = vnode.el),
-    onVnodeUnmounted: () => (state.value = null),
-  } as unknown as ElementRef<T>
+  const bind = {
+    onVnodeMounted: (vnode: VNode) => (element.value = (vnode.el as T) || undefined),
+    onVnodeUnmounted: () => (element.value = undefined),
+  }
 
-  Object.defineProperty(callback, 'value', {
-    get: () => state.value,
-  })
-
-  return callback
+  return { element, bind }
 }

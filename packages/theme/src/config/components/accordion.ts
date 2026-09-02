@@ -22,39 +22,7 @@ export const accordion = defineComponent({
     'rounded-item': 'radius-md',
 
     gap: 'gap-sm',
-
-    focus: {
-      ring: 'ring-brand',
-    },
-
-    value: {
-      text: 'text-foreground',
-    },
-
-    indicator: {
-      text: 'text-muted',
-      open: {
-        text: 'text-foreground',
-      },
-    },
-
-    item: {
-      px: 'space-lg',
-      py: 'space-md',
-      pb: 'space-md',
-      gap: 'gap-md',
-      type: 'type-sm',
-      rounded: 'radius-md',
-      border: 'border-default',
-      text: 'text-foreground',
-      outlined: {
-        bg: 'bg-background',
-      },
-      soft: {
-        bg: 'bg-neutral-soft',
-      },
-    },
-  } as any,
+  },
 
   utilities: {
     transition: 'transition-[background-color,color,border-color,opacity]',

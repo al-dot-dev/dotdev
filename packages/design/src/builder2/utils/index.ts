@@ -1,2 +1,2 @@
-export * from './parse-token-value.ts'
+export * from '../compiler/parse.ts'
 export * from './flatten-object.ts'

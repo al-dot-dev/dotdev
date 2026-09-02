@@ -1,7 +1,7 @@
 <script generic="T, L extends keyof T, V extends keyof T, M extends boolean | undefined" lang="ts" setup>
 import { asTemplateRef, Floating, Icon, ListBox, normalizeBooleanProp, useUiKit } from '@dotdev/ui-kit'
 import type { UISelectEmits, UISelectProps, UISelectSlots } from './select.types.ts'
-import { computed, nextTick, ref, useId, useTemplateRef } from 'vue'
+import { computed, ref, useId, useTemplateRef } from 'vue'
 import { selectStyle } from '@dotdev/theme'
 
 const UI_NAME = 'select'
@@ -106,7 +106,7 @@ function onKeyDown(event: KeyboardEvent) {
       toggleDropdown(event)
 
       if (!isPlaceholder.value) {
-        nextTick(() => listboxRef.value?.focusIn())
+        listboxRef.value?.focusIn()
         event.stopPropagation()
       }
 
@@ -120,10 +120,8 @@ function onKeyDown(event: KeyboardEvent) {
         floatingRef.value?.open(event)
       }
 
-      nextTick(() => {
-        listboxRef.value?.focusIn(event.key === 'ArrowUp' ? -1 : 1)
-        event.stopPropagation()
-      })
+      listboxRef.value?.focusIn(event.key === 'ArrowUp' ? -1 : 1)
+      event.stopPropagation()
       break
   }
 }

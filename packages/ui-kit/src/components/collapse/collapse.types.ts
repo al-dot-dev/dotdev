@@ -1,25 +1,12 @@
-import type { CSSProperties, VNode, VNodeRef } from 'vue'
-import type { DefineComponent, EmitFn, UICollapseConfig } from '@dotdev/ui-kit'
+import type { VNode } from 'vue'
+import type { DefineComponent, EmitFn } from '@dotdev/ui-kit'
 
-export type UICollapseFn = (event?: Event) => void
-export interface UICollapseProps extends UICollapseConfig {
-  fit?: boolean
-  dismissable?: boolean
+export type UICollapseProps = {}
+
+export type UICollapseSlots = {
+  default(scope: {}): VNode[]
 }
 
-export interface UICollapseSlots {
-  default(scope: {
-    isOpen: boolean
-    ref: VNodeRef | undefined
-    style: CSSProperties
-    open: UICollapseFn
-    close: UICollapseFn
-    toggle: UICollapseFn
-  }): VNode[]
-}
-
-export interface UICollapseEmits {
-  'click-outside': [event: MouseEvent]
-}
+export interface UICollapseEmits {}
 
 declare const Collapse: DefineComponent<UICollapseProps, UICollapseSlots, EmitFn<UICollapseEmits>>

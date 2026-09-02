@@ -2,7 +2,7 @@ import type { ComponentDefinition, DesignDefinition, Semantics, Tokens, TokenVal
 import type { BuildContext, Diagnostic, Owner } from './types.ts'
 import { flattenObject } from '../utils/index.ts'
 
-export function collect(context: BuildContext): void {
+export function collect(context: BuildContext) {
   collectDesign(context, context.design)
 
   for (const component of Object.values(context.design.components ?? {})) {
@@ -10,7 +10,7 @@ export function collect(context: BuildContext): void {
   }
 }
 
-function collectDesign(context: BuildContext, design: DesignDefinition): void {
+function collectDesign(context: BuildContext, design: DesignDefinition) {
   const owner: Owner = { kind: 'design' }
 
   collectTokens(context, design.tokens, owner)
@@ -18,7 +18,7 @@ function collectDesign(context: BuildContext, design: DesignDefinition): void {
   collectUtilities(context, design.utilities, owner)
 }
 
-function collectComponent(context: BuildContext, component: ComponentDefinition): void {
+function collectComponent(context: BuildContext, component: ComponentDefinition) {
   const name = component.ui
   const owner: Owner = { kind: 'component', name }
 
@@ -36,16 +36,17 @@ function collectComponent(context: BuildContext, component: ComponentDefinition)
   collectUtilities(context, component.utilities, owner)
 }
 
-function collectTokens(context: BuildContext, tokens: Tokens = {}, owner: Owner): void {
+function collectTokens(context: BuildContext, tokens: Tokens = {}, owner: Owner) {
   for (const [key, value] of Object.entries(tokens)) {
-    const name = createTokenName(key, owner)
+    const name = createName(key, owner)
     addToken(context, name, value, owner)
   }
 }
 
-function addToken(context: BuildContext, name: string, value: TokenValue, owner: Owner): void {
-  if (context.tokens.has(name)) {
-    context.diagnostics.push(createDuplicateWarning(name.replace('--', ''), 'token', owner))
+function addToken(context: BuildContext, name: string, value: TokenValue, owner: Owner) {
+  const duplicate = context.tokens.get(name)
+  if (duplicate) {
+    context.diagnostics.push(createDuplicateWarning(name, 'token', duplicate.owner))
     return
   }
 
@@ -55,7 +56,7 @@ function addToken(context: BuildContext, name: string, value: TokenValue, owner:
   context.tokens.set(name, { name, owner, light, dark })
 }
 
-function collectSemantics(context: BuildContext, semantics: Semantics = {}, owner: Owner): void {
+function collectSemantics(context: BuildContext, semantics: Semantics = {}, owner: Owner) {
   const flattened = flattenObject(semantics)
 
   for (const [key, value] of Object.entries(flattened)) {
@@ -63,13 +64,14 @@ function collectSemantics(context: BuildContext, semantics: Semantics = {}, owne
 
     const name = createName(key, owner)
 
-    if (context.semantics.has(name)) {
-      context.diagnostics.push(createDuplicateWarning(name, 'semantic', owner))
+    const duplicate = context.semantics.get(name)
+    if (duplicate) {
+      context.diagnostics.push(createDuplicateWarning(name, 'semantic', duplicate.owner))
       continue
     }
 
     const utility = getUtility(key, semantics)
-    const tokenName = createTokenName(key, owner)
+    const tokenName = createName(key, owner)
 
     context.semantics.set(name, { name, owner, utility, tokenName })
 
@@ -78,7 +80,7 @@ function collectSemantics(context: BuildContext, semantics: Semantics = {}, owne
   }
 }
 
-function collectUtilities(context: BuildContext, utilities: Utilities = {}, owner: Owner): void {
+function collectUtilities(context: BuildContext, utilities: Utilities = {}, owner: Owner) {
   for (const [key, value] of Object.entries(utilities)) {
     const name = createName(key, owner)
     const utility = getUtility(key)
@@ -86,9 +88,10 @@ function collectUtilities(context: BuildContext, utilities: Utilities = {}, owne
   }
 }
 
-function addUtility(context: BuildContext, name: string, utility: string, value: string, owner: Owner): void {
-  if (context.utilities.has(name)) {
-    context.diagnostics.push(createDuplicateWarning(name, 'utility', owner))
+function addUtility(context: BuildContext, name: string, utility: string, value: string, owner: Owner) {
+  const duplicate = context.utilities.get(name)
+  if (duplicate) {
+    context.diagnostics.push(createDuplicateWarning(name, 'utility', duplicate.owner))
     return
   }
 
@@ -109,10 +112,6 @@ function createName(name: string, owner: Owner): string {
   }
 
   return `${owner.name}-${name}`
-}
-
-function createTokenName(name: string, owner: Owner): string {
-  return `--${createName(name, owner)}`
 }
 
 function getLightValue(value: TokenValue): string {

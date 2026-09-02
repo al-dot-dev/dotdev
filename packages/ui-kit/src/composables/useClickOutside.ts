@@ -1,7 +1,7 @@
 import { type Ref, unref } from 'vue'
 import { useGlobalEvent } from './useGlobalEvent.ts'
 
-type TargetElement = HTMLElement | Ref<HTMLElement | null> | (HTMLElement | Ref<HTMLElement | null>)[]
+type TargetElement = HTMLElement | Ref<HTMLElement | undefined> | (HTMLElement | Ref<HTMLElement | undefined>)[]
 
 export function useClickOutside(target: TargetElement, callback: (event: MouseEvent) => void, enabled?: Ref<boolean>) {
   const listener = (event: MouseEvent) => {

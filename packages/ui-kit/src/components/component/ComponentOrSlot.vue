@@ -9,8 +9,7 @@ interface Props {
   is?: string | Component
 }
 
-const props = defineProps<Props>()
-console.log(props.is)
+defineProps<Props>()
 </script>
 
 <template>

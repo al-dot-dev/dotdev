@@ -112,13 +112,13 @@ export default {
       "var(--NS-neutral-500)",
       "var(--NS-neutral-400)"
     ],
-    "border-default": [
-      "var(--NS-neutral-100)",
-      "var(--NS-neutral-800)"
-    ],
     "text-placeholder": [
       "var(--NS-neutral-400)",
       "var(--NS-neutral-600)"
+    ],
+    "border-default": [
+      "var(--NS-neutral-100)",
+      "var(--NS-neutral-800)"
     ],
     "bg-brand": [
       "var(--NS-brand-500)",
@@ -405,13 +405,13 @@ export default {
       "text-indicator": "var(--NS-text-muted)",
       "text-indicator-open": "var(--NS-text-foreground)",
       "ring-focus": "var(--NS-ring-brand)",
-      "gap": "var(--NS-gap-sm)",
       "px-item": "var(--NS-space-lg)",
       "py-item": "var(--NS-space-md)",
       "pb-item": "var(--NS-space-md)",
       "gap-item": "var(--NS-gap-md)",
       "type-item": "var(--NS-type-sm)",
-      "rounded-item": "var(--NS-radius-md)"
+      "rounded-item": "var(--NS-radius-md)",
+      "gap": "var(--NS-gap-sm)"
     },
     "avatar": {
       "size": "2.5em",
@@ -799,6 +799,28 @@ export default {
       "gap-sm": "var(--NS-gap-sm)",
       "gap-md": "var(--NS-gap-md)",
       "gap-lg": "var(--NS-gap-lg)"
+    },
+    "tree-menu": {
+      "text-node": "var(--NS-text-muted)",
+      "text-node-hover": "var(--NS-text-foreground)",
+      "text-node-active": "var(--NS-text-foreground)",
+      "bg-node-hover": "var(--NS-bg-neutral-soft)",
+      "bg-node-active": "var(--NS-bg-neutral-soft)",
+      "text-indicator": "var(--NS-text-muted)",
+      "text-indicator-open": "var(--NS-text-foreground)",
+      "border-indent": "var(--NS-border-default)",
+      "gap": "var(--NS-gap-xs)",
+      "gap-node": "var(--NS-gap-md)",
+      "px-node-sm": "var(--NS-space-sm)",
+      "px-node-md": "var(--NS-space-md)",
+      "px-node-lg": "var(--NS-space-lg)",
+      "h-node-sm": "var(--NS-size-sm)",
+      "h-node-md": "var(--NS-size-md)",
+      "h-node-lg": "var(--NS-size-lg)",
+      "rounded-node": "var(--NS-radius-md)",
+      "type-sm": "var(--NS-type-sm)",
+      "type-md": "var(--NS-tree-menu-type-sm)",
+      "type-lg": "var(--NS-tree-menu-type-md)"
     }
   }
 }

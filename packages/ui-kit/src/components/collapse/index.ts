@@ -1,2 +1,2 @@
-export * from './floating.types.ts'
-export { default as Floating } from './Floating.vue'
+export * from './collapse.types.ts'
+export { default as Collapse } from './Collapse.vue'

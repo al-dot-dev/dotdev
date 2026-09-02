@@ -1,4 +1,4 @@
-import { computed, type CSSProperties, type MaybeRefOrGetter, type Ref, onScopeDispose, ref, toValue, watch } from 'vue'
+import { computed, type CSSProperties, type MaybeRefOrGetter, onScopeDispose, type Ref, ref, toValue, watch } from 'vue'
 import { autoUpdate, computePosition, flip, offset, type Placement, shift, type Strategy } from '@floating-ui/dom'
 
 export interface UIFloatingConfig {
@@ -8,7 +8,7 @@ export interface UIFloatingConfig {
   autoUpdate?: boolean
 }
 
-type ElementRef = MaybeRefOrGetter<HTMLElement | null>
+type ElementRef = MaybeRefOrGetter<HTMLElement | undefined>
 
 export interface UIFloatingBinding {
   placement: Ref<Placement>

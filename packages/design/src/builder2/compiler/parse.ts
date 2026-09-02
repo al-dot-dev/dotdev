@@ -1,14 +1,4 @@
-export type TokenExpression =
-  | {
-      kind: 'css'
-      raw: string
-    }
-  | {
-      kind: 'ref'
-      name: string
-      raw: string
-      alpha?: number
-    }
+import { BuildContext, TokenReference } from './types.ts'
 
 const CSS_KEYWORDS = new Set([
   'auto',
@@ -42,105 +32,71 @@ const CSS_HEX = /^#[0-9a-f]{3,8}$/i
 const CSS_VARIABLE = /^var\(\s*--[\w-]+(?:\s*,[\s\S]+)?\s*\)$/i
 const TOKEN_ALPHA = /^(.+?)\/(\d+(?:\.\d+)?)$/
 
-export function parseTokenValue(value: string): TokenExpression {
+export function parseTokenValue(context: BuildContext, value: TokenReference): TokenReference {
+  if (typeof value !== 'string') return value
+
   const input = value.trim()
 
   if (!input) {
-    return { kind: 'css', raw: '' }
+    return ''
   }
 
-  // Explicit CSS variable:
-  //
-  // --foo
-  // var(--foo)
-  // var(--foo, red)
+  const reference = resolveTokenReference(context, input)
+
+  if (reference) {
+    return reference
+  }
+
   if (input.startsWith('--')) {
-    return { kind: 'css', raw: `var(${input})` }
+    return `var(${input})`
   }
 
   if (CSS_VARIABLE.test(input)) {
-    return { kind: 'css', raw: input }
+    return input
   }
 
-  // Numbers:
-  //
-  // 0
-  // 1
-  // -1
-  // 1.5
-  // .5
   if (CSS_NUMBER.test(input)) {
-    return { kind: 'css', raw: input }
+    return input
   }
 
-  // Dimensions:
-  //
-  // 4px
-  // 1rem
-  // 100%
-  // 50vh
-  // 1fr
-  // 2deg
   if (CSS_DIMENSION.test(input)) {
-    return { kind: 'css', raw: input }
+    return input
   }
 
-  // Hex colors
-  //
-  // #fff
-  // #ffffff
-  // #ffffffff
   if (CSS_HEX.test(input)) {
-    return { kind: 'css', raw: input }
+    return input
   }
 
-  // CSS keywords
   if (CSS_KEYWORDS.has(input)) {
-    return { kind: 'css', raw: input }
+    return input
   }
 
-  // CSS functions:
-  //
-  // rgb(...)
-  // hsl(...)
-  // color(...)
-  // calc(...)
-  // min(...)
-  // max(...)
-  // clamp(...)
-  // linear-gradient(...)
-  // url(...)
   if (CSS_FUNCTION.test(input)) {
-    return { kind: 'css', raw: input }
+    return input
   }
 
-  // Token with alpha:
-  //
-  // brand-500/50
-  // neutral-950/20
-  //
-  // becomes:
-  //
-  // color-mix(
-  //   in oklab,
-  //   var(--brand-500) 50%,
-  //   transparent
-  // )
-  const alpha = parseTokenAlpha(input)
-
-  if (alpha) {
-    return {
-      kind: 'ref',
-      name: `--${alpha.name}`,
-      alpha: alpha.value,
-      raw: createTokenAlphaValue(alpha.name, alpha.value),
-    }
-  }
-
-  return { kind: 'ref', name: `--${input}`, raw: `var(--${input})` }
+  return { ref: input }
 }
 
-function parseTokenAlpha(value: string): { name: string; value: number } | undefined {
+function resolveTokenReference(context: BuildContext, value: string): TokenReference | undefined {
+  const alpha = parseTokenAlpha(value)
+
+  if (alpha !== undefined) {
+    if (!context.tokens.has(alpha.name)) {
+      return undefined
+    }
+
+    return { ref: alpha.name, alpha: alpha.value }
+  }
+
+  if (!context.tokens.has(value)) {
+    return undefined
+  }
+
+  return { ref: value }
+}
+
+function parseTokenAlpha(value: string) {
   const match = value.match(TOKEN_ALPHA)
 
   if (!match) {
@@ -158,12 +114,5 @@ function parseTokenAlpha(value: string): { name: string; value: number } | undef
     return undefined
   }
 
-  return {
-    name,
-    value: alpha,
-  }
-}
-
-function createTokenAlphaValue(name: string, alpha: number): string {
-  return ['color-mix(', 'in oklab,', `var(--${name}) ${alpha}%,`, 'transparent', ')'].join(' ')
+  return { name, value: alpha }
 }

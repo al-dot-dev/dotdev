@@ -35,7 +35,7 @@ const onAfterLeave = (el: Element) => {
 
 <template>
   <Transition
-    :name="name"
+    :name="props.name"
     @enter="onEnter"
     @leave="onLeave"
     @before-enter="onBeforeEnter"

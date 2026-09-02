@@ -39,6 +39,7 @@ import type {
   UITabsProps,
   UITagProps,
   UITextareaProps,
+  UITreeMenuProps,
 } from '@dotdev/ui-kit'
 
 export interface UiKitConfigComponents {
@@ -77,6 +78,7 @@ export interface UiKitConfigComponents {
   'layout-header': UILayoutHeaderProps
   'layout-content': UILayoutContentProps
   tabs: UITabsProps
+  'tree-menu': UITreeMenuProps
 }
 
 export interface UiKitConfig {

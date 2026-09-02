@@ -84,6 +84,7 @@ declare module 'vue-router/auto-routes' {
       | 'Tabs'
       | 'Tag'
       | 'Textarea'
+      | 'TreeMenu'
       | 'useArrayModel'
       | 'useClickOutside'
       | 'useClipboard'
@@ -431,6 +432,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    'TreeMenu': RouteRecordInfo<
+      'TreeMenu',
+      '/docs/ui-kit/navigation/tree-menu',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     'Overlay': RouteRecordInfo<
       'Overlay',
       '/docs/ui-kit/overlay',
@@ -531,6 +539,7 @@ declare module 'vue-router/auto-routes' {
         | 'Tabs'
         | 'Tag'
         | 'Textarea'
+        | 'TreeMenu'
         | 'useArrayModel'
         | 'useClickOutside'
         | 'useClipboard'
@@ -925,6 +934,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/docs/ui-kit/navigation/tabs/index.vue': {
       routes:
         | 'Tabs'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/docs/ui-kit/navigation/tree-menu/index.vue': {
+      routes:
+        | 'TreeMenu'
       views:
         | never
       pathParamNames:

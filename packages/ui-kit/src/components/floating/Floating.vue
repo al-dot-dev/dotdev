@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import type { CSSProperties, VNodeRef } from 'vue'
-import { computed, ref } from 'vue'
+import { computed, type CSSProperties, ref, toValue, type VNodeRef, watchEffect } from 'vue'
 import type { UIFloatingEmits, UIFloatingProps, UIFloatingSlots } from './floating.types'
 import { useClickOutside, useFloating } from '@dotdev/ui-kit'
 
@@ -13,8 +12,8 @@ const props = withDefaults(defineProps<UIFloatingProps>(), {
 })
 
 const isOpen = ref<boolean>(false)
-const anchor = ref<HTMLElement | null>(null)
-const floating = ref<HTMLElement | null>(null)
+const anchor = ref<HTMLElement>()
+const floating = ref<HTMLElement>()
 
 const floatingConfig = computed(() => ({
   placement: props.placement,
@@ -31,7 +30,13 @@ const floatingStyle = computed<CSSProperties>(() => ({
   width: props.fit && anchor.value ? `${anchor.value.clientWidth}px` : undefined,
 }))
 
-function setFloatingRef(el: HTMLElement | null) {
+watchEffect(() => {
+  if (props.target) {
+    anchor.value = toValue(props.target)
+  }
+})
+
+function setFloatingRef(el?: HTMLElement) {
   floating.value = el
 }
 
@@ -41,7 +46,6 @@ function open(event?: Event) {
   if (!(target instanceof HTMLElement)) {
     return
   }
-
   anchor.value = target
   isOpen.value = true
 }
@@ -73,7 +77,7 @@ defineExpose({
 
 <template>
   <slot
-    :ref="setFloatingRef as VNodeRef | undefined"
+    :ref="setFloatingRef as unknown as VNodeRef | undefined"
     :close="close"
     :is-open="isOpen"
     :open="open"

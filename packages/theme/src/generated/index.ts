@@ -29,4 +29,5 @@ export { default as progressStyle } from './progress.ts'
 export { default as paginationStyle } from './pagination.ts'
 export { default as layoutStyle } from './layout.ts'
 export { default as tabsStyle } from './tabs.ts'
+export { default as treeMenuStyle } from './tree-menu.ts'
 

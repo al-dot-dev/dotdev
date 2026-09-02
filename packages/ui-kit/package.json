@@ -52,9 +52,7 @@
   "dependencies": {
     "@floating-ui/dom": "^1.8.0",
     "@vue/compiler-core": "^3.5.0",
-    "magic-string": "^0.30.21"
-  },
-  "peerDependencies": {
+    "magic-string": "^0.30.21",
     "vue": "^3.5.39",
     "vue-router": "^5.2.0"
   },

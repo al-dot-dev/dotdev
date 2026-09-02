@@ -28,6 +28,7 @@ import { progress } from './components/progress.ts'
 import { pagination } from './components/pagination.ts'
 import { layout } from './components/layout.ts'
 import { tabs } from './components/tabs.ts'
+import { treeMenu } from './components/tree-menu.ts'
 
 const sizeKeys = ['h', 'size']
 const spaceKeys = ['px', 'py', 'p', 'pl', 'pr', 'pt', 'pb']
@@ -294,6 +295,7 @@ export default defineTheme({
     pagination,
     layout,
     tabs,
+    treeMenu,
   },
 })
 

@@ -1,6 +1,8 @@
 export const accordion = {
   ui: 'accordion',
-
+  tokens: {
+    'padding-bottom': '--$ns-space-x',
+  },
   semantics: {
     'bg-item-outlined': 'bg-background',
     'bg-item-soft': 'bg-neutral-soft',
@@ -55,6 +57,7 @@ export const accordion = {
   } as any,
 
   utilities: {
+    'item-size': '&-item-px &-item-py &-item-pb',
     transition: 'transition-[background-color,color,border-color,opacity]',
     'transition-indicator': 'transition-[transform,rotate,color]',
     'transition-panel': 'transition-[height] duration-200',

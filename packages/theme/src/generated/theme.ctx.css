@@ -97,8 +97,8 @@
   --NS-bg-surface: var(--NS-white);
   --NS-text-foreground: var(--NS-neutral-900);
   --NS-text-muted: var(--NS-neutral-500);
-  --NS-border-default: var(--NS-neutral-100);
   --NS-text-placeholder: var(--NS-neutral-400);
+  --NS-border-default: var(--NS-neutral-100);
   --NS-bg-brand: var(--NS-brand-500);
   --NS-bg-brand-hover: var(--NS-brand-600);
   --NS-text-brand: var(--NS-brand-600);
@@ -162,8 +162,8 @@
   --NS-bg-surface: var(--NS-neutral-950);
   --NS-text-foreground: var(--NS-neutral-100);
   --NS-text-muted: var(--NS-neutral-400);
-  --NS-border-default: var(--NS-neutral-800);
   --NS-text-placeholder: var(--NS-neutral-600);
+  --NS-border-default: var(--NS-neutral-800);
   --NS-bg-brand: var(--NS-brand-400);
   --NS-bg-brand-hover: var(--NS-brand-300);
   --NS-text-brand: var(--NS-brand-400);
@@ -228,12 +228,12 @@
   @apply text-(--NS-text-muted);
 }
 
-@utility border-default {
-  @apply border-(--NS-border-default);
-}
-
 @utility text-placeholder {
   @apply text-(--NS-text-placeholder);
+}
+
+@utility border-default {
+  @apply border-(--NS-border-default);
 }
 
 @utility bg-brand {

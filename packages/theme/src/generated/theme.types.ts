@@ -100,8 +100,8 @@ export interface ThemeDefinition<T = string | [string, string]> {
     "bg-surface"?: T
     "text-foreground"?: T
     "text-muted"?: T
-    "border-default"?: T
     "text-placeholder"?: T
+    "border-default"?: T
     "bg-brand"?: T
     "bg-brand-hover"?: T
     "text-brand"?: T
@@ -261,13 +261,13 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "text-indicator"?: T
       "text-indicator-open"?: T
       "ring-focus"?: T
-      "gap"?: T
       "px-item"?: T
       "py-item"?: T
       "pb-item"?: T
       "gap-item"?: T
       "type-item"?: T
       "rounded-item"?: T
+      "gap"?: T
     }
     "avatar"?: {
       "size"?: T
@@ -644,6 +644,28 @@ export interface ThemeDefinition<T = string | [string, string]> {
       "gap-sm"?: T
       "gap-md"?: T
       "gap-lg"?: T
+    }
+    "tree-menu"?: {
+      "text-node"?: T
+      "text-node-hover"?: T
+      "text-node-active"?: T
+      "bg-node-hover"?: T
+      "bg-node-active"?: T
+      "text-indicator"?: T
+      "text-indicator-open"?: T
+      "border-indent"?: T
+      "gap"?: T
+      "gap-node"?: T
+      "px-node-sm"?: T
+      "px-node-md"?: T
+      "px-node-lg"?: T
+      "h-node-sm"?: T
+      "h-node-md"?: T
+      "h-node-lg"?: T
+      "rounded-node"?: T
+      "type-sm"?: T
+      "type-md"?: T
+      "type-lg"?: T
     }
   }
 }
