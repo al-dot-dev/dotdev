@@ -101,10 +101,6 @@
         "vue-router": "^5.2.0",
         "vue-tsc": "^3.3.10",
       },
-      "peerDependencies": {
-        "vue": "^3.5.39",
-        "vue-router": "^5.2.0",
-      },
     },
   },
   "packages": {

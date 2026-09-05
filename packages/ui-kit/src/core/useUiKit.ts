@@ -1,4 +1,5 @@
 import {
+  asTemplateRef,
   UI_KIT_CONFIG_KEY,
   UI_KIT_NAMESPACE_KEY,
   type UiKitBaseProps,
@@ -39,6 +40,7 @@ export function useUiKit<P extends UiKitBaseProps>(component: UiKitComponentKeys
 
   return {
     ui: uiKitProps,
+    tui: asTemplateRef(uiKitProps),
     bem,
     config: state.config,
     theme: state.theme,

@@ -1,46 +1,39 @@
-import { type Component, type Events, type Ref, type VNode } from 'vue'
-import type { DefineComponent, EmitFn, UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
+import type { Ref, VNode, VNodeRef } from 'vue'
+import type { DefineComponent, EmitFn, LowercaseElementEvents, UiKitBaseProps, UiKitOverride } from '@dotdev/ui-kit'
 
-export interface UITreeMenuProps<T = unknown> extends UiKitBaseProps, UITreeMenuBaseProps<T> {
-  disabledItem?: (item: T) => boolean
-  expandedItem?: (item: T) => boolean
-  onExpand?: (item: T) => void
-  onCollapse?: (item: T) => void
-  root?: boolean
-}
-
-interface Adapter<T = unknown> {
-  component?: (item: T) => Component | undefined
-  bind?: (item: T) => Record<string, unknown>
-}
-
-export interface UITreeMenuBaseProps<T = unknown> {
+export interface UITreeMenuProps<T = unknown> extends UiKitBaseProps {
   items?: T[]
   size?: UITreeMenuSize
   childrenKey?: keyof T
   labelKey?: keyof T
-  adapter?: Adapter<T>
+  disabledItem?: (item: T) => boolean
+  expandedItem?: (item: T) => boolean
+  itemAttrs?: (item: T) => Record<string, unknown>
+  focusedItem?: T
 }
 
 export interface UITreeMenuSlots<T = unknown> {
-  label?(scope: { label?: string; item: T }): VNode[]
+  item?(scope: UITreeMenuSlotScope<T>): VNode[]
+  label?(scope: UITreeMenuSlotScope<T>): VNode[]
   children?(scope: UITreeMenuSlotScope<T>): VNode[]
-  adapter?(scope: { component: () => Component }): VNode[]
 }
 
-export type UITreeMenuEmits<T = unknown> = UITreeMenuItemEmits<T> & {}
+export type UITreeMenuEmits<T = unknown> = UITreeMenuItemEmits<T> & {
+  expand: [item: T]
+  collapse: [item: T]
+}
 
 export type UITreeMenuItemEmits<T = unknown> = /* @vue-ignore */ {
-  [E in keyof Events as `item:${E}`]: [item: T]
+  [E in keyof LowercaseElementEvents as `item:${E}`]: [item: T, event: LowercaseElementEvents[E]]
 }
 
 export interface UITreeMenuSlotScope<T = unknown> {
   item: T
-  items: T[]
-  anchor: Ref<HTMLElement | undefined>
-  bind: any
+  children: T[]
+  element: Ref<HTMLElement | undefined>
+  ref: VNodeRef
   label: string
-  Children: VNode | null
+  NestedMenu: VNode | null
 }
 
 export type UITreeMenuSize = UiKitOverride<keyof UITreeMenuSizes, 'treeMenuSize'>

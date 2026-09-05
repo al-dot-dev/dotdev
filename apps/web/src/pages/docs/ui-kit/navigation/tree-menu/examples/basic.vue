@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Collapse, Floating, TreeMenu } from '@dotdev/ui-kit'
+import { Menu2 as Menu } from '@dotdev/ui-kit'
 import { ref } from 'vue'
 
 interface Item {
@@ -21,6 +21,7 @@ const items: Item[] = [
   {
     label: 'Projects',
     value: 'projects',
+    kind: 'collapse',
     children: [
       {
         label: 'Website redesign',
@@ -54,6 +55,7 @@ const items: Item[] = [
   {
     label: 'Settings',
     value: 'settings',
+    kind: 'floating',
     children: [
       { label: 'General', value: 'settings-general' },
       { label: 'Security', value: 'settings-security' },
@@ -83,47 +85,60 @@ function isActive(item: Item) {
 function isDisabled(item: Item) {
   return !!item.disabled
 }
+
+function itemAttrs(item: Item) {
+  return {
+    class: {
+      'opacity-50': isDisabled(item),
+    },
+    onclick: (event: Event) => {
+      console.log(event)
+    },
+  }
+}
 </script>
 
 <template>
-  <TreeMenu
-    :disabled-item="isDisabled"
-    :expanded-item="isActive"
-    :items="items"
-    :on-collapse="toggleModel"
-    :on-expand="toggleModel"
-    children-key="children"
-    class="w-64"
-    label-key="label"
-    @item:click="toggleModel"
-  >
-    <template #label="{ label, item }">
-      <span :class="{ 'opacity-50': item.disabled }" class="font-bold">{{ label }}</span>
-    </template>
+  <Menu :disabled-item="isDisabled" :items="items" children-key="children" label-key="label" />
 
-    <template #children="{ Children, anchor, item }">
-      <Collapse :model-value="isActive(item)">
-        <component :is="Children" />
-      </Collapse>
+  <!--  <TreeMenu-->
+  <!--    :disabled-item="isDisabled"-->
+  <!--    :expanded-item="isActive"-->
+  <!--    :items="items"-->
+  <!--    children-key="children"-->
+  <!--    class="w-64"-->
+  <!--    label-key="label"-->
+  <!--    @collapse="toggleModel"-->
+  <!--    @expand="toggleModel"-->
+  <!--    @item:click="toggleModel"-->
+  <!--  >-->
+  <!--    <template #label="{ label, item }">-->
+  <!--      <span :class="{ 'opacity-50': item.disabled }" class="font-bold">{{ label }}</span>-->
+  <!--    </template>-->
 
-      <Floating
-        v-if="item.kind === 'floating'"
-        #default="{ style, ref }"
-        :target="anchor"
-        auto-update
-        placement="right-start"
-      >
-        <teleport to="body">
-          <div
-            v-if="isActive(item)"
-            :ref="ref"
-            :style="{ ...style, zIndex: 9999 }"
-            class="w-45 bg-background p-1 radius-lg border border-default"
-          >
-            <component :is="Children" />
-          </div>
-        </teleport>
-      </Floating>
-    </template>
-  </TreeMenu>
+  <!--    <template #children="{ NestedMenu, element, item }">-->
+  <!--      <Collapse v-if="item.kind === 'collapse'" :model-value="isActive(item)">-->
+  <!--        <component :is="NestedMenu" />-->
+  <!--      </Collapse>-->
+
+  <!--      <Floating-->
+  <!--        v-if="item.kind === 'floating'"-->
+  <!--        #default="{ style, ref }"-->
+  <!--        :target="element"-->
+  <!--        auto-update-->
+  <!--        placement="right-start"-->
+  <!--      >-->
+  <!--        <teleport to="body">-->
+  <!--          <div-->
+  <!--            v-if="isActive(item)"-->
+  <!--            :ref="ref"-->
+  <!--            :style="{ ...style, zIndex: 9999 }"-->
+  <!--            class="w-45 bg-background p-1 radius-lg border border-default"-->
+  <!--          >-->
+  <!--            <component :is="NestedMenu" />-->
+  <!--          </div>-->
+  <!--        </teleport>-->
+  <!--      </Floating>-->
+  <!--    </template>-->
+  <!--  </TreeMenu>-->
 </template>

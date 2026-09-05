@@ -77,9 +77,12 @@ export const treeMenu = defineComponent({
         tree-menu-text-node-hover
         tree-menu-bg-node-hover`,
 
-    '&__item--active': `
+    '&__item--focused': `
         tree-menu-text-node-active
         tree-menu-bg-node-active`,
+
+    '&__item--disabled': `
+        disabled`,
 
     '&--sm &__item': `
         tree-menu-size-node-sm`,
