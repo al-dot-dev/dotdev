@@ -12,7 +12,7 @@ import type { VNode } from 'vue'
 interface UIMenuProps2<T = unknown> extends UiKitBaseProps, UIListProps<T> {
   disabledItem?: (item: T) => boolean
   itemAttrs?: (item: T) => Record<string, unknown>
-  depth?: number
+  disabled?: boolean
 }
 
 /* Slots */

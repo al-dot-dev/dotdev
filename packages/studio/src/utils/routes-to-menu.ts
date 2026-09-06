@@ -21,7 +21,7 @@ function compareNodes(a: Node, b: Node): number {
 export function routesToMenu(routes: RouteRecordNormalized[]): StudioMenuItem[] {
   const root: Node = {
     segment: '',
-    path: '',
+    key: '',
     children: new Map(),
   }
 
@@ -40,7 +40,7 @@ export function routesToMenu(routes: RouteRecordNormalized[]): StudioMenuItem[] 
       if (!node.children.has(segment)) {
         node.children.set(segment, {
           segment,
-          path: currentPath,
+          key: currentPath,
           children: new Map(),
         })
       }

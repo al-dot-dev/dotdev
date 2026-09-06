@@ -61,7 +61,7 @@ function useNavigationBranch(disabled?: MaybeRefOrGetter<boolean>): NavigationBr
 
   return {
     component: getCurrentInstance(), // children items instance
-    path: parent?.path ?? ([] as NavigationPath), // item [1,1]
+    key: parent?.path ?? ([] as NavigationPath), // item [1,1]
     disabled: computed(() => (parent?.disabled.value ?? false) || (toValue(disabled) ?? false)),
   }
 }
@@ -101,7 +101,7 @@ export function useNavigateItem<T>(value: T, index: number, disabled: MaybeRefOr
 
   provide(BRANCH_KEY, {
     component: parent.component,
-    path,
+    key: path,
     disabled: isDisabled,
   })
 
