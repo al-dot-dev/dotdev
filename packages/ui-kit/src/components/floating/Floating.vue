@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, type CSSProperties, ref, toValue, type VNodeRef, watchEffect } from 'vue'
+import { computed, type CSSProperties, ref, toValue, type VNodeRef, watch, watchEffect } from 'vue'
 import type { UIFloatingEmits, UIFloatingProps, UIFloatingSlots } from './floating.types'
 import { useClickOutside, useFloating } from '@dotdev/ui-kit'
 
@@ -11,9 +11,14 @@ const props = withDefaults(defineProps<UIFloatingProps>(), {
   dismissable: true,
 })
 
+const model = defineModel<boolean>()
 const isOpen = ref<boolean>(false)
-const anchor = ref<HTMLElement>()
-const floating = ref<HTMLElement>()
+const anchor = ref<HTMLElement | null | undefined>(null)
+const floating = ref<HTMLElement | null | undefined>(null)
+
+watch(model, (value) => {
+  value ? open() : close()
+})
 
 const floatingConfig = computed(() => ({
   placement: props.placement,
@@ -33,6 +38,10 @@ const floatingStyle = computed<CSSProperties>(() => ({
 watchEffect(() => {
   if (props.target) {
     anchor.value = toValue(props.target)
+  }
+
+  if (props.floating) {
+    floating.value = toValue(props.floating)
   }
 })
 

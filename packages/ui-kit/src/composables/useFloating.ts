@@ -8,7 +8,7 @@ export interface UIFloatingConfig {
   autoUpdate?: boolean
 }
 
-type ElementRef = MaybeRefOrGetter<HTMLElement | undefined>
+type ElementRef = MaybeRefOrGetter<HTMLElement | undefined | null>
 
 export interface UIFloatingBinding {
   placement: Ref<Placement>

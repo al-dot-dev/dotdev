@@ -5,7 +5,6 @@ import TransitionCollapse from '../accordion/TransitionCollapse.vue'
 defineSlots<UICollapseSlots>()
 const emits = defineEmits<UICollapseEmits>()
 const props = withDefaults(defineProps<UICollapseProps>(), {})
-
 const model = defineModel<boolean>({ default: true })
 </script>
 

@@ -3,7 +3,8 @@ import type { DefineComponent, EmitFn, UIFloatingConfig } from '@dotdev/ui-kit'
 
 export type UIFloatingFn = (event?: Event) => void
 export interface UIFloatingProps extends UIFloatingConfig {
-  target?: MaybeRefOrGetter<HTMLElement | undefined>
+  target?: MaybeRefOrGetter<HTMLElement | undefined | null>
+  floating?: MaybeRefOrGetter<HTMLElement | undefined | null>
   fit?: boolean
   dismissable?: boolean
 }
