@@ -1,6 +1,6 @@
 import type { NavigationPath, NavigationPathKey } from './types.ts'
 
-export function getPathKey(path: NavigationPath): NavigationPathKey {
+export function toPathKey(path: NavigationPath): NavigationPathKey {
   return path.join('.')
 }
 

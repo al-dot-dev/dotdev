@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useNavigationItem } from './context/index.ts'
-import { computed } from 'vue'
+import { computed, useTemplateRef } from 'vue'
+import { useNavigationItem } from './composables/useNavigationItem.ts'
 
 interface Props {
   index: number
@@ -14,9 +14,12 @@ const { branch, navigation } = useNavigationItem({
   disabled: () => props.disabled,
 })
 
-const isFocused = computed(() => navigation.key.value === branch.key)
+const isFocused = computed(() => navigation.focusedKey.value === branch.key)
+const element = useTemplateRef('element')
 </script>
 
 <template>
-  <slot :focused="isFocused" />
+  <li ref="element" @click.stop="navigation.setFocus(branch.key)">
+    <slot :key="branch.key" :disabled="branch.disabled" :element="element" :focused="isFocused" />
+  </li>
 </template>

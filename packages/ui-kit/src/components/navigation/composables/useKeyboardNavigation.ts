@@ -16,7 +16,7 @@ export interface NavigationOptions<T = unknown> {
   onReachRight?: NavigationHandler<T>
 }
 
-type NavigationHandler<T> = (context: NavigationContext<T>) => void | true
+export type NavigationHandler<T> = (context: NavigationContext<T>) => void | true
 
 export interface NavigationContext<T = unknown> {
   event: KeyboardEvent

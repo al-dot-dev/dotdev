@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Menu2 as Menu } from '@dotdev/ui-kit'
+import { Collapse, Floating, Menu2 as Menu } from '@dotdev/ui-kit'
 import { ref } from 'vue'
 
 interface Item {
@@ -85,21 +85,35 @@ function isActive(item: Item) {
 function isDisabled(item: Item) {
   return !!item.disabled
 }
-
-function itemAttrs(item: Item) {
-  return {
-    class: {
-      'opacity-50': isDisabled(item),
-    },
-    onclick: (event: Event) => {
-      console.log(event)
-    },
-  }
-}
 </script>
 
 <template>
-  <Menu :disabled-item="isDisabled" :items="items" children-key="children" label-key="label" />
+  <Menu :disabled-item="isDisabled" :items="items" children-key="children" label-key="label" @command="toggleModel">
+    <template #children="{ props, item, itemEl }">
+      <Collapse v-if="item.kind === 'collapse'" :model-value="isActive(item)">
+        <Menu v-bind="props" />
+      </Collapse>
+
+      <Floating
+        v-if="item.kind === 'floating'"
+        #default="{ style, ref }"
+        :target="itemEl"
+        auto-update
+        placement="right-start"
+      >
+        <teleport to="body">
+          <div
+            v-if="isActive(item)"
+            :ref="ref"
+            :style="style"
+            class="bg-background border border-default rounded-md p-1"
+          >
+            <Menu v-bind="props" />
+          </div>
+        </teleport>
+      </Floating>
+    </template>
+  </Menu>
 
   <!--  <TreeMenu-->
   <!--    :disabled-item="isDisabled"-->

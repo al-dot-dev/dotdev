@@ -13,6 +13,7 @@ interface UIMenuProps2<T = unknown> extends UiKitBaseProps, UIListProps<T> {
   disabledItem?: (item: T) => boolean
   itemAttrs?: (item: T) => Record<string, unknown>
   disabled?: boolean
+  onCommand?: (item: T, event: Event) => void
 }
 
 /* Slots */
